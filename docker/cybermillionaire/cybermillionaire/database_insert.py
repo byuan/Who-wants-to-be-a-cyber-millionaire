@@ -1,22 +1,34 @@
 import mysql.connector
+from mysql.connector import Error
 import re
 
 # Function to parse the returned text and remove the A, B, C, D labels
 def parse_question_and_answers(text):
-    # Regular expression to extract the question and answers
+    """
+    Parse a GPT-style multiple choice response into discrete fields.
+
+    The function expects a format that looks like:
+
+    Question: <text>\n\n
+    A. first answer
+    B. second answer
+    C. third answer
+    D. fourth answer
+    Correct Answer: <letter>
+    """
     question_match = re.search(r"Question: (.*?)\n", text)
     answers_match = re.findall(r"([A-D])\.\s([^\n]+)", text)  # Matches A. Answer text, B. Answer text, etc.
     correct_answer_match = re.search(r"Correct Answer: ([A-D])", text)  # Matches Correct Answer: A, B, C, or D
 
-    if not question_match or not answers_match or not correct_answer_match:
+    if not question_match or len(answers_match) != 4 or not correct_answer_match:
         raise ValueError("Unable to parse the text correctly")
 
     question = question_match.group(1)
     answers = [a[1].strip() for a in answers_match]  # Extract answer texts and strip extra spaces
     correct_letter = correct_answer_match.group(1)  # The correct letter (e.g., A, B, C, D)
-    
-    # Convert the correct letter (A-D) to a 0-based index
-    correct_answer = ord(correct_letter) - ord('A')
+
+    # Convert the correct letter (A-D) to a 1-based index for database consistency
+    correct_answer = ord(correct_letter) - ord('A') + 1
 
     return question, answers, correct_answer
 
