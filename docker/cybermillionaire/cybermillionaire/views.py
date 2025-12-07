@@ -1,63 +1,45 @@
 #views.py file
 
-
-from django.shortcuts import HttpResponse
-from django import template
+from django.shortcuts import render
 import cybermillionaire.export as e
 
 
 def index(request):
-    t = template.loader.get_template('index.html')
-    html = t.render()
-    return HttpResponse(html)
-    
-def start1(request):        # Static Primary School Level
-    e.export_questions('1')
-    t = template.loader.get_template('game.html')
-    html = t.render()
-    return HttpResponse(html)
+    return render(request, "index.html")
 
-def start2(request):        # Static Secondary School Level
-    e.export_questions('2')
-    t = template.loader.get_template('game.html')
-    html = t.render()
-    return HttpResponse(html)
 
-    
-def start3(request):        # Static College Level
-    e.export_questions('3')
-    t = template.loader.get_template('game.html')
-    html = t.render()
-    return HttpResponse(html)
-    
-    
-def start4(request):        # Static Expert Level
-    e.export_questions('4')
-    t = template.loader.get_template('game.html')
-    html = t.render()
-    return HttpResponse(html)
+def start_game(request, selection):
+    e.export_questions(selection)
+    return render(request, "game.html")
 
-# Dynamic views
+
+def start1(request):  # Static Primary School Level
+    return start_game(request, "1")
+
+
+def start2(request):  # Static Secondary School Level
+    return start_game(request, "2")
+
+
+def start3(request):  # Static College Level
+    return start_game(request, "3")
+
+
+def start4(request):  # Static Expert Level
+    return start_game(request, "4")
+
+
 def dynamic_start1(request):  # Dynamic Primary School Level
-    e.export_questions('dynamic-1')
-    t = template.loader.get_template('game.html')
-    html = t.render()
-    return HttpResponse(html)
+    return start_game(request, "dynamic-1")
+
 
 def dynamic_start2(request):  # Dynamic Secondary School Level
-    e.export_questions('dynamic-2')
-    t = template.loader.get_template('game.html')
-    html = t.render()
-    return HttpResponse(html)
+    return start_game(request, "dynamic-2")
+
 
 def dynamic_start3(request):  # Dynamic College Level
-    e.export_questions('dynamic-3')
-    t = template.loader.get_template('game.html')
-    html = t.render()
-    return HttpResponse(html)
+    return start_game(request, "dynamic-3")
+
 
 def dynamic_start4(request):  # Dynamic Expert Level
-    e.export_questions('dynamic-4')
-    t = template.loader.get_template('game.html')
-    html = t.render()
-    return HttpResponse(html)
+    return start_game(request, "dynamic-4")
