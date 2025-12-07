@@ -1,5 +1,13 @@
+from pathlib import Path
 import mysql.connector
+from mysql.connector import Error
 import re
+
+PASSWORD_FILE = Path("cybermillionaire/util/mysqlPassword.txt")
+
+
+def _read_password():
+    return PASSWORD_FILE.read_text().strip()
 
 # Function to parse the returned text and remove the A, B, C, D labels
 def parse_question_and_answers(text):
@@ -20,44 +28,38 @@ def parse_question_and_answers(text):
 
     return question, answers, correct_answer
 
-# Function to insert the parsed data into the database
-def insert_question_into_db(question, answers, correct_answer):
-    # Connect to MySQL
-    try:
-    
-        f = open("cybermillionaire/util/mysqlPassword.txt")
-        conn = mysql.connector.connect(host='db',
-                                         database='Millionaire',
-                                         user='root',
-                                         password= f.read().strip())
-        cursor = conn.cursor()
-    
-    except Error as e:
-        print("Error reading data from MySQL table", e)
-    
-
-    # Insert query
-    insert_query = '''
-    INSERT INTO dynamic (Question, Ans1, Ans2, Ans3, Ans4, Correct)
-    VALUES (%s, %s, %s, %s, %s, %s)
-    '''
-
-    # Data to insert
-    data = (
-        question,
-        answers[0],  # Ans1
-        answers[1],  # Ans2
-        answers[2],  # Ans3
-        answers[3],  # Ans4
-        correct_answer  # Correct answer is an integer (1-4)
+def create_connection():
+    password = _read_password()
+    return mysql.connector.connect(
+        host="db", database="Millionaire", user="root", password=password
     )
 
-    # Execute the query
-    cursor.execute(insert_query, data)
 
-    # Commit the transaction
-    conn.commit()
+# Function to insert the parsed data into the database
+def insert_question_into_db(question, answers, correct_answer, connection=None):
+    managed_connection = connection or create_connection()
+    cursor = managed_connection.cursor()
 
-    # Close the connection
-    cursor.close()
-    conn.close()
+    try:
+        insert_query = (
+            "INSERT INTO dynamic (Question, Ans1, Ans2, Ans3, Ans4, Correct) "
+            "VALUES (%s, %s, %s, %s, %s, %s)"
+        )
+
+        data = (
+            question,
+            answers[0],  # Ans1
+            answers[1],  # Ans2
+            answers[2],  # Ans3
+            answers[3],  # Ans4
+            correct_answer,  # Correct answer is a 0-based index
+        )
+
+        cursor.execute(insert_query, data)
+        managed_connection.commit()
+    except Error as exc:
+        print("Error inserting data into MySQL table", exc)
+    finally:
+        cursor.close()
+        if connection is None:
+            managed_connection.close()
