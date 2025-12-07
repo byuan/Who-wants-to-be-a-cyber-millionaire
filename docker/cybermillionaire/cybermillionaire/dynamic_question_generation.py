@@ -1,5 +1,7 @@
-from openai import OpenAI
+import os
 import random
+
+from openai import OpenAI
 
 # Bags of words for each level
 BAG_O_WORDS_PRIMARY = ['Passwords', 'Internet Safety', 'Cyberbullying', 'Social Media', 'Secure Websites', 'Hacking', 'Digital Footprints', 'Data', 'Phishing', 'Safe Downloading'] 
@@ -20,11 +22,14 @@ def pick_a_word(BAG_O_WORDS):
     return BAG_O_WORDS[word] # returns the word at the selected index in the specified BAG_O_WORDS
 
 # Function that reaches out to the API
+MODEL_NAME = os.getenv("OPENAI_MODEL", "gpt-5")
+
+
 def api(BAG_O_WORDS, content, question_level):
     word = pick_a_word(BAG_O_WORDS) # picks a random word from BAG_O_WORDS
     client = OpenAI() # creates the API class
     completion = client.chat.completions.create(
-        model="gpt-3.5-turbo-0125", # specified GPT API model
+        model=MODEL_NAME, # specified GPT API model
         messages=[
             {"role": "system", "content": content}, # defines the role of the API
             {
