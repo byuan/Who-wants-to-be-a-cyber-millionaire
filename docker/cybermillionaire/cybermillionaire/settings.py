@@ -27,7 +27,7 @@ SECRET_KEY = f.read().strip()
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-#Need to put IP address of sevrer here
+#Need to put IP address of server here
 ALLOWED_HOSTS = ['*']
 
 
