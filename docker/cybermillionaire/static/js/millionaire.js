@@ -304,11 +304,20 @@ var MillionaireModel = function(data) {
  		$("#" + elm).slideUp('slow', function() {
  			startSound('wrong', false);
  			$("#" + elm).css('background', 'red').slideDown('slow', function() {
- 				$("#game").fadeOut('slow', function() {
-					 $("#game-over").html('Game Over!<br /><button onclick=\"window.location.replace(\'/\')\">Play again?</button>');
- 					$("#game-over").fadeIn('slow');
- 					self.transitioning = false;
- 				});
+ 				if(self.level() + 1 > 15) {
+	 				$("#game").fadeOut('slow', function() {
+	 					$("#game-over").html('You Win!<br /><button onclick=\"window.location.replace(\'/\')\">Play again?</button>');
+	 					$("#game-over").fadeIn('slow');
+	 				});
+ 				} else {
+ 					self.level(self.level() + 1);
+ 					$("#" + elm).css('background', 'none');
+			 		$("#answer-one").show();
+			 		$("#answer-two").show();
+			 		$("#answer-three").show();
+			 		$("#answer-four").show();
+			 		self.transitioning = false;
+ 				}
  			});
  		});
  	}
