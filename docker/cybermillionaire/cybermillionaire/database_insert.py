@@ -1,5 +1,6 @@
 import mysql.connector
 import re
+from mysql.connector import Error
 
 # Function to parse the returned text and remove the A, B, C, D labels
 def parse_question_and_answers(text):

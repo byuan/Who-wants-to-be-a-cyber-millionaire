@@ -67,7 +67,7 @@ VALUES
 ("What is considered cyberbullying?", "Asking for help", "Sharing kind messages online", "Sending mean messages repeatedly to someone", "Complimenting a friend", 2, "easy", 1),
 ("What is cyberbullying?", "Meeting freinds online", "Sending mean messages or threats through the internet", "Playing games on a computer", "Watching videos on a tablet", 1, "easy", 1),
 ("What should you do if you are being cyberbullied?", "Respond with mean messages back", "Keep it secret and don\'t tell anyone", "Block the person and report the behavior to a trusted adult", "Meet the bully in person to confront them", 2, "easy", 1),
-("What should you do if someone is being mean to you online repeatedly?", "Be mean back to them", "Tell a trusted adult", "Keep it a secret and ignore it", "Meeti them in person to talk to them", 1, "easy", 1),
+("What should you do if someone is being mean to you online repeatedly?", "Be mean back to them", "Tell a trusted adult", "Keep it a secret and ignore it", "Meet them in person to talk to them", 1, "easy", 1),
 ("What should you do if someone is being mean to you online and won\'t stop?", "Keep responding to them", "Tell a trusted adult about the situation", "Be mean back to them", "Keep it a secret", 1, "easy", 1),
 ("What is cyberbullying?", "Sending kind messages online", "Sharing funny memes with friends", "Posting mean comments to hurt someone on the internet", "Watching educational videos on YouTube", 2, "easy", 1),
 ("What should you do if you receive a mean or threatening message online?", "Respond with an even meaner message to show you are not scared", "Delete the message and forget about it", "Show the message to a trusted adult and ask for help", "Share the message with your friends for support", 2, "medium", 1),
