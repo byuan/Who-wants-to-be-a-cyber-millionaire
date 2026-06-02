@@ -55,7 +55,7 @@ var MillionaireModel = function(data) {
 	var self = this;
     var help = -1
 
-    //Question memory bank
+    // Question memory bank
     this.history = [];
 
 	// The 15 questions of this game
@@ -255,13 +255,30 @@ var MillionaireModel = function(data) {
             //document.getElementById("display-help").innerHTML = "";
             help = -1
         }
+
+        var isCorrect = self.questions[self.level() - 1].correct == index;
         
- 		if(self.questions[self.level() - 1].correct == index) {
+        //Log the user's choice 
+        self.logAnswer(index, isCorrect);
+        
+ 		if(isCorrect) {
  			self.rightAnswer(elm);
  		} else {
  			self.wrongAnswer(elm);
  		}
  	}
+
+    self.logAnswer = function(index, isCorrect) {
+        var q = self.questions[self.level() - 1];
+
+        self.history.push({
+            question: q.question,
+            selected: index,
+            correct: q.correct,
+            isCorrect: isCorrect,
+            money: self.money()
+        });
+    }
 
     //match correct answer to element name
     self.getElm = function(correct){
@@ -287,7 +304,7 @@ var MillionaireModel = function(data) {
  				if(self.level() + 1 > 15) {
 	 				$("#game").fadeOut('slow', function() {
 	 					$("#game-over").html('You Win!<br /><button onclick=\"window.location.replace(\'/\')\">Play again?</button>');
-	 					$("#game-over").fadeIn('slow');
+	 					self.showReport();
 	 				});
  				} else {
  					self.level(self.level() + 1);
@@ -328,8 +345,24 @@ var MillionaireModel = function(data) {
  	// Gets the money formatted string of the current won amount of money.
  	self.formatMoney = function() {
 	    return self.money().money(2, '.', ',');
-	}
+	}  
+    
+    self.showReport = function(){
+        var html = "<ul>";
+
+        for (var i = 0; i <self.history.length; i++){
+            var h = self.history[i];
+            html += "<li>" + "<b>Question:</b>" + h.question + "<br>" + "<b>Your Answer</b>" + (h.selected + 1) + "</li><br>";
+        }
+        html += "</ul>";
+
+        $("#report-content").html(html);
+        $("#game").fadeOut('slow',function() {
+            $("#report").fadeIn('slow');
+        });
+    }
 };
+
 
 
 // Executes on page load, bootstrapping
