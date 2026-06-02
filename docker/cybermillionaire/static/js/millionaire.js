@@ -55,6 +55,9 @@ var MillionaireModel = function(data) {
 	var self = this;
     var help = -1
 
+    //Question memory bank
+    this.history = [];
+
 	// The 15 questions of this game
     this.questions = data.questions;
 
@@ -299,18 +302,18 @@ var MillionaireModel = function(data) {
  		});
  	}
 
- 	// Executes the proceedure of guessing incorrectly, losing the game.
+ 	// Executes the proceedure of guessing incorrectly, letting the player try again.
  	self.wrongAnswer = function(elm) {
  		$("#" + elm).slideUp('slow', function() {
  			startSound('wrong', false);
  			$("#" + elm).css('background', 'red').slideDown('slow', function() {
- 				if(self.level() + 1 > 15) {
+ 				if(self.level() > 15) {
 	 				$("#game").fadeOut('slow', function() {
 	 					$("#game-over").html('You Win!<br /><button onclick=\"window.location.replace(\'/\')\">Play again?</button>');
 	 					$("#game-over").fadeIn('slow');
 	 				});
  				} else {
- 					self.level(self.level() + 1);
+ 					self.level(self.level());
  					$("#" + elm).css('background', 'none');
 			 		$("#answer-one").show();
 			 		$("#answer-two").show();
@@ -327,8 +330,6 @@ var MillionaireModel = function(data) {
 	    return self.money().money(2, '.', ',');
 	}
 };
-
-
 
 
 // Executes on page load, bootstrapping
