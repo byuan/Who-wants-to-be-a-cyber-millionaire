@@ -69,7 +69,7 @@ var MillionaireModel = function(data) {
  	this.money = new ko.observable(0);
 
  	// The current level(starting at 1) 
- 	this.level = new ko.observable(1);
+ 	this.level = new ko.observable(14);
 
  	// The three the user can use to 
  	// attempt to answer a question (1 use each)
@@ -273,10 +273,9 @@ var MillionaireModel = function(data) {
 
         self.history.push({
             question: q.question,
-            selected: index,
-            correct: q.correct,
-            isCorrect: isCorrect,
-            money: self.money()
+            selected: q.content[index],
+            correct: q.content[q.correct],
+            isCorrect: isCorrect
         });
     }
 
@@ -303,8 +302,10 @@ var MillionaireModel = function(data) {
  				self.money($(".active").data('amt'));
  				if(self.level() + 1 > 15) {
 	 				$("#game").fadeOut('slow', function() {
+                        console.log("History", self.history);
+                        self.showReport();
 	 					$("#game-over").html('You Win!<br /><button onclick=\"window.location.replace(\'/\')\">Play again?</button>');
-	 					self.showReport();
+	 					// self.showReport();
 	 				});
  				} else {
  					self.level(self.level() + 1);
@@ -348,13 +349,15 @@ var MillionaireModel = function(data) {
 	}  
     
     self.showReport = function(){
+        console.log("report called")
         var html = "<ul>";
 
         for (var i = 0; i <self.history.length; i++){
             var h = self.history[i];
-            html += "<li>" + "<b>Question:</b>" + h.question + "<br>" + "<b>Your Answer</b>" + (h.selected + 1) + "</li><br>";
+            html += "<li>" + "<b>Question: </b>" + h.question + "<br>" + "<b>Your Answer: </b>" + (h.selected)
+             + "<b> Result: </b>" + (h.isCorrect ? "Correct" : "Wrong") + "<br><br></li>";
         }
-        html += "</ul>";
+        html += "</ul>"
 
         $("#report-content").html(html);
         $("#game").fadeOut('slow',function() {

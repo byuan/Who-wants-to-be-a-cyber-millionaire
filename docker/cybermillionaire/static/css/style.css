@@ -1,24 +1,23 @@
 body {
 	background: black;
 	font-family: 'Roboto Slab', serif;
-    
 }
 
 h1 {
-    color: white;
-    text-align: center;
+	color: white;
+	text-align: center;
 }
 
 h2 {
-color: white;
-text-align: center;
+	color: white;
+	text-align: center;
+	font-size: small;
 }
 
 h3 {
-color: white;
-text-align: center;
+	color: white;
+	text-align: center;
 }
-
 
 .container {
     height: 200px;
@@ -36,13 +35,19 @@ text-align: center;
 }
 
 
-
 audio {
 	display: none;
 }
 
 .clear {
 	clear: both;
+}
+
+#report {
+    color: white;
+    width: 960px;
+    margin: 0 auto;
+	text-align: center;
 }
 
 #game {
