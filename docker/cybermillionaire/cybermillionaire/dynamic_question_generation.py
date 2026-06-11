@@ -1,47 +1,119 @@
-from openai import OpenAI
+"""Dynamic question generation via the Anthropic Claude API (Claude Fable 5)."""
+
+from __future__ import annotations
+
 import random
+from anthropic import Anthropic
 
-# Bags of words for each level
-BAG_O_WORDS_PRIMARY = ['Passwords', 'Internet Safety', 'Cyberbullying', 'Social Media', 'Secure Websites', 'Hacking', 'Digital Footprints', 'Data', 'Phishing', 'Safe Downloading'] 
-BAG_O_WORDS_SECONDARY = ['Passwords', 'Phishing', 'Encryption', 'Firewall', 'Malware', 'Two-factor authentication', 'Social Engineering', 'Network Security', 'Endpoint Security', 'Advanced Persistent Threats']
-BAG_O_WORDS_COLLEGE = ['Intrusion Detection Systems', 'Cyber Threat Intelligence', 'Digital Forensics', 'Cryptography', 'Blockchain Security', 'Secure Coding Practices', 'Ethical Hacking', 'Social Engineering', 'Cyber Incident Response', 'Network Encryption']
-BAG_O_WORDS_EXPERT = ['TCP Protocol', 'Wireless Security Protocol', 'HTTP Headers', 'Virtualization', 'Kerberos Authentication', 'TCP/UDP Protocol', 'SSL/X509 Certificates', 'Asymmetric/Symmetric Encryption for Cryptography', 'Linux/Unix System Forensics', 'Technical Aspects of Network Protocols']
+# ---------------------------------------------------------------------------
+# Single client instance reused across all calls. Reads ANTHROPIC_API_KEY
+# from the environment by default.
+# ---------------------------------------------------------------------------
+_client = Anthropic()
 
-# Dictionary to hold all the level choices
-levels = {"easy": (BAG_O_WORDS_PRIMARY, "You are an elementary school teacher trying to create a cybersecurity quiz.", "primary school"), 
-          "medium": (BAG_O_WORDS_SECONDARY, "You are a high school teacher trying to create a cybersecurity quiz.", "secondary school"), 
-          "hard" : (BAG_O_WORDS_COLLEGE, "You are a cybersecurity professor trying to create a quiz.", "college"), 
-          "expert" : (BAG_O_WORDS_EXPERT, "You are a cybersecurity expert trying to create a quiz.", "expert with technical experience")}
+_MODEL = "claude-fable-5"
+
+# ---------------------------------------------------------------------------
+# Topic banks per difficulty tier
+# ---------------------------------------------------------------------------
+_TOPICS: dict[str, list[str]] = {
+    "easy": [
+        "Passwords", "Internet Safety", "Cyberbullying", "Social Media",
+        "Secure Websites", "Hacking", "Digital Footprints", "Data",
+        "Phishing", "Safe Downloading",
+    ],
+    "medium": [
+        "Passwords", "Phishing", "Encryption", "Firewall", "Malware",
+        "Two-factor authentication", "Social Engineering",
+        "Network Security", "Endpoint Security", "Advanced Persistent Threats",
+    ],
+    "hard": [
+        "Intrusion Detection Systems", "Cyber Threat Intelligence",
+        "Digital Forensics", "Cryptography", "Blockchain Security",
+        "Secure Coding Practices", "Ethical Hacking", "Social Engineering",
+        "Cyber Incident Response", "Network Encryption",
+    ],
+    "expert": [
+        "TCP Protocol", "Wireless Security Protocol", "HTTP Headers",
+        "Virtualization", "Kerberos Authentication", "TCP/UDP Protocol",
+        "SSL/X509 Certificates", "Asymmetric/Symmetric Encryption for Cryptography",
+        "Linux/Unix System Forensics", "Technical Aspects of Network Protocols",
+    ],
+}
+
+# System prompt and human-readable level label per tier
+_LEVEL_META: dict[str, tuple[str, str]] = {
+    "easy":   ("You are an elementary school teacher creating a cybersecurity quiz.",
+               "primary school"),
+    "medium": ("You are a high school teacher creating a cybersecurity quiz.",
+               "secondary school"),
+    "hard":   ("You are a cybersecurity professor creating a quiz.",
+               "college"),
+    "expert": ("You are a cybersecurity expert creating a quiz.",
+               "expert with technical experience"),
+}
+
+_PROMPT_TEMPLATE = (
+    "Write one unique {level} level cybersecurity quiz question about {topic} "
+    "for an educational trivia game, and provide multiple-choice answers "
+    "(one correct, three incorrect) similar to the game style of "
+    "Who Wants to Be a Millionaire. "
+    "Respond with ONLY the following format and nothing else (no preamble, "
+    "no markdown):\n"
+    "Question: <question>\n\n"
+    "A. <answer>\n"
+    "B. <answer>\n"
+    "C. <answer>\n"
+    "D. <answer>\n\n"
+    "Correct Answer: <letter>"
+)
 
 
-# Function uses Random module to pick a word and returns it
-def pick_a_word(BAG_O_WORDS):
-    word = random.randint(0, len(BAG_O_WORDS) - 1) # randomly selects the index from the length of the specified BAG_O_WORDS
-    return BAG_O_WORDS[word] # returns the word at the selected index in the specified BAG_O_WORDS
+class GenerationRefusedError(RuntimeError):
+    """Raised when the model declines to generate a question."""
 
-# Function that reaches out to the API
-def api(BAG_O_WORDS, content, question_level):
-    word = pick_a_word(BAG_O_WORDS) # picks a random word from BAG_O_WORDS
-    client = OpenAI() # creates the API class
-    completion = client.chat.completions.create(
-        model="gpt-3.5-turbo-0125", # specified GPT API model
+
+def generate_question(tier: str) -> str:
+    """
+    Generate one cybersecurity multiple-choice question for *tier*.
+
+    *tier* must be one of: ``"easy"``, ``"medium"``, ``"hard"``, ``"expert"``.
+
+    Returns the raw model response string, ready for
+    :func:`database_insert.parse_question_and_answers`.
+
+    Raises :class:`GenerationRefusedError` if the model's safety classifiers
+    decline the request (stop_reason == "refusal"), so callers can skip the
+    question and retry rather than inserting an unparseable response.
+    """
+    if tier not in _LEVEL_META:
+        raise ValueError(f"Unknown tier {tier!r}. Expected one of {list(_LEVEL_META)}")
+
+    system_msg, level_label = _LEVEL_META[tier]
+    topic = random.choice(_TOPICS[tier])
+
+    message = _client.messages.create(
+        model=_MODEL,
+        max_tokens=1024,
+        system=system_msg,
         messages=[
-            {"role": "system", "content": content}, # defines the role of the API
             {
                 "role": "user",
-                "content": "Write one unique " + question_level + " level cybersecurity question about " + word + " and provide multiple answers (one correct, three incorrect, but state the correct answer) similar to the game style of Who Wants to Be a Millionaire. In the response can you organize it so that it states the question starting with 'Question: <question>', followed by two new lines, and the answers in an 'A. B. C. D. ' format separated by newlines. Finally can it only list the correct answer with the format of 'Correct Answer: <correct answer>'" # prompt for the API
+                "content": _PROMPT_TEMPLATE.format(level=level_label, topic=topic),
             }
-        ]
+        ],
     )
-    return completion.choices[0].message.content # returns the content field from the message from the API
 
-def generate_question(level):
-    BAG_O_WORDS = levels[level][0] # sets the correct BAG_O_WORDS for the specified level
-    content = levels[level][1] # sets the correct content field for the specified level
-    question_level = levels[level][2] # sets the correct question level field for the specified level
+    if message.stop_reason == "refusal":
+        raise GenerationRefusedError(
+            f"Model declined to generate a question about {topic!r}"
+        )
 
-    return api(BAG_O_WORDS, content, question_level)
+    # Concatenate text blocks (reasoning/other block types are skipped)
+    return "".join(
+        block.text for block in message.content if block.type == "text"
+    )
 
-if __name__ == '__main__':
-    level = "expert"  # Default level for direct execution
-    print(generate_question(level))
+
+if __name__ == "__main__":
+    print(generate_question("expert"))

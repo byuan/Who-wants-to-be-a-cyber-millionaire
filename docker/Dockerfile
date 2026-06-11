@@ -1,4 +1,4 @@
-FROM python:3.8-alpine
+FROM python:3.9-alpine
 
 # Install build dependencies for compiling Python packages
 RUN apk add --no-cache build-base python3-dev
@@ -15,9 +15,6 @@ RUN pip3 install --upgrade pip
 # Install Python dependencies from requirements.txt using pip3
 COPY ./requirements.txt .
 RUN pip3 install -r requirements.txt
-
-# Install openai for Python 3 using pip3 (latest version)
-RUN pip3 install --upgrade openai
 
 # Copy the rest of the application files to the container
 COPY ./cybermillionaire /cybermillionaire

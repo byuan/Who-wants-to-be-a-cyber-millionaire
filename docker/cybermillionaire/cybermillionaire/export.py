@@ -1,325 +1,159 @@
-import mysql.connector
-from mysql.connector import Error
+"""
+export.py – Fetch questions from MySQL, serialise them to millionaire.json.
+
+Key improvements over the original:
+  - 8 near-identical Static_*/Dynamic_* functions collapsed into two helpers.
+  - A single shared DB connection is reused while generating dynamic questions
+    instead of opening one per INSERT.
+  - Connection / cursor are closed in the correct order (cursor first).
+  - generate_json rebuilt for clarity; logic is identical to the original.
+"""
+
+from __future__ import annotations
+
 import json
-import sys
+from mysql.connector import Error
+import mysql.connector
+
 import cybermillionaire.dynamic_question_generation as generation
-import cybermillionaire.database_insert as insert
+import cybermillionaire.database_insert as db_insert
 
-# Executes all export functionality
-def run_sql(cursor, query):
-    cursor.execute(query)
-    records = cursor.fetchall() #All the records for that query are here.
-    return records
-    
-def generate_json(game):
-    json_file = {}
-    json_file['games'] = []
-    questions = []
+# ---------------------------------------------------------------------------
+# Difficulty level → SQL Level column value
+# ---------------------------------------------------------------------------
+_STATIC_LEVEL: dict[str, int] = {
+    "1": 1,   # Primary School
+    "2": 2,   # Secondary School
+    "3": 3,   # College
+    "4": 4,   # Expert
+}
 
+# Dynamic selection key → generation tier
+_DYNAMIC_TIER: dict[str, str] = {
+    "dynamic-1": "easy",
+    "dynamic-2": "medium",
+    "dynamic-3": "hard",
+    "dynamic-4": "expert",
+}
 
-    
-    for question in game:
-        #for column in question:
-        for i in range(len(question)):
-            # Need to include "questions" around the individual question
-            if i == 0:
-                quest_json = question[i]
-            # Surround answers with [],
-            if i == 1:
-                ans1_json = question[i]
-            if i == 2:
-                ans2_json = question[i]
-            if i == 3:
-                ans3_json = question[i]
-            if i == 4:
-                ans4_json = question[i]
-            if i == 5:
-                correct_json = question[i]
-                                 
-        #create content array
-        content = []
-        content.append(str(ans1_json))
-        content.append(str(ans2_json))
-        content.append(str(ans3_json))
-        content.append(str(ans4_json))
-
-        # populate questions dictionary
-        questions.append({
-            "question": str(quest_json),
-            "content" : content,
-            "correct": int(correct_json)
-        })
-    json_file['games'].append({"questions" : questions})
-
-    with open('static/js/millionaire.json','w') as outfile:
-        json.dump(json_file, outfile)
-
-# This will run when a Static Primary School game is selected. It will gather all questions for the game       
-def Static_Primary_School(cursor):
-    game = []
-
-    # Gets the 5 easy questions for the Static Primary School game
-    sql_Primary_T1 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'easy' AND Level = 1 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Primary_T1)
-    #save everything as variables
-    for row in result:
-        game.append(row)
-
-        
-    # Gets the 5 medium questions for the Static Primary School game
-    sql_Primary_T2 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'medium' and Level = 1 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Primary_T2)
-    #save everything as variables
-    for row in result:
-        game.append(row)
-
-    # Gets the 5 hard questions for the Static Primary School game
-    sql_Primary_T3 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'hard' and Level = 1 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Primary_T3)
-    #save everything as variables
-    for row in result:
-        game.append(row)
-
-    return game
+_QUESTIONS_PER_GAME = 15
 
 
-# This will run when a Static Secondary School game is selected. It will gather all questions for the game
-def Static_Secondary_School(cursor):
-    game = []
+# ---------------------------------------------------------------------------
+# Internal helpers
+# ---------------------------------------------------------------------------
 
-    # Gets the 5 easy questions for the Static Secondary School game
-    sql_Secondary_T1 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'easy' AND Level = 2 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Secondary_T1)
-    #save everything as variables 
-    for row in result:
-        game.append(row)
-
-    # Gets the 5 medium questions for the Static Secondary School game
-    sql_Secondary_T2 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'medium' AND Level = 2 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Secondary_T2)
-    #save everything as variables 
-    for row in result:
-        game.append(row)
-
-    # Gets the 5 hard questions for the Static Secondary School game
-    sql_Secondary_T3 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'hard' AND Level = 2 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Secondary_T3)
-    #save everything as variables 
-    for row in result:
-        game.append(row)
-
-    return game
+def _get_connection() -> mysql.connector.MySQLConnection:
+    with open("cybermillionaire/util/mysqlPassword.txt") as f:
+        password = f.read().strip()
+    return mysql.connector.connect(
+        host="db",
+        database="Millionaire",
+        user="root",
+        password=password,
+    )
 
 
-# This will run when a Static College game is selected. It will gather all questions for the game.
-def Static_College(cursor):
-    game = []
-
-    # Gets the 5 easy questions for the Static College game
-    sql_College_T1 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'easy' AND Level = 3 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_College_T1)
-    #save everything as variables 
-    for row in result:
-        game.append(row)
-
-
-    # Gets the 5 medium questions for the Static College game
-    sql_College_T2 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'medium' AND Level = 3 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_College_T2)
-    #save everything as variables
-    for row in result:
-        game.append(row)
-
-    # Gets the 5 hard questions for the Static College game
-    sql_College_T3 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'hard' AND Level = 3 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_College_T3)
-    #save everything as variables
-    for row in result:
-        game.append(row)
-
-    return game
+def _fetch_static(cursor, level: int) -> list[tuple]:
+    """Return 15 randomly ordered questions for a static level (5 per tier)."""
+    rows: list[tuple] = []
+    for difficulty in ("easy", "medium", "hard"):
+        cursor.execute(
+            """
+            SELECT Question, Ans1, Ans2, Ans3, Ans4, Correct
+            FROM millionaire
+            WHERE Difficulty = %s AND Level = %s
+            ORDER BY RAND()
+            LIMIT 5
+            """,
+            (difficulty, level),
+        )
+        rows.extend(cursor.fetchall())
+    return rows
 
 
-# This will run when a Static Expert game is selected. It will gather all questions for the game
-def Static_Expert(cursor):
-    game = []
+def _generate_dynamic(cursor, tier: str) -> list[tuple]:
+    """
+    Generate 15 questions via the Claude API (Claude Fable 5), persist them
+    to the `dynamic` table, read them back, then truncate the table.
 
-    # Gets the 5 easy questions for the Static Expert game
-    sql_Expert_T1 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'easy' AND Level = 4 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Expert_T1)
-    #save everything as variables
-    for row in result:
-        game.append(row)
+    Retries on parse failures or model refusals (up to a hard attempt cap)
+    so the game still receives a full set of questions.
+    """
+    max_attempts = _QUESTIONS_PER_GAME * 2  # safety cap on API calls
+    inserted = 0
+    attempts = 0
 
-
-    # Gets the 5 medium questions for the Static Expert game
-    sql_Expert_T2 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'medium' AND Level = 4 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Expert_T2)
-    #save everything as variables
-    for row in result:
-        game.append(row)
-
-    # Gets the 5 hard questions for the Static Expert game
-    sql_Expert_T3 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'hard' AND Level = 4 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Expert_T3)
-    #save everything as variables
-    for row in result:
-        game.append(row)
-    
-    return game
-
-
-# DYNAMIC
-# This will run when a dynamic primary school game is selected. It will gather all questions for the game and then empty the dynamic table.
-def Dynamic_Primary_School(cursor):
-    game = []
-    
-    for i in range(0, 15):
-        question_text = generation.generate_question("easy")
-
-        try:
-            question, answers, correct_answer = insert.parse_question_and_answers(question_text)
-            insert.insert_question_into_db(question, answers, correct_answer)
-            print("Question inserted successfully!")
-        except Exception as e:
-            print(f"An error occurred: {e}")
-
-    # add questions from database to game
-    sql_dynamic_primary = "SELECT * FROM dynamic LIMIT 15;"
-    result = run_sql(cursor, sql_dynamic_primary)
-    #save everything as variables 
-    for row in result:
-        game.append(row)
-
-    # Clear the dynamic table
-    cursor.execute("TRUNCATE TABLE dynamic;")
-
-    return game
-
-# This will run when a dynamic secondary school game is selected. It will gather all questions for the game.
-def Dynamic_Secondary_School(cursor):
-    game = []
-    
-    for i in range(0, 15):
-        question_text = generation.generate_question("medium")
-
-        try:
-            question, answers, correct_answer = insert.parse_question_and_answers(question_text)
-            insert.insert_question_into_db(question, answers, correct_answer)
-            print("Question inserted successfully!")
-        except Exception as e:
-            print(f"An error occurred: {e}")
-
-    # add questions from database to game
-    sql_dynamic_secondary = "SELECT * FROM dynamic LIMIT 15;"
-    result = run_sql(cursor, sql_dynamic_secondary)
-    #save everything as variables 
-    for row in result:
-        game.append(row)
-
-    # Clear the dynamic table
-    cursor.execute("TRUNCATE TABLE dynamic;")
-
-    return game
-
-# This will run when a dynamic college game is selected. It will gather all questions for the game.
-def Dynamic_College(cursor):
-    game = []
-    
-    for i in range(0, 15):
-        question_text = generation.generate_question("hard")
-
-        try:
-            question, answers, correct_answer = insert.parse_question_and_answers(question_text)
-            insert.insert_question_into_db(question, answers, correct_answer)
-            print("Question inserted successfully!")
-        except Exception as e:
-            print(f"An error occurred: {e}")
-
-    # add questions from database to game
-    sql_dynamic_college = "SELECT * FROM dynamic LIMIT 15;"
-    result = run_sql(cursor, sql_dynamic_college)
-    #save everything as variables 
-    for row in result:
-        game.append(row)
-
-    # Clear the dynamic table
-    cursor.execute("TRUNCATE TABLE dynamic;")
-
-    return game
-
-# This will run when a dynamic expert game is selected. It will gather all questions for the game.
-def Dynamic_Expert(cursor):
-    game = []
-    
-    for i in range(0, 15):
-        question_text = generation.generate_question("expert")
-
-        try:
-            question, answers, correct_answer = insert.parse_question_and_answers(question_text)
-            insert.insert_question_into_db(question, answers, correct_answer)
-            print("Question inserted successfully!")
-        except Exception as e:
-            print(f"An error occurred: {e}")
-
-    # add questions from database to game
-    sql_dynamic_expert = "SELECT * FROM dynamic LIMIT 15;"
-    result = run_sql(cursor, sql_dynamic_expert)
-    #save everything as variables 
-    for row in result:
-        game.append(row)
-
-    # Clear the dynamic table
-    cursor.execute("TRUNCATE TABLE dynamic;")
-
-    return game
-
-#def main():
-def export_questions(selection):
-    # export questions from mysql based on a given level
-    game = []
+    # Reuse one connection for all inserts
+    conn = _get_connection()
     try:
-    
-        f = open("cybermillionaire/util/mysqlPassword.txt")
-        connection = mysql.connector.connect(host='db',
-                                         database='Millionaire',
-                                         user='root',
-                                         password= f.read().strip())
+        while inserted < _QUESTIONS_PER_GAME and attempts < max_attempts:
+            attempts += 1
+            try:
+                raw = generation.generate_question(tier)
+                question, answers, correct = db_insert.parse_question_and_answers(raw)
+                db_insert.insert_question_into_db(question, answers, correct, connection=conn)
+                inserted += 1
+                print(f"Question {inserted}/{_QUESTIONS_PER_GAME} inserted.")
+            except generation.GenerationRefusedError as exc:
+                print(f"Model declined, retrying – {exc}")
+            except Exception as exc:
+                print(f"Skipping question, retrying – error: {exc}")
+    finally:
+        conn.close()
+
+    cursor.execute("SELECT * FROM dynamic LIMIT %s", (_QUESTIONS_PER_GAME,))
+    rows = cursor.fetchall()
+    cursor.execute("TRUNCATE TABLE dynamic")
+    return rows
+
+
+def _generate_json(rows: list[tuple]) -> None:
+    """Serialise *rows* to ``static/js/millionaire.json``."""
+    questions = [
+        {
+            "question": str(row[0]),
+            "content":  [str(row[i]) for i in range(1, 5)],
+            "correct":  int(row[5]),
+        }
+        for row in rows
+    ]
+    payload = {"games": [{"questions": questions}]}
+    with open("static/js/millionaire.json", "w") as f:
+        json.dump(payload, f)
+
+
+# ---------------------------------------------------------------------------
+# Public API
+# ---------------------------------------------------------------------------
+
+def export_questions(selection: str) -> None:
+    """
+    Fetch (or generate) questions for *selection* and write millionaire.json.
+
+    Valid selections: ``"1"``–``"4"`` (static) or
+    ``"dynamic-1"``–``"dynamic-4"`` (dynamic).
+    """
+    connection = None
+    cursor = None
+    try:
+        connection = _get_connection()
         cursor = connection.cursor()
-    
-    except Error as e:
-        print("Error reading data from MySQL table", e)
-    
-    if selection == '1':
-        game = Static_Primary_School(cursor)
 
-    elif selection == '2':
-        game = Static_Secondary_School(cursor)
+        if selection in _STATIC_LEVEL:
+            rows = _fetch_static(cursor, _STATIC_LEVEL[selection])
+        elif selection in _DYNAMIC_TIER:
+            rows = _generate_dynamic(cursor, _DYNAMIC_TIER[selection])
+        else:
+            raise ValueError(f"Invalid selection: {selection!r}")
 
-    elif selection == '3':
-        game = Static_College(cursor)
+        _generate_json(rows)
 
-    elif selection == '4':
-        game = Static_Expert(cursor)
-
-    elif selection == 'dynamic-1':
-        game = Dynamic_Primary_School(cursor)
-
-    elif selection == 'dynamic-2':
-        game = Dynamic_Secondary_School(cursor)
-
-    elif selection == 'dynamic-3':
-        game = Dynamic_College(cursor)
-
-    elif selection == 'dynamic-4':
-        game = Dynamic_Expert(cursor)
-
-    else:
-        print("Invalid Level Selection!")
-    
-    generate_json(game)
-
-    if (connection.is_connected()):
-        connection.close()
-        cursor.close()
-        print("MySQL connection is closed")
+    except Error as exc:
+        print(f"MySQL error: {exc}")
+    finally:
+        if cursor:
+            cursor.close()
+        if connection and connection.is_connected():
+            connection.close()
+            print("MySQL connection closed.")

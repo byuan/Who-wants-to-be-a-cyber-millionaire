@@ -8,7 +8,7 @@ In this game, players must answer a series of multiple-choice questions, each wo
 
 1. Features 
 2. Game Modes
-3. OPENAI API Key Setup
+3. Anthropic API Key Setup
 4. Starting the Game
 
 ---
@@ -34,13 +34,13 @@ In this game, players must answer a series of multiple-choice questions, each wo
 
 ## API Key Setup
 
-To enable dyanmic play, the game requires an API key to access the CHATGPT OPENAI services. Follow these steps to securely store your API key:
+To enable dynamic play, the game requires an Anthropic API key to access Claude (model: claude-fable-5). Follow these steps to securely store your API key:
 
-1. Obtain your API key from the provided service.
+1. Obtain your API key from the Anthropic Console (https://platform.claude.com -> Settings -> API keys).
 2. Locate the `api_config.env` file in the root of the repository.
-3. Replace the text `placeholder` in the file with your actual OPENAI API key:
+3. Replace the text `placeholder` in the file with your actual Anthropic API key:
    ```
-   OPENAI_API_KEY="placeholder"
+   ANTHROPIC_API_KEY="placeholder"
    ```
 4. Save the file. Ensure this file is not committed to the repository to keep your key secure.
 

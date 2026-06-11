@@ -1,63 +1,76 @@
-import mysql.connector
+from __future__ import annotations
+
 import re
+import mysql.connector
+from mysql.connector import Error
 
-# Function to parse the returned text and remove the A, B, C, D labels
-def parse_question_and_answers(text):
-    # Regular expression to extract the question and answers
-    question_match = re.search(r"Question: (.*?)\n", text)
-    answers_match = re.findall(r"([A-D])\.\s([^\n]+)", text)  # Matches A. Answer text, B. Answer text, etc.
-    correct_answer_match = re.search(r"Correct Answer: ([A-D])", text)  # Matches Correct Answer: A, B, C, or D
 
-    if not question_match or not answers_match or not correct_answer_match:
-        raise ValueError("Unable to parse the text correctly")
+def _get_db_password() -> str:
+    """Read the MySQL password once from disk."""
+    with open("cybermillionaire/util/mysqlPassword.txt") as f:
+        return f.read().strip()
 
-    question = question_match.group(1)
-    answers = [a[1].strip() for a in answers_match]  # Extract answer texts and strip extra spaces
-    correct_letter = correct_answer_match.group(1)  # The correct letter (e.g., A, B, C, D)
-    
-    # Convert the correct letter (A-D) to a 0-based index
-    correct_answer = ord(correct_letter) - ord('A')
 
-    return question, answers, correct_answer
-
-# Function to insert the parsed data into the database
-def insert_question_into_db(question, answers, correct_answer):
-    # Connect to MySQL
-    try:
-    
-        f = open("cybermillionaire/util/mysqlPassword.txt")
-        conn = mysql.connector.connect(host='db',
-                                         database='Millionaire',
-                                         user='root',
-                                         password= f.read().strip())
-        cursor = conn.cursor()
-    
-    except Error as e:
-        print("Error reading data from MySQL table", e)
-    
-
-    # Insert query
-    insert_query = '''
-    INSERT INTO dynamic (Question, Ans1, Ans2, Ans3, Ans4, Correct)
-    VALUES (%s, %s, %s, %s, %s, %s)
-    '''
-
-    # Data to insert
-    data = (
-        question,
-        answers[0],  # Ans1
-        answers[1],  # Ans2
-        answers[2],  # Ans3
-        answers[3],  # Ans4
-        correct_answer  # Correct answer is an integer (1-4)
+def get_connection() -> mysql.connector.MySQLConnection:
+    """Return a new MySQL connection using the stored credentials."""
+    return mysql.connector.connect(
+        host="db",
+        database="Millionaire",
+        user="root",
+        password=_get_db_password(),
     )
 
-    # Execute the query
-    cursor.execute(insert_query, data)
 
-    # Commit the transaction
-    conn.commit()
+def parse_question_and_answers(text: str) -> tuple[str, list[str], int]:
+    """
+    Parse the GPT response text into (question, [ans1..ans4], correct_index).
 
-    # Close the connection
-    cursor.close()
-    conn.close()
+    Raises ValueError if the expected fields are missing.
+    """
+    question_match = re.search(r"Question:\s*(.+)", text)
+    answers_match = re.findall(r"[A-D]\.\s*([^\n]+)", text)
+    correct_match = re.search(r"Correct Answer:\s*([A-D])", text)
+
+    if not question_match or len(answers_match) < 4 or not correct_match:
+        raise ValueError(f"Unable to parse GPT response:\n{text}")
+
+    question = question_match.group(1).strip()
+    answers = [a.strip() for a in answers_match[:4]]
+    correct_index = ord(correct_match.group(1)) - ord("A")
+
+    return question, answers, correct_index
+
+
+def insert_question_into_db(
+    question: str,
+    answers: list[str],
+    correct_answer: int,
+    connection: mysql.connector.MySQLConnection | None = None,
+) -> None:
+    """
+    Insert a parsed question into the `dynamic` table.
+
+    Accepts an optional existing *connection* so callers that insert many
+    rows in a loop can reuse a single connection instead of opening a new
+    one per row.
+    """
+    own_connection = connection is None
+    try:
+        if own_connection:
+            connection = get_connection()
+
+        with connection.cursor() as cursor:
+            cursor.execute(
+                """
+                INSERT INTO dynamic (Question, Ans1, Ans2, Ans3, Ans4, Correct)
+                VALUES (%s, %s, %s, %s, %s, %s)
+                """,
+                (question, *answers, correct_answer),
+            )
+        connection.commit()
+
+    except Error as exc:
+        raise RuntimeError(f"MySQL insert failed: {exc}") from exc
+    finally:
+        if own_connection and connection is not None:
+            connection.close()
