@@ -92,9 +92,16 @@ def generate_question(tier: str) -> str:
     system_msg, level_label = _LEVEL_META[tier]
     topic = random.choice(_TOPICS[tier])
 
+    # NOTE: Fable 5 has always-on adaptive thinking; thinking tokens count
+    # against max_tokens even though thinking content is omitted from the
+    # response. The budget must therefore be much larger than the visible
+    # answer, or the model exhausts it while thinking and returns no text.
+    # effort="low" keeps thinking minimal for this simple task (and cheap:
+    # thinking tokens are billed as output).
     message = _client.messages.create(
         model=_MODEL,
-        max_tokens=1024,
+        max_tokens=8000,
+        effort="low",
         system=system_msg,
         messages=[
             {
@@ -109,10 +116,19 @@ def generate_question(tier: str) -> str:
             f"Model declined to generate a question about {topic!r}"
         )
 
-    # Concatenate text blocks (reasoning/other block types are skipped)
-    return "".join(
+    # Concatenate text blocks (thinking/other block types are skipped)
+    text = "".join(
         block.text for block in message.content if block.type == "text"
     )
+
+    if not text.strip():
+        raise RuntimeError(
+            f"Empty response from model (stop_reason={message.stop_reason!r}, "
+            f"topic={topic!r}). If stop_reason is 'max_tokens', the thinking "
+            "budget was exhausted - increase max_tokens."
+        )
+
+    return text
 
 
 if __name__ == "__main__":

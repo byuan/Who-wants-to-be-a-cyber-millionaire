@@ -27,6 +27,10 @@ def parse_question_and_answers(text: str) -> tuple[str, list[str], int]:
 
     Raises ValueError if the expected fields are missing.
     """
+    # Strip markdown emphasis (e.g. "**Question:**") that capable models
+    # sometimes add despite format instructions.
+    text = text.replace("**", "").replace("__", "")
+
     question_match = re.search(r"Question:\s*(.+)", text)
     answers_match = re.findall(r"[A-D]\.\s*([^\n]+)", text)
     correct_match = re.search(r"Correct Answer:\s*([A-D])", text)
