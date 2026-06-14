@@ -1,6 +1,69 @@
 [
     {
-        "played_at": "2026-06-14T19:17:09.215209",
+        "played_at": "2026-06-14T19:37:09.145145",
+        "history": [
+            {
+                "question": "Which encryption algorithm is commonly used for securing Wi-Fi networks?",
+                "selected": "RSA",
+                "correct": "RSA",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a common attack vector in Blockchain security that occurs when a malicious user controls the majority of computing power in a network?",
+                "selected": "51% attack",
+                "correct": "51% attack",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-14T19:40:41.576446",
+        "history": [
+            {
+                "question": "Which of the following indicates that a website is secure and can be trusted?",
+                "selected": "The website address starts with 'https://'",
+                "correct": "The website address starts with 'https://'",
+                "isCorrect": true
+            },
+            {
+                "question": "What does a firewall do for your computer?",
+                "selected": "Increases the computer's speed",
+                "correct": "Blocks unauthorized access to your computer",
+                "isCorrect": false
+            },
+            {
+                "question": "What does a firewall do for your computer?",
+                "selected": "Blocks unauthorized access to your computer",
+                "correct": "Blocks unauthorized access to your computer",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-14T20:01:13.882170",
+        "history": [
+            {
+                "question": "Which type of malware is designed to display unwanted advertisements on a user's computer?",
+                "selected": "Adware",
+                "correct": "Adware",
+                "isCorrect": true
+            },
+            {
+                "question": "Which encryption method uses two different keys for encryption and decryption?",
+                "selected": "Symmetric encryption",
+                "correct": "Asymmetric encryption",
+                "isCorrect": false
+            },
+            {
+                "question": "Which encryption method uses two different keys for encryption and decryption?",
+                "selected": "Asymmetric encryption",
+                "correct": "Asymmetric encryption",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-14T20:01:25.498666",
         "history": [
             {
                 "question": "What key distribution technique does Kerberos utilize to securely share keys between entities?",
@@ -15,44 +78,160 @@
                 "isCorrect": true
             },
             {
-                "question": "What is the range of port numbers for TCP and UDP respectively?",
-                "selected": "0-65535 and 1-65536",
-                "correct": "0-65535 and 1-65536",
+                "question": "Which tool in Linux can be used for memory forensics to analyze RAM contents?",
+                "selected": "volatility",
+                "correct": "volatility",
                 "isCorrect": true
             }
         ]
     },
     {
-        "played_at": "2026-06-14T19:22:53.972314",
+        "played_at": "2026-06-14T20:05:35.264565",
         "history": [
             {
-                "question": "What is a common practice that can help keep your social media account secure?",
-                "selected": "Clicking on links from unknown sources",
-                "correct": "Using two-factor authentication",
+                "question": "What is a common attack vector in Blockchain security that occurs when a malicious user controls the majority of computing power in a network?",
+                "selected": "DDoS attack  ",
+                "correct": "51% attack",
                 "isCorrect": false
             },
             {
-                "question": "What is a common practice that can help keep your social media account secure?",
-                "selected": "Sharing your passwords with friends",
-                "correct": "Using two-factor authentication",
-                "isCorrect": false
-            },
-            {
-                "question": "What is a common practice that can help keep your social media account secure?",
-                "selected": "Posting personal information publicly",
-                "correct": "Using two-factor authentication",
-                "isCorrect": false
-            },
-            {
-                "question": "What is a common practice that can help keep your social media account secure?",
-                "selected": "Using two-factor authentication",
-                "correct": "Using two-factor authentication",
+                "question": "What is a common attack vector in Blockchain security that occurs when a malicious user controls the majority of computing power in a network?",
+                "selected": "51% attack",
+                "correct": "51% attack",
                 "isCorrect": true
             },
             {
-                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
-                "selected": "The website is secure and encrypted",
-                "correct": "The website is secure and encrypted",
+                "question": "In Cyber Incident Response, what does the term 'Containment' refer to?",
+                "selected": "Analyzing the root cause of the incident",
+                "correct": "Removing the incident from the network",
+                "isCorrect": false
+            },
+            {
+                "question": "In Cyber Incident Response, what does the term 'Containment' refer to?",
+                "selected": "Communicating with the media",
+                "correct": "Removing the incident from the network",
+                "isCorrect": false
+            },
+            {
+                "question": "In Cyber Incident Response, what does the term 'Containment' refer to?",
+                "selected": "Removing the incident from the network",
+                "correct": "Removing the incident from the network",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-14T20:05:50.537671",
+        "history": [
+            {
+                "question": "Which key is shared between the client and the Key Distribution Center (KDC) in Kerberos authentication?",
+                "selected": "Session key",
+                "correct": "Private key",
+                "isCorrect": false
+            },
+            {
+                "question": "Which key is shared between the client and the Key Distribution Center (KDC) in Kerberos authentication?",
+                "selected": "Private key",
+                "correct": "Private key",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following is NOT a component of the Kerberos authentication system?",
+                "selected": "Ticket-Granting Ticket",
+                "correct": "Authentication Server",
+                "isCorrect": false
+            },
+            {
+                "question": "Which of the following is NOT a component of the Kerberos authentication system?",
+                "selected": "Ticket-Granting Server",
+                "correct": "Authentication Server",
+                "isCorrect": false
+            },
+            {
+                "question": "Which of the following is NOT a component of the Kerberos authentication system?",
+                "selected": "Session key",
+                "correct": "Authentication Server",
+                "isCorrect": false
+            },
+            {
+                "question": "Which of the following is NOT a component of the Kerberos authentication system?",
+                "selected": "Authentication Server",
+                "correct": "Authentication Server",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-14T20:08:52.212074",
+        "history": [
+            {
+                "question": "What does the 'https://' at the beginning of a website URL indicate?",
+                "selected": "The website is not secure",
+                "correct": "The website is secure",
+                "isCorrect": false
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website URL indicate?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following indicates that a website is secure?",
+                "selected": "The website address begins with 'https://'",
+                "correct": "The website address begins with 'https://'",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-14T20:10:11.811012",
+        "history": [
+            {
+                "question": "What is a Distributed Denial of Service (DDoS) attack?",
+                "selected": "An attack that steals confidential information through email phishing",
+                "correct": "An attack that floods a network with excessive traffic to disrupt normal operation",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a Distributed Denial of Service (DDoS) attack?",
+                "selected": "An attack that floods a network with excessive traffic to disrupt normal operation",
+                "correct": "An attack that floods a network with excessive traffic to disrupt normal operation",
+                "isCorrect": true
+            },
+            {
+                "question": "Which encryption algorithm is commonly used for securing web traffic?",
+                "selected": "AES",
+                "correct": "AES",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-14T20:15:33.508761",
+        "history": [
+            {
+                "question": "Which organization provides guidelines and best practices for digital forensics?",
+                "selected": "WHO (World Health Organization)",
+                "correct": "ISO (International Organization for Standardization)",
+                "isCorrect": false
+            },
+            {
+                "question": "Which organization provides guidelines and best practices for digital forensics?",
+                "selected": "ISO (International Organization for Standardization)",
+                "correct": "ISO (International Organization for Standardization)",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following is an example of a symmetric encryption algorithm?",
+                "selected": "Diffie-Hellman",
+                "correct": "AES",
+                "isCorrect": false
+            },
+            {
+                "question": "Which of the following is an example of a symmetric encryption algorithm?",
+                "selected": "AES",
+                "correct": "AES",
                 "isCorrect": true
             }
         ]

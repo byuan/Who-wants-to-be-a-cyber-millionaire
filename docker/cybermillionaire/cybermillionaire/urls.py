@@ -32,7 +32,8 @@ urlpatterns = [
     url(r'^dynamic-expert', views.dynamic_start4, name='dynamic-expert'),  # Dynamic Expert
 
     url(r'^save-results/$', views.save_results, name='save_results'),
-    
+    url(r'^get-results/$', views.get_results, name='get_results'),
+
     url(r'', views.index, name='start-page'),
     ]
 

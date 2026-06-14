@@ -348,39 +348,69 @@ var MillionaireModel = function(data) {
 	    return self.money().money(2, '.', ',');
 	}  
     
-    self.showReport = function(){
-        console.log("report called")
-        var html = "<ul>";
+    self.showReport = function() {
 
-        for (var i = 0; i <self.history.length; i++){
-            var h = self.history[i];
-            html += "<li>" + "<b>Question: </b>" + h.question + "<br>" + "<b>Your Answer: </b>" + (h.selected)
-             + "<b> Result: </b>" + (h.isCorrect ? "Correct" : "Wrong") + "<br><br></li>";
-        }
-        html += "</ul>"
+        console.log("Saving game results...");
 
-    fetch('/save-results/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            finalMoney: self.money(),
-            history: self.history
+        fetch('/save-results/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                finalMoney: self.money(),
+                history: self.history
+            })
         })
-    })
-    .then(response => response.json())
-    .then(data => console.log("Results saved:", data))
-    .catch(error => console.error("Save failed:", error));
+        .then(response => response.json())
+        .then(data => {
 
-        $("#report-content").html(html);
-        $("#game").fadeOut('slow',function() {
-            $("#report").fadeIn('slow');
+            console.log("Saved", data);
+            loadLifetimeStats();
+
+        })
+        .catch(error => {
+            console.error("Save failed:", error);
+        });
+    };
+
+    function loadLifetimeStats() {
+
+    fetch('/get-results/')
+        .then(response => response.json())
+        .then(data => {
+
+            var html = "<h2>Game History</h2>";
+
+            for (var g = 0; g < data.length; g++) {
+
+                var game = data[g];
+
+                html += "<h3>Game " + (g + 1) + "</h3>";
+                html += "<ul>";
+
+                for (var i = 0; i < game.history.length; i++) {
+
+                    var h = game.history[i];
+
+                    html += "<li>";
+                    html += "<b>Q:</b> " + h.question + "<br>";
+                    html += "<b>Your Answer:</b> " + (h.selected) + "<br>";
+                    html += "<b>Result:</b> " + (h.isCorrect ? "Correct" : "Wrong");
+                    html += "</li><br>";
+                }
+
+                html += "</ul><hr>";
+            }
+
+            $("#report-content").html(html);
+
+            $("#game").fadeOut('slow', function() {
+                $("#report").fadeIn('slow');
+            });
         });
     }
-};
-
-
+}
 
 // Executes on page load, bootstrapping
 // the start game functionality to trigger a game model

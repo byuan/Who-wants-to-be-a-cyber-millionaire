@@ -36,6 +36,17 @@ def save_results(request):
 
     return JsonResponse({"status": "error"})
 
+@csrf_exempt
+def get_results(request):
+    try:
+        with open("results.json", "r") as f:
+            data = json.load(f)
+
+        return JsonResponse(data, safe=False)
+
+    except Exception as e:
+        return JsonResponse({"error": str(e)})
+
 def index(request):
     t = template.loader.get_template('index.html')
     html = t.render()
