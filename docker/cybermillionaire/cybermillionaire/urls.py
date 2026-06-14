@@ -30,6 +30,8 @@ urlpatterns = [
     url(r'^dynamic-secondary-school', views.dynamic_start2, name='dynamic-secondary-school'),  # Dynamic Secondary School
     url(r'^dynamic-college', views.dynamic_start3, name='dynamic-college'),  # Dynamic College
     url(r'^dynamic-expert', views.dynamic_start4, name='dynamic-expert'),  # Dynamic Expert
+
+    url(r'^save-results/$', views.save_results, name='save_results'),
     
     url(r'', views.index, name='start-page'),
     ]

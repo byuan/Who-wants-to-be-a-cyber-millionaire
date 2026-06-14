@@ -1,0 +1,60 @@
+[
+    {
+        "played_at": "2026-06-14T19:17:09.215209",
+        "history": [
+            {
+                "question": "What key distribution technique does Kerberos utilize to securely share keys between entities?",
+                "selected": "Public key encryption",
+                "correct": "Symmetric key cryptography",
+                "isCorrect": false
+            },
+            {
+                "question": "What key distribution technique does Kerberos utilize to securely share keys between entities?",
+                "selected": "Symmetric key cryptography",
+                "correct": "Symmetric key cryptography",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the range of port numbers for TCP and UDP respectively?",
+                "selected": "0-65535 and 1-65536",
+                "correct": "0-65535 and 1-65536",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-14T19:22:53.972314",
+        "history": [
+            {
+                "question": "What is a common practice that can help keep your social media account secure?",
+                "selected": "Clicking on links from unknown sources",
+                "correct": "Using two-factor authentication",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a common practice that can help keep your social media account secure?",
+                "selected": "Sharing your passwords with friends",
+                "correct": "Using two-factor authentication",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a common practice that can help keep your social media account secure?",
+                "selected": "Posting personal information publicly",
+                "correct": "Using two-factor authentication",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a common practice that can help keep your social media account secure?",
+                "selected": "Using two-factor authentication",
+                "correct": "Using two-factor authentication",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is secure and encrypted",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": true
+            }
+        ]
+    }
+]

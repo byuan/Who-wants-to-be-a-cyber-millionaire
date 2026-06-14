@@ -4,7 +4,37 @@
 from django.shortcuts import HttpResponse
 from django import template
 import cybermillionaire.export as e
+import json
+import os
+from datetime import datetime
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt
+def save_results(request):
+    if request.method == "POST":
+
+        data = json.loads(request.body)
+        filename = "results.json"
+
+        if os.path.exists(filename):
+            with open(filename, "r") as f:
+                results = json.load(f)
+        else:
+            results = []
+
+        results.append({
+            "played_at": datetime.now().isoformat(),
+            # "final_money": data["finalMoney"], Not used yet 
+            "history": data["history"]
+        })
+
+        with open(filename, "w") as f:
+            json.dump(results, f, indent=4)
+
+        return JsonResponse({"status": "success"})
+
+    return JsonResponse({"status": "error"})
 
 def index(request):
     t = template.loader.get_template('index.html')

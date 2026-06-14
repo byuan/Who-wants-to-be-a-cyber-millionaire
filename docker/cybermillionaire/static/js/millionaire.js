@@ -359,6 +359,20 @@ var MillionaireModel = function(data) {
         }
         html += "</ul>"
 
+    fetch('/save-results/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            finalMoney: self.money(),
+            history: self.history
+        })
+    })
+    .then(response => response.json())
+    .then(data => console.log("Results saved:", data))
+    .catch(error => console.error("Save failed:", error));
+
         $("#report-content").html(html);
         $("#game").fadeOut('slow',function() {
             $("#report").fadeIn('slow');
