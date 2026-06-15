@@ -235,5 +235,40 @@
                 "isCorrect": true
             }
         ]
+    },
+    {
+        "played_at": "2026-06-14T20:27:55.053100",
+        "history": [
+            {
+                "question": "Which tool in Linux can be used for memory forensics to analyze RAM contents?",
+                "selected": "volatility",
+                "correct": "volatility",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the correct sequence of steps in the Kerberos authentication process?",
+                "selected": "Service Ticket request, Client request, Access granted, TGT validation",
+                "correct": "Client request, TGT validation, Service Ticket request, Access granted",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the correct sequence of steps in the Kerberos authentication process?",
+                "selected": "Client request, Ticket Granting Ticket (TGT) validation, Service Ticket request, Access granted",
+                "correct": "Client request, TGT validation, Service Ticket request, Access granted",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the correct sequence of steps in the Kerberos authentication process?",
+                "selected": "TGT validation, Service Ticket request, Access granted, Client request",
+                "correct": "Client request, TGT validation, Service Ticket request, Access granted",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the correct sequence of steps in the Kerberos authentication process?",
+                "selected": "Client request, TGT validation, Service Ticket request, Access granted",
+                "correct": "Client request, TGT validation, Service Ticket request, Access granted",
+                "isCorrect": true
+            }
+        ]
     }
 ]

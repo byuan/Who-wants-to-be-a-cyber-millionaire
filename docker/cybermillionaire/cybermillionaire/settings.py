@@ -25,7 +25,7 @@ f = open("cybermillionaire/util/secretKey.txt")
 SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 #Need to put IP address of server here
 ALLOWED_HOSTS = ['*']
