@@ -374,7 +374,7 @@ var MillionaireModel = function(data) {
         });
     };
 
-    function loadLifetimeStats() {
+function loadLifetimeStats() {
 
     fetch('/get-results/')
         .then(response => response.json())
@@ -385,8 +385,32 @@ var MillionaireModel = function(data) {
             for (var g = 0; g < data.length; g++) {
 
                 var game = data[g];
+                var date = new Date(game.played_at);
 
-                html += "<h3>Game " + (g + 1) + "</h3>";
+                var timestamp = isNaN(date.getTime())
+                    ? game.played_at
+                    : date.toLocaleString();
+
+                var correct = 0;
+
+                for (var i = 0; i < game.history.length; i++) {
+                    if (game.history[i].isCorrect) {
+                        correct++;
+                    }
+                }
+
+                var totalQuestions = game.history.length;
+                var percent = totalQuestions > 0
+                    ? Math.round((correct / totalQuestions) * 100)
+                    : 0;
+
+                html += "<details " + (g === data.length - 1 ? "open" : "") + ">";
+                html += "<summary>";
+                html += "Game " + (g + 1);
+                html += " - " + timestamp;
+                html += " - Score: " + percent + "%";
+                html += "</summary>";
+
                 html += "<ul>";
 
                 for (var i = 0; i < game.history.length; i++) {
@@ -395,12 +419,13 @@ var MillionaireModel = function(data) {
 
                     html += "<li>";
                     html += "<b>Q:</b> " + h.question + "<br>";
-                    html += "<b>Your Answer:</b> " + (h.selected) + "<br>";
+                    html += "<b>Your Answer:</b> " + h.selected + "<br>";
                     html += "<b>Result:</b> " + (h.isCorrect ? "Correct" : "Wrong");
                     html += "</li><br>";
                 }
 
-                html += "</ul><hr>";
+                html += "</ul>";
+                html += "</details><hr>";
             }
 
             $("#report-content").html(html);
