@@ -1,4 +1,3 @@
-from openai import OpenAI
 from google import genai
 import random
 

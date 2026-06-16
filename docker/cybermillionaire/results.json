@@ -298,5 +298,75 @@
                 "isCorrect": true
             }
         ]
+    },
+    {
+        "played_at": "2026-06-16T23:15:50.269560",
+        "history": [
+            {
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is under construction",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": false
+            },
+            {
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is showing advertisements",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": false
+            },
+            {
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is secure and encrypted",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following indicates that a website is secure?",
+                "selected": "The website address begins with 'https://'",
+                "correct": "The website address begins with 'https://'",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-16T23:16:11.479649",
+        "history": [
+            {
+                "question": "Which of the following is NOT a component of the Kerberos authentication system?",
+                "selected": "Session key",
+                "correct": "Authentication Server",
+                "isCorrect": false
+            },
+            {
+                "question": "Which of the following is NOT a component of the Kerberos authentication system?",
+                "selected": "Ticket-Granting Ticket",
+                "correct": "Authentication Server",
+                "isCorrect": false
+            },
+            {
+                "question": "Which of the following is NOT a component of the Kerberos authentication system?",
+                "selected": "Authentication Server",
+                "correct": "Authentication Server",
+                "isCorrect": true
+            },
+            {
+                "question": "Which filesystem is commonly used in Linux for journaling and is often employed for data recovery and system repair?",
+                "selected": "NTFS",
+                "correct": "EXT4",
+                "isCorrect": false
+            },
+            {
+                "question": "Which filesystem is commonly used in Linux for journaling and is often employed for data recovery and system repair?",
+                "selected": "FAT32",
+                "correct": "EXT4",
+                "isCorrect": false
+            },
+            {
+                "question": "Which filesystem is commonly used in Linux for journaling and is often employed for data recovery and system repair?",
+                "selected": "EXT4",
+                "correct": "EXT4",
+                "isCorrect": true
+            }
+        ]
     }
 ]
