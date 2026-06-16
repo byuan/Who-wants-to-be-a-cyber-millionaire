@@ -1,4 +1,5 @@
 from openai import OpenAI
+from google import genai
 import random
 
 # Bags of words for each level
@@ -22,18 +23,33 @@ def pick_a_word(BAG_O_WORDS):
 # Function that reaches out to the API
 def api(BAG_O_WORDS, content, question_level):
     word = pick_a_word(BAG_O_WORDS) # picks a random word from BAG_O_WORDS
-    client = OpenAI() # creates the API class
-    completion = client.chat.completions.create(
-        model="gpt-3.5-turbo-0125", # specified GPT API model
-        messages=[
-            {"role": "system", "content": content}, # defines the role of the API
-            {
-                "role": "user",
-                "content": "Write one unique " + question_level + " level cybersecurity question about " + word + " and provide multiple answers (one correct, three incorrect, but state the correct answer) similar to the game style of Who Wants to Be a Millionaire. In the response can you organize it so that it states the question starting with 'Question: <question>', followed by two new lines, and the answers in an 'A. B. C. D. ' format separated by newlines. Finally can it only list the correct answer with the format of 'Correct Answer: <correct answer>'" # prompt for the API
-            }
-        ]
+
+    client = genai.Client(api_key="")
+
+    prompt = f"""
+{content}
+
+Write one unique {question_level} level cybersecurity question about {word}
+and provide multiple answers (one correct, three incorrect).
+
+Format exactly like this:
+
+Question: <question>
+
+A. <answer>
+B. <answer>
+C. <answer>
+D. <answer>
+
+Correct Answer: <correct answer>
+"""
+
+    response = client.models.generate_content(
+        model="gemini-3.1-flash-lite",
+        contents=prompt
     )
-    return completion.choices[0].message.content # returns the content field from the message from the API
+
+    return response.text
 
 def generate_question(level):
     BAG_O_WORDS = levels[level][0] # sets the correct BAG_O_WORDS for the specified level

@@ -1,80 +1,110 @@
 [
     {
-        "played_at": "2026-06-14T19:37:09.145145",
+        "played_at": "2026-06-15T23:43:08.404091",
         "history": [
             {
-                "question": "Which encryption algorithm is commonly used for securing Wi-Fi networks?",
-                "selected": "RSA",
-                "correct": "RSA",
+                "question": "Which of the following indicates that a website is secure?",
+                "selected": "The website address begins with 'https://'",
+                "correct": "The website address begins with 'https://'",
                 "isCorrect": true
             },
             {
-                "question": "What is a common attack vector in Blockchain security that occurs when a malicious user controls the majority of computing power in a network?",
-                "selected": "51% attack",
-                "correct": "51% attack",
+                "question": "What does it mean if a website has 'https://' at the beginning of its URL?",
+                "selected": "The website is for entertainment purposes only",
+                "correct": "The website is secure",
+                "isCorrect": false
+            },
+            {
+                "question": "What does it mean if a website has 'https://' at the beginning of its URL?",
+                "selected": "The website is not secure",
+                "correct": "The website is secure",
+                "isCorrect": false
+            },
+            {
+                "question": "What does it mean if a website has 'https://' at the beginning of its URL?",
+                "selected": "The website is fake",
+                "correct": "The website is secure",
+                "isCorrect": false
+            },
+            {
+                "question": "What does it mean if a website has 'https://' at the beginning of its URL?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
                 "isCorrect": true
             }
         ]
     },
     {
-        "played_at": "2026-06-14T19:40:41.576446",
+        "played_at": "2026-06-15T23:45:35.226137",
         "history": [
             {
-                "question": "Which of the following indicates that a website is secure and can be trusted?",
-                "selected": "The website address starts with 'https://'",
-                "correct": "The website address starts with 'https://'",
-                "isCorrect": true
-            },
-            {
-                "question": "What does a firewall do for your computer?",
-                "selected": "Increases the computer's speed",
-                "correct": "Blocks unauthorized access to your computer",
+                "question": "What does it mean if a website has 'https://' at the beginning of its URL?",
+                "selected": "The website is not secure",
+                "correct": "The website is secure",
                 "isCorrect": false
             },
             {
-                "question": "What does a firewall do for your computer?",
-                "selected": "Blocks unauthorized access to your computer",
-                "correct": "Blocks unauthorized access to your computer",
+                "question": "What does it mean if a website has 'https://' at the beginning of its URL?",
+                "selected": "The website is fake",
+                "correct": "The website is secure",
+                "isCorrect": false
+            },
+            {
+                "question": "What does it mean if a website has 'https://' at the beginning of its URL?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is secure and encrypted",
+                "correct": "The website is secure and encrypted",
                 "isCorrect": true
             }
         ]
     },
     {
-        "played_at": "2026-06-14T20:01:13.882170",
+        "played_at": "2026-06-15T23:50:34.004900",
         "history": [
             {
-                "question": "Which type of malware is designed to display unwanted advertisements on a user's computer?",
-                "selected": "Adware",
-                "correct": "Adware",
-                "isCorrect": true
-            },
-            {
-                "question": "Which encryption method uses two different keys for encryption and decryption?",
-                "selected": "Symmetric encryption",
-                "correct": "Asymmetric encryption",
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is showing advertisements",
+                "correct": "The website is secure and encrypted",
                 "isCorrect": false
             },
             {
-                "question": "Which encryption method uses two different keys for encryption and decryption?",
-                "selected": "Asymmetric encryption",
-                "correct": "Asymmetric encryption",
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is secure and encrypted",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": true
+            },
+            {
+                "question": "How can you protect your computer from malware?",
+                "selected": "Installing antivirus software and keeping it updated",
+                "correct": "Installing antivirus software and keeping it updated",
                 "isCorrect": true
             }
         ]
     },
     {
-        "played_at": "2026-06-14T20:01:25.498666",
+        "played_at": "2026-06-15T23:55:02.585609",
         "history": [
             {
-                "question": "What key distribution technique does Kerberos utilize to securely share keys between entities?",
-                "selected": "Public key encryption",
-                "correct": "Symmetric key cryptography",
+                "question": "How does a self-signed SSL certificate differ from a certificate signed by a trusted CA?",
+                "selected": "Self-signed certificates are free.",
+                "correct": "Self-signed certificates are not trusted by browsers.",
                 "isCorrect": false
             },
             {
-                "question": "What key distribution technique does Kerberos utilize to securely share keys between entities?",
-                "selected": "Symmetric key cryptography",
-                "correct": "Symmetric key cryptography",
+                "question": "How does a self-signed SSL certificate differ from a certificate signed by a trusted CA?",
+                "selected": "Self-signed certificates offer stronger encryption.",
+                "correct": "Self-signed certificates are not trusted by browsers.",
+                "isCorrect": false
+            },
+            {
+                "question": "How does a self-signed SSL certificate differ from a certificate signed by a trusted CA?",
+                "selected": "Self-signed certificates are not trusted by browsers.",
+                "correct": "Self-signed certificates are not trusted by browsers.",
                 "isCorrect": true
             },
             {
@@ -86,87 +116,104 @@
         ]
     },
     {
-        "played_at": "2026-06-14T20:05:35.264565",
+        "played_at": "2026-06-15T23:56:43.051531",
         "history": [
             {
-                "question": "What is a common attack vector in Blockchain security that occurs when a malicious user controls the majority of computing power in a network?",
-                "selected": "DDoS attack  ",
-                "correct": "51% attack",
-                "isCorrect": false
-            },
-            {
-                "question": "What is a common attack vector in Blockchain security that occurs when a malicious user controls the majority of computing power in a network?",
-                "selected": "51% attack",
-                "correct": "51% attack",
+                "question": "What is the primary advantage of asymmetric encryption compared to symmetric encryption?",
+                "selected": "Key distribution",
+                "correct": "Key distribution",
                 "isCorrect": true
             },
             {
-                "question": "In Cyber Incident Response, what does the term 'Containment' refer to?",
-                "selected": "Analyzing the root cause of the incident",
-                "correct": "Removing the incident from the network",
+                "question": "Which protocol does Kerberos primarily use for authentication?",
+                "selected": "HTTPS",
+                "correct": "LDAP",
                 "isCorrect": false
             },
             {
-                "question": "In Cyber Incident Response, what does the term 'Containment' refer to?",
-                "selected": "Communicating with the media",
-                "correct": "Removing the incident from the network",
+                "question": "Which protocol does Kerberos primarily use for authentication?",
+                "selected": "NTLM",
+                "correct": "LDAP",
                 "isCorrect": false
             },
             {
-                "question": "In Cyber Incident Response, what does the term 'Containment' refer to?",
-                "selected": "Removing the incident from the network",
-                "correct": "Removing the incident from the network",
+                "question": "Which protocol does Kerberos primarily use for authentication?",
+                "selected": "LDAP",
+                "correct": "LDAP",
                 "isCorrect": true
             }
         ]
     },
     {
-        "played_at": "2026-06-14T20:05:50.537671",
+        "played_at": "2026-06-15T23:57:03.729498",
         "history": [
             {
-                "question": "Which key is shared between the client and the Key Distribution Center (KDC) in Kerberos authentication?",
-                "selected": "Session key",
-                "correct": "Private key",
+                "question": "Which of the following is NOT a common endpoint security tool?",
+                "selected": "Intrusion Detection System (IDS)",
+                "correct": "Social Media Monitoring Software",
                 "isCorrect": false
             },
             {
-                "question": "Which key is shared between the client and the Key Distribution Center (KDC) in Kerberos authentication?",
-                "selected": "Private key",
-                "correct": "Private key",
+                "question": "Which of the following is NOT a common endpoint security tool?",
+                "selected": "Social Media Monitoring Software",
+                "correct": "Social Media Monitoring Software",
                 "isCorrect": true
             },
             {
-                "question": "Which of the following is NOT a component of the Kerberos authentication system?",
-                "selected": "Ticket-Granting Ticket",
-                "correct": "Authentication Server",
-                "isCorrect": false
-            },
-            {
-                "question": "Which of the following is NOT a component of the Kerberos authentication system?",
-                "selected": "Ticket-Granting Server",
-                "correct": "Authentication Server",
-                "isCorrect": false
-            },
-            {
-                "question": "Which of the following is NOT a component of the Kerberos authentication system?",
-                "selected": "Session key",
-                "correct": "Authentication Server",
-                "isCorrect": false
-            },
-            {
-                "question": "Which of the following is NOT a component of the Kerberos authentication system?",
-                "selected": "Authentication Server",
-                "correct": "Authentication Server",
+                "question": "Which encryption method is used for protecting emails and digital signatures?",
+                "selected": "RSA",
+                "correct": "RSA",
                 "isCorrect": true
             }
         ]
     },
     {
-        "played_at": "2026-06-14T20:08:52.212074",
+        "played_at": "2026-06-15T23:57:39.519821",
+        "history": [
+            {
+                "question": "What is the primary advantage of asymmetric encryption compared to symmetric encryption?",
+                "selected": "Complexity",
+                "correct": "Key distribution",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary advantage of asymmetric encryption compared to symmetric encryption?",
+                "selected": "Security",
+                "correct": "Key distribution",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary advantage of asymmetric encryption compared to symmetric encryption?",
+                "selected": "Speed",
+                "correct": "Key distribution",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary advantage of asymmetric encryption compared to symmetric encryption?",
+                "selected": "Key distribution",
+                "correct": "Key distribution",
+                "isCorrect": true
+            },
+            {
+                "question": "How does a self-signed SSL certificate differ from a certificate signed by a trusted CA?",
+                "selected": "Self-signed certificates expire sooner.",
+                "correct": "Self-signed certificates are not trusted by browsers.",
+                "isCorrect": false
+            },
+            {
+                "question": "How does a self-signed SSL certificate differ from a certificate signed by a trusted CA?",
+                "selected": "Self-signed certificates are not trusted by browsers.",
+                "correct": "Self-signed certificates are not trusted by browsers.",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-16T00:09:48.418293",
         "history": [
             {
                 "question": "What does the 'https://' at the beginning of a website URL indicate?",
-                "selected": "The website is not secure",
+                "selected": "The website is designed for kids",
                 "correct": "The website is secure",
                 "isCorrect": false
             },
@@ -177,96 +224,77 @@
                 "isCorrect": true
             },
             {
-                "question": "Which of the following indicates that a website is secure?",
-                "selected": "The website address begins with 'https://'",
-                "correct": "The website address begins with 'https://'",
+                "question": "Which of the following is NOT a part of your digital footprint?",
+                "selected": "Conversations with friends in person",
+                "correct": "Conversations with friends in person",
                 "isCorrect": true
             }
         ]
     },
     {
-        "played_at": "2026-06-14T20:10:11.811012",
+        "played_at": "2026-06-16T00:16:37.639123",
         "history": [
             {
-                "question": "What is a Distributed Denial of Service (DDoS) attack?",
-                "selected": "An attack that steals confidential information through email phishing",
-                "correct": "An attack that floods a network with excessive traffic to disrupt normal operation",
-                "isCorrect": false
-            },
-            {
-                "question": "What is a Distributed Denial of Service (DDoS) attack?",
-                "selected": "An attack that floods a network with excessive traffic to disrupt normal operation",
-                "correct": "An attack that floods a network with excessive traffic to disrupt normal operation",
+                "question": "Which of the following indicates that a website is secure and can be trusted?",
+                "selected": "The website address starts with 'https://'",
+                "correct": "The website address starts with 'https://'",
                 "isCorrect": true
             },
             {
-                "question": "Which encryption algorithm is commonly used for securing web traffic?",
-                "selected": "AES",
-                "correct": "AES",
+                "question": "What does the 'https://' at the beginning of a website address indicate?",
+                "selected": "The website is secure and encrypted ",
+                "correct": "The website is secure and encrypted ",
                 "isCorrect": true
             }
         ]
     },
     {
-        "played_at": "2026-06-14T20:15:33.508761",
+        "played_at": "2026-06-16T00:27:51.768919",
         "history": [
             {
-                "question": "Which organization provides guidelines and best practices for digital forensics?",
-                "selected": "WHO (World Health Organization)",
-                "correct": "ISO (International Organization for Standardization)",
-                "isCorrect": false
-            },
-            {
-                "question": "Which organization provides guidelines and best practices for digital forensics?",
-                "selected": "ISO (International Organization for Standardization)",
-                "correct": "ISO (International Organization for Standardization)",
+                "question": "What does the 'https://' at the beginning of a website URL indicate?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
                 "isCorrect": true
             },
             {
-                "question": "Which of the following is an example of a symmetric encryption algorithm?",
-                "selected": "Diffie-Hellman",
-                "correct": "AES",
-                "isCorrect": false
-            },
-            {
-                "question": "Which of the following is an example of a symmetric encryption algorithm?",
-                "selected": "AES",
-                "correct": "AES",
+                "question": "Which of the following is NOT a part of your digital footprint?",
+                "selected": "Conversations with friends in person",
+                "correct": "Conversations with friends in person",
                 "isCorrect": true
             }
         ]
     },
     {
-        "played_at": "2026-06-14T20:27:55.053100",
+        "played_at": "2026-06-16T00:30:07.253603",
         "history": [
             {
-                "question": "Which tool in Linux can be used for memory forensics to analyze RAM contents?",
-                "selected": "volatility",
-                "correct": "volatility",
+                "question": "What is a common practice that can help keep your social media account secure?",
+                "selected": "Using two-factor authentication",
+                "correct": "Using two-factor authentication",
                 "isCorrect": true
             },
             {
-                "question": "What is the correct sequence of steps in the Kerberos authentication process?",
-                "selected": "Service Ticket request, Client request, Access granted, TGT validation",
-                "correct": "Client request, TGT validation, Service Ticket request, Access granted",
-                "isCorrect": false
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is secure and encrypted",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-16T00:33:42.067029",
+        "history": [
+            {
+                "question": "Which of the following indicates that a website is secure and can be trusted?",
+                "selected": "The website address starts with 'https://'",
+                "correct": "The website address starts with 'https://'",
+                "isCorrect": true
             },
             {
-                "question": "What is the correct sequence of steps in the Kerberos authentication process?",
-                "selected": "Client request, Ticket Granting Ticket (TGT) validation, Service Ticket request, Access granted",
-                "correct": "Client request, TGT validation, Service Ticket request, Access granted",
-                "isCorrect": false
-            },
-            {
-                "question": "What is the correct sequence of steps in the Kerberos authentication process?",
-                "selected": "TGT validation, Service Ticket request, Access granted, Client request",
-                "correct": "Client request, TGT validation, Service Ticket request, Access granted",
-                "isCorrect": false
-            },
-            {
-                "question": "What is the correct sequence of steps in the Kerberos authentication process?",
-                "selected": "Client request, TGT validation, Service Ticket request, Access granted",
-                "correct": "Client request, TGT validation, Service Ticket request, Access granted",
+                "question": "What does the 'https://' at the beginning of a website URL indicate?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
                 "isCorrect": true
             }
         ]
