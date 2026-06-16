@@ -380,7 +380,7 @@ var MillionaireModel = function(data) {
         .then(response => response.json())
         .then(data => {
 
-            var html = "<h2>Game History</h2>";
+            var html = "";
 
             for (var g = 0; g < data.length; g++) {
 
