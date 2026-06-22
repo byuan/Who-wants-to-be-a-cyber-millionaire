@@ -368,5 +368,155 @@
                 "isCorrect": true
             }
         ]
+    },
+    {
+        "played_at": "2026-06-17T18:21:09.225138",
+        "history": [
+            {
+                "question": "Which of the following indicates that a website is secure?",
+                "selected": "The website address begins with 'https://'",
+                "correct": "The website address begins with 'https://'",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is secure and encrypted",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-17T18:40:06.782233",
+        "history": [
+            {
+                "question": "How can you protect your computer from malware?",
+                "selected": "Sharing your computer password with friends",
+                "correct": "Installing antivirus software and keeping it updated",
+                "isCorrect": false
+            },
+            {
+                "question": "How can you protect your computer from malware?",
+                "selected": "Installing antivirus software and keeping it updated",
+                "correct": "Installing antivirus software and keeping it updated",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following indicates that a website is secure and can be trusted?",
+                "selected": "The website address starts with 'https://'",
+                "correct": "The website address starts with 'https://'",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-17T18:40:22.502587",
+        "history": [
+            {
+                "question": "Which protocol is commonly used for secure remote access through a firewall?",
+                "selected": "FTP",
+                "correct": "SSH",
+                "isCorrect": false
+            },
+            {
+                "question": "Which protocol is commonly used for secure remote access through a firewall?",
+                "selected": "SSH",
+                "correct": "SSH",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following is NOT a common endpoint security tool?",
+                "selected": "Virtual Private Network (VPN)",
+                "correct": "Social Media Monitoring Software",
+                "isCorrect": false
+            },
+            {
+                "question": "Which of the following is NOT a common endpoint security tool?",
+                "selected": "Social Media Monitoring Software",
+                "correct": "Social Media Monitoring Software",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-17T18:40:41.016011",
+        "history": [
+            {
+                "question": "In Cyber Incident Response, what does the term 'Containment' refer to?",
+                "selected": "Analyzing the root cause of the incident",
+                "correct": "Removing the incident from the network",
+                "isCorrect": false
+            },
+            {
+                "question": "In Cyber Incident Response, what does the term 'Containment' refer to?",
+                "selected": "Communicating with the media",
+                "correct": "Removing the incident from the network",
+                "isCorrect": false
+            },
+            {
+                "question": "In Cyber Incident Response, what does the term 'Containment' refer to?",
+                "selected": "Reporting the incident to law enforcement",
+                "correct": "Removing the incident from the network",
+                "isCorrect": false
+            },
+            {
+                "question": "In Cyber Incident Response, what does the term 'Containment' refer to?",
+                "selected": "Removing the incident from the network",
+                "correct": "Removing the incident from the network",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a common attack vector in Blockchain security that occurs when a malicious user controls the majority of computing power in a network?",
+                "selected": "Replay attack",
+                "correct": "51% attack",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a common attack vector in Blockchain security that occurs when a malicious user controls the majority of computing power in a network?",
+                "selected": "51% attack",
+                "correct": "51% attack",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-22T20:44:17.110786",
+        "history": [
+            {
+                "question": "What does it mean if a website has 'https://' at the beginning of its URL?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is secure and encrypted",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-22T20:44:33.564568",
+        "history": [
+            {
+                "question": "Which encryption algorithm is commonly used for securing web traffic?",
+                "selected": "AES",
+                "correct": "AES",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a Distributed Denial of Service (DDoS) attack?",
+                "selected": "An attack that steals confidential information through email phishing",
+                "correct": "An attack that floods a network with excessive traffic to disrupt normal operation",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a Distributed Denial of Service (DDoS) attack?",
+                "selected": "An attack that floods a network with excessive traffic to disrupt normal operation",
+                "correct": "An attack that floods a network with excessive traffic to disrupt normal operation",
+                "isCorrect": true
+            }
+        ]
     }
 ]

@@ -1,4 +1,4 @@
-FROM python:3.9-alpine
+FROM python:3.10-alpine
 
 # Install build dependencies for compiling Python packages
 RUN apk add --no-cache build-base python3-dev
