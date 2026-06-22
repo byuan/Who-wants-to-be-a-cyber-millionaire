@@ -77,6 +77,9 @@ var MillionaireModel = function(data) {
  	this.usedPhone = new ko.observable(false);
  	this.usedAudience = new ko.observable(false);
 
+    var gameMode = localStorage.getItem("gameMode") || "game";
+    console.log("Game mode:", gameMode);
+
  	// Grabs the question text of the current question
  	self.getQuestionText = function() {
  		return self.questions[self.level() - 1].question;
@@ -191,6 +194,10 @@ var MillionaireModel = function(data) {
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
+
+    function getGameMode() {
+        return localStorage.getItem("gameMode") || "game";
+    }
  
     //Uses the audience option
     self.audience = function(item, event) {
@@ -297,7 +304,6 @@ var MillionaireModel = function(data) {
  	self.rightAnswer = function(elm) {
  		$("#" + elm).slideUp('slow', function() {
  			startSound('right', false);
-            //$("#display-help").fadeOut('slow');
  			$("#" + elm).css('background', 'green').slideDown('slow', function() {
  				self.money($(".active").data('amt'));
  				if(self.level() + 1 > 15) {
@@ -322,25 +328,24 @@ var MillionaireModel = function(data) {
 
  	// Executes the proceedure of guessing incorrectly, letting the player try again.
  	self.wrongAnswer = function(elm) {
- 		$("#" + elm).slideUp('slow', function() {
- 			startSound('wrong', false);
- 			$("#" + elm).css('background', 'red').slideDown('slow', function() {
- 				if(self.level() > 15) {
-	 				$("#game").fadeOut('slow', function() {
-	 					$("#game-over").html('You Win!<br /><button onclick=\"window.location.replace(\'/\')\">Play again?</button>');
-	 					$("#game-over").fadeIn('slow');
-	 				});
- 				} else {
- 					self.level(self.level());
- 					$("#" + elm).css('background', 'none');
-			 		$("#answer-one").show();
-			 		$("#answer-two").show();
-			 		$("#answer-three").show();
-			 		$("#answer-four").show();
-			 		self.transitioning = false;
- 				}
- 			});
- 		});
+        $("#"+elm).slideUp('slow', function() {
+            startSound('wrong', false);
+            $("#"+elm).css('background', 'red').slideDown('slow', function() {
+                const mode = getGameMode();
+                if (mode === "original") {
+
+                    $("#game").fadeOut('slow', function() {
+                        $("#game-over").fadeIn('slow');
+                    });
+
+                    self.transitioning = false;
+                    return;
+                }
+                $("#"+elm).css('background', 'none');
+                $("#answer-one, #answer-two, #answer-three, #answer-four").show();
+                self.transitioning = false;
+            });
+        });
  	}
 
  	// Gets the money formatted string of the current won amount of money.
@@ -373,6 +378,14 @@ var MillionaireModel = function(data) {
             console.error("Save failed:", error);
         });
     };
+
+function setGameMode() {
+    var mode = document.querySelector(
+        'input[name="gameMode"]:checked'
+    ).value;
+
+    localStorage.setItem("gameMode", mode);
+}
 
 function loadLifetimeStats() {
 

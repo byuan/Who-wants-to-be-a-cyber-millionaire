@@ -157,6 +157,18 @@
                 <p id="dynamicStatus">Current AI mode: Static</p> <!-- Display dynamic status -->
             </div>
         </div>
+
+        <h3>Game Mode</h3>
+
+        <label>
+            <input type="radio" name="gameMode" value="original" checked>
+            Original
+        </label>
+
+        <label>
+            <input type="radio" name="gameMode" value="practice">
+            Practice Mode
+        </label>
     
         <script>
             let dynamicVariable = false; // Initialize dynamic variable as false (Static mode)
@@ -174,11 +186,21 @@
                     statusText.textContent = 'Current AI mode: Static'; // Update status
                 }
             }
+
+            function saveGameMode() {
+                const mode = document.querySelector(
+                    'input[name="gameMode"]:checked'
+                ).value;
+
+                localStorage.setItem("gameMode", mode);
+            }
     
             // Function to navigate to the correct URL based on the mode
             function navigateTo(button) {
                 const staticUrl = button.getAttribute('data-static-url');
                 const dynamicUrl = button.getAttribute('data-dynamic-url');
+
+                saveGameMode();
                 
                 if (dynamicVariable) {
                     // Navigate to the dynamic URL
