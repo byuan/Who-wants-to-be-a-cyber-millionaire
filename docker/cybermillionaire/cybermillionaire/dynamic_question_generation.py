@@ -48,11 +48,13 @@ Do not add any text before or after the format.
     response = requests.post(
         "http://192.168.1.28:11434/api/generate",
         json={
-            "model": "qwen3:8b",
+            "model": "llama3.2:3b",
             "prompt": prompt,
-            "stream": False
+            "stream": False,
+            "options": {
+                "num_predict": 150
+            }
         },
-        timeout=60
     )
 
     return response.json()["response"].strip()
