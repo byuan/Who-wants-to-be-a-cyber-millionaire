@@ -1,4 +1,4 @@
-import requests
+from google import genai
 import random
 
 # Bags of words for each level
@@ -21,14 +21,17 @@ def pick_a_word(BAG_O_WORDS):
 
 # Function that reaches out to the API
 def api(BAG_O_WORDS, content, question_level):
-    word = pick_a_word(BAG_O_WORDS)
+    word = pick_a_word(BAG_O_WORDS) # picks a random word from BAG_O_WORDS
+
+    client = genai.Client(api_key="")
 
     prompt = f"""
 {content}
 
-Write one unique {question_level} level cybersecurity question about {word}.
+Write one unique {question_level} level cybersecurity question about {word}
+and provide multiple answers (one correct, three incorrect).
 
-You MUST return ONLY the following format:
+Format exactly like this:
 
 Question: <question>
 
@@ -37,25 +40,15 @@ B. <answer>
 C. <answer>
 D. <answer>
 
-Correct Answer: <single letter A, B, C, or D>
-
-Do not provide explanations.
-Do not provide reasoning.
-Do not use markdown.
-Do not add any text before or after the format.
+Correct Answer: <correct answer>
 """
 
-    response = requests.post(
-        "http://192.168.1.28:11434/api/generate",
-        json={
-            "model": "qwen3:8b",
-            "prompt": prompt,
-            "stream": False
-        },
-        timeout=60
+    response = client.models.generate_content(
+        model="gemini-3.1-flash-lite",
+        contents=prompt
     )
 
-    return response.json()["response"].strip()
+    return response.text
 
 def generate_question(level):
     BAG_O_WORDS = levels[level][0] # sets the correct BAG_O_WORDS for the specified level
