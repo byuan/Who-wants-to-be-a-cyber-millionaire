@@ -15,5 +15,319 @@
                 "isCorrect": true
             }
         ]
+    },
+    {
+        "played_at": "2026-06-25T15:24:44.328417",
+        "history": [
+            {
+                "question": "Which of the following is a strong password?",
+                "selected": "Sup3rSecr3t!",
+                "correct": "Sup3rSecr3t!",
+                "isCorrect": true
+            },
+            {
+                "question": "Why is it important to keep your passwords secret?",
+                "selected": "To protect your personal information and prevent unauthorized access",
+                "correct": "To protect your personal information and prevent unauthorized access",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a common tactic used by cybercriminals to steal personal information such as passwords and credit card details by disguising as a trustworthy entity?",
+                "selected": "Watering",
+                "correct": "Phishing",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a common tactic used by cybercriminals to steal personal information such as passwords and credit card details by disguising as a trustworthy entity?",
+                "selected": "Hiking",
+                "correct": "Phishing",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a common tactic used by cybercriminals to steal personal information such as passwords and credit card details by disguising as a trustworthy entity?",
+                "selected": "Phishing",
+                "correct": "Phishing",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following is NOT safe to share on social media?",
+                "selected": "Your full name and address",
+                "correct": "Your full name and address",
+                "isCorrect": true
+            },
+            {
+                "question": "What should you do if a website asks for your personal information like your full name, address, and phone number without your parents' permission?",
+                "selected": "Tell your parents about the website and ask for their help",
+                "correct": "Tell your parents about the website and ask for their help",
+                "isCorrect": true
+            },
+            {
+                "question": "What should you do if you receive a mean or threatening message online?",
+                "selected": "Show the message to a trusted adult and ask for help",
+                "correct": "Show the message to a trusted adult and ask for help",
+                "isCorrect": true
+            },
+            {
+                "question": "What should you do if a website asks you to share your full name, address, and phone number without your parents' permission?",
+                "selected": "Ask your parents for help and advice before sharing any personal information",
+                "correct": "Ask your parents for help and advice before sharing any personal information",
+                "isCorrect": true
+            },
+            {
+                "question": "Why is it important to keep your personal information private online?",
+                "selected": "To protect yourself from identity theft and cyberbullying",
+                "correct": "To protect yourself from identity theft and cyberbullying",
+                "isCorrect": true
+            },
+            {
+                "question": "What should you do if a stranger sends you a friend request on social media?",
+                "selected": "Ignore the friend request",
+                "correct": "Ignore the friend request",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website's URL indicate?",
+                "selected": "The website is secure and encrypts data",
+                "correct": "The website is secure and encrypts data",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following is NOT a part of your digital footprint?",
+                "selected": "Conversations with friends in person",
+                "correct": "Conversations with friends in person",
+                "isCorrect": true
+            },
+            {
+                "question": "What does a firewall do for your computer?",
+                "selected": "Blocks unauthorized access to your computer",
+                "correct": "Blocks unauthorized access to your computer",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a common practice that can help keep your social media account secure?",
+                "selected": "Clicking on links from unknown sources",
+                "correct": "Using two-factor authentication",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a common practice that can help keep your social media account secure?",
+                "selected": "Sharing your passwords with friends",
+                "correct": "Using two-factor authentication",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a common practice that can help keep your social media account secure?",
+                "selected": "Posting personal information publicly",
+                "correct": "Using two-factor authentication",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a common practice that can help keep your social media account secure?",
+                "selected": "Using two-factor authentication",
+                "correct": "Using two-factor authentication",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website URL indicate?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is secure and encrypted",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T16:42:39.840042",
+        "history": [
+            {
+                "question": "Which of the following actions promotes safe downloading?",
+                "selected": "Checking the website's reputation before downloading",
+                "correct": "Checking the website's reputation before downloading",
+                "isCorrect": true
+            },
+            {
+                "question": "What is cyberbullying?",
+                "selected": "Posting mean comments to hurt someone on the internet",
+                "correct": "Posting mean comments to hurt someone on the internet",
+                "isCorrect": true
+            },
+            {
+                "question": "What is cyberbullying?",
+                "selected": "Sending mean messages or threats through the internet",
+                "correct": "Sending mean messages or threats through the internet",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following is the most secure password?",
+                "selected": "P@ssw0rd!",
+                "correct": "P@ssw0rd!",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following is a safe way to communicate with someone online?",
+                "selected": "Making video calls with strangers",
+                "correct": "Instant messaging with friends you know in person",
+                "isCorrect": false
+            },
+            {
+                "question": "Which of the following is a safe way to communicate with someone online?",
+                "selected": "Instant messaging with friends you know in person",
+                "correct": "Instant messaging with friends you know in person",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a virus in the context of computers?",
+                "selected": "A software program designed to harm your computer",
+                "correct": "A software program designed to harm your computer",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a digital footprint?",
+                "selected": "Traces of a person's online activity",
+                "correct": "Traces of a person's online activity",
+                "isCorrect": true
+            },
+            {
+                "question": "What should you do if you receive an email from an unknown sender asking for personal information?",
+                "selected": "Delete the email and do not respond",
+                "correct": "Delete the email and do not respond",
+                "isCorrect": true
+            },
+            {
+                "question": "Why is it important to keep your personal information private online?",
+                "selected": "To protect yourself from identity theft and cyberbullying",
+                "correct": "To protect yourself from identity theft and cyberbullying",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following is an example of sharing too much personal information on social media?",
+                "selected": "Sharing your home address in a private message",
+                "correct": "Sharing your home address in a private message",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following is NOT a part of your digital footprint?",
+                "selected": "Conversations with friends in person",
+                "correct": "Conversations with friends in person",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website URL indicate?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website address indicate?",
+                "selected": "The website is secure and encrypted ",
+                "correct": "The website is secure and encrypted ",
+                "isCorrect": true
+            },
+            {
+                "question": "How can you protect your computer from malware?",
+                "selected": "Installing antivirus software and keeping it updated",
+                "correct": "Installing antivirus software and keeping it updated",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is secure and encrypted",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T17:12:02.495809",
+        "history": [
+            {
+                "question": "What does the 'https://' at the beginning of a website URL indicate?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is secure and encrypted",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": true
+            },
+            {
+                "question": "What does it mean if a website has 'https://' at the beginning of its URL?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following is NOT a part of your digital footprint?",
+                "selected": "Comments you make on websites",
+                "correct": "Conversations with friends in person",
+                "isCorrect": false
+            },
+            {
+                "question": "Which of the following is NOT a part of your digital footprint?",
+                "selected": "Videos you post on the internet",
+                "correct": "Conversations with friends in person",
+                "isCorrect": false
+            },
+            {
+                "question": "Which of the following is NOT a part of your digital footprint?",
+                "selected": "Conversations with friends in person",
+                "correct": "Conversations with friends in person",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T17:23:35.506458",
+        "history": [
+            {
+                "question": "What happens to your data when you delete it from your computer?",
+                "selected": "It stays forever",
+                "correct": "It disappears",
+                "isCorrect": false
+            },
+            {
+                "question": "What happens to your data when you delete it from your computer?",
+                "selected": "It disappears",
+                "correct": "It disappears",
+                "isCorrect": true
+            },
+            {
+                "question": "What is Data that you find in a digital picture?",
+                "selected": "Numbers and words used to describe something",
+                "correct": "Numbers and words used to describe something",
+                "isCorrect": true
+            },
+            {
+                "question": "What does a Phishing email usually try to trick you into doing?",
+                "selected": "Giving out personal info online",
+                "correct": "Sharing your password",
+                "isCorrect": false
+            },
+            {
+                "question": "What does a Phishing email usually try to trick you into doing?",
+                "selected": "Sharing your password",
+                "correct": "Sharing your password",
+                "isCorrect": true
+            },
+            {
+                "question": "Why is it bad to share your password with a friend?",
+                "selected": "Because anyone who knows the word can guess it",
+                "correct": "Because it helps keep your account safe",
+                "isCorrect": false
+            },
+            {
+                "question": "Why is it bad to share your password with a friend?",
+                "selected": "Because it helps keep your account safe",
+                "correct": "Because it helps keep your account safe",
+                "isCorrect": true
+            }
+        ]
     }
 ]

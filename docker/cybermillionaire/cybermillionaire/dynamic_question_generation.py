@@ -37,12 +37,14 @@ B. <answer>
 C. <answer>
 D. <answer>
 
-Correct Answer: <single letter A, B, C, or D>
+Correct Answer: <A, B, C, or D>
 
+Questions must make sense.
+Questions must always have exactly 4 unique answers followed by the correct answer.
+The Correct Answer MUST always be reiterated on a seperate line below the answers. 
 Do not provide explanations.
 Do not provide reasoning.
 Do not use markdown.
-Do not add any text before or after the format.
 """
 
     response = requests.post(
@@ -50,10 +52,7 @@ Do not add any text before or after the format.
         json={
             "model": "llama3.2:3b",
             "prompt": prompt,
-            "stream": False,
-            "options": {
-                "num_predict": 150
-            }
+            "stream": False
         },
     )
 
@@ -67,5 +66,5 @@ def generate_question(level):
     return api(BAG_O_WORDS, content, question_level)
 
 if __name__ == '__main__':
-    level = "expert"  # Default level for direct execution
+    level = "easy"  # Default level for direct execution
     print(generate_question(level))

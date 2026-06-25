@@ -5,9 +5,9 @@ from mysql.connector import Error
 # Function to parse the returned text and remove the A, B, C, D labels
 def parse_question_and_answers(text):
     # Regular expression to extract the question and answers
-    question_match = re.search(r"Question: (.*?)\n", text)
+    question_match = re.search(r"Question: (.*?)\n", text, re.IGNORECASE)
     answers_match = re.findall(r"([A-D])\.\s([^\n]+)", text)  # Matches A. Answer text, B. Answer text, etc.
-    correct_answer_match = re.search(r"Correct Answer: ([A-D])", text)  # Matches Correct Answer: A, B, C, or D
+    correct_answer_match = re.search(r"Correct Answer: ([A-D])", text, re.IGNORECASE)  # Matches Correct Answer: A, B, C, or D
 
     if not question_match or not answers_match or not correct_answer_match:
         raise ValueError("Unable to parse the text correctly")

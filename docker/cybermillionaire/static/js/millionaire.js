@@ -68,8 +68,8 @@ var MillionaireModel = function(data) {
     // The current money obtained
  	this.money = new ko.observable(0);
 
- 	// The current level(starting at 1) 
- 	this.level = new ko.observable(1);
+ 	// The current level(starting at 1) <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<STARTING LEVEL
+ 	this.level = new ko.observable(12);
 
  	// The three the user can use to 
  	// attempt to answer a question (1 use each)

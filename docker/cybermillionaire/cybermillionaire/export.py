@@ -16,8 +16,6 @@ def generate_json(game):
     json_file['games'] = []
     questions = []
 
-
-    
     for question in game:
         #for column in question:
         for i in range(len(question)):
@@ -174,7 +172,7 @@ def Static_Expert(cursor):
 def Dynamic_Primary_School(cursor):
     game = []
     
-    for i in range(0, 15):
+    for i in range(0, 20):
         question_text = generation.generate_question("easy")
 
         try:
@@ -200,7 +198,7 @@ def Dynamic_Primary_School(cursor):
 def Dynamic_Secondary_School(cursor):
     game = []
     
-    for i in range(0, 15):
+    for i in range(0, 20):
         question_text = generation.generate_question("medium")
 
         try:
@@ -226,7 +224,7 @@ def Dynamic_Secondary_School(cursor):
 def Dynamic_College(cursor):
     game = []
     
-    for i in range(0, 15):
+    for i in range(0, 20):
         question_text = generation.generate_question("hard")
 
         try:
@@ -252,7 +250,7 @@ def Dynamic_College(cursor):
 def Dynamic_Expert(cursor):
     game = []
     
-    for i in range(0, 15):
+    for i in range(0, 20):
         question_text = generation.generate_question("expert")
 
         try:
