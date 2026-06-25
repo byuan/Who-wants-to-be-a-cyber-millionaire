@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Feedback</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+
+<h1>Your Performance Review</h1>
+
+<h3>
+    <pre style="white-space: pre-wrap;">
+        {{ feedback }}
+    </pre>
+</h3>
+
+<div><button onclick="window.location.replace('/')">Go Back</button></div>
+
+</body>
+</html>

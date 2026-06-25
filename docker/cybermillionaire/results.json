@@ -74,5 +74,708 @@
                 "isCorrect": true
             }
         ]
+    },
+    {
+        "played_at": "2026-06-25T20:08:23.651792",
+        "history": [
+            {
+                "question": "A website asks for your username and password to play your favorite online game. What should you do first?",
+                "selected": "Ignore the request and go back home",
+                "correct": "Ask a grown-up before entering anything",
+                "isCorrect": false
+            },
+            {
+                "question": "A website asks for your username and password to play your favorite online game. What should you do first?",
+                "selected": "Try to find the website's URL in a search engine",
+                "correct": "Ask a grown-up before entering anything",
+                "isCorrect": false
+            },
+            {
+                "question": "A website asks for your username and password to play your favorite online game. What should you do first?",
+                "selected": "Enter your login credentials right away",
+                "correct": "Ask a grown-up before entering anything",
+                "isCorrect": false
+            },
+            {
+                "question": "A website asks for your username and password to play your favorite online game. What should you do first?",
+                "selected": "Try to find the website's URL in a search engine",
+                "correct": "Ask a grown-up before entering anything",
+                "isCorrect": false
+            },
+            {
+                "question": "A website asks for your username and password to play your favorite online game. What should you do first?",
+                "selected": "Ask a grown-up before entering anything",
+                "correct": "Ask a grown-up before entering anything",
+                "isCorrect": true
+            },
+            {
+                "question": "What is one way hackers try to trick you into sharing sensitive information?",
+                "selected": "By sending you a fake email that looks like it's from your bank",
+                "correct": "By sending you a fake email that looks like it's from your bank",
+                "isCorrect": true
+            },
+            {
+                "question": "What should you do if someone is sending mean messages to you online?",
+                "selected": "Ignore them and block their number",
+                "correct": "Ignore them and block their number",
+                "isCorrect": true
+            },
+            {
+                "question": "What should you never share your birthday on social media?",
+                "selected": "Your family",
+                "correct": "No one",
+                "isCorrect": false
+            },
+            {
+                "question": "What should you never share your birthday on social media?",
+                "selected": "Online friends",
+                "correct": "No one",
+                "isCorrect": false
+            },
+            {
+                "question": "What should you never share your birthday on social media?",
+                "selected": "No one",
+                "correct": "No one",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T20:13:57.437026",
+        "history": [
+            {
+                "question": "Which of the following indicates that a website is secure?",
+                "selected": "The website address begins with 'https://'",
+                "correct": "The website address begins with 'https://'",
+                "isCorrect": true
+            },
+            {
+                "question": "How can you protect your computer from malware?",
+                "selected": "Sharing your computer password with friends",
+                "correct": "Installing antivirus software and keeping it updated",
+                "isCorrect": false
+            },
+            {
+                "question": "How can you protect your computer from malware?",
+                "selected": "Clicking on every pop-up ad you see",
+                "correct": "Installing antivirus software and keeping it updated",
+                "isCorrect": false
+            },
+            {
+                "question": "How can you protect your computer from malware?",
+                "selected": "Installing antivirus software and keeping it updated",
+                "correct": "Installing antivirus software and keeping it updated",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is secure and encrypted",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following is NOT a part of your digital footprint?",
+                "selected": "Conversations with friends in person",
+                "correct": "Conversations with friends in person",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T20:15:45.215540",
+        "history": [
+            {
+                "question": "What does the 'https://' at the beginning of a website URL indicate?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
+                "isCorrect": true
+            },
+            {
+                "question": "What does it mean if a website has 'https://' at the beginning of its URL?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
+                "isCorrect": true
+            },
+            {
+                "question": "What does a firewall do for your computer?",
+                "selected": "Blocks unauthorized access to your computer",
+                "correct": "Blocks unauthorized access to your computer",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website address indicate?",
+                "selected": "The website is secure and encrypted ",
+                "correct": "The website is secure and encrypted ",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T20:19:49.195491",
+        "history": [
+            {
+                "question": "Which of the following indicates that a website is secure and can be trusted?",
+                "selected": "The website address starts with 'https://'",
+                "correct": "The website address starts with 'https://'",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website address indicate?",
+                "selected": "The website is secure and encrypted ",
+                "correct": "The website is secure and encrypted ",
+                "isCorrect": true
+            },
+            {
+                "question": "What does it mean if a website has 'https://' at the beginning of its URL?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website URL indicate?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T20:22:57.082141",
+        "history": [
+            {
+                "question": "Which of the following is NOT a part of your digital footprint?",
+                "selected": "Conversations with friends in person",
+                "correct": "Conversations with friends in person",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is secure and encrypted",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website address indicate?",
+                "selected": "The website is secure and encrypted ",
+                "correct": "The website is secure and encrypted ",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website URL indicate?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T20:29:00.025350",
+        "history": [
+            {
+                "question": "What happens to your online activity when you search for something on Google?",
+                "selected": "It creates a digital footprint that can be seen by others",
+                "correct": "It creates a digital footprint that can be seen by others",
+                "isCorrect": true
+            },
+            {
+                "question": "What can you do to prevent others from seeing what you post on social media online?",
+                "selected": "Set private profiles on all accounts",
+                "correct": "Set private profiles on all accounts",
+                "isCorrect": true
+            },
+            {
+                "question": "What is data usually stored in a computer?",
+                "selected": "A hard drive",
+                "correct": "A hard drive",
+                "isCorrect": true
+            },
+            {
+                "question": "What do we call it when a website starts with \"https\" and has a padlock symbol?",
+                "selected": "Secure Website",
+                "correct": "Secure Website",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T20:55:21.762720",
+        "history": [
+            {
+                "question": "Which of the following is NOT a part of your digital footprint?",
+                "selected": "Conversations with friends in person",
+                "correct": "Conversations with friends in person",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website address indicate?",
+                "selected": "The website is secure and encrypted ",
+                "correct": "The website is secure and encrypted ",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following indicates that a website is secure?",
+                "selected": "The website address begins with 'https://'",
+                "correct": "The website address begins with 'https://'",
+                "isCorrect": true
+            },
+            {
+                "question": "What does a firewall do for your computer?",
+                "selected": "Blocks unauthorized access to your computer",
+                "correct": "Blocks unauthorized access to your computer",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T20:58:33.783223",
+        "history": [
+            {
+                "question": "What should you never share your birthday on social media?",
+                "selected": "With no one",
+                "correct": "On private accounts only",
+                "isCorrect": false
+            },
+            {
+                "question": "What should you never share your birthday on social media?",
+                "selected": "With friends",
+                "correct": "On private accounts only",
+                "isCorrect": false
+            },
+            {
+                "question": "What should you never share your birthday on social media?",
+                "selected": "On private accounts only",
+                "correct": "On private accounts only",
+                "isCorrect": true
+            },
+            {
+                "question": "What should you do before downloading an app or game from the internet?",
+                "selected": "Ask your parents for permission first",
+                "correct": "Ask your parents for permission first",
+                "isCorrect": true
+            },
+            {
+                "question": "What is something that you can share with your friend, but should only share with them?",
+                "selected": "A secret code",
+                "correct": "A password",
+                "isCorrect": false
+            },
+            {
+                "question": "What is something that you can share with your friend, but should only share with them?",
+                "selected": "A password",
+                "correct": "A password",
+                "isCorrect": true
+            },
+            {
+                "question": "What should you do before opening an attachment or clicking on a link from someone you don't know?",
+                "selected": "Ask a grown-up first",
+                "correct": "Ask a grown-up first",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T21:00:53.898801",
+        "history": [
+            {
+                "question": "What is the primary purpose of Virtual Machine Monitor (VMM) in virtualization?",
+                "selected": "To provide a layer of abstraction between physical and virtual machines",
+                "correct": "To create and manage multiple virtual machines",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of Virtual Machine Monitor (VMM) in virtualization?",
+                "selected": "To manage the physical hardware resources",
+                "correct": "To create and manage multiple virtual machines",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of Virtual Machine Monitor (VMM) in virtualization?",
+                "selected": "To ensure high availability of virtual machines",
+                "correct": "To create and manage multiple virtual machines",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of Virtual Machine Monitor (VMM) in virtualization?",
+                "selected": "To create and manage multiple virtual machines",
+                "correct": "To create and manage multiple virtual machines",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of the Kerberos ticket-granting ticket in Kerberos Authentication?",
+                "selected": "To verify the authenticity of the ticket issuer",
+                "correct": "To grant access to authorized resources on behalf of the user",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of the Kerberos ticket-granting ticket in Kerberos Authentication?",
+                "selected": "To grant access to authorized resources on behalf of the user",
+                "correct": "To grant access to authorized resources on behalf of the user",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary function of the Kerberos authentication protocol's ticket-granting ticket (TGT)?",
+                "selected": "To delegate Kerberos tickets from a service principal to another user",
+                "correct": "To delegate Kerberos tickets from a service principal to another user",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the purpose of the SYN-ACK packet in a three-way handshake during TCP Handshake?",
+                "selected": "To initiate the handshake sequence after receiving the SYN packet",
+                "correct": "To initiate the handshake sequence after receiving the SYN packet",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T21:04:25.965330",
+        "history": [
+            {
+                "question": "Which protocol does Kerberos primarily use for authentication?",
+                "selected": "LDAP",
+                "correct": "LDAP",
+                "isCorrect": true
+            },
+            {
+                "question": "How does a self-signed SSL certificate differ from a certificate signed by a trusted CA?",
+                "selected": "Self-signed certificates are not trusted by browsers.",
+                "correct": "Self-signed certificates are not trusted by browsers.",
+                "isCorrect": true
+            },
+            {
+                "question": "What cryptographic algorithm is commonly used in SSL certificates?",
+                "selected": "RSA",
+                "correct": "RSA",
+                "isCorrect": true
+            },
+            {
+                "question": "What key distribution technique does Kerberos utilize to securely share keys between entities?",
+                "selected": "Diffie-Hellman key exchange",
+                "correct": "Symmetric key cryptography",
+                "isCorrect": false
+            },
+            {
+                "question": "What key distribution technique does Kerberos utilize to securely share keys between entities?",
+                "selected": "Symmetric key cryptography",
+                "correct": "Symmetric key cryptography",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T21:06:17.159404",
+        "history": [
+            {
+                "question": "What encryption algorithm is commonly used for securing web traffic?",
+                "selected": "RSA",
+                "correct": "AES",
+                "isCorrect": false
+            },
+            {
+                "question": "What encryption algorithm is commonly used for securing web traffic?",
+                "selected": "AES",
+                "correct": "AES",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a common drawback of Signature-based IDS?",
+                "selected": "Slowing down network speed",
+                "correct": "High false positive rate",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a common drawback of Signature-based IDS?",
+                "selected": "Inability to detect known threats",
+                "correct": "High false positive rate",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a common drawback of Signature-based IDS?",
+                "selected": "High false positive rate",
+                "correct": "High false positive rate",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following is an asymmetric encryption algorithm?",
+                "selected": "AES",
+                "correct": "RSA",
+                "isCorrect": false
+            },
+            {
+                "question": "Which of the following is an asymmetric encryption algorithm?",
+                "selected": "RSA",
+                "correct": "RSA",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the purpose of a watering hole attack?",
+                "selected": "Infecting a target's system with malware by exploiting unsecured network connections",
+                "correct": "Compromising a website frequented by the target to distribute malware",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the purpose of a watering hole attack?",
+                "selected": "Compromising a website frequented by the target to distribute malware",
+                "correct": "Compromising a website frequented by the target to distribute malware",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T21:10:10.862217",
+        "history": [
+            {
+                "question": "What is the primary purpose of a Certificate Signing Request (CSR) in the process of obtaining an SSL/TLS certificate?",
+                "selected": "To request a certificate from a Certificate Authority (CA)",
+                "correct": "To request a certificate from a Certificate Authority (CA)",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the maximum amount of data that can be sent in a single TCP segment?",
+                "selected": "512 bytes",
+                "correct": "65535 bytes",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the maximum amount of data that can be sent in a single TCP segment?",
+                "selected": "4096 bytes",
+                "correct": "65535 bytes",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the maximum amount of data that can be sent in a single TCP segment?",
+                "selected": "10000 bytes",
+                "correct": "65535 bytes",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the maximum amount of data that can be sent in a single TCP segment?",
+                "selected": "65535 bytes",
+                "correct": "65535 bytes",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of the subjectAlternativeName (SAN) extension in an X509 certificate?",
+                "selected": "To indicate that the certificate was issued to an individual entity",
+                "correct": "To specify the domain name or IP address that the certificate is valid for",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of the subjectAlternativeName (SAN) extension in an X509 certificate?",
+                "selected": "To authenticate the identity of the organization issuing the certificate",
+                "correct": "To specify the domain name or IP address that the certificate is valid for",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of the subjectAlternativeName (SAN) extension in an X509 certificate?",
+                "selected": "To specify the domain name or IP address that the certificate is valid for",
+                "correct": "To specify the domain name or IP address that the certificate is valid for",
+                "isCorrect": true
+            },
+            {
+                "question": "An attacker has deleted all files from the /var/log directory on a Linux system, making it difficult to recover logs for an investigation. What can you do next?",
+                "selected": "Boot into single-user mode and examine /var/log for deleted files",
+                "correct": "Check if any backups of log files exist in other locations",
+                "isCorrect": false
+            },
+            {
+                "question": "An attacker has deleted all files from the /var/log directory on a Linux system, making it difficult to recover logs for an investigation. What can you do next?",
+                "selected": "Use the `systemd-journal` command to view system logs",
+                "correct": "Check if any backups of log files exist in other locations",
+                "isCorrect": false
+            },
+            {
+                "question": "An attacker has deleted all files from the /var/log directory on a Linux system, making it difficult to recover logs for an investigation. What can you do next?",
+                "selected": "Check if any backups of log files exist in other locations",
+                "correct": "Check if any backups of log files exist in other locations",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T21:13:28.454621",
+        "history": [
+            {
+                "question": "Which of the following indicates that a website is secure?",
+                "selected": "The website address begins with 'https://'",
+                "correct": "The website address begins with 'https://'",
+                "isCorrect": true
+            },
+            {
+                "question": "How can you protect your computer from malware?",
+                "selected": "Installing antivirus software and keeping it updated",
+                "correct": "Installing antivirus software and keeping it updated",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a common practice that can help keep your social media account secure?",
+                "selected": "Using two-factor authentication",
+                "correct": "Using two-factor authentication",
+                "isCorrect": true
+            },
+            {
+                "question": "What does a firewall do for your computer?",
+                "selected": "Blocks unauthorized access to your computer",
+                "correct": "Blocks unauthorized access to your computer",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T21:16:26.379504",
+        "history": [
+            {
+                "question": "An Intrusion Detection System (IDS) uses Statistical Process Control (SPC) to monitor network traffic and detect anomalies. What is a key benefit of using SPC in an IDS?",
+                "selected": "Increased network performance",
+                "correct": "Reduced false positive rates",
+                "isCorrect": false
+            },
+            {
+                "question": "An Intrusion Detection System (IDS) uses Statistical Process Control (SPC) to monitor network traffic and detect anomalies. What is a key benefit of using SPC in an IDS?",
+                "selected": "Enhanced threat intelligence gathering",
+                "correct": "Reduced false positive rates",
+                "isCorrect": false
+            },
+            {
+                "question": "An Intrusion Detection System (IDS) uses Statistical Process Control (SPC) to monitor network traffic and detect anomalies. What is a key benefit of using SPC in an IDS?",
+                "selected": "Improved incident response times",
+                "correct": "Reduced false positive rates",
+                "isCorrect": false
+            },
+            {
+                "question": "An Intrusion Detection System (IDS) uses Statistical Process Control (SPC) to monitor network traffic and detect anomalies. What is a key benefit of using SPC in an IDS?",
+                "selected": "Reduced false positive rates",
+                "correct": "Reduced false positive rates",
+                "isCorrect": true
+            },
+            {
+                "question": "What type of encryption algorithm is based on the difficulty of factoring large composite numbers, making it computationally infeasible to determine the original message without the public key?",
+                "selected": "Elliptic Curve Cryptography (ECC)",
+                "correct": "RSA",
+                "isCorrect": false
+            },
+            {
+                "question": "What type of encryption algorithm is based on the difficulty of factoring large composite numbers, making it computationally infeasible to determine the original message without the public key?",
+                "selected": "Advanced Encryption Standard (AES)",
+                "correct": "RSA",
+                "isCorrect": false
+            },
+            {
+                "question": "What type of encryption algorithm is based on the difficulty of factoring large composite numbers, making it computationally infeasible to determine the original message without the public key?",
+                "selected": "RSA",
+                "correct": "RSA",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of a Smart Contract in Blockchain Security?",
+                "selected": "Self-executing and autonomous, ensuring secure and transparent transactions",
+                "correct": "Self-executing and autonomous, ensuring secure and transparent transactions",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of the Transport Layer Security (TLS) protocol in network encryption?",
+                "selected": "To encrypt data in transit and establish a secure connection",
+                "correct": "To encrypt data in transit and establish a secure connection",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T21:20:28.182671",
+        "history": [
+            {
+                "question": "Which of the following indicates that a website is secure?",
+                "selected": "The website address begins with 'https://'",
+                "correct": "The website address begins with 'https://'",
+                "isCorrect": true
+            },
+            {
+                "question": "What does it mean if a website has 'https://' at the beginning of its URL?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is secure and encrypted",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following indicates that a website is secure and can be trusted?",
+                "selected": "The website address starts with 'https://'",
+                "correct": "The website address starts with 'https://'",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T21:23:56.571567",
+        "history": [
+            {
+                "question": "Which type of malware is designed to display unwanted advertisements on a user's computer?",
+                "selected": "Adware",
+                "correct": "Adware",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a common method used to secure wireless networks?",
+                "selected": "Enabling MAC address filtering",
+                "correct": "Enabling MAC address filtering",
+                "isCorrect": true
+            },
+            {
+                "question": "Which encryption algorithm is commonly used for securing web traffic?",
+                "selected": "AES",
+                "correct": "AES",
+                "isCorrect": true
+            },
+            {
+                "question": "In a phishing attack, what is the purpose of a spoofed email address?",
+                "selected": "To ensure the email lands in the spam folder",
+                "correct": "To disguise the true identity of the sender",
+                "isCorrect": false
+            },
+            {
+                "question": "In a phishing attack, what is the purpose of a spoofed email address?",
+                "selected": "To disguise the true identity of the sender",
+                "correct": "To disguise the true identity of the sender",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T21:26:33.074177",
+        "history": [
+            {
+                "question": "What should you NOT do when creating a password?",
+                "selected": "Use your name and a special number",
+                "correct": "Write it down and put it in a secret box",
+                "isCorrect": false
+            },
+            {
+                "question": "What should you NOT do when creating a password?",
+                "selected": "Write it down and put it in a secret box",
+                "correct": "Write it down and put it in a secret box",
+                "isCorrect": true
+            },
+            {
+                "question": "What does HTTPS mean?",
+                "selected": "Hypertext Security Technology Standard",
+                "correct": "Hypertext Security Technology Standard",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the main purpose of storing data in a safe place like a computer or phone?",
+                "selected": "To keep it private and secure",
+                "correct": "To keep it private and secure",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a password that only you know, to keep your online accounts safe from others?",
+                "selected": "Something unique and secret",
+                "correct": "Something unique and secret",
+                "isCorrect": true
+            }
+        ]
     }
 ]

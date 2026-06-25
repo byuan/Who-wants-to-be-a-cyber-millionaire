@@ -1,12 +1,9 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <!-- game.html -->
 <html>
     <head>
-        
-        
         <title>Cyber Millionaire</title>
         <link href="{% static 'css/style.css' %}" rel="stylesheet">
     </head>
@@ -78,6 +75,7 @@
             <div id="report" style="display: none;">
                 <h1>Post Game Report</h1>
                 <div id="report-content"></div><button onclick="window.location.replace('/')">Play again?</button>
+                <button onclick="window.location.href='/ai-feedback/'">Get AI Feedback</button>
             </div>
         
             

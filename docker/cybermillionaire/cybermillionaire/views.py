@@ -9,6 +9,7 @@ import os
 from datetime import datetime
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from .ai_report import generate_ai_feedback
 
 @csrf_exempt
 def save_results(request):
@@ -25,7 +26,6 @@ def save_results(request):
 
         results.append({
             "played_at": datetime.now().isoformat(),
-            # "final_money": data["finalMoney"], Not used yet 
             "history": data["history"]
         })
 
@@ -46,6 +46,12 @@ def get_results(request):
 
     except Exception as e:
         return JsonResponse({"error": str(e)})
+    
+def ai_feedback(request):
+    feedback = generate_ai_feedback()
+    t = template.loader.get_template('feedback.html')
+    html = t.render({"feedback": feedback})
+    return HttpResponse(html)
 
 def index(request):
     t = template.loader.get_template('index.html')

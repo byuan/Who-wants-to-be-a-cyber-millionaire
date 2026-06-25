@@ -2,7 +2,7 @@ import json
 import requests
 import os
 
-def load_results(path="C:/Million/docker/cybermillionaire/results.json"):
+def load_results(path="./results.json"):
     with open(path, "r") as f:
         return json.load(f)
 

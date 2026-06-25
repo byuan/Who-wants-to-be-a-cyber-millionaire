@@ -33,6 +33,7 @@ urlpatterns = [
 
     url(r'^save-results/$', views.save_results, name='save_results'),
     url(r'^get-results/$', views.get_results, name='get_results'),
+    url(r'^ai-feedback/', views.ai_feedback, name='ai_feedback'),
 
     url(r'', views.index, name='start-page'),
     ]
