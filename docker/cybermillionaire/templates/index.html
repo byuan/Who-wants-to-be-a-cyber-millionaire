@@ -98,7 +98,6 @@
     <body>
         <h1> Welcome To Who Wants To Be A Cyber Millionaire!</h1>
         <h2> Please Select a Difficulty Level Below:</h2>
-        <h3> Dynamic will work very soon :)</h3>
         
         <div class="container">
             <div class="vertical-center">
@@ -158,17 +157,20 @@
             </div>
         </div>
 
-        <h3>Game Mode</h3>
+        <div class="container">
+            <div class="vertical-center">
+                <h3>Game Mode</h3>
+                <label>
+                    <input type="radio" name="gameMode" value="original" checked>
+                    Original
+                </label>
 
-        <label>
-            <input type="radio" name="gameMode" value="original" checked>
-            Original
-        </label>
-
-        <label>
-            <input type="radio" name="gameMode" value="practice">
-            Practice Mode
-        </label>
+                <label>
+                    <input type="radio" name="gameMode" value="practice">
+                    Practice Mode
+                </label>
+            </div>
+        </div>
     
         <script>
             let dynamicVariable = false; // Initialize dynamic variable as false (Static mode)

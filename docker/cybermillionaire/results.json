@@ -329,5 +329,110 @@
                 "isCorrect": true
             }
         ]
+    },
+    {
+        "played_at": "2026-06-25T17:40:53.329308",
+        "history": [
+            {
+                "question": "What is the main goal of labeling and organizing your files in digital storage?",
+                "selected": "To keep track of who created each file",
+                "correct": "To keep track of who created each file",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the name of the person who helps keep your online information safe?",
+                "selected": "A cybersecurity expert",
+                "correct": "A cybersecurity expert",
+                "isCorrect": true
+            },
+            {
+                "question": "What does it mean to \"crack\" someone's password?",
+                "selected": "To guess it correctly",
+                "correct": "To guess it correctly",
+                "isCorrect": true
+            },
+            {
+                "question": "What happens to data when you delete it from your computer?",
+                "selected": "It becomes unreadable but still exists on the hard drive",
+                "correct": "It disappears forever",
+                "isCorrect": false
+            },
+            {
+                "question": "What happens to data when you delete it from your computer?",
+                "selected": "It disappears forever",
+                "correct": "It disappears forever",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T17:43:19.466798",
+        "history": [
+            {
+                "question": "What is the primary difference between symmetric encryption and asymmetric encryption?",
+                "selected": "Asymmetric encryption uses a pair of keys (public and private)",
+                "correct": "Asymmetric encryption uses a pair of keys (public and private)",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of a Virtual Machine Monitor (VMM) in virtualization?",
+                "selected": "Creating and managing virtual machines",
+                "correct": "Creating and managing virtual machines",
+                "isCorrect": true
+            },
+            {
+                "question": "What type of encryption uses the same secret key for both encryption and decryption?",
+                "selected": "Symmetric Encryption",
+                "correct": "Symmetric Encryption",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the purpose of the `strace` command in Linux/Unix System Forensics?",
+                "selected": "To capture and display low-level system calls for debugging purposes",
+                "correct": "To capture and display low-level system calls for debugging purposes",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T17:46:09.145667",
+        "history": [
+            {
+                "question": "An organization has an IDS that is configured to alert when it detects unauthorized access attempts, but the system administrators are concerned about false positives resulting in unnecessary alerts.",
+                "selected": "Increasing the sensitivity of the IDS's threshold parameters",
+                "correct": "Increasing the sensitivity of the IDS's threshold parameters",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of a Diffie-Hellman key exchange protocol in network encryption?",
+                "selected": "To authenticate the identity of communicating parties",
+                "correct": "To securely generate and manage cryptographic keys",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of a Diffie-Hellman key exchange protocol in network encryption?",
+                "selected": "To securely generate and manage cryptographic keys",
+                "correct": "To securely generate and manage cryptographic keys",
+                "isCorrect": true
+            },
+            {
+                "question": "What type of encryption is commonly used to protect network communications between a VPN server and a remote client, using both symmetric and asymmetric key exchange?",
+                "selected": "SSL/TLS",
+                "correct": "SSL/TLS",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary function of the Signature-based Intrusion Detection System (IDS) approach, and what are its main limitations?",
+                "selected": "Improving incident response times with automated alerts",
+                "correct": "Learning to recognize specific attack signatures stored in a database",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary function of the Signature-based Intrusion Detection System (IDS) approach, and what are its main limitations?",
+                "selected": "Learning to recognize specific attack signatures stored in a database",
+                "correct": "Learning to recognize specific attack signatures stored in a database",
+                "isCorrect": true
+            }
+        ]
     }
 ]

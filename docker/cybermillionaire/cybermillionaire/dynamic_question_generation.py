@@ -66,5 +66,5 @@ def generate_question(level):
     return api(BAG_O_WORDS, content, question_level)
 
 if __name__ == '__main__':
-    level = "easy"  # Default level for direct execution
+    level = "expert"  # Default level for direct execution
     print(generate_question(level))
