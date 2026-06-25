@@ -1,113 +1,12 @@
 [
     {
-        "played_at": "2026-06-24T21:31:53.383135",
+        "played_at": "2026-06-25T19:02:06.551635",
         "history": [
             {
-                "question": "What does the 'https://' at the beginning of a website URL indicate?",
-                "selected": "The website is secure",
-                "correct": "The website is secure",
+                "question": "Which of the following indicates that a website is secure?",
+                "selected": "The website address begins with 'https://'",
+                "correct": "The website address begins with 'https://'",
                 "isCorrect": true
-            },
-            {
-                "question": "How can you protect your computer from malware?",
-                "selected": "Installing antivirus software and keeping it updated",
-                "correct": "Installing antivirus software and keeping it updated",
-                "isCorrect": true
-            }
-        ]
-    },
-    {
-        "played_at": "2026-06-25T15:24:44.328417",
-        "history": [
-            {
-                "question": "Which of the following is a strong password?",
-                "selected": "Sup3rSecr3t!",
-                "correct": "Sup3rSecr3t!",
-                "isCorrect": true
-            },
-            {
-                "question": "Why is it important to keep your passwords secret?",
-                "selected": "To protect your personal information and prevent unauthorized access",
-                "correct": "To protect your personal information and prevent unauthorized access",
-                "isCorrect": true
-            },
-            {
-                "question": "What is a common tactic used by cybercriminals to steal personal information such as passwords and credit card details by disguising as a trustworthy entity?",
-                "selected": "Watering",
-                "correct": "Phishing",
-                "isCorrect": false
-            },
-            {
-                "question": "What is a common tactic used by cybercriminals to steal personal information such as passwords and credit card details by disguising as a trustworthy entity?",
-                "selected": "Hiking",
-                "correct": "Phishing",
-                "isCorrect": false
-            },
-            {
-                "question": "What is a common tactic used by cybercriminals to steal personal information such as passwords and credit card details by disguising as a trustworthy entity?",
-                "selected": "Phishing",
-                "correct": "Phishing",
-                "isCorrect": true
-            },
-            {
-                "question": "Which of the following is NOT safe to share on social media?",
-                "selected": "Your full name and address",
-                "correct": "Your full name and address",
-                "isCorrect": true
-            },
-            {
-                "question": "What should you do if a website asks for your personal information like your full name, address, and phone number without your parents' permission?",
-                "selected": "Tell your parents about the website and ask for their help",
-                "correct": "Tell your parents about the website and ask for their help",
-                "isCorrect": true
-            },
-            {
-                "question": "What should you do if you receive a mean or threatening message online?",
-                "selected": "Show the message to a trusted adult and ask for help",
-                "correct": "Show the message to a trusted adult and ask for help",
-                "isCorrect": true
-            },
-            {
-                "question": "What should you do if a website asks you to share your full name, address, and phone number without your parents' permission?",
-                "selected": "Ask your parents for help and advice before sharing any personal information",
-                "correct": "Ask your parents for help and advice before sharing any personal information",
-                "isCorrect": true
-            },
-            {
-                "question": "Why is it important to keep your personal information private online?",
-                "selected": "To protect yourself from identity theft and cyberbullying",
-                "correct": "To protect yourself from identity theft and cyberbullying",
-                "isCorrect": true
-            },
-            {
-                "question": "What should you do if a stranger sends you a friend request on social media?",
-                "selected": "Ignore the friend request",
-                "correct": "Ignore the friend request",
-                "isCorrect": true
-            },
-            {
-                "question": "What does the 'https://' at the beginning of a website's URL indicate?",
-                "selected": "The website is secure and encrypts data",
-                "correct": "The website is secure and encrypts data",
-                "isCorrect": true
-            },
-            {
-                "question": "Which of the following is NOT a part of your digital footprint?",
-                "selected": "Conversations with friends in person",
-                "correct": "Conversations with friends in person",
-                "isCorrect": true
-            },
-            {
-                "question": "What does a firewall do for your computer?",
-                "selected": "Blocks unauthorized access to your computer",
-                "correct": "Blocks unauthorized access to your computer",
-                "isCorrect": true
-            },
-            {
-                "question": "What is a common practice that can help keep your social media account secure?",
-                "selected": "Clicking on links from unknown sources",
-                "correct": "Using two-factor authentication",
-                "isCorrect": false
             },
             {
                 "question": "What is a common practice that can help keep your social media account secure?",
@@ -117,110 +16,15 @@
             },
             {
                 "question": "What is a common practice that can help keep your social media account secure?",
-                "selected": "Posting personal information publicly",
-                "correct": "Using two-factor authentication",
-                "isCorrect": false
-            },
-            {
-                "question": "What is a common practice that can help keep your social media account secure?",
                 "selected": "Using two-factor authentication",
                 "correct": "Using two-factor authentication",
                 "isCorrect": true
             },
             {
-                "question": "What does the 'https://' at the beginning of a website URL indicate?",
-                "selected": "The website is secure",
-                "correct": "The website is secure",
-                "isCorrect": true
-            },
-            {
-                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
-                "selected": "The website is secure and encrypted",
-                "correct": "The website is secure and encrypted",
-                "isCorrect": true
-            }
-        ]
-    },
-    {
-        "played_at": "2026-06-25T16:42:39.840042",
-        "history": [
-            {
-                "question": "Which of the following actions promotes safe downloading?",
-                "selected": "Checking the website's reputation before downloading",
-                "correct": "Checking the website's reputation before downloading",
-                "isCorrect": true
-            },
-            {
-                "question": "What is cyberbullying?",
-                "selected": "Posting mean comments to hurt someone on the internet",
-                "correct": "Posting mean comments to hurt someone on the internet",
-                "isCorrect": true
-            },
-            {
-                "question": "What is cyberbullying?",
-                "selected": "Sending mean messages or threats through the internet",
-                "correct": "Sending mean messages or threats through the internet",
-                "isCorrect": true
-            },
-            {
-                "question": "Which of the following is the most secure password?",
-                "selected": "P@ssw0rd!",
-                "correct": "P@ssw0rd!",
-                "isCorrect": true
-            },
-            {
-                "question": "Which of the following is a safe way to communicate with someone online?",
-                "selected": "Making video calls with strangers",
-                "correct": "Instant messaging with friends you know in person",
+                "question": "What does the 'https://' at the beginning of a website address indicate?",
+                "selected": "The website is using an outdated design",
+                "correct": "The website is secure and encrypted ",
                 "isCorrect": false
-            },
-            {
-                "question": "Which of the following is a safe way to communicate with someone online?",
-                "selected": "Instant messaging with friends you know in person",
-                "correct": "Instant messaging with friends you know in person",
-                "isCorrect": true
-            },
-            {
-                "question": "What is a virus in the context of computers?",
-                "selected": "A software program designed to harm your computer",
-                "correct": "A software program designed to harm your computer",
-                "isCorrect": true
-            },
-            {
-                "question": "What is a digital footprint?",
-                "selected": "Traces of a person's online activity",
-                "correct": "Traces of a person's online activity",
-                "isCorrect": true
-            },
-            {
-                "question": "What should you do if you receive an email from an unknown sender asking for personal information?",
-                "selected": "Delete the email and do not respond",
-                "correct": "Delete the email and do not respond",
-                "isCorrect": true
-            },
-            {
-                "question": "Why is it important to keep your personal information private online?",
-                "selected": "To protect yourself from identity theft and cyberbullying",
-                "correct": "To protect yourself from identity theft and cyberbullying",
-                "isCorrect": true
-            },
-            {
-                "question": "Which of the following is an example of sharing too much personal information on social media?",
-                "selected": "Sharing your home address in a private message",
-                "correct": "Sharing your home address in a private message",
-                "isCorrect": true
-            },
-            {
-                "question": "Which of the following is NOT a part of your digital footprint?",
-                "selected": "Conversations with friends in person",
-                "correct": "Conversations with friends in person",
-                "isCorrect": true
-            },
-            {
-                "question": "What does the 'https://' at the beginning of a website URL indicate?",
-                "selected": "The website is secure",
-                "correct": "The website is secure",
-                "isCorrect": true
             },
             {
                 "question": "What does the 'https://' at the beginning of a website address indicate?",
@@ -229,442 +33,44 @@
                 "isCorrect": true
             },
             {
-                "question": "How can you protect your computer from malware?",
-                "selected": "Installing antivirus software and keeping it updated",
-                "correct": "Installing antivirus software and keeping it updated",
-                "isCorrect": true
-            },
-            {
-                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
-                "selected": "The website is secure and encrypted",
-                "correct": "The website is secure and encrypted",
-                "isCorrect": true
-            }
-        ]
-    },
-    {
-        "played_at": "2026-06-25T17:12:02.495809",
-        "history": [
-            {
-                "question": "What does the 'https://' at the beginning of a website URL indicate?",
-                "selected": "The website is secure",
+                "question": "What does it mean if a website has 'https://' at the beginning of its URL?",
+                "selected": "The website is for entertainment purposes only",
                 "correct": "The website is secure",
-                "isCorrect": true
-            },
-            {
-                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
-                "selected": "The website is secure and encrypted",
-                "correct": "The website is secure and encrypted",
-                "isCorrect": true
+                "isCorrect": false
             },
             {
                 "question": "What does it mean if a website has 'https://' at the beginning of its URL?",
                 "selected": "The website is secure",
                 "correct": "The website is secure",
                 "isCorrect": true
-            },
-            {
-                "question": "Which of the following is NOT a part of your digital footprint?",
-                "selected": "Comments you make on websites",
-                "correct": "Conversations with friends in person",
-                "isCorrect": false
-            },
-            {
-                "question": "Which of the following is NOT a part of your digital footprint?",
-                "selected": "Videos you post on the internet",
-                "correct": "Conversations with friends in person",
-                "isCorrect": false
-            },
-            {
-                "question": "Which of the following is NOT a part of your digital footprint?",
-                "selected": "Conversations with friends in person",
-                "correct": "Conversations with friends in person",
-                "isCorrect": true
             }
         ]
     },
     {
-        "played_at": "2026-06-25T17:23:35.506458",
+        "played_at": "2026-06-25T19:03:07.766169",
         "history": [
             {
-                "question": "What happens to your data when you delete it from your computer?",
-                "selected": "It stays forever",
-                "correct": "It disappears",
-                "isCorrect": false
-            },
-            {
-                "question": "What happens to your data when you delete it from your computer?",
-                "selected": "It disappears",
-                "correct": "It disappears",
+                "question": "What is one major security risk associated with using passwords that are only a combination of common words and numbers?",
+                "selected": "Dictionary attacks",
+                "correct": "Dictionary attacks",
                 "isCorrect": true
             },
             {
-                "question": "What is Data that you find in a digital picture?",
-                "selected": "Numbers and words used to describe something",
-                "correct": "Numbers and words used to describe something",
+                "question": "A company's network is compromised when an employee clicks on a phishing email that installs malware on their device. What type of attack is this?",
+                "selected": "Phishing attack",
+                "correct": "Phishing attack",
                 "isCorrect": true
             },
             {
-                "question": "What does a Phishing email usually try to trick you into doing?",
-                "selected": "Giving out personal info online",
-                "correct": "Sharing your password",
-                "isCorrect": false
-            },
-            {
-                "question": "What does a Phishing email usually try to trick you into doing?",
-                "selected": "Sharing your password",
-                "correct": "Sharing your password",
+                "question": "A phishing email is sent to your classmates with a link that promises a free gift card if you click on it and enter your login credentials. However, when you try to open it, it says the sender's email address has been changed.",
+                "selected": "You should report the email to the school IT department immediately.",
+                "correct": "You should report the email to the school IT department immediately.",
                 "isCorrect": true
             },
             {
-                "question": "Why is it bad to share your password with a friend?",
-                "selected": "Because anyone who knows the word can guess it",
-                "correct": "Because it helps keep your account safe",
-                "isCorrect": false
-            },
-            {
-                "question": "Why is it bad to share your password with a friend?",
-                "selected": "Because it helps keep your account safe",
-                "correct": "Because it helps keep your account safe",
-                "isCorrect": true
-            }
-        ]
-    },
-    {
-        "played_at": "2026-06-25T17:40:53.329308",
-        "history": [
-            {
-                "question": "What is the main goal of labeling and organizing your files in digital storage?",
-                "selected": "To keep track of who created each file",
-                "correct": "To keep track of who created each file",
-                "isCorrect": true
-            },
-            {
-                "question": "What is the name of the person who helps keep your online information safe?",
-                "selected": "A cybersecurity expert",
-                "correct": "A cybersecurity expert",
-                "isCorrect": true
-            },
-            {
-                "question": "What does it mean to \"crack\" someone's password?",
-                "selected": "To guess it correctly",
-                "correct": "To guess it correctly",
-                "isCorrect": true
-            },
-            {
-                "question": "What happens to data when you delete it from your computer?",
-                "selected": "It becomes unreadable but still exists on the hard drive",
-                "correct": "It disappears forever",
-                "isCorrect": false
-            },
-            {
-                "question": "What happens to data when you delete it from your computer?",
-                "selected": "It disappears forever",
-                "correct": "It disappears forever",
-                "isCorrect": true
-            }
-        ]
-    },
-    {
-        "played_at": "2026-06-25T17:43:19.466798",
-        "history": [
-            {
-                "question": "What is the primary difference between symmetric encryption and asymmetric encryption?",
-                "selected": "Asymmetric encryption uses a pair of keys (public and private)",
-                "correct": "Asymmetric encryption uses a pair of keys (public and private)",
-                "isCorrect": true
-            },
-            {
-                "question": "What is the primary purpose of a Virtual Machine Monitor (VMM) in virtualization?",
-                "selected": "Creating and managing virtual machines",
-                "correct": "Creating and managing virtual machines",
-                "isCorrect": true
-            },
-            {
-                "question": "What type of encryption uses the same secret key for both encryption and decryption?",
-                "selected": "Symmetric Encryption",
-                "correct": "Symmetric Encryption",
-                "isCorrect": true
-            },
-            {
-                "question": "What is the purpose of the `strace` command in Linux/Unix System Forensics?",
-                "selected": "To capture and display low-level system calls for debugging purposes",
-                "correct": "To capture and display low-level system calls for debugging purposes",
-                "isCorrect": true
-            }
-        ]
-    },
-    {
-        "played_at": "2026-06-25T17:46:09.145667",
-        "history": [
-            {
-                "question": "An organization has an IDS that is configured to alert when it detects unauthorized access attempts, but the system administrators are concerned about false positives resulting in unnecessary alerts.",
-                "selected": "Increasing the sensitivity of the IDS's threshold parameters",
-                "correct": "Increasing the sensitivity of the IDS's threshold parameters",
-                "isCorrect": true
-            },
-            {
-                "question": "What is the primary purpose of a Diffie-Hellman key exchange protocol in network encryption?",
-                "selected": "To authenticate the identity of communicating parties",
-                "correct": "To securely generate and manage cryptographic keys",
-                "isCorrect": false
-            },
-            {
-                "question": "What is the primary purpose of a Diffie-Hellman key exchange protocol in network encryption?",
-                "selected": "To securely generate and manage cryptographic keys",
-                "correct": "To securely generate and manage cryptographic keys",
-                "isCorrect": true
-            },
-            {
-                "question": "What type of encryption is commonly used to protect network communications between a VPN server and a remote client, using both symmetric and asymmetric key exchange?",
-                "selected": "SSL/TLS",
-                "correct": "SSL/TLS",
-                "isCorrect": true
-            },
-            {
-                "question": "What is the primary function of the Signature-based Intrusion Detection System (IDS) approach, and what are its main limitations?",
-                "selected": "Improving incident response times with automated alerts",
-                "correct": "Learning to recognize specific attack signatures stored in a database",
-                "isCorrect": false
-            },
-            {
-                "question": "What is the primary function of the Signature-based Intrusion Detection System (IDS) approach, and what are its main limitations?",
-                "selected": "Learning to recognize specific attack signatures stored in a database",
-                "correct": "Learning to recognize specific attack signatures stored in a database",
-                "isCorrect": true
-            }
-        ]
-    },
-    {
-        "played_at": "2026-06-25T18:01:27.620676",
-        "history": [
-            {
-                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
-                "selected": "The website is using fancy decorations",
-                "correct": "The website is secure and encrypted",
-                "isCorrect": false
-            },
-            {
-                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
-                "selected": "The website is secure and encrypted",
-                "correct": "The website is secure and encrypted",
-                "isCorrect": true
-            },
-            {
-                "question": "What does it mean if a website has 'https://' at the beginning of its URL?",
-                "selected": "The website is secure",
-                "correct": "The website is secure",
-                "isCorrect": true
-            },
-            {
-                "question": "What does the 'https://' at the beginning of a website URL indicate?",
-                "selected": "The website is not secure",
-                "correct": "The website is secure",
-                "isCorrect": false
-            },
-            {
-                "question": "What does the 'https://' at the beginning of a website URL indicate?",
-                "selected": "The website is secure",
-                "correct": "The website is secure",
-                "isCorrect": true
-            },
-            {
-                "question": "Which of the following indicates that a website is secure?",
-                "selected": "The website address begins with 'https://'",
-                "correct": "The website address begins with 'https://'",
-                "isCorrect": true
-            }
-        ]
-    },
-    {
-        "played_at": "2026-06-25T18:02:05.490164",
-        "history": [
-            {
-                "question": "Which of the following is NOT a part of your digital footprint?",
-                "selected": "Conversations with friends in person",
-                "correct": "Conversations with friends in person",
-                "isCorrect": true
-            },
-            {
-                "question": "How can you protect your computer from malware?",
-                "selected": "Installing antivirus software and keeping it updated",
-                "correct": "Installing antivirus software and keeping it updated",
-                "isCorrect": true
-            },
-            {
-                "question": "What is a common practice that can help keep your social media account secure?",
-                "selected": "Using two-factor authentication",
-                "correct": "Using two-factor authentication",
-                "isCorrect": true
-            },
-            {
-                "question": "What does the 'https://' at the beginning of a website address indicate?",
-                "selected": "The website is secure and encrypted ",
-                "correct": "The website is secure and encrypted ",
-                "isCorrect": true
-            }
-        ]
-    },
-    {
-        "played_at": "2026-06-25T18:15:09.264153",
-        "history": [
-            {
-                "question": "How can you protect your computer from malware?",
-                "selected": "Clicking on every pop-up ad you see",
-                "correct": "Installing antivirus software and keeping it updated",
-                "isCorrect": false
-            },
-            {
-                "question": "How can you protect your computer from malware?",
-                "selected": "Sharing your computer password with friends",
-                "correct": "Installing antivirus software and keeping it updated",
-                "isCorrect": false
-            },
-            {
-                "question": "How can you protect your computer from malware?",
-                "selected": "Installing antivirus software and keeping it updated",
-                "correct": "Installing antivirus software and keeping it updated",
-                "isCorrect": true
-            },
-            {
-                "question": "Which of the following indicates that a website is secure?",
-                "selected": "The website address begins with 'https://'",
-                "correct": "The website address begins with 'https://'",
-                "isCorrect": true
-            },
-            {
-                "question": "Which of the following indicates that a website is secure and can be trusted?",
-                "selected": "The website address starts with 'https://'",
-                "correct": "The website address starts with 'https://'",
-                "isCorrect": true
-            },
-            {
-                "question": "What is a common practice that can help keep your social media account secure?",
-                "selected": "Posting personal information publicly",
-                "correct": "Using two-factor authentication",
-                "isCorrect": false
-            },
-            {
-                "question": "What is a common practice that can help keep your social media account secure?",
-                "selected": "Using two-factor authentication",
-                "correct": "Using two-factor authentication",
-                "isCorrect": true
-            }
-        ]
-    },
-    {
-        "played_at": "2026-06-25T18:19:43.056617",
-        "history": [
-            {
-                "question": "What is something that you should never share your password with?",
-                "selected": "A social media site you don't know",
-                "correct": "Your best friend",
-                "isCorrect": false
-            },
-            {
-                "question": "What is something that you should never share your password with?",
-                "selected": "A computer game website",
-                "correct": "Your best friend",
-                "isCorrect": false
-            },
-            {
-                "question": "What is something that you should never share your password with?",
-                "selected": "Your best friend",
-                "correct": "Your best friend",
-                "isCorrect": true
-            },
-            {
-                "question": "What should you never share with anyone when creating a password?",
-                "selected": "A secret word",
-                "correct": "Your name",
-                "isCorrect": false
-            },
-            {
-                "question": "What should you never share with anyone when creating a password?",
-                "selected": "Your name",
-                "correct": "Your name",
-                "isCorrect": true
-            },
-            {
-                "question": "What can you do to hide your online searches?",
-                "selected": "Use strong passwords",
-                "correct": "Use strong passwords",
-                "isCorrect": true
-            },
-            {
-                "question": "Why do you need to type in your password when you visit a secure website?",
-                "selected": "To keep your password safe from hackers",
-                "correct": "To keep your password safe from hackers",
-                "isCorrect": true
-            }
-        ]
-    },
-    {
-        "played_at": "2026-06-25T18:32:37.673326",
-        "history": [
-            {
-                "question": "What is the primary function of a firewall in network security?",
-                "selected": "To filter and restrict incoming and outgoing network traffic based on predetermined security rules",
-                "correct": "To filter and restrict incoming and outgoing network traffic based on predetermined security rules",
-                "isCorrect": true
-            },
-            {
-                "question": "What is the primary purpose of using a Time-Based One-Time Password (TOTP) token in two-factor authentication?",
-                "selected": "To authenticate users after a successful login attempt",
-                "correct": "To generate a unique password every 30 minutes",
-                "isCorrect": false
-            },
-            {
-                "question": "What is the primary purpose of using a Time-Based One-Time Password (TOTP) token in two-factor authentication?",
-                "selected": "To generate a time-stamped code that changes every 60 seconds",
-                "correct": "To generate a unique password every 30 minutes",
-                "isCorrect": false
-            },
-            {
-                "question": "What is the primary purpose of using a Time-Based One-Time Password (TOTP) token in two-factor authentication?",
-                "selected": "To generate a unique password every 30 minutes",
-                "correct": "To generate a unique password every 30 minutes",
-                "isCorrect": true
-            },
-            {
-                "question": "What is a common technique used to guess passwords by trying each possible combination of characters in alphabetical order, starting with 'a' and going up to 'z', before moving on to numbers?",
-                "selected": "Dictionary Attack",
-                "correct": "Dictionary Attack",
-                "isCorrect": true
-            },
-            {
-                "question": "A user suspects their computer has been infected with malware after noticing unusual slow performance and frequent pop-up ads. What is likely the primary indicator of malware infection?",
-                "selected": "Unusual pop-up ads and slow system performance",
-                "correct": "Unusual pop-up ads and slow system performance",
-                "isCorrect": true
-            }
-        ]
-    },
-    {
-        "played_at": "2026-06-25T18:34:46.196829",
-        "history": [
-            {
-                "question": "What should you do if someone asks for your secret password or sends you an email that says \"Free Cookie\"?",
-                "selected": "Ignore and ask a grown-up",
-                "correct": "Ignore and ask a grown-up",
-                "isCorrect": true
-            },
-            {
-                "question": "What is something that can happen to a computer's internet connection if someone tries to trick it into revealing its password?",
-                "selected": "Someone tries to hack the network",
-                "correct": "Someone tries to hack the network",
-                "isCorrect": true
-            },
-            {
-                "question": "Your friend sends you an email that says \"Free Candy\" and asks you to click on a link to get it. What should you do?",
-                "selected": "Ask a grown-up before clicking",
-                "correct": "Ask a grown-up before clicking",
-                "isCorrect": true
-            },
-            {
-                "question": "What is something that scammers might send to trick you into giving them your password?",
-                "selected": "A fake email from your favorite website",
-                "correct": "A fake email from your favorite website",
+                "question": "What is a common mistake people make when creating strong passwords?",
+                "selected": "Reusing passwords across multiple accounts",
+                "correct": "Reusing passwords across multiple accounts",
                 "isCorrect": true
             }
         ]
