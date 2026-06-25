@@ -79,105 +79,37 @@ def Static_Game(cursor, level):
 
 # DYNAMIC
 # This will run when a dynamic primary school game is selected. It will gather all questions for the game and then empty the dynamic table.
-def Dynamic_Primary_School(cursor):
+def Dynamic_Game(cursor, difficulty_level):
     game = []
-    
-    for i in range(0, 20):
-        question_text = generation.generate_question("easy")
+
+    # map your difficulty strings to AI input
+    level_map = {
+        "primary": "easy",
+        "secondary": "medium",
+        "college": "hard",
+        "expert": "expert"
+    }
+
+    ai_level = level_map[difficulty_level]
+
+    # 1. Generate questions + insert into DB
+    count = 0
+    while count < 15:
+        question_text = generation.generate_question(ai_level)
 
         try:
             question, answers, correct_answer = insert.parse_question_and_answers(question_text)
             insert.insert_question_into_db(question, answers, correct_answer)
-            print("Question inserted successfully!")
+            count += 1
         except Exception as e:
-            print(f"An error occurred: {e}")
+            print(f"Generation error: {e}")
+            continue
 
-    # add questions from database to game
-    sql_dynamic_primary = "SELECT * FROM dynamic LIMIT 15;"
-    result = run_sql(cursor, sql_dynamic_primary)
-    #save everything as variables 
+    result = run_sql(cursor, "SELECT * FROM dynamic LIMIT 15;")
+
     for row in result:
         game.append(row)
 
-    # Clear the dynamic table
-    cursor.execute("TRUNCATE TABLE dynamic;")
-
-    return game
-
-# This will run when a dynamic secondary school game is selected. It will gather all questions for the game.
-def Dynamic_Secondary_School(cursor):
-    game = []
-    
-    for i in range(0, 20):
-        question_text = generation.generate_question("medium")
-
-        try:
-            question, answers, correct_answer = insert.parse_question_and_answers(question_text)
-            insert.insert_question_into_db(question, answers, correct_answer)
-            print("Question inserted successfully!")
-        except Exception as e:
-            print(f"An error occurred: {e}")
-
-    # add questions from database to game
-    sql_dynamic_secondary = "SELECT * FROM dynamic LIMIT 15;"
-    result = run_sql(cursor, sql_dynamic_secondary)
-    #save everything as variables 
-    for row in result:
-        game.append(row)
-
-    # Clear the dynamic table
-    cursor.execute("TRUNCATE TABLE dynamic;")
-
-    return game
-
-# This will run when a dynamic college game is selected. It will gather all questions for the game.
-def Dynamic_College(cursor):
-    game = []
-    
-    for i in range(0, 20):
-        question_text = generation.generate_question("hard")
-
-        try:
-            question, answers, correct_answer = insert.parse_question_and_answers(question_text)
-            insert.insert_question_into_db(question, answers, correct_answer)
-            print("Question inserted successfully!")
-        except Exception as e:
-            print(f"An error occurred: {e}")
-
-    # add questions from database to game
-    sql_dynamic_college = "SELECT * FROM dynamic LIMIT 15;"
-    result = run_sql(cursor, sql_dynamic_college)
-    #save everything as variables 
-    for row in result:
-        game.append(row)
-
-    # Clear the dynamic table
-    cursor.execute("TRUNCATE TABLE dynamic;")
-
-    return game
-
-# This will run when a dynamic expert game is selected. It will gather all questions for the game.
-def Dynamic_Expert(cursor):
-    game = []
-    
-    for i in range(0, 20):
-        question_text = generation.generate_question("expert")
-
-        try:
-            question, answers, correct_answer = insert.parse_question_and_answers(question_text)
-            insert.insert_question_into_db(question, answers, correct_answer)
-            print("Question inserted successfully!")
-        except Exception as e:
-            print(f"An error occurred: {e}")
-
-    # add questions from database to game
-    sql_dynamic_expert = "SELECT * FROM dynamic LIMIT 15;"
-    result = run_sql(cursor, sql_dynamic_expert)
-    #save everything as variables 
-    for row in result:
-        game.append(row)
-
-    # Clear the dynamic table
     cursor.execute("TRUNCATE TABLE dynamic;")
 
     return game
@@ -198,29 +130,20 @@ def export_questions(selection):
     except Error as e:
         print("Error reading data from MySQL table", e)
     
-    if selection == '1':
-        game = Static_Game(cursor,selection)
-
-    elif selection == '2':
-        game = Static_Game(cursor,selection)
-
-    elif selection == '3':
-        game = Static_Game(cursor,selection)
-
-    elif selection == '4':
+    if selection == '1' or selection == '2' or selection == '3' or selection == '4':
         game = Static_Game(cursor,selection)
 
     elif selection == 'dynamic-1':
-        game = Dynamic_Primary_School(cursor)
+        game = Dynamic_Game(cursor,"primary")
 
     elif selection == 'dynamic-2':
-        game = Dynamic_Secondary_School(cursor)
+        game = Dynamic_Game(cursor,"secondary")
 
     elif selection == 'dynamic-3':
-        game = Dynamic_College(cursor)
+        game = Dynamic_Game(cursor,"college")
 
     elif selection == 'dynamic-4':
-        game = Dynamic_Expert(cursor)
+        game = Dynamic_Game(cursor,"expert")
 
     else:
         print("Invalid Level Selection!")

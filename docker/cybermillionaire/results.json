@@ -504,5 +504,169 @@
                 "isCorrect": true
             }
         ]
+    },
+    {
+        "played_at": "2026-06-25T18:15:09.264153",
+        "history": [
+            {
+                "question": "How can you protect your computer from malware?",
+                "selected": "Clicking on every pop-up ad you see",
+                "correct": "Installing antivirus software and keeping it updated",
+                "isCorrect": false
+            },
+            {
+                "question": "How can you protect your computer from malware?",
+                "selected": "Sharing your computer password with friends",
+                "correct": "Installing antivirus software and keeping it updated",
+                "isCorrect": false
+            },
+            {
+                "question": "How can you protect your computer from malware?",
+                "selected": "Installing antivirus software and keeping it updated",
+                "correct": "Installing antivirus software and keeping it updated",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following indicates that a website is secure?",
+                "selected": "The website address begins with 'https://'",
+                "correct": "The website address begins with 'https://'",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following indicates that a website is secure and can be trusted?",
+                "selected": "The website address starts with 'https://'",
+                "correct": "The website address starts with 'https://'",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a common practice that can help keep your social media account secure?",
+                "selected": "Posting personal information publicly",
+                "correct": "Using two-factor authentication",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a common practice that can help keep your social media account secure?",
+                "selected": "Using two-factor authentication",
+                "correct": "Using two-factor authentication",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T18:19:43.056617",
+        "history": [
+            {
+                "question": "What is something that you should never share your password with?",
+                "selected": "A social media site you don't know",
+                "correct": "Your best friend",
+                "isCorrect": false
+            },
+            {
+                "question": "What is something that you should never share your password with?",
+                "selected": "A computer game website",
+                "correct": "Your best friend",
+                "isCorrect": false
+            },
+            {
+                "question": "What is something that you should never share your password with?",
+                "selected": "Your best friend",
+                "correct": "Your best friend",
+                "isCorrect": true
+            },
+            {
+                "question": "What should you never share with anyone when creating a password?",
+                "selected": "A secret word",
+                "correct": "Your name",
+                "isCorrect": false
+            },
+            {
+                "question": "What should you never share with anyone when creating a password?",
+                "selected": "Your name",
+                "correct": "Your name",
+                "isCorrect": true
+            },
+            {
+                "question": "What can you do to hide your online searches?",
+                "selected": "Use strong passwords",
+                "correct": "Use strong passwords",
+                "isCorrect": true
+            },
+            {
+                "question": "Why do you need to type in your password when you visit a secure website?",
+                "selected": "To keep your password safe from hackers",
+                "correct": "To keep your password safe from hackers",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T18:32:37.673326",
+        "history": [
+            {
+                "question": "What is the primary function of a firewall in network security?",
+                "selected": "To filter and restrict incoming and outgoing network traffic based on predetermined security rules",
+                "correct": "To filter and restrict incoming and outgoing network traffic based on predetermined security rules",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of using a Time-Based One-Time Password (TOTP) token in two-factor authentication?",
+                "selected": "To authenticate users after a successful login attempt",
+                "correct": "To generate a unique password every 30 minutes",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of using a Time-Based One-Time Password (TOTP) token in two-factor authentication?",
+                "selected": "To generate a time-stamped code that changes every 60 seconds",
+                "correct": "To generate a unique password every 30 minutes",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of using a Time-Based One-Time Password (TOTP) token in two-factor authentication?",
+                "selected": "To generate a unique password every 30 minutes",
+                "correct": "To generate a unique password every 30 minutes",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a common technique used to guess passwords by trying each possible combination of characters in alphabetical order, starting with 'a' and going up to 'z', before moving on to numbers?",
+                "selected": "Dictionary Attack",
+                "correct": "Dictionary Attack",
+                "isCorrect": true
+            },
+            {
+                "question": "A user suspects their computer has been infected with malware after noticing unusual slow performance and frequent pop-up ads. What is likely the primary indicator of malware infection?",
+                "selected": "Unusual pop-up ads and slow system performance",
+                "correct": "Unusual pop-up ads and slow system performance",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T18:34:46.196829",
+        "history": [
+            {
+                "question": "What should you do if someone asks for your secret password or sends you an email that says \"Free Cookie\"?",
+                "selected": "Ignore and ask a grown-up",
+                "correct": "Ignore and ask a grown-up",
+                "isCorrect": true
+            },
+            {
+                "question": "What is something that can happen to a computer's internet connection if someone tries to trick it into revealing its password?",
+                "selected": "Someone tries to hack the network",
+                "correct": "Someone tries to hack the network",
+                "isCorrect": true
+            },
+            {
+                "question": "Your friend sends you an email that says \"Free Candy\" and asks you to click on a link to get it. What should you do?",
+                "selected": "Ask a grown-up before clicking",
+                "correct": "Ask a grown-up before clicking",
+                "isCorrect": true
+            },
+            {
+                "question": "What is something that scammers might send to trick you into giving them your password?",
+                "selected": "A fake email from your favorite website",
+                "correct": "A fake email from your favorite website",
+                "isCorrect": true
+            }
+        ]
     }
 ]
