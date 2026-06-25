@@ -434,5 +434,75 @@
                 "isCorrect": true
             }
         ]
+    },
+    {
+        "played_at": "2026-06-25T18:01:27.620676",
+        "history": [
+            {
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is using fancy decorations",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": false
+            },
+            {
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is secure and encrypted",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": true
+            },
+            {
+                "question": "What does it mean if a website has 'https://' at the beginning of its URL?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website URL indicate?",
+                "selected": "The website is not secure",
+                "correct": "The website is secure",
+                "isCorrect": false
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website URL indicate?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following indicates that a website is secure?",
+                "selected": "The website address begins with 'https://'",
+                "correct": "The website address begins with 'https://'",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-25T18:02:05.490164",
+        "history": [
+            {
+                "question": "Which of the following is NOT a part of your digital footprint?",
+                "selected": "Conversations with friends in person",
+                "correct": "Conversations with friends in person",
+                "isCorrect": true
+            },
+            {
+                "question": "How can you protect your computer from malware?",
+                "selected": "Installing antivirus software and keeping it updated",
+                "correct": "Installing antivirus software and keeping it updated",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a common practice that can help keep your social media account secure?",
+                "selected": "Using two-factor authentication",
+                "correct": "Using two-factor authentication",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website address indicate?",
+                "selected": "The website is secure and encrypted ",
+                "correct": "The website is secure and encrypted ",
+                "isCorrect": true
+            }
+        ]
     }
 ]

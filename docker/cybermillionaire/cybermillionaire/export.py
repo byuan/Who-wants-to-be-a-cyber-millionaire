@@ -6,8 +6,11 @@ import cybermillionaire.dynamic_question_generation as generation
 import cybermillionaire.database_insert as insert
 
 # Executes all export functionality
-def run_sql(cursor, query):
-    cursor.execute(query)
+def run_sql(cursor, query, param=None):
+    if param:
+        cursor.execute(query, param)
+    else:
+        cursor.execute(query)
     records = cursor.fetchall() #All the records for that query are here.
     return records
     
@@ -53,119 +56,26 @@ def generate_json(game):
         json.dump(json_file, outfile)
 
 # This will run when a Static Primary School game is selected. It will gather all questions for the game       
-def Static_Primary_School(cursor):
+def Static_Game(cursor, level):
     game = []
 
-    # Gets the 5 easy questions for the Static Primary School game
-    sql_Primary_T1 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'easy' AND Level = 1 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Primary_T1)
-    #save everything as variables
-    for row in result:
-        game.append(row)
+    difficulties = ["easy", "medium", "hard"]
 
-        
-    # Gets the 5 medium questions for the Static Primary School game
-    sql_Primary_T2 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'medium' and Level = 1 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Primary_T2)
-    #save everything as variables
-    for row in result:
-        game.append(row)
+    for diff in difficulties:
+        sql = """
+        SELECT Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level
+        FROM millionaire
+        WHERE Difficulty = %s AND Level = %s
+        ORDER BY rand()
+        LIMIT 5;
+        """
 
-    # Gets the 5 hard questions for the Static Primary School game
-    sql_Primary_T3 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'hard' and Level = 1 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Primary_T3)
-    #save everything as variables
-    for row in result:
-        game.append(row)
+        result = run_sql(cursor, sql, (diff, level))
+
+        for row in result:
+            game.append(row)
 
     return game
-
-
-# This will run when a Static Secondary School game is selected. It will gather all questions for the game
-def Static_Secondary_School(cursor):
-    game = []
-
-    # Gets the 5 easy questions for the Static Secondary School game
-    sql_Secondary_T1 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'easy' AND Level = 2 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Secondary_T1)
-    #save everything as variables 
-    for row in result:
-        game.append(row)
-
-    # Gets the 5 medium questions for the Static Secondary School game
-    sql_Secondary_T2 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'medium' AND Level = 2 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Secondary_T2)
-    #save everything as variables 
-    for row in result:
-        game.append(row)
-
-    # Gets the 5 hard questions for the Static Secondary School game
-    sql_Secondary_T3 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'hard' AND Level = 2 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Secondary_T3)
-    #save everything as variables 
-    for row in result:
-        game.append(row)
-
-    return game
-
-
-# This will run when a Static College game is selected. It will gather all questions for the game.
-def Static_College(cursor):
-    game = []
-
-    # Gets the 5 easy questions for the Static College game
-    sql_College_T1 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'easy' AND Level = 3 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_College_T1)
-    #save everything as variables 
-    for row in result:
-        game.append(row)
-
-
-    # Gets the 5 medium questions for the Static College game
-    sql_College_T2 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'medium' AND Level = 3 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_College_T2)
-    #save everything as variables
-    for row in result:
-        game.append(row)
-
-    # Gets the 5 hard questions for the Static College game
-    sql_College_T3 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'hard' AND Level = 3 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_College_T3)
-    #save everything as variables
-    for row in result:
-        game.append(row)
-
-    return game
-
-
-# This will run when a Static Expert game is selected. It will gather all questions for the game
-def Static_Expert(cursor):
-    game = []
-
-    # Gets the 5 easy questions for the Static Expert game
-    sql_Expert_T1 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'easy' AND Level = 4 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Expert_T1)
-    #save everything as variables
-    for row in result:
-        game.append(row)
-
-
-    # Gets the 5 medium questions for the Static Expert game
-    sql_Expert_T2 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'medium' AND Level = 4 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Expert_T2)
-    #save everything as variables
-    for row in result:
-        game.append(row)
-
-    # Gets the 5 hard questions for the Static Expert game
-    sql_Expert_T3 = "select Question, Ans1, Ans2, Ans3, Ans4, Correct, Difficulty, Level FROM millionaire WHERE Difficulty = 'hard' AND Level = 4 ORDER BY rand() LIMIT 5;"
-    result = run_sql(cursor, sql_Expert_T3)
-    #save everything as variables
-    for row in result:
-        game.append(row)
-    
-    return game
-
 
 # DYNAMIC
 # This will run when a dynamic primary school game is selected. It will gather all questions for the game and then empty the dynamic table.
@@ -289,16 +199,16 @@ def export_questions(selection):
         print("Error reading data from MySQL table", e)
     
     if selection == '1':
-        game = Static_Primary_School(cursor)
+        game = Static_Game(cursor,selection)
 
     elif selection == '2':
-        game = Static_Secondary_School(cursor)
+        game = Static_Game(cursor,selection)
 
     elif selection == '3':
-        game = Static_College(cursor)
+        game = Static_Game(cursor,selection)
 
     elif selection == '4':
-        game = Static_Expert(cursor)
+        game = Static_Game(cursor,selection)
 
     elif selection == 'dynamic-1':
         game = Dynamic_Primary_School(cursor)
