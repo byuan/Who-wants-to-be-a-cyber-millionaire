@@ -47,10 +47,30 @@ def get_results(request):
     except Exception as e:
         return JsonResponse({"error": str(e)})
     
+def save_topics(request):
+    try:
+        if request.method == "POST":
+            selected_topics = request.POST.getlist("topics")
+            settings = {
+                "easy": selected_topics
+            }
+            with open("cybermillionaire/topic_settings.json", "w") as f:
+                json.dump(settings, f, indent=4)
+
+        return JsonResponse({"status": "success"})
+    except Exception as e:
+        return JsonResponse({"error": str(e)})
+    
+    
 def ai_feedback(request):
-    feedback = generate_ai_feedback()
+    feedback = generate_ai_feedback("results.json")
     t = template.loader.get_template('feedback.html')
     html = t.render({"feedback": feedback})
+    return HttpResponse(html)
+
+def topics(request):
+    t = template.loader.get_template('topics.html')
+    html = t.render()
     return HttpResponse(html)
 
 def index(request):

@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Topics</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="vertical-center">
+
+        <h1>Select Question Topics</h1>
+
+        <form action="/save-topics/" method="post">
+            {% csrf_token %}
+
+            <label>
+                <input type="checkbox" name="topics" value="Passwords" checked>
+                Passwords
+            </label><br>
+
+            <label>
+                <input type="checkbox" name="topics" value="Internet Safety" checked>
+                Internet Safety
+            </label><br>
+
+            <label>
+                <input type="checkbox" name="topics" value="Cyberbullying" checked>
+                Cyberbullying
+            </label><br>
+
+            <label>
+                <input type="checkbox" name="topics" value="Social Media" checked>
+                Social Media
+            </label><br>
+
+            <label>
+                <input type="checkbox" name="topics" value="Secure Websites" checked>
+                Secure Websites
+            </label><br>
+
+            <label>
+                <input type="checkbox" name="topics" value="Hacking" checked>
+                Hacking
+            </label><br>
+
+            <label>
+                <input type="checkbox" name="topics" value="Digital Footprints" checked>
+                Digital Footprints
+            </label><br>
+
+            <label>
+                <input type="checkbox" name="topics" value="Phishing" checked>
+                Phishing
+            </label><br>
+
+            <label>
+                <input type="checkbox" name="topics" value="Safe Downloading" checked>
+                Safe Downloading
+            </label><br><br>
+
+            <input type="submit" value="Save">
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
