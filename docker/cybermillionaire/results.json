@@ -180,5 +180,52 @@
                 "isCorrect": true
             }
         ]
+    },
+    {
+        "played_at": "2026-06-30T22:41:29.530050",
+        "history": [
+            {
+                "question": "What should you NOT use as your password?",
+                "selected": "A word like \"password\"",
+                "correct": "A word like \"password\"",
+                "isCorrect": true
+            },
+            {
+                "question": "What should you never share with anyone, especially not your friends or family members?",
+                "selected": "Your secret password for online games",
+                "correct": "Your secret password for online games",
+                "isCorrect": true
+            },
+            {
+                "question": "Why should you never share your password with your friend?",
+                "selected": "It keeps you safe from hackers",
+                "correct": "It keeps you safe from hackers",
+                "isCorrect": true
+            },
+            {
+                "question": "What should you never do when creating a password?",
+                "selected": "Choose a password that is easy to guess",
+                "correct": "Write down your password and keep it safe",
+                "isCorrect": false
+            },
+            {
+                "question": "What should you never do when creating a password?",
+                "selected": "Use your favorite sports team's name",
+                "correct": "Write down your password and keep it safe",
+                "isCorrect": false
+            },
+            {
+                "question": "What should you never do when creating a password?",
+                "selected": "Change your password every day",
+                "correct": "Write down your password and keep it safe",
+                "isCorrect": false
+            },
+            {
+                "question": "What should you never do when creating a password?",
+                "selected": "Write down your password and keep it safe",
+                "correct": "Write down your password and keep it safe",
+                "isCorrect": true
+            }
+        ]
     }
 ]

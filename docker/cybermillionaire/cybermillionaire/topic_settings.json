@@ -1,9 +1,14 @@
 {
-    "easy": [],
-    "medium": [],
-    "hard": [],
+    "easy": [
+        "Passwords"
+    ],
+    "medium": [
+        "Passwords"
+    ],
+    "hard": [
+        "Intrusion Detection Systems"
+    ],
     "expert": [
-        "TCP Protocol",
-        "Wireless Security Protocol"
+        "TCP Protocol"
     ]
 }

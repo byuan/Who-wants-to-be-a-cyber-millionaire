@@ -89,6 +89,25 @@
                 color: white;
             }
 
+            .settings-button {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+
+                background: #4CAF50;
+                color: white;
+                border: none;
+                padding: 10px 14px;
+                border-radius: 8px;
+
+                font-size: 14px;
+                cursor: pointer;
+            }
+
+            .settings-button:hover {
+                background: #45a049;
+            }
+
             #dynamicStatus {
                 font-size: 16px;
                 color: #e7910f;
@@ -102,9 +121,9 @@
         <div class="container">
             <div class="vertical-center">
 
-                <button onclick="window.location.href='/topics/'">
-                    Topic Selection
-                </button>
+            <button class="settings-button" onclick="window.location.href='/topics/'">
+                ⚙ Topics
+            </button>
                 <!-- Buttons with pre-rendered static and dynamic URLs -->
                 <input 
                     class="btn btn-success" 
