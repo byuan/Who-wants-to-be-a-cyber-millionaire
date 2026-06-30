@@ -70,12 +70,30 @@
                     </div>
             </div>
             
-            <div id="game-over" style="display: none;">Game Over!<br><button onclick="window.location.replace('/')">Play again?</button></div>
+            <div id="game-over" style="display: none;">
+                <div class="end-screen">
+                    <h1>Game Over</h1>
+
+                    <button class="game-button" onclick="window.location.replace('/')">
+                        Play Again
+                    </button>
+                </div>
+            </div>
             
             <div id="report" style="display: none;">
                 <h1>Post Game Report</h1>
-                <div id="report-content"></div><button onclick="window.location.replace('/')">Play again?</button>
-                <button onclick="window.location.href='/ai-feedback/'">Get AI Feedback</button>
+
+                <div id="report-content"></div>
+
+                <div class="report-buttons">
+                    <button class="game-button" onclick="window.location.replace('/')">
+                        Play Again
+                    </button>
+
+                    <button class="game-button" onclick="window.location.href='/ai-feedback/'">
+                        AI Feedback
+                    </button>
+                </div>
             </div>
         
             

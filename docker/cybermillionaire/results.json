@@ -297,5 +297,105 @@
                 "isCorrect": true
             }
         ]
+    },
+    {
+        "played_at": "2026-06-30T23:38:53.059170",
+        "history": [
+            {
+                "question": "What is the primary purpose of the Kerberos ticket-granting ticket (TGT) in the Kerberos authentication protocol?",
+                "selected": "To grant the client access to a specific service or resource",
+                "correct": "To verify the client's identity with the Kerberos Authentication Server",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of the Kerberos ticket-granting ticket (TGT) in the Kerberos authentication protocol?",
+                "selected": "To delegate access to multiple services from a single session",
+                "correct": "To verify the client's identity with the Kerberos Authentication Server",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of the Kerberos ticket-granting ticket (TGT) in the Kerberos authentication protocol?",
+                "selected": "To verify the client's identity with the Kerberos Authentication Server",
+                "correct": "To verify the client's identity with the Kerberos Authentication Server",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of the Ticket-Granting Service (TGS) in Kerberos Authentication?",
+                "selected": "Authenticating clients to servers",
+                "correct": "Caching and renewing tickets",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of the Ticket-Granting Service (TGS) in Kerberos Authentication?",
+                "selected": "To verify user identity",
+                "correct": "Caching and renewing tickets",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of the Ticket-Granting Service (TGS) in Kerberos Authentication?",
+                "selected": "Caching and renewing tickets",
+                "correct": "Caching and renewing tickets",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of the Ticket Granting Ticket (TGT) in the Kerberos authentication protocol?",
+                "selected": "To authorize access to a specific resource or service",
+                "correct": "To authorize access to a specific resource or service",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of the Key Distribution Center (KDC) in Kerberos Authentication?",
+                "selected": "To store and manage user credentials for all applications",
+                "correct": "To issue service tickets to authenticated clients",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of the Key Distribution Center (KDC) in Kerberos Authentication?",
+                "selected": "To authenticate users and verify their identities",
+                "correct": "To issue service tickets to authenticated clients",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of the Key Distribution Center (KDC) in Kerberos Authentication?",
+                "selected": "To encrypt data transmitted between clients and servers",
+                "correct": "To issue service tickets to authenticated clients",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of the Key Distribution Center (KDC) in Kerberos Authentication?",
+                "selected": "To issue service tickets to authenticated clients",
+                "correct": "To issue service tickets to authenticated clients",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-30T23:40:44.043677",
+        "history": [
+            {
+                "question": "How can you protect your computer from malware?",
+                "selected": "Installing antivirus software and keeping it updated",
+                "correct": "Installing antivirus software and keeping it updated",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is secure and encrypted",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a common practice that can help keep your social media account secure?",
+                "selected": "Using two-factor authentication",
+                "correct": "Using two-factor authentication",
+                "isCorrect": true
+            },
+            {
+                "question": "What does a firewall do for your computer?",
+                "selected": "Blocks unauthorized access to your computer",
+                "correct": "Blocks unauthorized access to your computer",
+                "isCorrect": true
+            }
+        ]
     }
 ]

@@ -1,8 +1,17 @@
 {
-    "easy": [],
-    "medium": [],
-    "hard": [],
+    "easy": [
+        "Social Media",
+        "Secure Websites"
+    ],
+    "medium": [
+        "Firewall"
+    ],
+    "hard": [
+        "Digital Forensics",
+        "Cryptography",
+        "Blockchain Security"
+    ],
     "expert": [
-        "SSL/X509 Certificates"
+        "Kerberos Authentication"
     ]
 }
