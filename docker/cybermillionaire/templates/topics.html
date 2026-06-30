@@ -9,73 +9,165 @@
 
 <body>
 
-<div class="container">
-    <div class="vertical-center">
+    <div class="topic-container">
 
         <h1>Select Question Topics</h1>
 
-        <form action="/save-topics/" method="post">
+        {% if error %}
+            <div class="error-box">
+                {{ error }}
+            </div>
+        {% endif %}
 
-            <h2>Primary School</h2>
+        <form action="{% url 'save_topics' %}" method="post">
 
-            <label><input type="checkbox" name="easy_topics" value="Passwords"> Passwords</label><br>
-            <label><input type="checkbox" name="easy_topics" value="Internet Safety"> Internet Safety</label><br>
-            <label><input type="checkbox" name="easy_topics" value="Cyberbullying"> Cyberbullying</label><br>
-            <label><input type="checkbox" name="easy_topics" value="Social Media"> Social Media</label><br>
-            <label><input type="checkbox" name="easy_topics" value="Secure Websites"> Secure Websites</label><br>
-            <label><input type="checkbox" name="easy_topics" value="Hacking"> Hacking</label><br>
-            <label><input type="checkbox" name="easy_topics" value="Digital Footprints"> Digital Footprints</label><br>
-            <label><input type="checkbox" name="easy_topics" value="Data"> Data</label><br>
-            <label><input type="checkbox" name="easy_topics" value="Phishing"> Phishing</label><br>
-            <label><input type="checkbox" name="easy_topics" value="Safe Downloading"> Safe Downloading</label>
-
-            <h2>Secondary School</h2>
-
-            <label><input type="checkbox" name="medium_topics" value="Passwords"> Passwords</label><br>
-            <label><input type="checkbox" name="medium_topics" value="Phishing"> Phishing</label><br>
-            <label><input type="checkbox" name="medium_topics" value="Encryption"> Encryption</label><br>
-            <label><input type="checkbox" name="medium_topics" value="Firewall"> Firewall</label><br>
-            <label><input type="checkbox" name="medium_topics" value="Malware"> Malware</label><br>
-            <label><input type="checkbox" name="medium_topics" value="Two-factor authentication"> Two-factor Authentication</label><br>
-            <label><input type="checkbox" name="medium_topics" value="Social Engineering"> Social Engineering</label><br>
-            <label><input type="checkbox" name="medium_topics" value="Network Security"> Network Security</label><br>
-            <label><input type="checkbox" name="medium_topics" value="Endpoint Security"> Endpoint Security</label><br>
-            <label><input type="checkbox" name="medium_topics" value="Advanced Persistent Threats"> Advanced Persistent Threats</label>
-
-            <h2>College</h2>
-
-            <label><input type="checkbox" name="hard_topics" value="Intrusion Detection Systems"> Intrusion Detection Systems</label><br>
-            <label><input type="checkbox" name="hard_topics" value="Cyber Threat Intelligence"> Cyber Threat Intelligence</label><br>
-            <label><input type="checkbox" name="hard_topics" value="Digital Forensics"> Digital Forensics</label><br>
-            <label><input type="checkbox" name="hard_topics" value="Cryptography"> Cryptography</label><br>
-            <label><input type="checkbox" name="hard_topics" value="Blockchain Security"> Blockchain Security</label><br>
-            <label><input type="checkbox" name="hard_topics" value="Secure Coding Practices"> Secure Coding Practices</label><br>
-            <label><input type="checkbox" name="hard_topics" value="Ethical Hacking"> Ethical Hacking</label><br>
-            <label><input type="checkbox" name="hard_topics" value="Social Engineering"> Social Engineering</label><br>
-            <label><input type="checkbox" name="hard_topics" value="Cyber Incident Response"> Cyber Incident Response</label><br>
-            <label><input type="checkbox" name="hard_topics" value="Network Encryption"> Network Encryption</label>
-
-            <h2>Expert</h2>
-
-            <label><input type="checkbox" name="expert_topics" value="TCP Protocol"> TCP Protocol</label><br>
-            <label><input type="checkbox" name="expert_topics" value="Wireless Security Protocol"> Wireless Security Protocol</label><br>
-            <label><input type="checkbox" name="expert_topics" value="HTTP Headers"> HTTP Headers</label><br>
-            <label><input type="checkbox" name="expert_topics" value="Virtualization"> Virtualization</label><br>
-            <label><input type="checkbox" name="expert_topics" value="Kerberos Authentication"> Kerberos Authentication</label><br>
-            <label><input type="checkbox" name="expert_topics" value="TCP/UDP Protocol"> TCP/UDP Protocol</label><br>
-            <label><input type="checkbox" name="expert_topics" value="SSL/X509 Certificates"> SSL/X509 Certificates</label><br>
-            <label><input type="checkbox" name="expert_topics" value="Asymmetric/Symmetric Encryption for Cryptography"> Asymmetric/Symmetric Encryption for Cryptography</label><br>
-            <label><input type="checkbox" name="expert_topics" value="Linux/Unix System Forensics"> Linux/Unix System Forensics</label><br>
-            <label><input type="checkbox" name="expert_topics" value="Technical Aspects of Network Protocols"> Technical Aspects of Network Protocols</label>
-
-            <br><br>
+            {% csrf_token %}
             
-            <input type="submit" value="Save" onclick="window.location.replace('/')">
+            <div class="topic-grid">
+                <div class="topic-column">
+                    <h2>Primary School</h2>
+
+                    <label><input type="checkbox" name="easy_topics" value="Passwords"
+                        {% if "Passwords" in settings.easy %}checked{% endif %}> Passwords</label><br>
+
+                    <label><input type="checkbox" name="easy_topics" value="Internet Safety"
+                        {% if "Internet Safety" in settings.easy %}checked{% endif %}> Internet Safety</label><br>
+
+                    <label><input type="checkbox" name="easy_topics" value="Cyberbullying"
+                        {% if "Cyberbullying" in settings.easy %}checked{% endif %}> Cyberbullying</label><br>
+
+                    <label><input type="checkbox" name="easy_topics" value="Social Media"
+                        {% if "Social Media" in settings.easy %}checked{% endif %}> Social Media</label><br>
+
+                    <label><input type="checkbox" name="easy_topics" value="Secure Websites"
+                        {% if "Secure Websites" in settings.easy %}checked{% endif %}> Secure Websites</label><br>
+
+                    <label><input type="checkbox" name="easy_topics" value="Hacking"
+                        {% if "Hacking" in settings.easy %}checked{% endif %}> Hacking</label><br>
+
+                    <label><input type="checkbox" name="easy_topics" value="Digital Footprints"
+                        {% if "Digital Footprints" in settings.easy %}checked{% endif %}> Digital Footprints</label><br>
+
+                    <label><input type="checkbox" name="easy_topics" value="Data"
+                        {% if "Data" in settings.easy %}checked{% endif %}> Data</label><br>
+
+                    <label><input type="checkbox" name="easy_topics" value="Phishing"
+                        {% if "Phishing" in settings.easy %}checked{% endif %}> Phishing</label><br>
+
+                    <label><input type="checkbox" name="easy_topics" value="Safe Downloading"
+                        {% if "Safe Downloading" in settings.easy %}checked{% endif %}> Safe Downloading</label>
+                </div>
+
+                <div class="topic-column">            
+                    <h2>Secondary School</h2>
+
+                    <label><input type="checkbox" name="medium_topics" value="Passwords"
+                        {% if "Passwords" in settings.medium %}checked{% endif %}> Passwords</label><br>
+
+                    <label><input type="checkbox" name="medium_topics" value="Phishing"
+                        {% if "Phishing" in settings.medium %}checked{% endif %}> Phishing</label><br>
+
+                    <label><input type="checkbox" name="medium_topics" value="Encryption"
+                        {% if "Encryption" in settings.medium %}checked{% endif %}> Encryption</label><br>
+
+                    <label><input type="checkbox" name="medium_topics" value="Firewall"
+                        {% if "Firewall" in settings.medium %}checked{% endif %}> Firewall</label><br>
+
+                    <label><input type="checkbox" name="medium_topics" value="Malware"
+                        {% if "Malware" in settings.medium %}checked{% endif %}> Malware</label><br>
+
+                    <label><input type="checkbox" name="medium_topics" value="Two-factor authentication"
+                        {% if "Two-factor authentication" in settings.medium %}checked{% endif %}> Two-factor Authentication</label><br>
+
+                    <label><input type="checkbox" name="medium_topics" value="Social Engineering"
+                        {% if "Social Engineering" in settings.medium %}checked{% endif %}> Social Engineering</label><br>
+
+                    <label><input type="checkbox" name="medium_topics" value="Network Security"
+                        {% if "Network Security" in settings.medium %}checked{% endif %}> Network Security</label><br>
+
+                    <label><input type="checkbox" name="medium_topics" value="Endpoint Security"
+                        {% if "Endpoint Security" in settings.medium %}checked{% endif %}> Endpoint Security</label><br>
+
+                    <label><input type="checkbox" name="medium_topics" value="Advanced Persistent Threats"
+                        {% if "Advanced Persistent Threats" in settings.medium %}checked{% endif %}> Advanced Persistent Threats</label>
+                </div>
+
+                <div class="topic-column">
+                    <h2>College</h2>
+
+                    <label><input type="checkbox" name="hard_topics" value="Intrusion Detection Systems"
+                        {% if "Intrusion Detection Systems" in settings.hard %}checked{% endif %}> Intrusion Detection Systems</label><br>
+
+                    <label><input type="checkbox" name="hard_topics" value="Cyber Threat Intelligence"
+                        {% if "Cyber Threat Intelligence" in settings.hard %}checked{% endif %}> Cyber Threat Intelligence</label><br>
+
+                    <label><input type="checkbox" name="hard_topics" value="Digital Forensics"
+                        {% if "Digital Forensics" in settings.hard %}checked{% endif %}> Digital Forensics</label><br>
+
+                    <label><input type="checkbox" name="hard_topics" value="Cryptography"
+                        {% if "Cryptography" in settings.hard %}checked{% endif %}> Cryptography</label><br>
+
+                    <label><input type="checkbox" name="hard_topics" value="Blockchain Security"
+                        {% if "Blockchain Security" in settings.hard %}checked{% endif %}> Blockchain Security</label><br>
+
+                    <label><input type="checkbox" name="hard_topics" value="Secure Coding Practices"
+                        {% if "Secure Coding Practices" in settings.hard %}checked{% endif %}> Secure Coding Practices</label><br>
+
+                    <label><input type="checkbox" name="hard_topics" value="Ethical Hacking"
+                        {% if "Ethical Hacking" in settings.hard %}checked{% endif %}> Ethical Hacking</label><br>
+
+                    <label><input type="checkbox" name="hard_topics" value="Social Engineering"
+                        {% if "Social Engineering" in settings.hard %}checked{% endif %}> Social Engineering</label><br>
+
+                    <label><input type="checkbox" name="hard_topics" value="Cyber Incident Response"
+                        {% if "Cyber Incident Response" in settings.hard %}checked{% endif %}> Cyber Incident Response</label><br>
+
+                    <label><input type="checkbox" name="hard_topics" value="Network Encryption"
+                        {% if "Network Encryption" in settings.hard %}checked{% endif %}> Network Encryption</label>
+                </div>
+
+                <div class="topic-column">
+                    <h2>Expert</h2>
+
+                    <label><input type="checkbox" name="expert_topics" value="TCP Protocol"
+                        {% if "TCP Protocol" in settings.expert %}checked{% endif %}> TCP Protocol</label><br>
+
+                    <label><input type="checkbox" name="expert_topics" value="Wireless Security Protocol"
+                        {% if "Wireless Security Protocol" in settings.expert %}checked{% endif %}> Wireless Security Protocol</label><br>
+
+                    <label><input type="checkbox" name="expert_topics" value="HTTP Headers"
+                        {% if "HTTP Headers" in settings.expert %}checked{% endif %}> HTTP Headers</label><br>
+
+                    <label><input type="checkbox" name="expert_topics" value="Virtualization"
+                        {% if "Virtualization" in settings.expert %}checked{% endif %}> Virtualization</label><br>
+
+                    <label><input type="checkbox" name="expert_topics" value="Kerberos Authentication"
+                        {% if "Kerberos Authentication" in settings.expert %}checked{% endif %}> Kerberos Authentication</label><br>
+
+                    <label><input type="checkbox" name="expert_topics" value="TCP/UDP Protocol"
+                        {% if "TCP/UDP Protocol" in settings.expert %}checked{% endif %}> TCP/UDP Protocol</label><br>
+
+                    <label><input type="checkbox" name="expert_topics" value="SSL/X509 Certificates"
+                        {% if "SSL/X509 Certificates" in settings.expert %}checked{% endif %}> SSL/X509 Certificates</label><br>
+
+                    <label><input type="checkbox" name="expert_topics" value="Asymmetric/Symmetric Encryption for Cryptography"
+                        {% if "Asymmetric/Symmetric Encryption for Cryptography" in settings.expert %}checked{% endif %}> Asymmetric/Symmetric Encryption for Cryptography</label><br>
+
+                    <label><input type="checkbox" name="expert_topics" value="Linux/Unix System Forensics"
+                        {% if "Linux/Unix System Forensics" in settings.expert %}checked{% endif %}> Linux/Unix System Forensics</label><br>
+
+                    <label><input type="checkbox" name="expert_topics" value="Technical Aspects of Network Protocols"
+                        {% if "Technical Aspects of Network Protocols" in settings.expert %}checked{% endif %}> Technical Aspects of Network Protocols</label>
+                </div>
+            </div>
+                
+            <div class="topic-buttons">
+                <input type="submit" value="Save Topics">
+                <a href="/">Cancel</a>
+            </div>
 
         </form>
-
     </div>
-</div>
 
 </body>
 </html>

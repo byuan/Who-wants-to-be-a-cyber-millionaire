@@ -2,12 +2,6 @@ import requests
 import random
 import json
 
-# Bags of words for each level
-# BAG_O_WORDS_PRIMARY = ['Passwords', 'Internet Safety', 'Cyberbullying', 'Social Media', 'Secure Websites', 'Hacking', 'Digital Footprints', 'Data', 'Phishing', 'Safe Downloading'] 
-# BAG_O_WORDS_SECONDARY = ['Passwords', 'Phishing', 'Encryption', 'Firewall', 'Malware', 'Two-factor authentication', 'Social Engineering', 'Network Security', 'Endpoint Security', 'Advanced Persistent Threats']
-# BAG_O_WORDS_COLLEGE = ['Intrusion Detection Systems', 'Cyber Threat Intelligence', 'Digital Forensics', 'Cryptography', 'Blockchain Security', 'Secure Coding Practices', 'Ethical Hacking', 'Social Engineering', 'Cyber Incident Response', 'Network Encryption']
-# BAG_O_WORDS_EXPERT = ['TCP Protocol', 'Wireless Security Protocol', 'HTTP Headers', 'Virtualization', 'Kerberos Authentication', 'TCP/UDP Protocol', 'SSL/X509 Certificates', 'Asymmetric/Symmetric Encryption for Cryptography', 'Linux/Unix System Forensics', 'Technical Aspects of Network Protocols']
-
 # Dictionary to hold all the level choices
 levels = {"easy": ("You are a school teacher trying to create a cybersecurity quiz.", "primary school"), 
           "medium": ("You are a high school teacher trying to create a cybersecurity quiz.", "secondary school"), 
@@ -15,12 +9,13 @@ levels = {"easy": ("You are a school teacher trying to create a cybersecurity qu
           "expert" : ("You are a cybersecurity expert trying to create a quiz.", "expert with technical experience")}
 
 # Load user-selected topics
-with open("cybermillionaire/topic_settings.json") as f:
-    settings = json.load(f)
+def load_topic_settings():
+    with open("./cybermillionaire/topic_settings.json") as f:
+        return json.load(f)
 
 # Function uses Random module to pick a word and returns it
 def pick_a_word(words):
-    return random.choice(words) # returns the word at the selected index in the specified BAG_O_WORDS
+    return random.choice(words) # returns a random word
 
 # Function that reaches out to the API
 def api(words, content, question_level):
@@ -63,6 +58,8 @@ Do not use markdown.
     return response.json()["response"].strip()
 
 def generate_question(level):
+    settings = load_topic_settings()
+
     words = settings[level]
     content = levels[level][0] # sets the correct content field for the specified level
     question_level = levels[level][1] # sets the correct question level field for the specified level

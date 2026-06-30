@@ -148,8 +148,6 @@ audio {
 	background: url('../img/audience.png') no-repeat 0 0;
 }
 
-
-
 #answer-box {
 	color: white;
 	font-size: 1.3em;
@@ -178,4 +176,95 @@ audio {
 
 .options-button:hover {
 	background-position: 0 -64px !important;
+}
+
+.topic-container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 40px auto;
+    color: white;
+}
+
+.topic-container h1 {
+    margin-bottom: 30px;
+}
+
+.topic-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.topic-column {
+    flex: 1;
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.topic-column h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #4CAF50;
+}
+
+.topic-column label {
+	color: white;
+    display: block;
+    margin: 8px 0;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.topic-column input[type="checkbox"] {
+    margin-right: 8px;
+	accent-color: #4CAF50;
+}
+
+.topic-buttons {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.topic-buttons input[type="submit"],
+.topic-buttons a {
+    background: #4CAF50;
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.topic-buttons input[type="submit"]:hover,
+.topic-buttons a:hover {
+    background: #45a049;
+}
+
+.error-message {
+    color: #ff6666;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Responsive layout */
+@media (max-width: 1100px) {
+    .topic-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .topic-grid {
+        grid-template-columns: 1fr;
+    }
 }

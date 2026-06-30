@@ -61,7 +61,7 @@ def save_topics(request):
             with open("cybermillionaire/topic_settings.json", "w") as f:
                 json.dump(settings, f, indent=4)
 
-            return JsonResponse({"status": "success"})
+                return HttpResponse(index(request))
 
         return JsonResponse({"status": "invalid request"})
 

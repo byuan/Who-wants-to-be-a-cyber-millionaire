@@ -1,280 +1,182 @@
 [
     {
-        "played_at": "2026-06-28T18:55:05.785831",
+        "played_at": "2026-06-30T22:20:33.367973",
         "history": [
             {
-                "question": "What is your digital footprint when you share a picture of yourself with your friends?",
-                "selected": "Your online identity",
-                "correct": "Your online identity",
+                "question": "What is the term for trying to guess someone's password?",
+                "selected": "Brute Force",
+                "correct": "Brute Force",
                 "isCorrect": true
             },
             {
                 "question": "What is hacking?",
-                "selected": "Breaking into someone else's online game without permission",
-                "correct": "Breaking into someone else's online game without permission",
+                "selected": "Guessing someone's password to get their stuff",
+                "correct": "Guessing someone's password to get their stuff",
                 "isCorrect": true
             },
             {
-                "question": "What do you call a special address that starts with \"https\" and takes you to a safe website?",
-                "selected": "A secure website address",
-                "correct": "A secure website address",
+                "question": "What should you do if someone is sending mean messages to you online and calling it cyberbullying?",
+                "selected": "Tell your parents about it",
+                "correct": "Tell your parents about it",
                 "isCorrect": true
             },
             {
-                "question": "What is something that can happen when someone posts mean comments or messages about you online?",
-                "selected": "You will feel sad and lonely",
-                "correct": "You will feel sad and lonely",
-                "isCorrect": true
-            }
-        ]
-    },
-    {
-        "played_at": "2026-06-28T18:59:49.070352",
-        "history": [
-            {
-                "question": "An employee receives an email claiming to be from the company's IT department, stating that their login credentials have been compromised and must be reset immediately. The email contains a link to reset the password. What should the employee do?",
-                "selected": "Verify the request with the actual IT department before proceeding",
-                "correct": "Verify the request with the actual IT department before proceeding",
-                "isCorrect": true
-            },
-            {
-                "question": "What is the primary purpose of a \"black box\" vulnerability testing approach in ethical hacking?",
-                "selected": "To assess the overall security posture of an organization without revealing its weaknesses",
-                "correct": "To assess the overall security posture of an organization without revealing its weaknesses",
-                "isCorrect": true
-            },
-            {
-                "question": "What is a primary function of a Machine Learning-based Intrusion Detection System (IDS) in identifying anomalies in network traffic?",
-                "selected": "Behavioral Profiling",
-                "correct": "Behavioral Profiling",
-                "isCorrect": true
-            },
-            {
-                "question": "What is the primary purpose of Transport Layer Security (TLS) when used in conjunction with Secure Sockets Layer (SSL)?",
-                "selected": "To encrypt data transmitted over the internet",
-                "correct": "To encrypt data transmitted over the internet",
+                "question": "What is something that can hurt someone's feelings and make them feel sad or alone when they are online?",
+                "selected": "Someone sending mean messages",
+                "correct": "Someone sending mean messages",
                 "isCorrect": true
             }
         ]
     },
     {
-        "played_at": "2026-06-29T19:36:06.414289",
+        "played_at": "2026-06-30T22:21:50.931259",
         "history": [
             {
-                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
-                "selected": "The website is secure and encrypted",
-                "correct": "The website is secure and encrypted",
+                "question": "What is the primary difference between TCP and UDP in terms of error handling?",
+                "selected": "TCP uses checksums while UDP does not",
+                "correct": "TCP is more efficient but may drop packets to maintain flow",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary difference between TCP and UDP in terms of error handling?",
+                "selected": "TCP is more efficient but may drop packets to maintain flow",
+                "correct": "TCP is more efficient but may drop packets to maintain flow",
                 "isCorrect": true
             },
             {
-                "question": "What does the 'https://' at the beginning of a website address indicate?",
-                "selected": "The website is secure and encrypted ",
-                "correct": "The website is secure and encrypted ",
+                "question": "What is the purpose of the \"Content-Security-Policy\" HTTP header?",
+                "selected": "To set the caching behavior for a webpage",
+                "correct": "To specify the allowed sources for scripts and stylesheets",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the purpose of the \"Content-Security-Policy\" HTTP header?",
+                "selected": "To specify the allowed sources for scripts and stylesheets",
+                "correct": "To specify the allowed sources for scripts and stylesheets",
                 "isCorrect": true
             },
             {
-                "question": "How can you protect your computer from malware?",
-                "selected": "Installing antivirus software and keeping it updated",
-                "correct": "Installing antivirus software and keeping it updated",
+                "question": "What is the primary purpose of an Extended Validation (EV) SSL/TLS certificate?",
+                "selected": "Code signing and digital signatures",
+                "correct": "Assertion of identity verification",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of an Extended Validation (EV) SSL/TLS certificate?",
+                "selected": "Assertion of identity verification",
+                "correct": "Assertion of identity verification",
                 "isCorrect": true
             },
             {
-                "question": "What does a firewall do for your computer?",
-                "selected": "Blocks unauthorized access to your computer",
-                "correct": "Blocks unauthorized access to your computer",
+                "question": "A TCP segment with a sequence number of 1000 is received in response to an initially sent segment with the same sequence number, what does this indicate?",
+                "selected": "The sender has changed its IP address",
+                "correct": "The sender's connection request was successful and the data transmission started",
+                "isCorrect": false
+            },
+            {
+                "question": "A TCP segment with a sequence number of 1000 is received in response to an initially sent segment with the same sequence number, what does this indicate?",
+                "selected": "The sender's connection request was successful and the data transmission started",
+                "correct": "The sender's connection request was successful and the data transmission started",
                 "isCorrect": true
             }
         ]
     },
     {
-        "played_at": "2026-06-29T19:36:40.394319",
+        "played_at": "2026-06-30T22:24:32.853402",
         "history": [
             {
-                "question": "Which type of encryption uses a single key for both encryption and decryption?",
-                "selected": "Symmetric encryption",
-                "correct": "Symmetric encryption",
+                "question": "What should you do before clicking on a link or downloading a file from someone's computer?",
+                "selected": "Ask a grown-up for permission first",
+                "correct": "Ask a grown-up for permission first",
                 "isCorrect": true
             },
             {
-                "question": "What is a Distributed Denial of Service (DDoS) attack?",
-                "selected": "An attack that floods a network with excessive traffic to disrupt normal operation",
-                "correct": "An attack that floods a network with excessive traffic to disrupt normal operation",
+                "question": "Why should you never share your password with someone, even if they are your best friend?",
+                "selected": "So you can stay friends forever",
+                "correct": "So everyone on the internet can guess it",
+                "isCorrect": false
+            },
+            {
+                "question": "Why should you never share your password with someone, even if they are your best friend?",
+                "selected": "So they can keep your computer safe",
+                "correct": "So everyone on the internet can guess it",
+                "isCorrect": false
+            },
+            {
+                "question": "Why should you never share your password with someone, even if they are your best friend?",
+                "selected": "So they can help you remember it",
+                "correct": "So everyone on the internet can guess it",
+                "isCorrect": false
+            },
+            {
+                "question": "Why should you never share your password with someone, even if they are your best friend?",
+                "selected": "So everyone on the internet can guess it",
+                "correct": "So everyone on the internet can guess it",
                 "isCorrect": true
             },
             {
-                "question": "What is an example of asymmetric encryption?",
-                "selected": "RSA",
-                "correct": "RSA",
+                "question": "Why should you never share your password with anyone?",
+                "selected": "To keep it safe and secure",
+                "correct": "To keep it safe and secure",
                 "isCorrect": true
             },
             {
-                "question": "Which type of malware is designed to display unwanted advertisements on a user's computer?",
-                "selected": "Adware",
-                "correct": "Adware",
+                "question": "What do you need to do before sharing a picture or video online?",
+                "selected": "Ask your parents first",
+                "correct": "Ask your parents first",
                 "isCorrect": true
             }
         ]
     },
     {
-        "played_at": "2026-06-29T19:42:27.797365",
+        "played_at": "2026-06-30T22:25:52.516818",
         "history": [
             {
-                "question": "What is something that can be shared with others about yourself when you create an online account?",
-                "selected": "Your favorite hobby",
-                "correct": "Your name and birthday",
+                "question": "What is the primary purpose of a \"cuttlefish\" attack in blockchain security, which involves a combination of replay and transaction malleability attacks?",
+                "selected": "To create a decentralized voting system",
+                "correct": "To protect against replay and transaction malleability attacks",
                 "isCorrect": false
             },
             {
-                "question": "What is something that can be shared with others about yourself when you create an online account?",
-                "selected": "Your location",
-                "correct": "Your name and birthday",
+                "question": "What is the primary purpose of a \"cuttlefish\" attack in blockchain security, which involves a combination of replay and transaction malleability attacks?",
+                "selected": "To increase the scalability of blockchain networks",
+                "correct": "To protect against replay and transaction malleability attacks",
                 "isCorrect": false
             },
             {
-                "question": "What is something that can be shared with others about yourself when you create an online account?",
-                "selected": "Your name and birthday",
-                "correct": "Your name and birthday",
+                "question": "What is the primary purpose of a \"cuttlefish\" attack in blockchain security, which involves a combination of replay and transaction malleability attacks?",
+                "selected": "To protect against replay and transaction malleability attacks",
+                "correct": "To protect against replay and transaction malleability attacks",
                 "isCorrect": true
             },
             {
-                "question": "What should you do before opening an email attachment from someone you don't know?",
-                "selected": "Ask a grown-up for help",
-                "correct": "Ask a grown-up for help",
+                "question": "An analyst is examining a digital forensic image of a compromised computer and finds a suspicious file labeled \"backup.bak\". Which of the following is a possible reason why this file was created?",
+                "selected": "To create a shadow copy of the system files",
+                "correct": "To create a shadow copy of the system files",
                 "isCorrect": true
             },
             {
-                "question": "What is something that hackers might try to trick you into sharing, like your password or email address?",
-                "selected": "Personal info online",
-                "correct": "Personal info online",
-                "isCorrect": true
-            },
-            {
-                "question": "Why do we need to type \"https://\" when visiting certain websites?",
-                "selected": "To make sure the information is safe and secure",
-                "correct": "To make sure the information is safe and secure",
-                "isCorrect": true
-            }
-        ]
-    },
-    {
-        "played_at": "2026-06-29T19:52:45.442515",
-        "history": [
-            {
-                "question": "When responding to a ransomware attack, what is the primary goal of the incident response team in terms of communication with stakeholders?",
-                "selected": "Immediate notification and escalation to senior management",
-                "correct": "Immediate notification and escalation to senior management",
-                "isCorrect": true
-            },
-            {
-                "question": "What is the primary purpose of using Elliptic Curve Cryptography (ECC) in network encryption protocols, and what is a common benefit it provides compared to traditional Diffie-Hellman key exchange?",
-                "selected": "ECC is used for digital signatures and provides more flexibility in multi-factor authentication",
-                "correct": "ECC is used for public-key encryption and provides stronger key security against quantum attacks",
+                "question": "What is the primary purpose of using a hash function in cryptographic protocols to secure data?",
+                "selected": "To ensure the confidentiality of data transmission",
+                "correct": "To detect any modifications made to the original data",
                 "isCorrect": false
             },
             {
-                "question": "What is the primary purpose of using Elliptic Curve Cryptography (ECC) in network encryption protocols, and what is a common benefit it provides compared to traditional Diffie-Hellman key exchange?",
-                "selected": "ECC is used for public-key encryption and provides stronger key security against quantum attacks",
-                "correct": "ECC is used for public-key encryption and provides stronger key security against quantum attacks",
-                "isCorrect": true
-            },
-            {
-                "question": "What type of attack is commonly referred to as \"reordering\" in a blockchain network, where an attacker manipulates the sequence of transactions to alter their order?",
-                "selected": "Transaction Reordering Attack",
-                "correct": "Transaction Reordering Attack",
-                "isCorrect": true
-            },
-            {
-                "question": "What is the primary benefit of using Input Validation in secure coding practices, specifically in relation to preventing SQL injection attacks?",
-                "selected": "Reduces storage requirements for sensitive data",
-                "correct": "Prevents potential SQL injection attacks by ensuring input is properly sanitized and formatted",
+                "question": "What is the primary purpose of using a hash function in cryptographic protocols to secure data?",
+                "selected": "To verify the authenticity of a message",
+                "correct": "To detect any modifications made to the original data",
                 "isCorrect": false
             },
             {
-                "question": "What is the primary benefit of using Input Validation in secure coding practices, specifically in relation to preventing SQL injection attacks?",
-                "selected": "Prevents potential SQL injection attacks by ensuring input is properly sanitized and formatted",
-                "correct": "Prevents potential SQL injection attacks by ensuring input is properly sanitized and formatted",
-                "isCorrect": true
-            }
-        ]
-    },
-    {
-        "played_at": "2026-06-29T23:10:55.403646",
-        "history": [
-            {
-                "question": "What is the primary purpose of a cryptographic hash function in a Blockchain security system?",
-                "selected": "To ensure data integrity and authenticity",
-                "correct": "To ensure data integrity and authenticity",
+                "question": "What is the primary purpose of using a hash function in cryptographic protocols to secure data?",
+                "selected": "To detect any modifications made to the original data",
+                "correct": "To detect any modifications made to the original data",
                 "isCorrect": true
             },
             {
-                "question": "A recent blockchain network faces a 51% attack, but its underlying consensus algorithm was designed to be more resistant to this type of assault. Which of the following is a possible reason why the network was able to withstand the attack?",
-                "selected": "The use of proof-of-stake (PoS) made it difficult for the attacker to accumulate enough power",
-                "correct": "The use of proof-of-stake (PoS) made it difficult for the attacker to accumulate enough power",
-                "isCorrect": true
-            },
-            {
-                "question": "What is a common weakness in Bitcoin's blockchain that can be exploited through a technique called \"51% Attack\"?",
-                "selected": "Inadequate cryptographic algorithms used",
-                "correct": "Limited transaction processing capacity",
-                "isCorrect": false
-            },
-            {
-                "question": "What is a common weakness in Bitcoin's blockchain that can be exploited through a technique called \"51% Attack\"?",
-                "selected": "Limited transaction processing capacity",
-                "correct": "Limited transaction processing capacity",
-                "isCorrect": true
-            },
-            {
-                "question": "What is the primary security benefit of using elliptic curve cryptography (ECC) in blockchain networks?",
-                "selected": "It provides the same level of key exchange as traditional RSA encryption algorithms",
-                "correct": "It increases the computational power required to launch a 51% attack",
-                "isCorrect": false
-            },
-            {
-                "question": "What is the primary security benefit of using elliptic curve cryptography (ECC) in blockchain networks?",
-                "selected": "It increases the computational power required to launch a 51% attack",
-                "correct": "It increases the computational power required to launch a 51% attack",
-                "isCorrect": true
-            }
-        ]
-    },
-    {
-        "played_at": "2026-06-29T23:12:16.565879",
-        "history": [
-            {
-                "question": "What is the primary advantage of using Multi-Signature wallets in Blockchain transactions?",
-                "selected": "Enhanced security through multiple approvals",
-                "correct": "Enhanced security through multiple approvals",
-                "isCorrect": true
-            },
-            {
-                "question": "What is the primary mechanism by which a blockchain network can resist 51% attacks, making it more resistant to double-spending and other types of malicious activity?",
-                "selected": "Digital signature schemes",
-                "correct": "Byzantine Fault Tolerance (BFT) algorithm",
-                "isCorrect": false
-            },
-            {
-                "question": "What is the primary mechanism by which a blockchain network can resist 51% attacks, making it more resistant to double-spending and other types of malicious activity?",
-                "selected": "Byzantine Fault Tolerance (BFT) algorithm",
-                "correct": "Byzantine Fault Tolerance (BFT) algorithm",
-                "isCorrect": true
-            },
-            {
-                "question": "What is the primary purpose of Hash Function in Blockchain Security?",
-                "selected": "To verify transactions",
-                "correct": "To verify transactions",
-                "isCorrect": true
-            },
-            {
-                "question": "What type of attack is a Bitcoin-style double-spending attack where an attacker attempts to spend the same cryptocurrency twice in a single transaction?",
-                "selected": "Transaction replay attack",
-                "correct": "Double-spend attack",
-                "isCorrect": false
-            },
-            {
-                "question": "What type of attack is a Bitcoin-style double-spending attack where an attacker attempts to spend the same cryptocurrency twice in a single transaction?",
-                "selected": "Double-spend attack",
-                "correct": "Double-spend attack",
+                "question": "What is a potential attack vector against blockchain networks that uses social engineering tactics, where an attacker manipulates users into revealing sensitive information such as seed phrases or passwords?",
+                "selected": "Non-Repudiation via Spoofing",
+                "correct": "Non-Repudiation via Spoofing",
                 "isCorrect": true
             }
         ]
