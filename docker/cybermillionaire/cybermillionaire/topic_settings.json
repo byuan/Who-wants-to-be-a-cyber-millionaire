@@ -1,14 +1,8 @@
 {
-    "easy": [
-        "Passwords"
-    ],
-    "medium": [
-        "Passwords"
-    ],
-    "hard": [
-        "Intrusion Detection Systems"
-    ],
+    "easy": [],
+    "medium": [],
+    "hard": [],
     "expert": [
-        "TCP Protocol"
+        "SSL/X509 Certificates"
     ]
 }

@@ -256,6 +256,51 @@ audio {
     font-weight: bold;
 }
 
+.feedback-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 60px auto;
+    text-align: center;
+    color: white;
+}
+
+.feedback-title {
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+.feedback-card {
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.feedback-text {
+    white-space: pre-wrap;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #e6e6e6;
+    margin: 0;
+}
+
+.back-button {
+    margin-top: 25px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.back-button:hover {
+    background: #45a049;
+}
+
 /* Responsive layout */
 @media (max-width: 1100px) {
     .topic-grid {

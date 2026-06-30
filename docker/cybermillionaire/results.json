@@ -227,5 +227,75 @@
                 "isCorrect": true
             }
         ]
+    },
+    {
+        "played_at": "2026-06-30T23:30:40.828577",
+        "history": [
+            {
+                "question": "What is the primary purpose of the X.509v3 Certificate Extension for RSA Key Identifiers?",
+                "selected": "To identify the RSA keys used in the certificate",
+                "correct": "To identify the RSA keys used in the certificate",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of the X509v3 extension in an SSL/TLS certificate?",
+                "selected": "Extended Key Usage Extension",
+                "correct": "Extended Key Usage Extension",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the purpose of the Subject Alternative Name (SAN) extension in an SSL/X509 certificate?",
+                "selected": "To specify the domain name that is trusted by the certificate holder",
+                "correct": "To specify multiple domain names that are trusted by the certificate holder",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the purpose of the Subject Alternative Name (SAN) extension in an SSL/X509 certificate?",
+                "selected": "To specify multiple domain names that are trusted by the certificate holder",
+                "correct": "To specify multiple domain names that are trusted by the certificate holder",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of the Extended Key Usage (EKU) extension in an SSL/TLS certificate?",
+                "selected": "To indicate the intended use of the certificate, such as server authentication or client authentication",
+                "correct": "To indicate the intended use of the certificate, such as server authentication or client authentication",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-30T23:32:02.615703",
+        "history": [
+            {
+                "question": "What is the primary purpose of a Subject Alternative Name (SAN) extension in an SSL/X509 certificate?",
+                "selected": "To specify a list of domain names for which the certificate is valid",
+                "correct": "To specify a list of domain names for which the certificate is valid",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of a trusted root certificate in an X509 certificate chain?",
+                "selected": "To establish trust for the domain or organization",
+                "correct": "To establish trust for the domain or organization",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of a Certificate Authority (CA) in the SSL/TLS certificate chain?",
+                "selected": "To authenticate the identity of the entity holding the private key",
+                "correct": "To authenticate the identity of the entity holding the private key",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of the SHA-256 hashing algorithm in X509 certificates?",
+                "selected": "To authenticate the identity of the issuing Certificate Authority",
+                "correct": "to create unique digital signatures for each certificate",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of the SHA-256 hashing algorithm in X509 certificates?",
+                "selected": "to create unique digital signatures for each certificate",
+                "correct": "to create unique digital signatures for each certificate",
+                "isCorrect": true
+            }
+        ]
     }
 ]

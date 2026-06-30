@@ -6,17 +6,26 @@
     <title>AI Feedback</title>
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
+
 <body>
 
-<h1>Your Performance Review</h1>
+<div class="feedback-container">
 
-<h3>
-    <pre style="white-space: pre-wrap;">
-        {{ feedback }}
-    </pre>
-</h3>
+    <h1 class="feedback-title">Your Performance Review</h1>
 
-<div><button onclick="window.location.replace('/')">Go Back</button></div>
+    <div class="feedback-card">
+
+        <pre class="feedback-text">
+{{ feedback }}
+        </pre>
+
+    </div>
+
+    <button class="back-button" onclick="window.location.replace('/')">
+        Back to Home
+    </button>
+
+</div>
 
 </body>
 </html>
