@@ -1,8 +1,30 @@
 {
     "easy": [],
-    "medium": [],
-    "hard": [
-        "Blockchain Security"
+    "medium": [
+        "Two-factor authentication",
+        "Social Engineering",
+        "Network Security",
+        "Endpoint Security",
+        "Advanced Persistent Threats"
     ],
-    "expert": []
+    "hard": [
+        "Digital Forensics",
+        "Cryptography",
+        "Blockchain Security",
+        "Secure Coding Practices",
+        "Ethical Hacking",
+        "Social Engineering",
+        "Cyber Incident Response",
+        "Network Encryption"
+    ],
+    "expert": [
+        "Wireless Security Protocol",
+        "HTTP Headers",
+        "Virtualization",
+        "Kerberos Authentication",
+        "TCP/UDP Protocol",
+        "SSL/X509 Certificates",
+        "Linux/Unix System Forensics",
+        "Technical Aspects of Network Protocols"
+    ]
 }

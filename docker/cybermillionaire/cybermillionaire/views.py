@@ -1,6 +1,5 @@
 #views.py file
 
-
 from django.shortcuts import HttpResponse
 from django import template
 import cybermillionaire.export as e
@@ -47,6 +46,7 @@ def get_results(request):
     except Exception as e:
         return JsonResponse({"error": str(e)})
     
+@csrf_exempt
 def save_topics(request):
     try:
         if request.method == "POST":
