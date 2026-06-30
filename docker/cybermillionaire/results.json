@@ -56,5 +56,227 @@
                 "isCorrect": true
             }
         ]
+    },
+    {
+        "played_at": "2026-06-29T19:36:06.414289",
+        "history": [
+            {
+                "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+                "selected": "The website is secure and encrypted",
+                "correct": "The website is secure and encrypted",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website address indicate?",
+                "selected": "The website is secure and encrypted ",
+                "correct": "The website is secure and encrypted ",
+                "isCorrect": true
+            },
+            {
+                "question": "How can you protect your computer from malware?",
+                "selected": "Installing antivirus software and keeping it updated",
+                "correct": "Installing antivirus software and keeping it updated",
+                "isCorrect": true
+            },
+            {
+                "question": "What does a firewall do for your computer?",
+                "selected": "Blocks unauthorized access to your computer",
+                "correct": "Blocks unauthorized access to your computer",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-29T19:36:40.394319",
+        "history": [
+            {
+                "question": "Which type of encryption uses a single key for both encryption and decryption?",
+                "selected": "Symmetric encryption",
+                "correct": "Symmetric encryption",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a Distributed Denial of Service (DDoS) attack?",
+                "selected": "An attack that floods a network with excessive traffic to disrupt normal operation",
+                "correct": "An attack that floods a network with excessive traffic to disrupt normal operation",
+                "isCorrect": true
+            },
+            {
+                "question": "What is an example of asymmetric encryption?",
+                "selected": "RSA",
+                "correct": "RSA",
+                "isCorrect": true
+            },
+            {
+                "question": "Which type of malware is designed to display unwanted advertisements on a user's computer?",
+                "selected": "Adware",
+                "correct": "Adware",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-29T19:42:27.797365",
+        "history": [
+            {
+                "question": "What is something that can be shared with others about yourself when you create an online account?",
+                "selected": "Your favorite hobby",
+                "correct": "Your name and birthday",
+                "isCorrect": false
+            },
+            {
+                "question": "What is something that can be shared with others about yourself when you create an online account?",
+                "selected": "Your location",
+                "correct": "Your name and birthday",
+                "isCorrect": false
+            },
+            {
+                "question": "What is something that can be shared with others about yourself when you create an online account?",
+                "selected": "Your name and birthday",
+                "correct": "Your name and birthday",
+                "isCorrect": true
+            },
+            {
+                "question": "What should you do before opening an email attachment from someone you don't know?",
+                "selected": "Ask a grown-up for help",
+                "correct": "Ask a grown-up for help",
+                "isCorrect": true
+            },
+            {
+                "question": "What is something that hackers might try to trick you into sharing, like your password or email address?",
+                "selected": "Personal info online",
+                "correct": "Personal info online",
+                "isCorrect": true
+            },
+            {
+                "question": "Why do we need to type \"https://\" when visiting certain websites?",
+                "selected": "To make sure the information is safe and secure",
+                "correct": "To make sure the information is safe and secure",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-29T19:52:45.442515",
+        "history": [
+            {
+                "question": "When responding to a ransomware attack, what is the primary goal of the incident response team in terms of communication with stakeholders?",
+                "selected": "Immediate notification and escalation to senior management",
+                "correct": "Immediate notification and escalation to senior management",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of using Elliptic Curve Cryptography (ECC) in network encryption protocols, and what is a common benefit it provides compared to traditional Diffie-Hellman key exchange?",
+                "selected": "ECC is used for digital signatures and provides more flexibility in multi-factor authentication",
+                "correct": "ECC is used for public-key encryption and provides stronger key security against quantum attacks",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of using Elliptic Curve Cryptography (ECC) in network encryption protocols, and what is a common benefit it provides compared to traditional Diffie-Hellman key exchange?",
+                "selected": "ECC is used for public-key encryption and provides stronger key security against quantum attacks",
+                "correct": "ECC is used for public-key encryption and provides stronger key security against quantum attacks",
+                "isCorrect": true
+            },
+            {
+                "question": "What type of attack is commonly referred to as \"reordering\" in a blockchain network, where an attacker manipulates the sequence of transactions to alter their order?",
+                "selected": "Transaction Reordering Attack",
+                "correct": "Transaction Reordering Attack",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary benefit of using Input Validation in secure coding practices, specifically in relation to preventing SQL injection attacks?",
+                "selected": "Reduces storage requirements for sensitive data",
+                "correct": "Prevents potential SQL injection attacks by ensuring input is properly sanitized and formatted",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary benefit of using Input Validation in secure coding practices, specifically in relation to preventing SQL injection attacks?",
+                "selected": "Prevents potential SQL injection attacks by ensuring input is properly sanitized and formatted",
+                "correct": "Prevents potential SQL injection attacks by ensuring input is properly sanitized and formatted",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-29T23:10:55.403646",
+        "history": [
+            {
+                "question": "What is the primary purpose of a cryptographic hash function in a Blockchain security system?",
+                "selected": "To ensure data integrity and authenticity",
+                "correct": "To ensure data integrity and authenticity",
+                "isCorrect": true
+            },
+            {
+                "question": "A recent blockchain network faces a 51% attack, but its underlying consensus algorithm was designed to be more resistant to this type of assault. Which of the following is a possible reason why the network was able to withstand the attack?",
+                "selected": "The use of proof-of-stake (PoS) made it difficult for the attacker to accumulate enough power",
+                "correct": "The use of proof-of-stake (PoS) made it difficult for the attacker to accumulate enough power",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a common weakness in Bitcoin's blockchain that can be exploited through a technique called \"51% Attack\"?",
+                "selected": "Inadequate cryptographic algorithms used",
+                "correct": "Limited transaction processing capacity",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a common weakness in Bitcoin's blockchain that can be exploited through a technique called \"51% Attack\"?",
+                "selected": "Limited transaction processing capacity",
+                "correct": "Limited transaction processing capacity",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary security benefit of using elliptic curve cryptography (ECC) in blockchain networks?",
+                "selected": "It provides the same level of key exchange as traditional RSA encryption algorithms",
+                "correct": "It increases the computational power required to launch a 51% attack",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary security benefit of using elliptic curve cryptography (ECC) in blockchain networks?",
+                "selected": "It increases the computational power required to launch a 51% attack",
+                "correct": "It increases the computational power required to launch a 51% attack",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-06-29T23:12:16.565879",
+        "history": [
+            {
+                "question": "What is the primary advantage of using Multi-Signature wallets in Blockchain transactions?",
+                "selected": "Enhanced security through multiple approvals",
+                "correct": "Enhanced security through multiple approvals",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary mechanism by which a blockchain network can resist 51% attacks, making it more resistant to double-spending and other types of malicious activity?",
+                "selected": "Digital signature schemes",
+                "correct": "Byzantine Fault Tolerance (BFT) algorithm",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary mechanism by which a blockchain network can resist 51% attacks, making it more resistant to double-spending and other types of malicious activity?",
+                "selected": "Byzantine Fault Tolerance (BFT) algorithm",
+                "correct": "Byzantine Fault Tolerance (BFT) algorithm",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of Hash Function in Blockchain Security?",
+                "selected": "To verify transactions",
+                "correct": "To verify transactions",
+                "isCorrect": true
+            },
+            {
+                "question": "What type of attack is a Bitcoin-style double-spending attack where an attacker attempts to spend the same cryptocurrency twice in a single transaction?",
+                "selected": "Transaction replay attack",
+                "correct": "Double-spend attack",
+                "isCorrect": false
+            },
+            {
+                "question": "What type of attack is a Bitcoin-style double-spending attack where an attacker attempts to spend the same cryptocurrency twice in a single transaction?",
+                "selected": "Double-spend attack",
+                "correct": "Double-spend attack",
+                "isCorrect": true
+            }
+        ]
     }
 ]

@@ -50,17 +50,23 @@ def get_results(request):
 def save_topics(request):
     try:
         if request.method == "POST":
-            selected_topics = request.POST.getlist("topics")
+
             settings = {
-                "easy": selected_topics
+                "easy": request.POST.getlist("easy_topics"),
+                "medium": request.POST.getlist("medium_topics"),
+                "hard": request.POST.getlist("hard_topics"),
+                "expert": request.POST.getlist("expert_topics")
             }
+
             with open("cybermillionaire/topic_settings.json", "w") as f:
                 json.dump(settings, f, indent=4)
 
-        return JsonResponse({"status": "success"})
+            return JsonResponse({"status": "success"})
+
+        return JsonResponse({"status": "invalid request"})
+
     except Exception as e:
         return JsonResponse({"error": str(e)})
-    
     
 def ai_feedback(request):
     feedback = generate_ai_feedback("results.json")

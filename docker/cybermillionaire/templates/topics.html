@@ -17,52 +17,61 @@
         <form action="/save-topics/" method="post">
             {% csrf_token %}
 
-            <label>
-                <input type="checkbox" name="topics" value="Passwords" checked>
-                Passwords
-            </label><br>
+            <h2>Primary School</h2>
 
-            <label>
-                <input type="checkbox" name="topics" value="Internet Safety" checked>
-                Internet Safety
-            </label><br>
+            <label><input type="checkbox" name="easy_topics" value="Passwords"> Passwords</label><br>
+            <label><input type="checkbox" name="easy_topics" value="Internet Safety"> Internet Safety</label><br>
+            <label><input type="checkbox" name="easy_topics" value="Cyberbullying"> Cyberbullying</label><br>
+            <label><input type="checkbox" name="easy_topics" value="Social Media"> Social Media</label><br>
+            <label><input type="checkbox" name="easy_topics" value="Secure Websites"> Secure Websites</label><br>
+            <label><input type="checkbox" name="easy_topics" value="Hacking"> Hacking</label><br>
+            <label><input type="checkbox" name="easy_topics" value="Digital Footprints"> Digital Footprints</label><br>
+            <label><input type="checkbox" name="easy_topics" value="Data"> Data</label><br>
+            <label><input type="checkbox" name="easy_topics" value="Phishing"> Phishing</label><br>
+            <label><input type="checkbox" name="easy_topics" value="Safe Downloading"> Safe Downloading</label>
 
-            <label>
-                <input type="checkbox" name="topics" value="Cyberbullying" checked>
-                Cyberbullying
-            </label><br>
+            <h2>Secondary School</h2>
 
-            <label>
-                <input type="checkbox" name="topics" value="Social Media" checked>
-                Social Media
-            </label><br>
+            <label><input type="checkbox" name="medium_topics" value="Passwords"> Passwords</label><br>
+            <label><input type="checkbox" name="medium_topics" value="Phishing"> Phishing</label><br>
+            <label><input type="checkbox" name="medium_topics" value="Encryption"> Encryption</label><br>
+            <label><input type="checkbox" name="medium_topics" value="Firewall"> Firewall</label><br>
+            <label><input type="checkbox" name="medium_topics" value="Malware"> Malware</label><br>
+            <label><input type="checkbox" name="medium_topics" value="Two-factor authentication"> Two-factor Authentication</label><br>
+            <label><input type="checkbox" name="medium_topics" value="Social Engineering"> Social Engineering</label><br>
+            <label><input type="checkbox" name="medium_topics" value="Network Security"> Network Security</label><br>
+            <label><input type="checkbox" name="medium_topics" value="Endpoint Security"> Endpoint Security</label><br>
+            <label><input type="checkbox" name="medium_topics" value="Advanced Persistent Threats"> Advanced Persistent Threats</label>
 
-            <label>
-                <input type="checkbox" name="topics" value="Secure Websites" checked>
-                Secure Websites
-            </label><br>
+            <h2>College</h2>
 
-            <label>
-                <input type="checkbox" name="topics" value="Hacking" checked>
-                Hacking
-            </label><br>
+            <label><input type="checkbox" name="hard_topics" value="Intrusion Detection Systems"> Intrusion Detection Systems</label><br>
+            <label><input type="checkbox" name="hard_topics" value="Cyber Threat Intelligence"> Cyber Threat Intelligence</label><br>
+            <label><input type="checkbox" name="hard_topics" value="Digital Forensics"> Digital Forensics</label><br>
+            <label><input type="checkbox" name="hard_topics" value="Cryptography"> Cryptography</label><br>
+            <label><input type="checkbox" name="hard_topics" value="Blockchain Security"> Blockchain Security</label><br>
+            <label><input type="checkbox" name="hard_topics" value="Secure Coding Practices"> Secure Coding Practices</label><br>
+            <label><input type="checkbox" name="hard_topics" value="Ethical Hacking"> Ethical Hacking</label><br>
+            <label><input type="checkbox" name="hard_topics" value="Social Engineering"> Social Engineering</label><br>
+            <label><input type="checkbox" name="hard_topics" value="Cyber Incident Response"> Cyber Incident Response</label><br>
+            <label><input type="checkbox" name="hard_topics" value="Network Encryption"> Network Encryption</label>
 
-            <label>
-                <input type="checkbox" name="topics" value="Digital Footprints" checked>
-                Digital Footprints
-            </label><br>
+            <h2>Expert</h2>
 
-            <label>
-                <input type="checkbox" name="topics" value="Phishing" checked>
-                Phishing
-            </label><br>
+            <label><input type="checkbox" name="expert_topics" value="TCP Protocol"> TCP Protocol</label><br>
+            <label><input type="checkbox" name="expert_topics" value="Wireless Security Protocol"> Wireless Security Protocol</label><br>
+            <label><input type="checkbox" name="expert_topics" value="HTTP Headers"> HTTP Headers</label><br>
+            <label><input type="checkbox" name="expert_topics" value="Virtualization"> Virtualization</label><br>
+            <label><input type="checkbox" name="expert_topics" value="Kerberos Authentication"> Kerberos Authentication</label><br>
+            <label><input type="checkbox" name="expert_topics" value="TCP/UDP Protocol"> TCP/UDP Protocol</label><br>
+            <label><input type="checkbox" name="expert_topics" value="SSL/X509 Certificates"> SSL/X509 Certificates</label><br>
+            <label><input type="checkbox" name="expert_topics" value="Asymmetric/Symmetric Encryption for Cryptography"> Asymmetric/Symmetric Encryption for Cryptography</label><br>
+            <label><input type="checkbox" name="expert_topics" value="Linux/Unix System Forensics"> Linux/Unix System Forensics</label><br>
+            <label><input type="checkbox" name="expert_topics" value="Technical Aspects of Network Protocols"> Technical Aspects of Network Protocols</label>
 
-            <label>
-                <input type="checkbox" name="topics" value="Safe Downloading" checked>
-                Safe Downloading
-            </label><br><br>
-
-            <input type="submit" value="Save">
+            <br><br>
+            
+            <input type="submit" value="Save" onclick="window.location.replace('/')">
 
         </form>
 
