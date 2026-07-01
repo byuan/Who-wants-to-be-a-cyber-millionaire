@@ -397,5 +397,52 @@
                 "isCorrect": true
             }
         ]
+    },
+    {
+        "played_at": "2026-07-01T02:37:55.050127",
+        "history": [
+            {
+                "question": "A digital forensic investigator is analyzing a compressed zip file that was recovered from a crashed hard drive. The file system is in an unknown format and cannot be read directly. What is the first step to proceed with analysis?",
+                "selected": "Employing a data recovery software tool",
+                "correct": "Employing a data recovery software tool",
+                "isCorrect": true
+            },
+            {
+                "question": "A digital forensic investigator is analyzing a computer's hard drive and discovers a deleted document with a suspicious extension. Which of the following steps should the investigator take next?",
+                "selected": "Use a forensically sound method to copy the deleted file to a new location on the same hard drive",
+                "correct": "Use a forensically sound method to copy the deleted file to a new location on the same hard drive",
+                "isCorrect": true
+            },
+            {
+                "question": "When analyzing a computer's hard drive in a digital forensic examination, what type of file is most likely to contain metadata about a deleted file?",
+                "selected": "System restore point",
+                "correct": "Recycle bin entry",
+                "isCorrect": false
+            },
+            {
+                "question": "When analyzing a computer's hard drive in a digital forensic examination, what type of file is most likely to contain metadata about a deleted file?",
+                "selected": "Shadow copy",
+                "correct": "Recycle bin entry",
+                "isCorrect": false
+            },
+            {
+                "question": "When analyzing a computer's hard drive in a digital forensic examination, what type of file is most likely to contain metadata about a deleted file?",
+                "selected": "Temp file",
+                "correct": "Recycle bin entry",
+                "isCorrect": false
+            },
+            {
+                "question": "When analyzing a computer's hard drive in a digital forensic examination, what type of file is most likely to contain metadata about a deleted file?",
+                "selected": "Recycle bin entry",
+                "correct": "Recycle bin entry",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary function of the Key Distribution Center (KDC) in a Kerberos authentication setup?",
+                "selected": "To manage and distribute Kerberos tickets to clients",
+                "correct": "To manage and distribute Kerberos tickets to clients",
+                "isCorrect": true
+            }
+        ]
     }
 ]

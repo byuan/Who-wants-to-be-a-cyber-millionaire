@@ -1,17 +1,18 @@
 {
     "easy": [
-        "Social Media",
-        "Secure Websites"
+        "Hacking",
+        "Digital Footprints"
     ],
     "medium": [
-        "Firewall"
+        "Firewall",
+        "Endpoint Security",
+        "Advanced Persistent Threats"
     ],
     "hard": [
-        "Digital Forensics",
-        "Cryptography",
-        "Blockchain Security"
+        "Digital Forensics"
     ],
     "expert": [
-        "Kerberos Authentication"
+        "Kerberos Authentication",
+        "Technical Aspects of Network Protocols"
     ]
 }

@@ -1,6 +1,7 @@
 #views.py file
 
 from django.shortcuts import HttpResponse
+from django.shortcuts import render
 from django import template
 import cybermillionaire.export as e
 import json
@@ -75,9 +76,20 @@ def ai_feedback(request):
     return HttpResponse(html)
 
 def topics(request):
-    t = template.loader.get_template('topics.html')
-    html = t.render()
-    return HttpResponse(html)
+    try:
+        with open("cybermillionaire/topic_settings.json", "r") as f:
+            settings = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        settings = {
+            "easy": [],
+            "medium": [],
+            "hard": [],
+            "expert": []
+        }
+
+    return render(request, "topics.html", {
+        "settings": settings
+    })
 
 def index(request):
     t = template.loader.get_template('index.html')
