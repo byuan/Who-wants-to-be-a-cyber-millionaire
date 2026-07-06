@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Topics</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <link rel="icon" href="/img/tigerlogo.jpg">
+</head>
+
+<body>
+    <div class="topic-container">
+        <h1>Select Question Topics</h1>
+        <h3>Dynamic games generate questions from the topics checked below.</h3>
+
+        <div id="error" class="error-message" style="display: none;"></div>
+
+        <div class="topic-grid" id="topic-grid"></div>
+
+        <div class="topic-buttons">
+            <input type="submit" value="Save Topics" onclick="save()">
+            <a href="/">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        const TIER_LABELS = {
+            easy: "Primary School",
+            medium: "Secondary School",
+            hard: "College",
+            expert: "Expert"
+        };
+
+        function showError(message) {
+            const box = document.getElementById('error');
+            box.textContent = message;
+            box.style.display = message ? 'block' : 'none';
+        }
+
+        // Render one checkbox column per tier from the server's topic bank
+        fetch('/api/topics')
+            .then(r => r.json())
+            .then(({ bank, selected }) => {
+                const grid = document.getElementById('topic-grid');
+                for (const [tier, topics] of Object.entries(bank)) {
+                    const column = document.createElement('div');
+                    column.className = 'topic-column';
+                    column.innerHTML = '<h2>' + TIER_LABELS[tier] + '</h2>';
+                    for (const topic of topics) {
+                        const label = document.createElement('label');
+                        const box = document.createElement('input');
+                        box.type = 'checkbox';
+                        box.name = tier;
+                        box.value = topic;
+                        box.checked = selected[tier].includes(topic);
+                        label.appendChild(box);
+                        label.appendChild(document.createTextNode(' ' + topic));
+                        column.appendChild(label);
+                    }
+                    grid.appendChild(column);
+                }
+            })
+            .catch(() => showError('Failed to load topics.'));
+
+        function save() {
+            const selection = {};
+            for (const tier of Object.keys(TIER_LABELS)) {
+                selection[tier] = [...document.querySelectorAll('input[name="' + tier + '"]:checked')]
+                    .map(box => box.value);
+                if (selection[tier].length === 0) {
+                    showError('Select at least one topic for ' + TIER_LABELS[tier] + '.');
+                    return;
+                }
+            }
+
+            fetch('/api/topics', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(selection)
+            })
+            .then(r => r.json().then(data => ({ ok: r.ok, data })))
+            .then(({ ok, data }) => {
+                if (!ok) return showError(data.error || 'Save failed.');
+                window.location.href = '/';
+            })
+            .catch(() => showError('Save failed.'));
+        }
+    </script>
+</body>
+</html>

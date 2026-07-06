@@ -1,0 +1,4802 @@
+[
+  {
+    "question": "Which of the following is a strong password?",
+    "answers": [
+      "Password123",
+      "123456",
+      "SunnyDay!",
+      "ABCDEFG"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is a good practice for creating a strong password?",
+    "answers": [
+      "Using your birthday",
+      "Making it short and simple",
+      "Including a mix of letters, numbers, and symbols",
+      "Sharing it with friends"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is a strong password?",
+    "answers": [
+      "123456",
+      "P0LLYW4NTCR4CK3R!",
+      "Soccer",
+      "Sunflower"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is the best practice for creating a secure password?",
+    "answers": [
+      "Using personal information like your name or birthdate",
+      "Using a combination of letters, numbers, and special characters",
+      "Sharing your password with friends",
+      "Using the same password for all your accounts"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is the most secure password?",
+    "answers": [
+      "Password123",
+      "Soccer",
+      "123456",
+      "P@ssw0rd!"
+    ],
+    "correct": 3,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is a strong password?",
+    "answers": [
+      "Password123",
+      "123456",
+      "Sup3rSecr3t!",
+      "Letmein"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is a strong password?",
+    "answers": [
+      "123456",
+      "Password123",
+      "ilovecats",
+      "Tr0ub4dor&3"
+    ],
+    "correct": 3,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is a good practice when creating a password?",
+    "answers": [
+      "Using personal information like your name or birthdate",
+      "Sharing your password with friends",
+      "Using a combination of letters, numbers, and symbols",
+      "Writing your password on a sticky note on your desk"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "Why is it important to keep your passwords secret?",
+    "answers": [
+      "Because sharing passwords can make your friends happy",
+      "So that your teacher can see what games you play",
+      "To protect your personal information and prevent unauthorized access",
+      "Because passwords are meant to be posted on social media"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is the best practice for creating a strong password?",
+    "answers": [
+      "Using your pet's name",
+      "Using a combination of letters, numbers, and symbols",
+      "Using the same password for all your accounts",
+      "Using your birthdate"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What should you never share online without permission from a trusted adult?",
+    "answers": [
+      "If you are left or right handed",
+      "Home address",
+      "Your favorite color",
+      "Pet's name"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is an example of personal information that should be kept private online?",
+    "answers": [
+      "Favorite color",
+      "Favorite book",
+      "Birthdate",
+      "Favorite movie"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "Why is it important to keep your passwords private?",
+    "answers": [
+      "To share them with friends",
+      "To protect your personal information",
+      "To show off to others",
+      "To make them easier to remember"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is an example of a strong password?",
+    "answers": [
+      "Password123",
+      "ABCDEFG",
+      "ilovecats",
+      "[email protected]$"
+    ],
+    "correct": 3,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What should you do if you receive a message from someone you don't know online?",
+    "answers": [
+      "Reply and start a conversation",
+      "Block and report the person",
+      "Share personal information with them",
+      "Meet them in person"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "Why is it important to log out of your accounts when using shared devices?",
+    "answers": [
+      "To make it easier for others to access your accounts",
+      "To protect your personal information",
+      "To show that you don't trust others",
+      "To create a new account"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What should you do if a website asks for your personal information but doesn't look trustworthy?",
+    "answers": [
+      "Provide the information anyway",
+      "Ask a friend to input the information for you",
+      "Ignore the request and leave the website",
+      "Share the website with others"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is a safe way to communicate with someone online?",
+    "answers": [
+      "Sharing your passwords",
+      "Making video calls with strangers",
+      "Instant messaging with friends you know in person",
+      "Clicking on email links from unknown senders"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What should you do if you receive a suspicious email asking for your login information?",
+    "answers": [
+      "Reply to the email with your login details",
+      "Click on any links provided in the email",
+      "Forward the email to a trusted adult for help",
+      "Delete the email without doing anything"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "Why is it important to keep your devices updated with the latest software and security patches?",
+    "answers": [
+      "To make your device run slower",
+      "To increase the risk of viruses and malware",
+      "To improve device performance and security",
+      "To make it easier for hackers to access your information"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What is considered cyberbullying?",
+    "answers": [
+      "Asking for help",
+      "Sharing kind messages online",
+      "Sending mean messages repeatedly to someone",
+      "Complimenting a friend"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is cyberbullying?",
+    "answers": [
+      "Meeting freinds online",
+      "Sending mean messages or threats through the internet",
+      "Playing games on a computer",
+      "Watching videos on a tablet"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What should you do if you are being cyberbullied?",
+    "answers": [
+      "Respond with mean messages back",
+      "Keep it secret and don't tell anyone",
+      "Block the person and report the behavior to a trusted adult",
+      "Meet the bully in person to confront them"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What should you do if someone is being mean to you online repeatedly?",
+    "answers": [
+      "Be mean back to them",
+      "Tell a trusted adult",
+      "Keep it a secret and ignore it",
+      "Meeti them in person to talk to them"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What should you do if someone is being mean to you online and won't stop?",
+    "answers": [
+      "Keep responding to them",
+      "Tell a trusted adult about the situation",
+      "Be mean back to them",
+      "Keep it a secret"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is cyberbullying?",
+    "answers": [
+      "Sending kind messages online",
+      "Sharing funny memes with friends",
+      "Posting mean comments to hurt someone on the internet",
+      "Watching educational videos on YouTube"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What should you do if you receive a mean or threatening message online?",
+    "answers": [
+      "Respond with an even meaner message to show you are not scared",
+      "Delete the message and forget about it",
+      "Show the message to a trusted adult and ask for help",
+      "Share the message with your friends for support"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What should you do if someone is being mean to you online through messages or social media?",
+    "answers": [
+      "Respond with mean messages back",
+      "Tell a trusted adult about it",
+      "Keep it a secret and ignore it",
+      "Meet the person in real life to talk it out"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What should you do if someone is being mean to you online on purpose?",
+    "answers": [
+      "Be mean back to them",
+      "Ignore them and not respond",
+      "Ask them why they are being mean",
+      "Share their messages with everyone"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is cyberbullying?",
+    "answers": [
+      "A type of dance move",
+      "Sending mean messages or threats online",
+      "A way to make friends online",
+      "An online game"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is an example of personal information that should not be shared on social media platforms?",
+    "answers": [
+      "Full name, address, and phone number",
+      "Favorite color and TV show",
+      "If you are right handed or left handed and favorite movie",
+      "Pet's name and favorite food"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is a common practice that can help keep your social media account secure?",
+    "answers": [
+      "Sharing your passwords with friends",
+      "Clicking on links from unknown sources",
+      "Using two-factor authentication",
+      "Posting personal information publicly"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 1
+  },
+  {
+    "question": "What should you NEVER share on social media?",
+    "answers": [
+      "Your favorite books",
+      "Your pet's name",
+      "Your home address",
+      "Your favorite color"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is the safest action to take if a stranger on social media asks for your personal information?",
+    "answers": [
+      "Ignore them",
+      "Share your thoughts",
+      "Meet them in person",
+      "Ask a friend for advice"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is an example of sharing too much personal information on social media?",
+    "answers": [
+      "Posting a picture of your pet dog",
+      "Sharing your home address in a private message",
+      "Liking a friend's vacation photo",
+      "Commenting on a funny meme"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What should you do if a stranger tries to message you on social media?",
+    "answers": [
+      "Reply and start a conversation",
+      "Tell the stranger personal information",
+      "Block the stranger and tell a trusted adult",
+      "Meet  up with the stranger in person"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is NOT safe to share on social media?",
+    "answers": [
+      "Your full name and address",
+      "Your favorite color",
+      "Your dinner",
+      "Pictures of your school friends"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is the safest action to take if a stranger sends you a friend request on social media?",
+    "answers": [
+      "Accept the friend request",
+      "Ignore the friend request",
+      "Share personal information with the stranger",
+      "Meet the stranger in person"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is a safe practice when sharing photos on social media?",
+    "answers": [
+      "Tagging the strangers in the photos",
+      "Sharing the exact location where the photo was taken",
+      "Using privacy settings to control who can see the photos",
+      "Posting photos without any captions"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What should you do if a stranger sends you a friend request on social media?",
+    "answers": [
+      "Accept the friend request",
+      "Ignore the friend request",
+      "Share personal information with the stranger",
+      "Meet the stranger in person"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What does the 'https://' at the beginning of a website address indicate?",
+    "answers": [
+      "The website is delivering free cookies",
+      "The website is using an outdated design",
+      "The website is secure and encrypted",
+      "The website is under construction"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 1
+  },
+  {
+    "question": "Which of the following indicates that a website is secure and can be trusted?",
+    "answers": [
+      "The website address starts with 'https://'",
+      "The website address does not have a padlock symbol",
+      "The website has a lot of pop-up ads",
+      "The website asks for personal information without encryption"
+    ],
+    "correct": 0,
+    "difficulty": "hard",
+    "level": 1
+  },
+  {
+    "question": "What does the lock icon next to a website's URL in the browser's address bar indicate?",
+    "answers": [
+      "The website is using fancy decorations",
+      "The website is secure and encrypted",
+      "The website is under construction",
+      "The website is showing advertisements"
+    ],
+    "correct": 1,
+    "difficulty": "hard",
+    "level": 1
+  },
+  {
+    "question": "What does the 'https://' at the beginning of a website URL indicate about the website's security?",
+    "answers": [
+      "The website is secure",
+      "The website is running slowly",
+      "The website is outdated",
+      "The website has lots of ads"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "Which of the following indicates that a website is secure?",
+    "answers": [
+      "The website address begins with 'http://'",
+      "The website address begins with 'https://'",
+      "The website address has spelling mistakes",
+      "The website has a lot of pop-up ads"
+    ],
+    "correct": 1,
+    "difficulty": "hard",
+    "level": 1
+  },
+  {
+    "question": "What does it mean if a website has 'https://' at the beginning of its URL?",
+    "answers": [
+      "The website is not secure",
+      "The website is secure",
+      "The website is fake",
+      "The website is for entertainment purposes only"
+    ],
+    "correct": 1,
+    "difficulty": "hard",
+    "level": 1
+  },
+  {
+    "question": "What does the 'https://' at the beginning of a website URL indicate?",
+    "answers": [
+      "The website is loading slowly",
+      "The website has a lot of advertisements",
+      "The website is secure and encrypts data",
+      "The website is only accessible on weekends"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What does the 'https://' at the beginning of a website URL indicate?",
+    "answers": [
+      "The website is not secure",
+      "The website is designed for kids",
+      "The website is located in a different country",
+      "The website is secure"
+    ],
+    "correct": 3,
+    "difficulty": "hard",
+    "level": 1
+  },
+  {
+    "question": "What does the 'https://' at the beginning of a website's URL indicate?",
+    "answers": [
+      "The website is running on an old server",
+      "The website is using outdated software",
+      "The website is secure and encrypts data",
+      "The website is prone to cyber attacks"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What does the 'https://' at the beginning of a website URL indicate?",
+    "answers": [
+      "The website has free giveaways",
+      "The website is not secure",
+      "The website uses a secure connection",
+      "The website is running slowly"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What is hacking?",
+    "answers": [
+      "Planting flowers in a garden",
+      "Cooking delicious food",
+      "Unauthorized access to a computer system",
+      "Building sandcastles at the beach"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What should you do if you receive a suspicious email from an unknown sender?",
+    "answers": [
+      "Click on any links or attachments in the email",
+      "Reply to the email with your personal information",
+      "Forward the email to a teacher or parent for help",
+      "Ignore the email and delete it"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is a secure way to create a password?",
+    "answers": [
+      "Using your pet's name",
+      "Using your birthday",
+      "Using a combination of letters, numbers, and special characters",
+      "Using the word 'password'"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "Why is it important to keep your personal information private online?",
+    "answers": [
+      "To make more friends",
+      "To protect yourself from identity theft and cyberbullying",
+      "To win online games",
+      "To share with strangers"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is an example of cyberbullying?",
+    "answers": [
+      "Sharing a funny meme with a friend",
+      "Sending mean messages to someone online",
+      "Liking a post on social media",
+      "Helping a classmate with homework"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What should you do if someone online asks you for your personal information?",
+    "answers": [
+      "Share your information with them",
+      "Ask for their personal information first",
+      "Tell a teacher or parent",
+      "Ignore their request"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What does a firewall do for your computer?",
+    "answers": [
+      "Allows all incoming internet traffic",
+      "Blocks unauthorized access to your computer",
+      "Increases the computer's speed",
+      "Changed the computer's background color"
+    ],
+    "correct": 1,
+    "difficulty": "hard",
+    "level": 1
+  },
+  {
+    "question": "What is a virus in the context of computers?",
+    "answers": [
+      "A type of worm found in the ground",
+      "A software program designed to harm your computer",
+      "A helpful tool for computer maintenance",
+      "A type of computer monitor"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What is a strong password?",
+    "answers": [
+      "Using your phone number",
+      "Using the word '123456'",
+      "Using a mix of uppercase and lowercase letters, numbers, and symbols",
+      "Using your best friend's name"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "How can you protect your computer from malware?",
+    "answers": [
+      "Clicking on every pop-up ad you see",
+      "Installing antivirus software and keeping it updated",
+      "Sharing your computer password with friends",
+      "Using the same password for all your accounts"
+    ],
+    "correct": 1,
+    "difficulty": "hard",
+    "level": 1
+  },
+  {
+    "question": "What is a digital footprint?",
+    "answers": [
+      "A physical footprint made on the ground",
+      "Traces of a person's online activity",
+      "A type of shoe",
+      "A digital painting"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "Why is it important to be mindful of your digital footprint?",
+    "answers": [
+      "Because it doesn't matter what you do online",
+      "It can affect your future opportunities",
+      "Because everyone's digital footprint is the same",
+      "It only affects adults"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is considered part of your digital footprint",
+    "answers": [
+      "Talking to your friends in person",
+      "Posting on social media",
+      "Doing homework offline",
+      "Watching TV"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "How can you manage your digital footprint?",
+    "answers": [
+      "Avoid using the internet",
+      "Deleting your online accounts",
+      "Being thoughtful about what you post online",
+      "Sharing everything you do online"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "Can information posted online ever be completely erased?",
+    "answers": [
+      "Yes",
+      "No",
+      "Only if you pay for it",
+      "Only if you are an adult"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is a safe practice for protecting your digital footprint?",
+    "answers": [
+      "Sharing your passwords with friends",
+      "Using the same password for all your accounts",
+      "Avoiding clicking on suspicious links",
+      "Posting personal information publicly"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "True or False: Your digital footprint is only important during childhood.",
+    "answers": [
+      "TRUE",
+      "FALSE",
+      "N/A",
+      "N/A"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "Why should you be cautious about the information you share online?",
+    "answers": [
+      "Because it's fun to share everything",
+      "To protect your privacy and safety",
+      "Nobody cares about online information",
+      "To become famous"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is NOT a part of your digital footprint?",
+    "answers": [
+      "Emails you send",
+      "Videos you post on the internet",
+      "Conversations with friends in person",
+      "Comments you make on websites"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 1
+  },
+  {
+    "question": "What can be one consequence of sharing too much personal information online?",
+    "answers": [
+      "Winning a prize",
+      "Making more friends",
+      "Identity theft",
+      "Becoming a celebrity"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What should you do if a website asks you to share your full name, address, and phone number without your parents' permission?",
+    "answers": [
+      "Tell them all the information they asked for",
+      "Ask your parents for help and advice before sharing any personal information",
+      "Immediately share the information to win a prize",
+      "Share made-up information to trick the website"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What should you do if you receive an email from an unknown sender asking for personal information?",
+    "answers": [
+      "Reply and provide your personal information",
+      "Click on any links or attachments in the email",
+      "Delete the email and do not respond",
+      "Forward the email to your friends"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What should you do if a website asks you to share your full name, address, and phone number online?",
+    "answers": [
+      "Type in all the information without checking",
+      "Ask an adult for help in deciding what information to share",
+      "Share your information only if the website looks fun",
+      "Ignore the website and close it without sharing any information"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is considered personal data that should be kept safe online?",
+    "answers": [
+      "Favorite cartoon character",
+      "Color of school backpack",
+      "School project grade",
+      "Pet's name"
+    ],
+    "correct": 3,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is the safest way to keep your password secure?",
+    "answers": [
+      "Share it with your friends",
+      "Write it down on a sticky note and keep it on your computer",
+      "Use a password that is easy to guess, such as 'password'",
+      "Memorize your password and do not share it with anyone"
+    ],
+    "correct": 3,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What should you do if you receive an email from an unknown sender asking for your username and password?",
+    "answers": [
+      "Reply back with your username and password",
+      "Ignore the email and delete it",
+      "Share your username only",
+      "Click on any links provided in the email"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is the safest way to share your password with a friend?",
+    "answers": [
+      "Write it down on a piece of paper and give it to them",
+      "Do not share the password with your friend at all",
+      "Send it to them in an email",
+      "Post it on social media"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What should you do if a stranger online asks for your personal information?",
+    "answers": [
+      "Share your information with them",
+      "Ignore them or tell an adult",
+      "Tell them everything they want to know",
+      "Ask for their personal information"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What should you do if a website asks for your personal information, such as your full name, address, and date of birth?",
+    "answers": [
+      "Provide the information to access the website",
+      "Ask an adult if the website is safe",
+      "Ask a friend for advice before sharing any information",
+      "Share the information only if it's a popular website"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What should you do if a website asks for your personal information like your full name, address, and phone number without your parents' permission?",
+    "answers": [
+      "Enter the information so you can access the website",
+      "Ask your friends for advice on what to do",
+      "Tell your parents about the website and ask for their help",
+      "Ignore the request and close the website"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is phishing?",
+    "answers": [
+      "A method of catching phish in the sea",
+      "A type of cyber attack where attackers pretend to be someone they're not to trick individuals into sharing sensitive information",
+      "A game played with a fishing rod and a hook",
+      "A type of dance popular on social media"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What is a common method used by cybercriminals to steal personal information by pretending to be a trustworthy source?",
+    "answers": [
+      "Texting a friend for help",
+      "Sharing passwords with strangers",
+      "Giving away home address online",
+      "Clicking on suspicious links in emails"
+    ],
+    "correct": 3,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is phishing?",
+    "answers": [
+      "A type of phishing",
+      "A way to catch ghosts",
+      "A cybersecurity attack that tricks people into giving out personal information",
+      "A type of surfing competition"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is phishing?",
+    "answers": [
+      "Fishing for real fish",
+      "A cyber attack where scammers try to trick people into giving away their personal information",
+      "Recreational activity in water bodies",
+      "Using a fishing rod to catch cyber criminals"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What is a common cyber attack where someone tries to trick you into giving out your personal information such as usernames, passwords, or credit card details by pretending to be a trustworthy entity?",
+    "answers": [
+      "Fishing",
+      "Phreaking",
+      "Phubbing",
+      "Phishing"
+    ],
+    "correct": 3,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What is phishing?",
+    "answers": [
+      "A way of catching fish",
+      "A fraudulent attempt to obtain sensitive information",
+      "A type of computer virus",
+      "A mathematical problem"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is phishing?",
+    "answers": [
+      "A type of fishing done in a cyber world",
+      "A method of stealing passwords and personal information by pretending to be a trustworthy source",
+      "A way to catch physical fish using digital tools",
+      "A game played by hackers"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What should you do if you receive an email asking for your password or personal information?",
+    "answers": [
+      "Click on any links or attachments in the email",
+      "Reply to the email with your password",
+      "Delete the email and do not provide any information",
+      "Share your password with a friend"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is phishing?",
+    "answers": [
+      "Fishing in a pond",
+      "Sending deceptive emails or messages to steal personal information",
+      "A type of outdoor activity",
+      "Cleaning up the ocean"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is a common tactic used by cybercriminals to steal personal information such as passwords and credit card details by disguising as a trustworthy entity?",
+    "answers": [
+      "Fishing",
+      "Watering",
+      "Hiking",
+      "Phishing"
+    ],
+    "correct": 3,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What should you do before downloading a file from the internet?",
+    "answers": [
+      "Click on any download link you see",
+      "Ask an adult or teacher for permission",
+      "hare your personal information in exchange for the download",
+      "Download the file without checking where it's from"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "When downloading a file from the internet, it is important to:",
+    "answers": [
+      "Always click on pop-up ads for faster downloads.",
+      "Check the source and make sure it is a trusted website.",
+      "Enter personal information when prompted to speed up the download.",
+      "Download multiple files at once to save time."
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What should you do before downloading a file or program from the internet to stay safe?",
+    "answers": [
+      "Click on any pop-up ads offering free downloads",
+      "Ask a parent, teacher, or guardian for permission",
+      "Enter your personal information on the website",
+      "Download from a website with lots of flashy animations"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What is the safest way to download files from the internet?",
+    "answers": [
+      "Click on pop-up ads",
+      "Use a reputable source or website",
+      "Enter personal information when prompted",
+      "Download from an unknown website"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 1
+  },
+  {
+    "question": "What is the safest way to download files from the internet?",
+    "answers": [
+      "Click on random pop-up ads",
+      "Use a download link sent by a stranger in an email.",
+      "Visit a trusted website and download from there.",
+      "Share your personal information to get a download link."
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is a safe way to download files from the internet?",
+    "answers": [
+      "Click on random pop-up ads",
+      "Download from official websites or trusted sources",
+      "Provide personal information to unknown sources",
+      "Install software from emails received from strangers"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "When downloading files online, what should you do to ensure they are safe for your computer?",
+    "answers": [
+      "Click on any pop-up ads",
+      "Download from official websites and trusted sources",
+      "Share the download link with friends",
+      "Install any software without reading the permissions"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "Which of the following actions promotes safe downloading?",
+    "answers": [
+      "Clicking on random pop-up ads offering free downloads",
+      "Checking the website's reputation before downloading",
+      "Downloading files from unknown sources without checking",
+      "Providing personal information to websites for downloads"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What should you do before downloading a file from the internet?",
+    "answers": [
+      "Double-click the file immediately",
+      "Check with a teacher or parent first",
+      "Download as many files as possible",
+      "Share the download link with friends"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "What should you do before downloading something from the internet?",
+    "answers": [
+      "Share the download link with friends",
+      "Click on as many download links as possible",
+      "Ask a parent or teacher if it is safe",
+      "Download immediately without checking"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 1
+  },
+  {
+    "question": "Which of the following is NOT a good practice for creating a strong password?",
+    "answers": [
+      "Using a combination of uppercase and lowercase letters",
+      "Using personal information such as birthdates",
+      "Using special characters like @ or !",
+      "Using a random string of numbers and letters"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "How often should you change your passwords for online accounts?",
+    "answers": [
+      "Never change them, as it may be difficult to remember new passwords",
+      "Change them every few years to keep them fresh",
+      "Change them regularly, such as every 3-6 months",
+      "Change them only if you suspect a security breach"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "True or False: It is safe to use the same password for multiple online accounts.",
+    "answers": [
+      "True",
+      "False",
+      "N/A",
+      "N/A"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is a common method used by hackers to crack passwords?",
+    "answers": [
+      "Brute force attack",
+      "Asking politely for the password",
+      "Guessing based on social media posts",
+      "Ignoring passwords and focusing on other security measures"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is a strong password?",
+    "answers": [
+      "Password123",
+      "Letmein",
+      "[email protected]",
+      "12345"
+    ],
+    "correct": 3,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "What is a passphrase?",
+    "answers": [
+      "A single, simple word used as a password",
+      "A sequence of random characters",
+      "A longer phrase made up of words that is easy to remember",
+      "A code sent to your email for password recovery"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is two-factor authentication?",
+    "answers": [
+      "Using the same password for multiple accounts",
+      "A security measure that requires two passwords",
+      "A method that combines something you know with something you have",
+      "Sharing your password with a trusted friend"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What does a password manager help with?",
+    "answers": [
+      "Generating secure passwords",
+      "Remembering all your different passwords",
+      "Storing passwords in an encrypted database",
+      "All of the above"
+    ],
+    "correct": 3,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "When setting security questions for password recovery, what is important to consider?",
+    "answers": [
+      "Choosing questions with difficult answers",
+      "Using answers that can be easily found on social media",
+      "Providing consistent answers that won't change",
+      "Selecting questions that only you would know the answer to"
+    ],
+    "correct": 3,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is a good way to protect your passwords from being stolen?",
+    "answers": [
+      "Writing them down on a sticky note on your desk",
+      "Sharing them with friends for safekeeping",
+      "Keeping them in a secure, encrypted file on your device",
+      "Using the same password for all accounts"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is a common method cybercriminals use to trick individuals into disclosing sensitive information such as usernames, passwords, and credit card details?",
+    "answers": [
+      "Vishing",
+      "Smishing",
+      "Phishing",
+      "Spoofing"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is NOT a red flag of a phishing email?",
+    "answers": [
+      "Spelling and grammar errors",
+      "Urgent language and threats of consequences",
+      "Embedded links from legitimate websites",
+      "Unknown sender or suspicious email address"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "In a phishing attack, what is the purpose of a spoofed email address?",
+    "answers": [
+      "To disguise the true identity of the sender",
+      "To ensure the email lands in the spam folder",
+      "To provide authentic information to the recipient",
+      "To attach malicious software to the email"
+    ],
+    "correct": 0,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "What is the term used to describe a type of phishing attack that specifically targets senior executives or high-ranking officials within an organization?",
+    "answers": [
+      "Spear Phishing",
+      "Clone Phishing",
+      "Whaling",
+      "Pharming"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is a precaution you can take to avoid falling victim to a phishing scam?",
+    "answers": [
+      "Always click on links in emails to verify information",
+      "Ignore suspicious email attachments",
+      "Share your passwords with colleagues for safety",
+      "Reply to emails requesting sensitive information"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is a common method used in phishing emails to create a sense of urgency and compel the recipient to act quickly?",
+    "answers": [
+      "Requesting personal information for a fake survey",
+      "Offering a too-good-to-be-true deal",
+      "Threatening to lock the recipient out of their accounts",
+      "Sending an email from a known acquaintance"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is the primary goal of a phishing attack?",
+    "answers": [
+      "To steal a victim's physical belongings",
+      "To gain unauthorized access to sensitive information",
+      "To deliver unwanted advertising materials",
+      "To test the network security of an organization"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is a characteristic of a phishing email?",
+    "answers": [
+      "It always comes from a known, trusted sender",
+      "It asks for personal information and authentication credentials",
+      "It includes detailed information about the recipient's previous online activities",
+      "It promises financial rewards without any effort"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "What type of information are cybercriminals typically trying to obtain through a phishing attack?",
+    "answers": [
+      "Favorite color and pet's name",
+      "Social security number and credit card details",
+      "Best friend's phone number and school address",
+      "Childhood nickname and favorite hobby"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "Which of the following best describes why it is crucial to stay vigilant against phishing attempts?",
+    "answers": [
+      "Phishing attacks are easily detected by cybersecurity software",
+      "Cybercriminals have no interest in personal information",
+      "Falling victim to phishing can lead to identity theft and financial loss",
+      "Phishing attacks are usually harmless pranks"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is encryption?",
+    "answers": [
+      "The process of converting data into a code to prevent unauthorized access",
+      "The process of permanently deleting data from a computer",
+      "The process of increasing a computer's processing speed",
+      "The process of organizing data into a database"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "Which type of encryption uses a single key for both encryption and decryption?",
+    "answers": [
+      "Symmetric encryption",
+      "Asymmetric encryption",
+      "Public key encryption",
+      "Private key encryption"
+    ],
+    "correct": 0,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "Which encryption method uses two different keys for encryption and decryption?",
+    "answers": [
+      "Symmetric encryption",
+      "Asymmetric encryption",
+      "Public key encryption",
+      "Private key encryption"
+    ],
+    "correct": 1,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "What is an example of asymmetric encryption?",
+    "answers": [
+      "RSA",
+      "AES",
+      "DES",
+      "3DES"
+    ],
+    "correct": 0,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "Which encryption algorithm is commonly used for securing web traffic?",
+    "answers": [
+      "DES",
+      "AES",
+      "Blowfish",
+      "Twofish"
+    ],
+    "correct": 1,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "What is the key length of Triple Data Encryption Standard (3DES)?",
+    "answers": [
+      "64 bits",
+      "128 bits",
+      "192 bits",
+      "256 bits"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "Which encryption algorithm is considered outdated and insecure due to its small key size?",
+    "answers": [
+      "RSA",
+      "Blowfish",
+      "DES",
+      "AES"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "Which encryption method is used for protecting emails and digital signatures?",
+    "answers": [
+      "RSA",
+      "AES",
+      "DES",
+      "3DES"
+    ],
+    "correct": 0,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "Which encryption key is kept private by the owner and not shared?",
+    "answers": [
+      "Public key",
+      "Shared key",
+      "Private key",
+      "Symmetric key"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is the purpose of encryption in cybersecurity?",
+    "answers": [
+      "To secure data and communications",
+      "To slow down computer processing",
+      "To delete sensitive information",
+      "To increase network speed"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is the primary function of a firewall in cybersecurity?",
+    "answers": [
+      "Preventing physical access to a computer",
+      "Filtering and controlling network traffic",
+      "Encrypting sensitive data",
+      "Backing up files securely"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is NOT a type of firewall?",
+    "answers": [
+      "Proxy firewall",
+      "Network address translation (NAT) firewall",
+      "Intrusion detection system (IDS)",
+      "Packet filtering firewall"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "In a firewall rule, what does 'ALLOW' typically mean?",
+    "answers": [
+      "Block network traffic",
+      "Permit network traffic",
+      "Restrict access to specific websites",
+      "Encrypt data transmission"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is the purpose of a stateful firewall?",
+    "answers": [
+      "Allowing all incoming and outgoing traffic",
+      "Examining the content of each packet individually",
+      "Filtering network traffic based on the context of the connection",
+      "Only blocking specific IP addresses"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "Which OSI model layer primarily deals with firewall operations?",
+    "answers": [
+      "Application layer",
+      "Transport layer",
+      "Network layer",
+      "Data link layer"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "What does a firewall do when it detects unauthorized network traffic?",
+    "answers": [
+      "Encrypts the data",
+      "Logs the incident for analysis",
+      "Allows the traffic to pass through",
+      "Reboots the system"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is the purpose of setting up 'port forwarding' on a firewall?",
+    "answers": [
+      "Blocking all incoming network traffic",
+      "Redirecting incoming network traffic to a specific device",
+      "Encrypting outgoing data packets",
+      "Changing the firewall's security settings"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "Which protocol is commonly used for secure remote access through a firewall?",
+    "answers": [
+      "HTTP",
+      "FTP",
+      "SSH",
+      "Telnet"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "What term is used to describe a firewall configuration error that unintentionally allows all network traffic?",
+    "answers": [
+      "Tunneling",
+      "Spoofing",
+      "Backdoor",
+      "Swiss cheese firewall"
+    ],
+    "correct": 3,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "Why is it important to regularly update firewall software?",
+    "answers": [
+      "To decrease the computer\\'s processing speed",
+      "To ensure compatibility with the latest video games",
+      "To fix software bugs and address new security threats",
+      "To limit internet access for users"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is a type of malware that disguises itself as a legitimate file or program?",
+    "answers": [
+      "Virus",
+      "Phishing",
+      "Trojan horse",
+      "Spyware"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is a common way malware spreads through email?",
+    "answers": [
+      "Updating software",
+      "Changing passwords frequently",
+      "Clicking on malicious attachments or links",
+      "Using a firewall"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is a type of malware that locks up a user's files and demands payment in exchange for decryption?",
+    "answers": [
+      "Ransomware",
+      "Adware",
+      "Worm",
+      "Rootkit"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is NOT a potential purpose of malware?",
+    "answers": [
+      "Data theft",
+      "System optimization",
+      "Espionage",
+      "Disruption of services"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is a type of malware that secretly collects information about a user's computer habits?",
+    "answers": [
+      "Worm",
+      "Adware",
+      "Botnet",
+      "Spyware"
+    ],
+    "correct": 3,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "What is a common method to protect against malware infections?",
+    "answers": [
+      "Sharing passwords with friends",
+      "Installing antivirus software",
+      "Clicking on suspicious links",
+      "Using public Wi-Fi for sensitive transactions"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "Which type of malware can replicate itself and spread to other computers without any user interaction?",
+    "answers": [
+      "Trojan horse",
+      "Worm",
+      "Ransomware",
+      "Keylogger"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "What is a technique used by cybercriminals to trick individuals into providing sensitive information such as passwords or credit card details?",
+    "answers": [
+      "Ransomware",
+      "Malvertising",
+      "Phishing",
+      "Rootkit"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "Which type of malware is designed to display unwanted advertisements on a user's computer?",
+    "answers": [
+      "Adware",
+      "Rootkit",
+      "Botnet",
+      "Keylogger"
+    ],
+    "correct": 0,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "What is a type of malware that infects a legitimate program and modifies its behavior when executed?",
+    "answers": [
+      "Trojan horse",
+      "Virus",
+      "Spyware",
+      "Worm"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "What is Two-factor authentication (2FA)?",
+    "answers": [
+      "A type of computer virus",
+      "A method of encrypting data",
+      "A security process that requires two forms of identification",
+      "A technique for hiding files"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "Which of the following can be used as a factor for Two-factor authentication?",
+    "answers": [
+      "Username and password",
+      "Facial recognition and fingerprint scan",
+      "Date of birth",
+      "Favorite color and pet's name"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "How does Two-factor authentication enhance security?",
+    "answers": [
+      "It slows down login processes",
+      "It decreases the complexity of passwords",
+      "It reduces the risk of unauthorized access",
+      "It requires only one step for authentication"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is NOT an example of a second factor in Two-factor authentication?",
+    "answers": [
+      "One-time passcode sent via SMS",
+      "Security question",
+      "Smart card",
+      "Biometric verification"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "True or False: Two-factor authentication can be bypassed easily by hackers.",
+    "answers": [
+      "True",
+      "False",
+      "N/A",
+      "N/A"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is a recommended way to receive a second factor for Two-factor authentication?",
+    "answers": [
+      "Email",
+      "Phone call",
+      "Public chat message",
+      "Social media post"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "True or False: Two-factor authentication can protect against phishing attacks",
+    "answers": [
+      "True",
+      "False",
+      "N/A",
+      "N/A"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is the purpose of using Two-factor authentication for online accounts?",
+    "answers": [
+      "To share login credentials securely",
+      "To increase the difficulty for hackers to access an account",
+      "To generate online advertisements",
+      "To make the login process quicker"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "True or False: Two-factor authentication is essential for maintaining strong cybersecurity.",
+    "answers": [
+      "True",
+      "False",
+      "N/A",
+      "N/A"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is a common type of second factor for Two-factor authentication?",
+    "answers": [
+      "Social media profile",
+      "Birth certificate number",
+      "Security token",
+      "Favorite food"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is social engineering in the context of cybersecurity?",
+    "answers": [
+      "Hacking into a computer system using sophisticated software tools",
+      "Manipulating people into giving confidential information",
+      "Programming a firewall to block unauthorized access",
+      "Conducting a penetration test to identify vulnerabilities"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is an example of a social engineering technique?",
+    "answers": [
+      "Installing antivirus software on a computer",
+      "Brute force attack on a password",
+      "Phishing email pretending to be from a bank requesting login information",
+      "Configuring a secure VPN connection"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "Why is social engineering considered a serious threat to cybersecurity?",
+    "answers": [
+      "It is only used by ethical hackers for legitimate purposes",
+      "It involves physical intrusion into secure facilities",
+      "It bypasses technical security measures by targeting human behavior",
+      "It requires advanced programming skills to execute"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is NOT a common goal of social engineering attacks?",
+    "answers": [
+      "Stealing sensitive information",
+      "Distributing malware",
+      "Disabling network firewalls",
+      "Gaining unauthorized access to systems"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "What is the best defense against social engineering attacks?",
+    "answers": [
+      "Using the same password for all accounts",
+      "Regularly updating antivirus software",
+      "Training employees to recognize and report suspicious activity",
+      "Installing biometric authentication systems"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is a common warning sign of a phishing email?",
+    "answers": [
+      "Direct request for sensitive information without explanation",
+      "Offer of free software download from a reputable source",
+      "Promises of winning a cash prize without entering a contest",
+      "Urgent message requiring immediate action with no consequences"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "What is pretexting in the context of social engineering?",
+    "answers": [
+      "Creating a fake identity to deceive individuals",
+      "Conducting extensive research on a target's habits",
+      "Exploiting software vulnerabilities to gain access to a network",
+      "Gathering information through social media profiles"
+    ],
+    "correct": 0,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is an example of tailgating as a social engineering tactic?",
+    "answers": [
+      "Sending deceptive emails to trick recipients into revealing passwords",
+      "Physically following an employee into a secure building without proper authorization",
+      "Creating fake social media profiles to gather personal information",
+      "Exploiting weaknesses in a company's network infrastructure"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "What is the main objective of a social engineering audit?",
+    "answers": [
+      "Assessing the strength of encryption algorithms",
+      "Evaluating the physical security measures of a building",
+      "Testing the effectiveness of employee awareness and training programs",
+      "Identifying vulnerabilities in network hardware"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is a common method used in vishing attacks?",
+    "answers": [
+      "Sending deceptive emails to trick recipients into revealing passwords",
+      "Making phone calls pretending to be a trusted entity to obtain sensitive information",
+      "Impersonating a technician to gain physical access to a computer system",
+      "Exploiting software vulnerabilities through malicious websites"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "What is the purpose of a firewall in network security?",
+    "answers": [
+      "To allow unlimited access to all network traffic",
+      "To prevent unauthorized access to or from a private network",
+      "To make the network faster by removing security checks",
+      "To hide the network from the internet"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is a common method used to secure wireless networks?",
+    "answers": [
+      "Using the default network name (SSID)",
+      "Disabling encryption",
+      "Enabling MAC address filtering",
+      "Sharing the network password with everyone"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "What is phishing?",
+    "answers": [
+      "A type of fishing technique to catch cybercriminals",
+      "A method of gaining unauthorized access to a system through a USB drive",
+      "A social engineering attack to trick individuals into giving out sensitive information",
+      "A software vulnerability in network routers"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is the purpose of encryption in network security?",
+    "answers": [
+      "To slow down network traffic",
+      "To make data unreadable to unauthorized users",
+      "To share all network data publicly",
+      "To increase the likelihood of data breaches"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is a best practice for creating strong passwords?",
+    "answers": [
+      "Using simple and common words or phrases",
+      "Sharing passwords with friends for easy access",
+      "Using a combination of letters, numbers, and special characters",
+      "Writing down passwords on sticky notes attached to a computer"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is a VPN (Virtual Private Network) used for in network security?",
+    "answers": [
+      "To make a network public and accessible to anyone",
+      "To hide internet browsing history from Internet Service Providers",
+      "To increase network speed",
+      "To securely connect to a private network over the internet"
+    ],
+    "correct": 3,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is a common type of malware that can spread through email attachments?",
+    "answers": [
+      "Firewall",
+      "Ransomware",
+      "VPN",
+      "Switch"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is the purpose of multi-factor authentication (MFA) in cybersecurity?",
+    "answers": [
+      "To simplify access to accounts by only using one authentication method",
+      "To increase security by requiring multiple forms of verification",
+      "To allow unrestricted access to all accounts",
+      "To share passwords with others for easier login"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is a Distributed Denial of Service (DDoS) attack?",
+    "answers": [
+      "An attack that encrypts all sensitive data on a network",
+      "An attack that floods a network with excessive traffic to disrupt normal operation",
+      "An attack that steals confidential information through email phishing",
+      "An attack that physically destroys network hardware"
+    ],
+    "correct": 1,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "How can users protect themselves from social engineering attacks?",
+    "answers": [
+      "By sharing personal information with strangers online",
+      "By always clicking on links sent via email without verification",
+      "By being cautious of unsolicited requests for sensitive information",
+      "By using weak and easily guessable passwords"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is endpoint security?",
+    "answers": [
+      "Anti-virus software",
+      "Protecting network devices",
+      "Securing physical entry points",
+      "Safeguarding individual devices connected to a network"
+    ],
+    "correct": 3,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is a common threat to endpoint security?",
+    "answers": [
+      "Physical security guards",
+      "Software updates",
+      "Firewall settings",
+      "Malware attacks"
+    ],
+    "correct": 3,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "What is the purpose of endpoint security software?",
+    "answers": [
+      "To improve network speed",
+      "To block all internet access",
+      "To monitor and protect endpoints from security threats",
+      "To track the physical location of devices"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "How can employees contribute to endpoint security?",
+    "answers": [
+      "Sharing passwords with colleagues",
+      "Installing unauthorized software",
+      "Reporting suspicious emails or activities",
+      "Leaving devices unlocked in public places"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is NOT a common endpoint security tool?",
+    "answers": [
+      "Firewall",
+      "Intrusion Detection System (IDS)",
+      "Virtual Private Network (VPN)",
+      "Social Media Monitoring Software"
+    ],
+    "correct": 3,
+    "difficulty": "hard",
+    "level": 2
+  },
+  {
+    "question": "What is the purpose of endpoint encryption?",
+    "answers": [
+      "To slow down device performance",
+      "To hide network traffic",
+      "To protect data stored on devices",
+      "To increase vulnerability to cyber attacks"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "What is a potential consequence of a successful endpoint security breach?",
+    "answers": [
+      "Increased network speed",
+      "Unauthorized access to sensitive data",
+      "Improved device performance",
+      "Enhanced cybersecurity measures"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is a best practice for endpoint security?",
+    "answers": [
+      "Sharing passwords with colleagues",
+      "Ignoring software updates",
+      "Using multi-factor authentication",
+      "Keeping devices unlocked in public places"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "Why is it important to regularly update endpoint security software?",
+    "answers": [
+      "To increase network vulnerability",
+      "To slow down device performance",
+      "To protect against new security threats",
+      "To decrease the need for encryption"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "What is the role of a VPN in endpoint security?",
+    "answers": [
+      "To block all incoming network traffic",
+      "To provide secure remote access to the network",
+      "To disable encryption on devices",
+      "To enhance social media monitoring"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "What is an Advanced Persistent Threat (APT)?",
+    "answers": [
+      "A type of computer virus",
+      "A type of software bug",
+      "A sophisticated and targeted cyberattack",
+      "An accidental system breach"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "Which of the following is a primary goal of an APT?",
+    "answers": [
+      "Stealing personal information",
+      "Slowing down internet speed",
+      "Sending spam emails",
+      "Installing computer games"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is a common method used in APT attacks?",
+    "answers": [
+      "Phishing",
+      "Spell casting",
+      "Baking cookies",
+      "Playing music"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "How do cybercriminals gain entry during an APT attack?",
+    "answers": [
+      "By asking for permission",
+      "By breaking down the door",
+      "By exploiting vulnerabilities",
+      "By sending friendly messages"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is the difference between a regular cyberattack and an APT?",
+    "answers": [
+      "Time of day the attack occurs",
+      "The number of attackers involved",
+      "The skill and persistence of the attackers",
+      "The type of devices targeted"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "After gaining access, what do attackers typically do during an APT?",
+    "answers": [
+      "Leave no trace of their presence",
+      "Hold a virtual tea party",
+      "Explore the network, locate valuable data, and maintain access",
+      "Write a thank you note"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is the role of social engineering in an APT?",
+    "answers": [
+      "Repairing network issues",
+      "Manipulating individuals into providing sensitive information or access",
+      "Creating stronger passwords",
+      "Designing new software"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "How can organizations protect themselves from APTs?",
+    "answers": [
+      "Ignoring security updates",
+      "Using weak passwords",
+      "Implementing strong cybersecurity measures",
+      "Leaving doors unlocked"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What is the potential impact of a successful APT on an organization?",
+    "answers": [
+      "Improved reputation",
+      "Financial losses, data breaches, and damage to the organization's integrity",
+      "Higher employee satisfaction",
+      "Decreased productivity"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 2
+  },
+  {
+    "question": "What should individuals do to prevent falling victim to an APT?",
+    "answers": [
+      "Share personal information on social media",
+      "Click on suspicious links and attachments",
+      "Be cautious of unsolicited emails and messages",
+      "Install all available software updates"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 2
+  },
+  {
+    "question": "What is the purpose of an Intrusion Detection System (IDS)?",
+    "answers": [
+      "To block all incoming network traffic",
+      "To monitor network traffic for suspicious activity",
+      "To increase internet speed",
+      "To encrypt data transmitted over the network"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "Which type of IDS analyzes network traffic in real-time?",
+    "answers": [
+      "Signature-based IDS",
+      "Anomaly-based IDS",
+      "Network-based IDS",
+      "Host-based IDS"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is the primary function of a Signature-based IDS?",
+    "answers": [
+      "Identifying deviations from normal behavior",
+      "Analyzing network packets for known patterns",
+      "Monitoring host logs for unusual activities",
+      "Encrypting data in transit"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "Which type of IDS focuses on deviations from established baselines of normal behavior?",
+    "answers": [
+      "Signature-based IDS",
+      "Anomaly-based IDS",
+      "Network-based IDS",
+      "Host-based IDS"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is a common drawback of Signature-based IDS?",
+    "answers": [
+      "High false positive rate",
+      "Slowing down network speed",
+      "Inability to detect known threats",
+      "Expensive implementation costs"
+    ],
+    "correct": 0,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "What is the difference between IDS and IPS?",
+    "answers": [
+      "IPS detects and responds to threats, while IDS only detects threats",
+      "IDS operates at the network level, while IPS operates at the application level",
+      "IPS is a passive monitoring system, while IDS is an active defense system",
+      "IDS provides recommendations to mitigate threats, while IPS does not"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "Which type of IDS may be more prone to false positives?",
+    "answers": [
+      "Anomaly-based IDS",
+      "Behavior-based IDS",
+      "Host-based IDS",
+      "Network-based IDS"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "In which phase of the cybersecurity kill chain can an IDS be particularly effective?",
+    "answers": [
+      "Reconnaissance",
+      "Exploitation",
+      "Command and Control",
+      "Exfiltration"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "What can an Intrusion Detection System help organizations with?",
+    "answers": [
+      "Preventing all cybersecurity incidents",
+      "Navgiating complex legal regulations",
+      "Identifying and responding to security incidents",
+      "Ensuring 100% network uptime"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "How does an Intrusion Prevention System (IPS) differ from an IDS?",
+    "answers": [
+      "IDS focuses on monitoring activity, while IPS focuses on blocking threats",
+      "IPS operates based on signatures, while IDS operates based on anomalies",
+      "IPS is placed before the firewall, while IDS is placed after the firewall",
+      "IPS is more cost-effective than IDS"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is the primary purpose of Cyber Threat Intelligence (CTI)?",
+    "answers": [
+      "To advertise cybersecurity products",
+      "To monitor network bandwidth",
+      "To provide actionable insights on potential threats",
+      "To improve software design"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "Which type of Cyber Threat Intelligence focuses on ongoing or recent cyber threats and attacks?",
+    "answers": [
+      "Tactical CTI",
+      "Strategic CTI",
+      "Operational CTI",
+      "Technical CTI"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What does IoC stand for in the context of Cyber Threat Intelligence?",
+    "answers": [
+      "Internet of Compromise",
+      "Indicator of Compromise",
+      "Input/Output Coding",
+      "Information on Cybersecurity"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is NOT a source commonly used in gathering Cyber Threat Intelligence?",
+    "answers": [
+      "Open-source intelligence",
+      "Industry reports",
+      "Social media analysis",
+      "Physical threat assessments"
+    ],
+    "correct": 3,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is the main goal of utilizing Threat Intelligence Platforms (TIPs)?",
+    "answers": [
+      "To slow down network operations",
+      "To increase vulnerability exposure",
+      "To facilitate the aggregation and analysis of threat data",
+      "To cause system failures"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "Which term refers to a set of indicators that collectively indicate the presence of a specific threat actor?",
+    "answers": [
+      "Threat indicator bundle",
+      "Malware package",
+      "Threat intelligence feed",
+      "TTP (Tactics, Techniques, and Procedures)"
+    ],
+    "correct": 3,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "How can Cyber Threat Intelligence be utilized in proactive defense strategies?",
+    "answers": [
+      "By only reacting to incidents after they occur",
+      "By identifying potential threats before they materialize",
+      "By blocking all network traffic",
+      "By ignoring security alerts"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is a key benefit of sharing Cyber Threat Intelligence within the industry?",
+    "answers": [
+      "Increased competition",
+      "Lowered reputation",
+      "Enhanced overall cybersecurity posture",
+      "Slowed response time to incidents"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What role does human analysis play in the effectiveness of Cyber Threat Intelligence?",
+    "answers": [
+      "Irrelevant, as automation renders human analysis unnecessary",
+      "Human analysis is crucial for contextualizing and verifying threat data",
+      "Human analysis leads to increased cybersecurity vulnerabilities",
+      "Only AI analysis is required for Cyber Threat Intelligence"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "Which phase of the Cyber Kill Chain model does Cyber Threat Intelligence play a significant role in?",
+    "answers": [
+      "Delivery",
+      "Reconnaissance",
+      "Exploitation",
+      "Command and control"
+    ],
+    "correct": 1,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "What is the primary goal of digital forensics?",
+    "answers": [
+      "To prevent cyber attacks",
+      "To recover data from digital forensics",
+      "To develop software programs",
+      "To secure network communications"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is a digital forensic investigator looking for during a forensic analysis?",
+    "answers": [
+      "Updates for software programs",
+      "Hidden clues or evidence on digital devices",
+      "Networking protocols",
+      "Social media accounts of suspects"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is NOT a step in the digital forensic process?",
+    "answers": [
+      "Evidence collections",
+      "Analysis",
+      "Data encryption",
+      "Reporting"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is the first phase of the digital forensics investigation process?",
+    "answers": [
+      "Analysis",
+      "Report writing",
+      "Identification",
+      "Collection"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "In the context of digital forensics, what does RAM stand for?",
+    "answers": [
+      "Random Access Memory",
+      "Rapid Application Management",
+      "Read-Only Memory",
+      "Remote Access Module"
+    ],
+    "correct": 3,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is an example of volatile data in digital forensics?",
+    "answers": [
+      "USB drive",
+      "Hard drive",
+      "RAM",
+      "Cloud storage"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "What is a hash value used for in digital forensics?",
+    "answers": [
+      "To log network activity",
+      "To identify a unique digital signature for a file",
+      "To decrypt encrypted data",
+      "To track IP addresses"
+    ],
+    "correct": 1,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "Which organization provides guidelines and best practices for digital forensics?",
+    "answers": [
+      "ISO (International Organization for Standardization)",
+      "WHO (World Health Organization)",
+      "NASA (National Aeronautics and Space Administration)",
+      "CIA (Central Intelligence Agency)"
+    ],
+    "correct": 0,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "What is steganography in the context of digital forensics?",
+    "answers": [
+      "A type of encryption algorithm",
+      "The process of recovering deleted files",
+      "The practice of concealing data within other data",
+      "A tool for analyzing network traffic"
+    ],
+    "correct": 1,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "What is the purpose of writing a digital forensic report?",
+    "answers": [
+      "To estimate the cost of the investigation",
+      "To document the findings, analysis, and conclusions of the investigation",
+      "To provide recommendations for encryption methods",
+      "To track the physical location of digital devices"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is the purpose of a cryptographic hash function?",
+    "answers": [
+      "To encrypt data",
+      "To generate random numbers",
+      "To compress files",
+      "To ensure data integrity"
+    ],
+    "correct": 3,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What encryption algorithm is commonly used for securing web traffic?",
+    "answers": [
+      "RSA",
+      "DES",
+      "AES",
+      "ROT13"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is an asymmetric encryption algorithm?",
+    "answers": [
+      "AES",
+      "DES",
+      "RSA",
+      "Blowfish"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "Which of the following encryption algorithms is symmetric?",
+    "answers": [
+      "RSA",
+      "AES",
+      "ECC",
+      "Diffie-Hellman"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is the purpose of a digital signature in cryptography?",
+    "answers": [
+      "To hide the message content",
+      "To verify the identity of the sender",
+      "To encrypt the message",
+      "To increase the message speed"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "Which cryptographic algorithm is asymmetric in nature, using a pair of keys for encryption and decryption?",
+    "answers": [
+      "AES",
+      "DES",
+      "RSA",
+      "SHA-256"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is the purpose of a digital signature in cryptography?",
+    "answers": [
+      "To encrypt sensitive data",
+      "To authenticate the sender of a message",
+      "To generate random numbers",
+      "To compress files"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What type of encryption uses the same key for both encryption and decryption?",
+    "answers": [
+      "Asymmetric encryption",
+      "Public-key encryption",
+      "Symmetric encryption",
+      "Multi-key encryption"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is the primary purpose of a digital signature in cryptography?",
+    "answers": [
+      "To encrypt messages securely",
+      "To authenticate the identity of the sender",
+      "To compress large files for efficient transmission",
+      "To hide the contents of the message"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What type of cryptographic key is used for both encryption and decryption in symmetric-key cryptography?",
+    "answers": [
+      "Public key",
+      "Private key",
+      "Shared key",
+      "Session key"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is the purpose of a cryptographic hash function in Blockchain technology?",
+    "answers": [
+      "To encrypt all data stored on the blockchain",
+      "To ensure confidentiality of data transactions",
+      "To provide a unique fingerprint for data integrity verification",
+      "To prevent unauthorized access to the blockchain"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is a common attack on blockchain technology that involves malicious nodes misleading other nodes in the network?",
+    "answers": [
+      "Sybil Attack",
+      "DDoS Attack",
+      "Man-in-the-Middle Attack",
+      "SQL Injection Attack"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is a common attack vector to compromise blockchain security?",
+    "answers": [
+      "SQL Injection",
+      "Phishing",
+      "Side Channel Attack",
+      "Ransomware"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is a common attack vector in Blockchain security that occurs when a malicious user controls the majority of computing power in a network?",
+    "answers": [
+      "DDoS attack",
+      "Replay attack",
+      "51% attack",
+      "Phishing attack"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "What is a common security vulnerability in blockchain technology?",
+    "answers": [
+      "Distributed Denial of Service (DDoS) attacks",
+      "Phishing attacks",
+      "Smart contract bugs",
+      "SQL injection attacks"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is a '51% attack' in the context of Blockchain Security?",
+    "answers": [
+      "When an attacker gains control of more than half of the network's computing power to manipulate transactions.",
+      "When an attacker gains unauthorized access to 51% of the blockchain's data.",
+      "When a hacker is able to crack a cryptographic key using quantum computing.",
+      "When a blockchain network experiences a 51% increase in user activity causing congestion."
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "Which cryptographic algorithm is commonly used to secure transactions in a blockchain network?",
+    "answers": [
+      "RSA",
+      "AES",
+      "SHA-256",
+      "DES"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is a common attack in Blockchain Security where an individual or a group ploys to control more than 50% of the network's mining power to manipulate transactions?",
+    "answers": [
+      "Distributed Denial of Service (DDoS) Attack",
+      "Man-in-the-Middle Attack",
+      "Sybil Attack",
+      "Phishing attack"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is a common vulnerability in Blockchain security that occurs when multiple transactions are grouped together and processed as a single unit?",
+    "answers": [
+      "Double spending attack",
+      "Man-in-the-middle attack",
+      "DDoS attack",
+      "Spear phishing attack"
+    ],
+    "correct": 0,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "What is a common vulnerability in Blockchain security that occurs when a user tries to spend the same cryptocurrency balance more than once?",
+    "answers": [
+      "Replay attack",
+      "DDoS Attack",
+      "Social Engineering",
+      "Phishing attack"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is the purpose of input validation in secure coding practices?",
+    "answers": [
+      "To slow down the performance of the code",
+      "To ensure that input data is accurate and safe",
+      "To introduce vulnerabilities into the code",
+      "To make the code harder to read and understand"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is an example of a common authentication vulnerability in web applications?",
+    "answers": [
+      "Encryption of sensitive data during transmission",
+      "Implementing strong password policies",
+      "Cross-Site Scripting (XSS)",
+      "Logging user activities securely"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "Why is it important to sanitize user input in secure coding practices?",
+    "answers": [
+      "To generate random user inputs",
+      "To prevent SQL injection and other code injection attacks",
+      "To make the code more difficult to maintain",
+      "To reduce the functionality of the code"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is a secure coding practice for protecting against buffer overflows?",
+    "answers": [
+      "Using dynamic memory allocation functions",
+      "Restricting the length of input data",
+      "Ignoring array bounds checks",
+      "Using outdated software libraries"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "When storing passwords in a database, what is a recommended security measure to implement?",
+    "answers": [
+      "Storing passwords in plaintext",
+      "Using the same password for all users",
+      "Hashing passwords with a strong cryptographic algorithm",
+      "Sharing passwords with other users"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is a common security issue related to improper error handling in code?",
+    "answers": [
+      "Tightening access controls",
+      "Revealing sensitive information to attackers",
+      "Regularly updating software patches",
+      "Enforcing strong password policies"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "Why is it important to apply the principle of least privilege in secure coding practices?",
+    "answers": [
+      "To give all users full administrative access",
+      "To limit code execution to only the necessary privileges",
+      "To store passwords in plaintext",
+      "To encourage open access to all functions"
+    ],
+    "correct": 1,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is an example of a security measure to prevent data leakage in secure coding practices?",
+    "answers": [
+      "Regularly sharing sensitive data with unauthorized users",
+      "Implementing data encryption for stored data",
+      "Using weak passwords for user accounts",
+      "Allowing open access to sensitive data"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is the purpose of implementing secure session management in web applications?",
+    "answers": [
+      "To allow unlimited session timeouts",
+      "To store sensitive session data in plaintext",
+      "To prevent unauthorized access to user sessions",
+      "To require users to share their session IDs publicly"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is a best practice for securely handling file uploads in web applications?",
+    "answers": [
+      "Allowing executable files to be uploaded",
+      "Storing uploaded files outside the web root directory",
+      "Not validating the file type or size",
+      "Running uploaded files directly on the server"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is the term used to describe a cybersecurity professional who legally hacks into systems to identify vulnerabilities?",
+    "answers": [
+      "Black Hat Hacker",
+      "White Hat Hacker",
+      "Gray Hat Hacker",
+      "Script Kiddie"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is the term used to describe a cybersecurity professional who is authorized to bypass security defenses to identify vulnerabilities in a system?",
+    "answers": [
+      "Shadow Hacker",
+      "Black Hat Hacker",
+      "White Hat Hacker",
+      "Gray Hat Hacker"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "In the realm of Ethical Hacking, what technique involves using password-cracking software to gain unauthorized access to a system?",
+    "answers": [
+      "Social Engineering",
+      "Phishing",
+      "Brute force attack",
+      "Trojan horse"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is the main goal of ethical hacking?",
+    "answers": [
+      "Theft of sensitive information",
+      "Disruption of services",
+      "Testing security systems",
+      "Installing malware"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is the primary goal of ethical hacking?",
+    "answers": [
+      "Stealing sensitive data",
+      "Causing damage to computer systems",
+      "Finding and fixing security vulnerabilities",
+      "Spreading malware"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is the primary goal of an ethical hacker during a penetration test?",
+    "answers": [
+      "Create chaos and disrupt the target system",
+      "Extract sensitive information for personal gain",
+      "Identify and report security vulnerabilities",
+      "Gain unauthorized access without detection"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "In the context of ethical hacking, what is the purpose of conducting a penetration test?",
+    "answers": [
+      "To exploit vulnerabilities in a system for personal gain",
+      "To illegally gain access to sensitive information",
+      "To assess the security of a system by simulating real-world attacks",
+      "To disrupt the normal operation of a network"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "In the context of ethical hacking, what is the term used to describe a type of attack wherein an attacker impersonates a legitimate website to gather a user's sensitive information?",
+    "answers": [
+      "SQL Injection",
+      "Cross-Site Scripting (XSS)",
+      "Phishing",
+      "Denial of Service (DoS)"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is the primary goal of ethical hacking?",
+    "answers": [
+      "To disrupt systems and cause harm",
+      "To steal sensitive information",
+      "To detect vulnerabilities and improve security",
+      "To perform illegal activities"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is social engineering in the context of ethical hacking?",
+    "answers": [
+      "Using software vulnerabilities to gain unauthorized access",
+      "Manipulating individuals to divulge confidential information",
+      "Encrypting data to prevent unauthorized access",
+      "Testing network security by conducting simulated attacks"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is social engineering in cybersecurity?",
+    "answers": [
+      "A type of encryption technique",
+      "A physical security measure",
+      "A psychological manipulation tactic",
+      "A network protocol"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is an example of social engineering attack?",
+    "answers": [
+      "Phishing",
+      "Firewall configuration",
+      "Software patching",
+      "VPN tunneling"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is the main goal of a social engineering attack?",
+    "answers": [
+      "Stealing hardware devices",
+      "Exploiting software vulnerabilities",
+      "Acquiring sensitive information or access",
+      "Disrupting network communications"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is a common pretexting technique in social engineering?",
+    "answers": [
+      "Brute force attack",
+      "Shoulder surfing",
+      "Dumpster diving",
+      "Impersonating a trusted individual"
+    ],
+    "correct": 3,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is the purpose of phishing in social engineering attacks?",
+    "answers": [
+      "Gaining unauthorized access through physical intrusion",
+      "Cracking passwords using brute force",
+      "Obtaining sensitive information or credentials",
+      "Monitoring network traffic for vulnerabilities"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is tailgating in the context of social engineering?",
+    "answers": [
+      "A form of malware attack",
+      "Using someone else's credentials to access a facility",
+      "Physically following an authorized person into a restricted area",
+      "Manipulating individuals to divulge confidential information"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is NOT a common social engineering technique?",
+    "answers": [
+      "Watering hole attack",
+      "Piggybacking",
+      "Man-in-the-Middle Attack",
+      "Baiting"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "What is the purpose of a watering hole attack?",
+    "answers": [
+      "Infecting a target's system with malware by exploiting unsecured network connections",
+      "Using a physical keylogger to capture keystrokes",
+      "Compromising a website frequented by the target to distribute malware",
+      "Intercepting network traffic to steal sensitive information"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is an example of reverse social engineering?",
+    "answers": [
+      "A hacker convincing a target to provide sensitive information",
+      "A target manipulating a hacker to provide access to a system",
+      "Sending deceptive emails to extract passwords",
+      "Exploiting a known vulnerability to gain unauthorized access"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What should individuals do to protect themselves from social engineering attacks?",
+    "answers": [
+      "Disable antivirus software",
+      "Share passwords with colleagues",
+      "Verify requests for sensitive information using multiple channels",
+      "Click on unfamiliar links or email attachments"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is the first step in the Cyber Incident Response process?",
+    "answers": [
+      "Containment",
+      "Recovery",
+      "Identification",
+      "Eradication"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is NOT a common goal of Cyber Incident Response?",
+    "answers": [
+      "Restoring systems and services",
+      "Identifying vulnerabilities in the network",
+      "Investigating the root cause of the incident",
+      "Punishing the hackers responsible"
+    ],
+    "correct": 3,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is the purpose of a Cyber Incident Response Plan?",
+    "answers": [
+      "To prevent all cyber incidents from occurring",
+      "To detect every cyber incident immediately",
+      "To provide a structured approach for responding to cyber incidents",
+      "To alert the media about cyber incidents"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "Which team is responsible for leading the Cyber Incident Response efforts within an organization?",
+    "answers": [
+      "Human Resources",
+      "Marketing",
+      "IT Department",
+      "Legal Department"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is the role of the Communication Team during Cyber Incident Response?",
+    "answers": [
+      "Investigating the incident",
+      "Restoring backups",
+      "Notifying stakeholders and public",
+      "Implementing access controls"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "In Cyber Incident Response, what does the term 'Containment' refer to?",
+    "answers": [
+      "Removing the incident from the network",
+      "Communicating with the media",
+      "Analyzing the root cause of the incident",
+      "Reporting the incident to law enforcement"
+    ],
+    "correct": 0,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is a key element of a successful Cyber Incident Response Plan?",
+    "answers": [
+      "Denying any incident ever occurred",
+      "Regular training and testing of the plan",
+      "Keeping the plan confidential from all employees",
+      "Ignoring incident notifications from external sources"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is the main purpose of conducting a post-incident review in Cyber Incident Response?",
+    "answers": [
+      "To assign blame to specific individuals",
+      "To improve the effectiveness of future response efforts",
+      "To delay the restoration of systems and services",
+      "To discourage employees from reporting incidents"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is the significance of documenting all activities during a Cyber Incident Response?",
+    "answers": [
+      "It helps in covering up mistakes made during the response",
+      "It can be used as evidence in legal proceedings",
+      "It is not necessary and can be skipped",
+      "It is only required for minor incidents"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "Which phase of the Cyber Incident Response process involves restoring affected systems and services?",
+    "answers": [
+      "Identification",
+      "Containment",
+      "Eradication",
+      "Recovery"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "What is the main purpose of network encryption?",
+    "answers": [
+      "To slow down internet speed",
+      "To prevent unauthorized access to data",
+      "To increase the chances of data leaks",
+      "To bypass firewalls"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "Which encryption protocol creates a secure tunnel for data to travel through a public network?",
+    "answers": [
+      "SSL/TLS",
+      "UDP",
+      "SNMP",
+      "SMTP"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is the purpose of a cryptographic key in network encryption?",
+    "answers": [
+      "To make data more accessible",
+      "To decrypt encrypted data",
+      "To hide data from the network administrator",
+      "To slow down network performance"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "Which encryption algorithm is commonly used for securing Wi-Fi networks?",
+    "answers": [
+      "DES",
+      "RC4",
+      "RSA",
+      "WEP"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is NOT a potential threat to encrypted network communication?",
+    "answers": [
+      "Man-in-the-Middle attacks",
+      "Phishing attacks",
+      "Spoofing attacks",
+      "Zero-day attacks"
+    ],
+    "correct": 3,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "Which type of encryption involves using two keys, one for encryption and one for decryption?",
+    "answers": [
+      "Symmetric encryption",
+      "Asymmetric encryption",
+      "Hashing",
+      "Obfuscation"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 3
+  },
+  {
+    "question": "In the context of network encryption, what is a VPN?",
+    "answers": [
+      "Virtual Private Network",
+      "Very Private Network",
+      "Visible Public Network",
+      "Virtual Personal Network"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "Which encryption method is often used in email communication for securing message content?",
+    "answers": [
+      "HTTPS",
+      "PGP",
+      "HMAC",
+      "CRC"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "What is the primary difference between hashing and encryption in the context of cybersecurity?",
+    "answers": [
+      "Hashing is irreversible, while encryption is reversible",
+      "Hashing is faster than encryption",
+      "Hashing requires a key, while encryption does not",
+      "Encryption is used for data integrity checks, while hashing is used for confidentiality"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 3
+  },
+  {
+    "question": "Which of the following is an example of a symmetric encryption algorithm?",
+    "answers": [
+      "RSA",
+      "AES",
+      "ECC",
+      "Diffie-Hellman"
+    ],
+    "correct": 1,
+    "difficulty": "hard",
+    "level": 3
+  },
+  {
+    "question": "What biometric trait is based on the unique patterns found in the colored part of the eye?",
+    "answers": [
+      "Fingerprint",
+      "Iris",
+      "Face",
+      "Voice"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "Which of the following biometric characteristics is least likely to change over time?",
+    "answers": [
+      "Facial features",
+      "Voice pattern",
+      "Retina pattern",
+      "Hand geometry"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What type of biometric authentication relies on physical characteristics unique to each individual's ear shape?",
+    "answers": [
+      "Voice recognition",
+      "Earprint analysis",
+      "Gait analysis",
+      "Signature verification"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "Which biometric trait is commonly used in conjunction with fingerprint scanning to enhance security?",
+    "answers": [
+      "Retina Pattern",
+      "Palm vein pattern",
+      "Ear shape",
+      "Lip movement"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Biometric authentication based on behavioral traits like typing rhythm and mouse usage is known as:",
+    "answers": [
+      "Bio-acoustic authentication",
+      "Behavioral biometrics",
+      "Lip movement analysis",
+      "Gait pattern recognition"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What is the term for the process of converting a biometric input such as a fingerprint into a digital format for comparison?",
+    "answers": [
+      "Credentialing",
+      "Validition",
+      "Enrollment",
+      "Biometric conversion"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which biometric trait is commonly used in mobile devices for user authentication due to its convenience and speed?",
+    "answers": [
+      "Eye vein pattern",
+      "Facial recognition",
+      "Palm print",
+      "Gait analysis"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What biometric feature uses the unique patterns of blood vessels in the whites of the eye for identification?",
+    "answers": [
+      "Hand geometry",
+      "Sciera recognition",
+      "Finger vein pattern",
+      "Earprint analysis"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "Which biometric authentication method analyzes the unique patterns of blood vessels in the palm of the hand?",
+    "answers": [
+      "Palm vein recognition",
+      "Handprint analysis",
+      "Finger vein pattern",
+      "Vascular hand scanning"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What term describes the process of verifying a claimed identity using biometric data against stored templates?",
+    "answers": [
+      "Authentication",
+      "Identification",
+      "Verification",
+      "Authorization"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "Which encryption protocol is most commonly used in Wi-Fi networks?",
+    "answers": [
+      "WEP",
+      "WPA",
+      "VPN",
+      "SSL"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What security flaw is associated with the Wired Equivalent Privacy (WEP) protocol?",
+    "answers": [
+      "Replay attacks",
+      "Man-in-the-middle attacks",
+      "Brute force attacks",
+      "DDoS attacks"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What technology is used to protect Wi-Fi networks by limiting access based on the physical location of the device?",
+    "answers": [
+      "WPA3",
+      "MAC filtering",
+      "Rogue access point",
+      "AES encryption"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What security feature does the Wi-Fi Protected Access (WPA) protocol offer that WEP lacks?",
+    "answers": [
+      "Stronger encryption algorithms",
+      "Open authentication",
+      "Backward compatibility",
+      "Default encryption key"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which of the following is a recommended best practice to enhance the security of a wireless network?",
+    "answers": [
+      "Disabling SSID broadcasting",
+      "Sharing passwords over email",
+      "Using default router configurations",
+      "Allowing guest access without restrictions"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which encryption method does the WPA2 protocol primarily use for securing wireless connections?",
+    "answers": [
+      "TKIP",
+      "AES",
+      "RSA",
+      "DES"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What Wi-Fi vulnerability allows attackers to intercept data being transmitted between two parties without either party's knowledge?",
+    "answers": [
+      "Evil twin",
+      "Bluejacking",
+      "Packet sniffing",
+      "Bluesnarfing"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What is the purpose of a Captive Portal in wireless network security?",
+    "answers": [
+      "Allows devices to connect automatically",
+      "Redirects users to a login before accessing the network",
+      "Encrypts all traffic on the network",
+      "Blocks unauthorized devices from connecting"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which of the following is a measure to protect against Rogue Access Points in a wireless network?",
+    "answers": [
+      "Strong password policies",
+      "Intrusion Detection System (IDS)",
+      "Enabling WEP encryption",
+      "Disabling firewall settings"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What security feature is provided by the Extensible Authentication Protocol (EAP) in wireless networks?",
+    "answers": [
+      "Secure key exchange",
+      "MAC filtering",
+      "Device location tracking",
+      "Network monitoring"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What HTTP header field is used by the server to instruct the browser to create a cached copy of the requested resource?",
+    "answers": [
+      "Cache-Control",
+      "Location",
+      "Referer",
+      "User-Agent"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which HTTP header can be used to prevent a website from being loaded into an iframe?",
+    "answers": [
+      "X-Frame-Options",
+      "Content-Encoding",
+      "ETag",
+      "Content-Security-Policy"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What HTTP header field can be used to specify the type of content being sent by the server to the client?",
+    "answers": [
+      "Content-Type",
+      "Set-Cookie",
+      "Connection",
+      "Expires"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "Which HTTP header field is used to identify the software running on the server?",
+    "answers": [
+      "Server",
+      "Accept",
+      "Host",
+      "Upgrade"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What HTTP header field is used to tell the client how long the requested resource is valid?",
+    "answers": [
+      "Expires",
+      "Last-Modified",
+      "ETag",
+      "Age"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "Which HTTP header field can be used to store session information on the client side?",
+    "answers": [
+      "Set-Cookie",
+      "Location",
+      "Date",
+      "Content-Length"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What HTTP header field can be used in response messages to accomplish resource redirection?",
+    "answers": [
+      "Location",
+      "Content-Encoding",
+      "Vary",
+      "Host"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which HTTP header field is used to specify how long a resource can stay in a cache?",
+    "answers": [
+      "Age",
+      "Cache-Control",
+      "ETag",
+      "Connection"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What HTTP header field can be used to check if a resource that has already been cached is still valid?",
+    "answers": [
+      "If-Modified-Since",
+      "Referer",
+      "Cookie",
+      "Range"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which HTTP header field specifies the allowed methods that can be performed on the resource?",
+    "answers": [
+      "Allow",
+      "Accept-Ranges",
+      "Content-Length",
+      "Retry-After"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What is the purpose of a hypervisor in virtualization technology?",
+    "answers": [
+      "To secure physical servers",
+      "To manage network traffic",
+      "To create virtual machines",
+      "To encrypt virtual data"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "Which type of virtualization technology allows multiple operating systems to run on a single physical server simultaneously?",
+    "answers": [
+      "Application virtualization",
+      "Network virtualization",
+      "Storage virtualization",
+      "Server virtualization"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What is a snapshot in the context of virtualization?",
+    "answers": [
+      "A backup of a physical server",
+      "A real-time monitoring tool",
+      "A replica of a virtual machine at a specific point in time",
+      "A vulnerability in a hypervisor software"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "Which virtualization technology isolates applications from the underlying operating system?",
+    "answers": [
+      "Network Virtualization",
+      "Storage Virtualization",
+      "Application Virtualization",
+      "Desktop Virtualization"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What is the purpose of a virtual switch in a virtualized environment?",
+    "answers": [
+      "to regulate CPU usage",
+      "To virtualize physical memory",
+      "To connect virtual machines within a host",
+      "To encrypt network traffic"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "Which virtualization technology allows users to access their desktop environments remotely?",
+    "answers": [
+      "Server virtualization",
+      "Application Virtualization",
+      "Desktop virtualization",
+      "Storage Virtualization"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What is a sandbox in virtualization security?",
+    "answers": [
+      "A virtual environment for testing untrusted applications",
+      "A secure storage container for virtual machines",
+      "A network segmentation tool",
+      "An encryption protocol for virtual networks"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What is a common vulnerability associated with virtualization technology?",
+    "answers": [
+      "Buffer overflow attacks",
+      "XSS attacks",
+      "VM escape attacks",
+      "Cross-site request forgery"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which component manages the allocation of physical resources to virtual machines in a virtualized environment?",
+    "answers": [
+      "Management Console",
+      "Hypervisor",
+      "Virtual Switch",
+      "Application server"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "How does live migration benefit virtualized environments?",
+    "answers": [
+      "Reduces energy consumption",
+      "Increases the number of virtual machines per host",
+      "Improves performance of virtual machines",
+      "Allows virtual machines to be moved between hosts without downtime"
+    ],
+    "correct": 3,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What is the primary function of Kerberos Authentication in a network security context?",
+    "answers": [
+      "Data encryption",
+      "User authentication",
+      "Network scanning",
+      "Firewall configuration"
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "Which protocol does Kerberos primarily use for authentication?",
+    "answers": [
+      "LDAP",
+      "HTTPS",
+      "NTLM",
+      "TCP/IP"
+    ],
+    "correct": 0,
+    "difficulty": "hard",
+    "level": 4
+  },
+  {
+    "question": "What type of entity is responsible for authenticating users and services in a Kerberos environment?",
+    "answers": [
+      "Key distribution center (KDC)",
+      "Domain name server (DNS)",
+      "Router",
+      "Web server"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "In the Kerberos authentication process, what is the function of a Ticket Granting Ticket (TGT)?",
+    "answers": [
+      "Encrypting user data",
+      "Authorizing access to resources",
+      "Verifying server integrity",
+      "Authenticating the user to the KDC"
+    ],
+    "correct": 3,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which key is shared between the client and the Key Distribution Center (KDC) in Kerberos authentication?",
+    "answers": [
+      "Public key",
+      "Session key",
+      "Private key",
+      "Authorization key"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 4
+  },
+  {
+    "question": "What is the correct sequence of steps in the Kerberos authentication process?",
+    "answers": [
+      "Client request, Ticket Granting Ticket (TGT) validation, Service Ticket request, Access granted",
+      "Service Ticket request, Client request, Access granted, TGT validation",
+      "TGT validation, Service Ticket request, Access granted, Client request",
+      "Client request, TGT validation, Service Ticket request, Access granted"
+    ],
+    "correct": 3,
+    "difficulty": "hard",
+    "level": 4
+  },
+  {
+    "question": "What is the purpose of a Service Ticket in the Kerberos authentication process?",
+    "answers": [
+      "Authenticating the KDC",
+      "Authorizing access to services",
+      "Generating encryption keys",
+      "Verifying the client's IP address"
+    ],
+    "correct": 1,
+    "difficulty": "hard",
+    "level": 4
+  },
+  {
+    "question": "Which of the following is a potential security vulnerability in a Kerberos authentication system?",
+    "answers": [
+      "Replay attacks",
+      "Strong encrypton algorithms",
+      "Multifactor authentications",
+      "Regular password changes"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What key distribution technique does Kerberos utilize to securely share keys between entities?",
+    "answers": [
+      "Public key encryption",
+      "One-time pad",
+      "Symmetric key cryptography",
+      "Diffie-Hellman key exchange"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 4
+  },
+  {
+    "question": "Which of the following is NOT a component of the Kerberos authentication system?",
+    "answers": [
+      "Ticket-Granting Server",
+      "Authentication Server",
+      "Ticket-Granting Ticket",
+      "Session key"
+    ],
+    "correct": 1,
+    "difficulty": "hard",
+    "level": 4
+  },
+  {
+    "question": "What is the primary difference between TCP and UDP protocols?",
+    "answers": [
+      "TCP is connectionless while UDP is connection-oriented",
+      "UDP is more reliable for transmitting data than TCP",
+      "TCP provides error-checking and ensures data delivery",
+      "UDP is slower than TCP for sending data"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which protocol is commonly used for web browsing?",
+    "answers": [
+      "TCP",
+      "UDP",
+      "FTP",
+      "ICMP"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which of the following statements about UDP is true?",
+    "answers": [
+      "UDP stands for Universal Data Protocol",
+      "UDP is slower but more secure than TCP",
+      "UDP is more commonly used for real-time applications like video streaming",
+      "UDP guarantees data delivery"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What is the range of port numbers for TCP and UDP respectively?",
+    "answers": [
+      "1-65,535 and 1-1024",
+      "0-65535 and 1-65536",
+      "1-1024 and 1025-49151",
+      "1-536 and 1024-49151"
+    ],
+    "correct": 1,
+    "difficulty": "hard",
+    "level": 4
+  },
+  {
+    "question": "Which protocol is considered to be more reliable for data transmission?",
+    "answers": [
+      "TCP",
+      "UDP",
+      "HTTP",
+      "ARP"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "In TCP, what does the term 'three-way handshake' refer to?",
+    "answers": [
+      "The process of establishing a connection between two devices",
+      "Data encryption process",
+      "Termination of a connection session",
+      "A method for error-checking in UDP"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which protocol is commonly used for real-time video conferencing?",
+    "answers": [
+      "TCP",
+      "FTP",
+      "UDP",
+      "HTTP"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "In TCP, what does the term 'SYN' stand for during the connection establishment phase?",
+    "answers": [
+      "Synchronize",
+      "Syntax",
+      "Systematic",
+      "Sync"
+    ],
+    "correct": 0,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which protocol is connectionless and unreliable for data transmission?",
+    "answers": [
+      "TCP",
+      "FTP",
+      "UDP",
+      "ICMP"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What is the purpose of the UDP checksum?",
+    "answers": [
+      "Ensures error-free data transmission",
+      "Encrypts data packets",
+      "Automatically retransmits lost data packets",
+      "Verifies data integrity"
+    ],
+    "correct": 3,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What is the purpose of an SSL/TLS certificate?",
+    "answers": [
+      "To improve website loading speed.",
+      "To automatically update software.",
+      "To encrypt communications between a web server and a browser.",
+      "To secure physical access to a server."
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What does X.509 define in the context of SSL certificates?",
+    "answers": [
+      "Encryption algorithms for securing emails.",
+      "Standards for securing physical locations",
+      "Format for certificates and public key infrastructure.",
+      "Protocols for securing mobile devices."
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which key is typically included in an SSL/TLS certificate?",
+    "answers": [
+      "Public key only.",
+      "Private key only.",
+      "Secret key only.",
+      "Public and private keys."
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What does the Common Name (CN) field in an X.509 certificate represent?",
+    "answers": [
+      "Email address of the certificate holder.",
+      "IP address of the certificate server.",
+      "Domain name associated with the certificate.",
+      "Physical location of the server."
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "How can a Certificate Authority (CA) be described in the context of SSL certificates?",
+    "answers": [
+      "A type of encryption technology.",
+      "An organization that issues digital certificates.",
+      "Software for securing network connections.",
+      "A tool for scanning vulnerabilities."
+    ],
+    "correct": 1,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What cryptographic algorithm is commonly used in SSL certificates?",
+    "answers": [
+      "ROT13",
+      "MD5",
+      "AES",
+      "RSA"
+    ],
+    "correct": 3,
+    "difficulty": "hard",
+    "level": 4
+  },
+  {
+    "question": "What is the purpose of the Certificate Revocation List (CRL) in SSL/TLS certificates?",
+    "answers": [
+      "To track website visitors.",
+      "To identify the server's location.",
+      "To list compromised or revoked certificates.",
+      "To optimize server performance."
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "How does a self-signed SSL certificate differ from a certificate signed by a trusted CA?",
+    "answers": [
+      "Self-signed certificates are free.",
+      "Self-signed certificates expire sooner.",
+      "Self-signed certificates are not trusted by browsers.",
+      "Self-signed certificates offer stronger encryption."
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 4
+  },
+  {
+    "question": "What is the purpose of the Certificate Signing Request (CSR) in SSL certificate issuance?",
+    "answers": [
+      "To renew an expired certificate.",
+      "To verify the identity of the certificate holder.",
+      "To request a CA to generate the certificate.",
+      "To encrypt communications on a web server."
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "Which protocol is commonly used to secure the transmission of SSL certificates?",
+    "answers": [
+      "FTP",
+      "HTTP",
+      "HTTPS",
+      "DNS"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What is the key difference between aysmmetric and symmetric encryption algorithms?",
+    "answers": [
+      "Asymmetric encryption uses the same key for encryption and decryption",
+      "Symmetric encryption uses different keys for encryption and decryption",
+      "Asymmetric encryption is faster than symmetric encryption",
+      "Symmetric encryption is more secure than asymmetric encryption"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which encryption method requires the sharing of a public key for encryption and a private key for decryption?",
+    "answers": [
+      "Symmetric encryption",
+      "Asymmetric encryption",
+      "Triple DES encryption",
+      "MD5 hashing"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which encryption technique is commonly used for securing communication over the internet with protocols such as HTTPS?",
+    "answers": [
+      "MD5",
+      "SHA-256",
+      "RSA",
+      "Blowfish"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 4
+  },
+  {
+    "question": "In asymmetric encryption, what is the purpose of the public key?",
+    "answers": [
+      "To decrypt data",
+      "To sign digital certificates",
+      "To encrypt data",
+      "To generate random numbers"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which of the following is an example of a symmetric encryption algorithm?",
+    "answers": [
+      "RSA",
+      "AES",
+      "Diffie-Hellman",
+      "ECC"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What is the primary advantage of asymmetric encryption compared to symmetric encryption?",
+    "answers": [
+      "Speed",
+      "Security",
+      "Key distribution",
+      "Complexity"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 4
+  },
+  {
+    "question": "Which encryption algorithm is based on the concept of exchanging keys over a secure channel to establish a shared secret key?",
+    "answers": [
+      "RSA",
+      "DES",
+      "ECC",
+      "Diffie-Hellman"
+    ],
+    "correct": 3,
+    "difficulty": "hard",
+    "level": 4
+  },
+  {
+    "question": "Which encryption algorithm is known for its use in digital signatures and key exchange protocols?",
+    "answers": [
+      "Blowfish",
+      "RSA",
+      "Triple DES",
+      "MD5"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What is a common use case for symmetric encryption?",
+    "answers": [
+      "Digital signatures",
+      "Secure communication over the internet",
+      "Encrypting large amounts of data",
+      "Public key encryption"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which encryption algorithm is vulnerable to brute force attacks due to its small key size?",
+    "answers": [
+      "AES",
+      "RSA",
+      "DES",
+      "Blowfish"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What is the primary hashing algorithm used for password storage in Unix/Linux systems?",
+    "answers": [
+      "MD5",
+      "SHA-1",
+      "SHA-256",
+      "Bcrypt"
+    ],
+    "correct": 3,
+    "difficulty": "hard",
+    "level": 4
+  },
+  {
+    "question": "Which command in Linux can be used to display the open files by a process?",
+    "answers": [
+      "ls",
+      "top",
+      "lsof",
+      "ps"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "In Linux filesystem forensics, what is the purpose of the 'file' command?",
+    "answers": [
+      "Display the contents of a file",
+      "Calculate the checksum of a file",
+      "Identify the type of a file",
+      "Edit a file"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which Linux command can be used to analyze network traffic for forensic investigation?",
+    "answers": [
+      "netstat",
+      "ifconfig",
+      "sudo",
+      "grep"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What is the purpose of the Linux 'strace' command in system forensics?",
+    "answers": [
+      "Analyze disk usage",
+      "Monitor system calls and signals",
+      "Encrypt files",
+      "Create checksums"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which filesystem is commonly used in Linux for journaling and is often employed for data recovery and system repair?",
+    "answers": [
+      "NTFS",
+      "FAT32",
+      "EXT4",
+      "HFS+"
+    ],
+    "correct": 2,
+    "difficulty": "hard",
+    "level": 4
+  },
+  {
+    "question": "What is the primary purpose of Linux swap space in system forensics?",
+    "answers": [
+      "Store temporary files",
+      "Speed up system performance",
+      "Maintain a clean system",
+      "Increase available memory"
+    ],
+    "correct": 3,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "In Linux forensics, what type of data is retained in the system logs?",
+    "answers": [
+      "Only user interactions",
+      "Only network traffic",
+      "Information on system events and activities",
+      "Audio recordings"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which tool in Linux can be used for memory forensics to analyze RAM contents?",
+    "answers": [
+      "gdb",
+      "volatility",
+      "tcpdump",
+      "ping"
+    ],
+    "correct": 1,
+    "difficulty": "hard",
+    "level": 4
+  },
+  {
+    "question": "What is the purpose of the Linux command 'diff' in system forensics?",
+    "answers": [
+      "Display system differences",
+      "Compare files line by line",
+      "Remove files",
+      "Encrypt files"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which protocol is commonly used for securely transferring files over a network?",
+    "answers": [
+      "FTP",
+      "HTTP",
+      "IRC",
+      "SSH"
+    ],
+    "correct": 3,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What port does the HTTPS protocol typically use for secure communication?",
+    "answers": [
+      "21",
+      "80",
+      "443",
+      "8080"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which protocol is used to convert domain names to IP addresses?",
+    "answers": [
+      "FTP",
+      "DNS",
+      "SMTP",
+      "IMAP"
+    ],
+    "correct": 1,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which transport layer protocol provides connection-oriented, reliable communication?",
+    "answers": [
+      "UDP",
+      "ICMP",
+      "TCP",
+      "ARP"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "What is the purpose of the IP protocol in the TCP/IP protocol suite?",
+    "answers": [
+      "Ensures reliable delivery of packets",
+      "Provides error checking for packet integrity",
+      "Routes data packets to their destination",
+      "Defines the addressing scheme for network devices"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  },
+  {
+    "question": "Which protocol is commonly used for remote access to servers and networking devices?",
+    "answers": [
+      "RDP",
+      "SNMP",
+      "SIP",
+      "POP3"
+    ],
+    "correct": 0,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "Which protocol is most commonly associated with email communication?",
+    "answers": [
+      "FTP",
+      "HTTP",
+      "SMTP",
+      "Telnet"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What is the primary function of the ICMP protocol?",
+    "answers": [
+      "Securely transfer files",
+      "Handle domain name resolution",
+      "Troubleshoot network connectivity issues",
+      "Establish secure communication channels"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "Which protocol is used to assign IP addresses dynamically to network devices?",
+    "answers": [
+      "HTTP",
+      "DNS",
+      "DHCP",
+      "SNMP"
+    ],
+    "correct": 2,
+    "difficulty": "easy",
+    "level": 4
+  },
+  {
+    "question": "What protocol is used to manage network devices and retrieve information such as device status and configurations?",
+    "answers": [
+      "IMAP",
+      "LDAP",
+      "SNMP",
+      "MQTT"
+    ],
+    "correct": 2,
+    "difficulty": "medium",
+    "level": 4
+  }
+]

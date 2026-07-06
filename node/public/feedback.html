@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Feedback</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <link rel="icon" href="/img/tigerlogo.jpg">
+</head>
+
+<body>
+    <div class="feedback-container">
+        <h1 class="feedback-title">Your Performance Review</h1>
+
+        <div class="feedback-card">
+            <div id="loading" style="margin-top: 0;">
+                <div class="spinner"></div>
+                <p>The coach is reviewing your games...</p>
+            </div>
+            <pre class="feedback-text" id="feedback" style="display: none;"></pre>
+        </div>
+
+        <button class="back-button" onclick="window.location.replace('/')">
+            Back to Home
+        </button>
+    </div>
+
+    <script>
+        fetch('/api/feedback')
+            .then(r => r.json().then(data => ({ ok: r.ok, data })))
+            .then(({ ok, data }) => {
+                document.getElementById('loading').style.display = 'none';
+                const box = document.getElementById('feedback');
+                box.textContent = ok ? data.feedback : (data.error || 'Feedback generation failed.');
+                box.style.display = 'block';
+            })
+            .catch(() => {
+                document.getElementById('loading').style.display = 'none';
+                const box = document.getElementById('feedback');
+                box.textContent = 'Feedback generation failed.';
+                box.style.display = 'block';
+            });
+    </script>
+</body>
+</html>

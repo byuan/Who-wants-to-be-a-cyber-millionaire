@@ -1,0 +1,469 @@
+body {
+	background: black;
+	font-family: 'Roboto Slab', serif;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+}
+
+h2 {
+	color: white;
+	text-align: center;
+	font-size: small;
+}
+
+h3 {
+	color: white;
+	text-align: center;
+	font-size: medium;
+}
+
+.container {
+    height: 200px;
+    position: relative;
+    text-align: center;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+audio {
+	display: none;
+}
+
+.clear {
+	clear: both;
+}
+
+#report {
+    color: white;
+    width: 960px;
+    margin: 0 auto;
+	text-align: center;
+}
+
+#game {
+	display: none;
+	text-align: center;
+}
+
+#top {
+	width: 960px;
+	margin: 0 auto;
+}
+
+#levels {
+	float: right;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	color: white;
+	text-align: right;
+	margin-top: 40px;
+	font-size: 1.3em;
+}
+
+.active {
+	color: green;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#options {
+	width: 960px;
+	height: 70px;
+	margin: 0 auto;
+}
+
+#question-box {
+	background: #ddd;
+	width: 960px;
+	margin: 0 auto;
+	padding: 10px;
+	font-size: 1.5em;
+}
+
+.big-text {
+	color: #FF7E00;
+	font-size: 2em;
+	margin-right: 15px;
+}
+
+#money {
+	font-size: 1.9em;
+	font-weight: bold;
+	color: green;
+	float: right;
+	display: block;
+	height: 50px;
+	padding-top: 20px;
+}
+
+#logo {
+    width: 480;
+	float: left;
+	margin-left: 240px;
+	margin-top: 60px;
+}
+
+
+#game-over {
+	display: none;
+	font-size: 8em;
+	font-weight: bold;
+	color: white;
+	width: 980px;
+	margin-top: 300px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#display-help {
+    color: white;
+    width: 960px;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 1.5em;
+    
+}
+
+#fifty {
+	background: url('../img/50-50.png') no-repeat 0 0;
+}
+
+#phone-friend {
+	background: url('../img/phone-friend.png') no-repeat 0 0;
+}
+
+#audience {
+	background: url('../img/audience.png') no-repeat 0 0;
+}
+
+#answer-box {
+	color: white;
+	font-size: 1.3em;
+	text-align: left;
+	width: 960px;
+	margin: 0 auto;
+}
+
+#pre-start {
+	display: none;
+}
+
+.answer:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.options-button {
+	width: 64px;
+	height: 64px;
+	margin-left: 12px;
+	float: left;
+	background-position: 0 0;
+	cursor: pointer;
+}
+
+.options-button:hover {
+	background-position: 0 -64px !important;
+}
+
+.topic-container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 40px auto;
+    color: white;
+}
+
+.topic-container h1 {
+    margin-bottom: 30px;
+}
+
+.topic-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.topic-column {
+    flex: 1;
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.topic-column h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #4CAF50;
+}
+
+.topic-column label {
+	color: white;
+    display: block;
+    margin: 8px 0;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.topic-column input[type="checkbox"] {
+    margin-right: 8px;
+	accent-color: #4CAF50;
+}
+
+.topic-buttons {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.topic-buttons input[type="submit"],
+.topic-buttons a {
+    background: #4CAF50;
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.topic-buttons input[type="submit"]:hover,
+.topic-buttons a:hover {
+    background: #45a049;
+}
+
+.error-message {
+    color: #ff6666;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.feedback-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 60px auto;
+    text-align: center;
+    color: white;
+}
+
+.feedback-title {
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+.feedback-card {
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.feedback-text {
+    white-space: pre-wrap;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #e6e6e6;
+    margin: 0;
+}
+
+.back-button {
+    margin-top: 25px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.back-button:hover {
+    background: #45a049;
+}
+
+.game-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.game-button:hover {
+    background: #45a049;
+}
+
+.report-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.end-screen {
+    text-align: center;
+    color: white;
+    margin-top: 200px;
+}
+
+#game-over h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+/* Responsive layout */
+@media (max-width: 1100px) {
+    .topic-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .topic-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Index page (styles that were inline in the Django index.html) --- */
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.btn-success {
+    background-color: #e7910f;
+    color: black;
+    border: none;
+    border-radius: 5px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #28a745;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.slider-text {
+    font-size: 14px;
+    color: white;
+}
+
+#dynamicStatus {
+    font-size: 16px;
+    color: #e7910f;
+}
+
+.container label {
+    color: white;
+    margin: 0 10px;
+}
+
+.settings-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.settings-button:hover {
+    background: #45a049;
+}
+
+/* --- Loading screen --- */
+
+#loading {
+    color: white;
+    text-align: center;
+    margin-top: 180px;
+    font-size: 1.2em;
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 20px;
+    border: 5px solid #333;
+    border-top-color: #e7910f;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

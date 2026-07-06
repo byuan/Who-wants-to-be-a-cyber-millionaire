@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cyber Millionaire</title>
+        <link href="/css/style.css" rel="stylesheet">
+        <link rel="icon" href="/img/tigerlogo.jpg">
+    </head>
+    <body>
+        <h1>Welcome To Who Wants To Be A Cyber Millionaire!</h1>
+        <h2>Please Select a Difficulty Level Below:</h2>
+
+        <button class="settings-button" onclick="window.location.href='/topics'">
+            &#9881; Topics
+        </button>
+
+        <div class="container">
+            <div class="vertical-center">
+                <input class="btn btn-success" type="button" value="Primary School" data-level="1" onclick="navigateTo(this)" /><br/>
+                <input class="btn btn-success" type="button" value="Secondary School" data-level="2" onclick="navigateTo(this)" /><br/>
+                <input class="btn btn-success" type="button" value="College" data-level="3" onclick="navigateTo(this)" /><br/>
+                <input class="btn btn-success" type="button" value="Expert" data-level="4" onclick="navigateTo(this)" /><br/>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="vertical-center">
+                <h3>What AI gameplay mode would you like?</h3>
+                <div class="slider-container">
+                    <span class="slider-text">Static</span>
+                    <label class="switch">
+                        <input type="checkbox" id="dynamicToggle" onchange="updateDynamicStatus()">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="slider-text">Dynamic</span>
+                </div>
+                <p id="dynamicStatus">Current AI mode: Static</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="vertical-center">
+                <h3>Select a Game Mode</h3>
+                <label>
+                    <input type="radio" name="gameMode" value="original" checked>
+                    Original
+                </label>
+                <label>
+                    <input type="radio" name="gameMode" value="practice">
+                    Practice Mode
+                </label>
+            </div>
+        </div>
+
+        <script>
+            function updateDynamicStatus() {
+                const dynamic = document.getElementById('dynamicToggle').checked;
+                document.getElementById('dynamicStatus').textContent =
+                    'Current AI mode: ' + (dynamic ? 'Dynamic' : 'Static');
+            }
+
+            function navigateTo(button) {
+                const level = button.getAttribute('data-level');
+                const dynamic = document.getElementById('dynamicToggle').checked;
+                const mode = document.querySelector('input[name="gameMode"]:checked').value;
+                const selection = (dynamic ? 'dynamic-' : '') + level;
+                location.href = '/game?selection=' + selection + '&mode=' + mode;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,5 @@
+node_modules/
+# Runtime state, not source
+data/results.json
+data/topic_settings.json
+.env
