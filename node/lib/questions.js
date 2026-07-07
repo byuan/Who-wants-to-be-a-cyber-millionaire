@@ -49,5 +49,10 @@ export function staticGame(level) {
       taken++;
     }
   }
-  return picked.map((q) => ({ question: q.question, content: q.answers, correct: q.correct }));
+  return picked.map((q) => ({
+    question: q.question,
+    content: q.answers,
+    correct: q.correct,
+    difficulty: q.difficulty,
+  }));
 }

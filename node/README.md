@@ -77,6 +77,20 @@ The **Players** page (`/players`) shows every player's games, wins, and
 overall accuracy, with an accuracy-per-game trend chart and a link to
 their AI feedback.
 
+## Difficulty
+
+Every question carries an easy/medium/hard tag matching its position on
+the money ladder (questions 1-5 easy, 6-10 medium, 11-15 hard). Static
+games sample the bank by tag; dynamic games generate with a ramped
+prompt and then run a second model pass that rates each question's
+difficulty for the audience and re-orders the game easiest-first.
+
+The tag is saved with every answer, so performance evaluation is
+difficulty-aware: the players page shows per-difficulty accuracy chips
+and a per-game breakdown, and the AI feedback coach is told the
+difficulty split and asked to identify where the player starts to
+struggle.
+
 ## Topic configuration
 
 The **Topics** page (`/topics`) controls what dynamic games are about:

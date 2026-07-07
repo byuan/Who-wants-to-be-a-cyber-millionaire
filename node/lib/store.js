@@ -163,6 +163,26 @@ export function resetTopics() {
   writeFileSync(TOPICS_PATH, JSON.stringify(DEFAULT_TOPIC_BANK, null, 2));
 }
 
+const DIFFICULTY_BANDS = ['easy', 'medium', 'hard'];
+
+// {easy: {questions, correct, accuracy}, ...} for one list of answers.
+// Answers saved before difficulty tracking carry no difficulty tag and
+// are counted only in the overall totals.
+export function accuracyByDifficulty(history) {
+  const by = {};
+  for (const band of DIFFICULTY_BANDS) {
+    const answers = history.filter((h) => h.difficulty === band);
+    if (answers.length === 0) continue;
+    const correct = answers.filter((h) => h.isCorrect).length;
+    by[band] = {
+      questions: answers.length,
+      correct,
+      accuracy: Math.round((correct / answers.length) * 100),
+    };
+  }
+  return by;
+}
+
 // Per-player aggregates for the players overview page, most recent first.
 export function getPlayerStats() {
   const byPlayer = new Map();
@@ -170,11 +190,13 @@ export function getPlayerStats() {
     const name = (result.player || '').trim();
     if (!name) continue;
     const key = name.toLowerCase();
-    if (!byPlayer.has(key)) byPlayer.set(key, { player: name, games: [] });
+    if (!byPlayer.has(key)) byPlayer.set(key, { player: name, games: [], history: [] });
 
     const history = Array.isArray(result.history) ? result.history : [];
     const correct = history.filter((h) => h.isCorrect).length;
-    byPlayer.get(key).games.push({
+    const entry = byPlayer.get(key);
+    entry.history.push(...history);
+    entry.games.push({
       played_at: result.played_at,
       selection: result.selection,
       mode: result.mode,
@@ -182,11 +204,12 @@ export function getPlayerStats() {
       questions: history.length,
       correct,
       accuracy: history.length ? Math.round((correct / history.length) * 100) : 0,
+      byDifficulty: accuracyByDifficulty(history),
     });
   }
 
   return [...byPlayer.values()]
-    .map((entry) => {
+    .map(({ history, ...entry }) => {
       const questions = entry.games.reduce((n, g) => n + g.questions, 0);
       const correct = entry.games.reduce((n, g) => n + g.correct, 0);
       return {
@@ -196,6 +219,7 @@ export function getPlayerStats() {
         questions,
         correct,
         accuracy: questions ? Math.round((correct / questions) * 100) : 0,
+        byDifficulty: accuracyByDifficulty(history),
         lastPlayed: entry.games[entry.games.length - 1]?.played_at ?? null,
       };
     })

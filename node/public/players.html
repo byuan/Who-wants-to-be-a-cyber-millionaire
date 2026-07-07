@@ -92,6 +92,28 @@
             return svg;
         }
 
+        function byDifficultyText(by) {
+            return ['easy', 'medium', 'hard']
+                .filter(band => by && by[band])
+                .map(band => band + ' ' + by[band].correct + '/' + by[band].questions)
+                .join(', ') || '-';
+        }
+
+        // Per-difficulty accuracy chips for a player card
+        function difficultyChips(by) {
+            const wrap = document.createElement('div');
+            wrap.className = 'player-difficulty';
+            for (const band of ['easy', 'medium', 'hard']) {
+                if (!by || !by[band]) continue;
+                const chip = document.createElement('span');
+                chip.className = 'difficulty-chip';
+                chip.innerHTML = '<span class="difficulty-tag ' + band + '">' + band + '</span> '
+                    + by[band].accuracy + '% <small>(' + by[band].correct + '/' + by[band].questions + ')</small>';
+                wrap.appendChild(chip);
+            }
+            return wrap;
+        }
+
         function gameTable(games) {
             const details = document.createElement('details');
             const summary = document.createElement('summary');
@@ -100,7 +122,7 @@
 
             const table = document.createElement('table');
             table.className = 'players-table';
-            table.innerHTML = '<tr><th>#</th><th>When</th><th>Type</th><th>Mode</th><th>Score</th><th>Result</th></tr>';
+            table.innerHTML = '<tr><th>#</th><th>When</th><th>Type</th><th>Mode</th><th>Score</th><th>By difficulty</th><th>Result</th></tr>';
             games.forEach((g, i) => {
                 const row = table.insertRow();
                 const type = String(g.selection || '').indexOf('dynamic') === 0 ? 'Dynamic' : 'Static';
@@ -110,6 +132,7 @@
                     type,
                     g.mode || '-',
                     g.accuracy + '% (' + g.correct + '/' + g.questions + ')',
+                    byDifficultyText(g.byDifficulty),
                     g.won ? 'Won' : 'Lost'
                 ];
                 for (const value of cells) row.insertCell().textContent = value;
@@ -139,6 +162,10 @@
                         + ' | last played ' + new Date(p.lastPlayed).toLocaleDateString() + '</span>';
                     header.querySelector('.player-name').textContent = p.player;
                     card.appendChild(header);
+
+                    if (p.byDifficulty && Object.keys(p.byDifficulty).length) {
+                        card.appendChild(difficultyChips(p.byDifficulty));
+                    }
 
                     const body = document.createElement('div');
                     body.className = 'player-body';

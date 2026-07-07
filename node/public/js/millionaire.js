@@ -214,6 +214,7 @@ var MillionaireModel = function(data) {
 			question: q.question,
 			selected: q.content[index],
 			correct: q.content[q.correct],
+			difficulty: q.difficulty,
 			isCorrect: isCorrect
 		});
 	}
@@ -305,7 +306,9 @@ var MillionaireModel = function(data) {
 					for (var i = 0; i < game.history.length; i++) {
 						var h = game.history[i];
 						html += "<li>";
-						html += "<b>Q:</b> " + h.question + "<br>";
+						html += "<b>Q:</b> " + h.question;
+						if (h.difficulty) html += ' <span class="difficulty-tag ' + h.difficulty + '">' + h.difficulty + '</span>';
+						html += "<br>";
 						html += "<b>Your Answer:</b> " + h.selected + "<br>";
 						html += "<b>Result:</b> " + (h.isCorrect ? "Correct" : "Wrong");
 						html += "</li><br>";

@@ -31,6 +31,14 @@ const RAMP = [
   'a genuinely difficult question that would challenge the strongest of this audience',
 ];
 const rampFor = (slot) => RAMP[Math.min(Math.floor(slot / 5), RAMP.length - 1)];
+const BANDS = ['easy', 'medium', 'hard'];
+const bandFor = (slot) => BANDS[Math.min(Math.floor(slot / 5), BANDS.length - 1)];
+
+const RATING_PROMPT = (levelLabel, questions) =>
+  `Rate the difficulty of each cybersecurity quiz question below for a ${levelLabel} audience, ` +
+  'on a scale of 1 (very easy for this audience) to 5 (very hard for this audience). ' +
+  'Respond with ONLY one line per question, in the format "<question number>: <rating>".\n\n' +
+  questions.map((q, i) => `${i + 1}. ${q.question}`).join('\n');
 
 const PROMPT = (level, topic, difficulty, avoid = []) =>
   `Write one unique ${level} level cybersecurity quiz question about ${topic} ` +
@@ -204,5 +212,38 @@ export async function generateGame(tier) {
     );
   }
 
-  return questions;
+  const calibrated = await calibrateOrder(questions, tier);
+  return calibrated.map((q, slot) => ({ ...q, difficulty: bandFor(slot) }));
+}
+
+// Second-pass difficulty calibration: one extra model call rates every
+// question 1-5 for the audience, and the game is re-ordered easiest-first
+// so difficulty genuinely climbs with the money ladder (the generation
+// prompts ask for a ramp, but the model's judgement of its own output is
+// a better sort key). Falls back to the generated order if the rating
+// response is unusable.
+async function calibrateOrder(questions, tier) {
+  const [, levelLabel] = LEVEL_META[tier];
+  try {
+    const text = await complete(
+      'You assess quiz question difficulty for educators.',
+      RATING_PROMPT(levelLabel, questions),
+    );
+    const ratings = new Map();
+    for (const match of text.matchAll(/^\s*(\d+)\s*[:.]\s*([1-5])\s*$/gm)) {
+      const index = Number(match[1]) - 1;
+      if (index >= 0 && index < questions.length) ratings.set(index, Number(match[2]));
+    }
+    if (ratings.size < questions.length * 0.8) {
+      throw new Error(`only ${ratings.size}/${questions.length} ratings parsed`);
+    }
+    // Stable sort: ties keep the generated (already ramped) order
+    return questions
+      .map((q, i) => ({ q, i, rating: ratings.get(i) ?? 3 }))
+      .sort((a, b) => a.rating - b.rating || a.i - b.i)
+      .map((entry) => entry.q);
+  } catch (err) {
+    console.warn(`Difficulty calibration skipped: ${err.message}`);
+    return questions;
+  }
 }

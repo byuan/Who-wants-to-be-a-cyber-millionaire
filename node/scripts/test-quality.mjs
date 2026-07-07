@@ -42,6 +42,7 @@ for (const level of [1, 2, 3, 4]) {
     game.forEach((q, i) => {
       const expected = i < 5 ? 'easy' : i < 10 ? 'medium' : 'hard';
       if (difficultyOf.get(`${level}|${q.question}`) !== expected) ladderOk = false;
+      if (q.difficulty !== expected) ladderOk = false; // tag sent to the frontend
     });
     for (let i = 0; i < game.length; i++) {
       for (let j = i + 1; j < game.length; j++) {
@@ -67,13 +68,48 @@ for (let i = 0; i < game.length; i++) {
 }
 check(noDups, 'dynamic: duplicates regenerated away (mock duplicated the whole first batch)');
 
-const rampOk = game.every((q, i) => {
-  const expected = i < 5 ? '[easy]' : i < 10 ? '[medium]' : '[hard]';
+// The mock rates INVERTED vs the generation tags ([easy]-generated -> 5,
+// [hard]-generated -> 1), so a working calibration pass must move the
+// [hard]-generated questions to the front of the game.
+const calibrationOk = game.every((q, i) => {
+  const expected = i < 5 ? '[hard]' : i < 10 ? '[medium]' : '[easy]';
   return q.question.includes(expected);
 });
-check(rampOk, 'dynamic: prompt difficulty ramps with the money ladder (mock echoes it)');
+check(calibrationOk, 'dynamic: calibration re-orders the game by rated difficulty');
+
+const tagsOk = game.every((q, i) => {
+  const expected = i < 5 ? 'easy' : i < 10 ? 'medium' : 'hard';
+  return q.difficulty === expected;
+});
+check(tagsOk, 'dynamic: final questions tagged easy/medium/hard by ladder position');
 
 const answersOk = game.every((q) => new Set(q.content).size === 4);
 check(answersOk, 'dynamic: all games have 4 distinct answer options');
+
+// --- difficulty-aware performance evaluation ---
+const { buildSummary } = await import('../lib/feedback.js');
+const summary = buildSummary([
+  {
+    played_at: '2026-07-07T10:00:00Z',
+    mode: 'original',
+    history: [
+      { question: 'q1', difficulty: 'easy', isCorrect: true },
+      { question: 'q2', difficulty: 'easy', isCorrect: true },
+      { question: 'q3', difficulty: 'medium', isCorrect: true },
+      { question: 'q4', difficulty: 'medium', isCorrect: false },
+      { question: 'q5', difficulty: 'hard', isCorrect: false },
+    ],
+  },
+]);
+check(
+  summary.accuracy_by_difficulty.easy.accuracy === 100
+    && summary.accuracy_by_difficulty.medium.accuracy === 50
+    && summary.accuracy_by_difficulty.hard.accuracy === 0
+    && summary.games[0].correct_by_difficulty.hard === '0/1',
+  'feedback: summary breaks accuracy down by difficulty (overall + per game)',
+);
+
+const { getPlayerStats } = await import('../lib/store.js');
+check(typeof getPlayerStats === 'function', 'stats: player stats module loads');
 
 process.exit(failures ? 1 : 0);

@@ -708,3 +708,45 @@ input:checked + .slider:before {
 .players-button {
     right: 110px;
 }
+
+/* --- Difficulty tags and chips --- */
+
+.difficulty-tag {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    text-transform: capitalize;
+    border: 1px solid;
+}
+
+.difficulty-tag.easy {
+    color: #7fd48a;
+    border-color: #2e5c34;
+}
+
+.difficulty-tag.medium {
+    color: #ffc966;
+    border-color: #6b5222;
+}
+
+.difficulty-tag.hard {
+    color: #ff8a80;
+    border-color: #6b2f2a;
+}
+
+.player-difficulty {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.difficulty-chip {
+    color: #e6e6e6;
+    font-size: 14px;
+}
+
+.difficulty-chip small {
+    color: #888;
+}
