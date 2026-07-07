@@ -45,8 +45,23 @@ function readJson(path, fallback) {
   }
 }
 
-export function getResults() {
-  return readJson(RESULTS_PATH, []);
+// All results, or one player's results (matched case-insensitively so
+// "alice" and "Alice" accumulate one history).
+export function getResults(player) {
+  const results = readJson(RESULTS_PATH, []);
+  if (!player) return results;
+  const needle = player.trim().toLowerCase();
+  return results.filter((r) => (r.player || '').trim().toLowerCase() === needle);
+}
+
+// Distinct player names, most recent game first.
+export function getPlayers() {
+  const seen = new Map();
+  for (const r of getResults()) {
+    const name = (r.player || '').trim();
+    if (name) seen.set(name.toLowerCase(), name);
+  }
+  return [...seen.values()].reverse();
 }
 
 export function appendResult(result) {

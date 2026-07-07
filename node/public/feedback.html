@@ -24,7 +24,12 @@
     </div>
 
     <script>
-        fetch('/api/feedback')
+        const player = (new URLSearchParams(window.location.search).get('player') || '').trim();
+        if (player) {
+            document.querySelector('.feedback-title').textContent = player + "'s Performance Review";
+        }
+
+        fetch('/api/feedback' + (player ? '?player=' + encodeURIComponent(player) : ''))
             .then(r => r.json().then(data => ({ ok: r.ok, data })))
             .then(({ ok, data }) => {
                 document.getElementById('loading').style.display = 'none';

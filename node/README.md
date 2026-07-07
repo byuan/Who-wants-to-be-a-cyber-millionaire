@@ -57,9 +57,19 @@ docker run -p 8000:8000 -e ANTHROPIC_API_KEY=sk-ant-... cyber-millionaire
 |----------------------|--------|------------------------------------------------|
 | `/api/game?selection=1..4` | GET | 15 static questions for a level (5 easy/5 medium/5 hard) |
 | `/api/game?selection=dynamic-1..4` | GET | 15 AI-generated questions          |
-| `/api/results`       | GET/POST | Lifetime game results (wins *and* losses)    |
+| `/api/results[?player=X]` | GET | Lifetime game results, optionally one player's (case-insensitive) |
+| `/api/results`       | POST   | Save a finished game (wins *and* losses); requires a `player` name |
+| `/api/players`       | GET    | Distinct player names seen so far              |
 | `/api/topics`        | GET/POST | Topic bank + selected topics per level; POST validates that every level keeps at least one topic |
-| `/api/feedback`      | GET    | AI coaching feedback over all saved results    |
+| `/api/feedback[?player=X]` | GET | AI coaching feedback over saved results, per player when given |
+
+## Players
+
+The home page asks for a name before a game can start (remembered in the
+browser for next time). Every saved result is tagged with the player, the
+post-game report shows only that player's history, and the AI feedback
+coach evaluates each player's performance over time individually. Names
+match case-insensitively, so "alice" and "Alice" share one history.
 
 ## Question bank
 

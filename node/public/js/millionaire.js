@@ -43,10 +43,11 @@ startSound = function(id, loop) {
 	}
 }
 
-// Game options come from the URL: /game?selection=1&mode=practice
+// Game options come from the URL: /game?selection=1&mode=practice&player=Alice
 var urlParams = new URLSearchParams(window.location.search);
 var gameSelection = urlParams.get("selection");
 var gameMode = urlParams.get("mode") === "practice" ? "practice" : "original";
+var playerName = (urlParams.get("player") || "").trim();
 
 /**
 * The View Model that represents one game of
@@ -259,11 +260,13 @@ var MillionaireModel = function(data) {
 	// sees the full picture - the original only saved wins.
 	self.endGame = function(won) {
 		$("#report-title").text(won ? "You Win!" : "Game Over");
+		$("#report-player").text(playerName + "'s game history");
 
 		fetch('/api/results', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
+				player: playerName,
 				selection: gameSelection,
 				mode: gameMode,
 				won: won,
@@ -276,9 +279,9 @@ var MillionaireModel = function(data) {
 		.then(function() { self.showReport(); });
 	}
 
-	// Builds the lifetime stats report from all saved games
+	// Builds the lifetime stats report from this player's saved games
 	self.showReport = function() {
-		fetch('/api/results')
+		fetch('/api/results?player=' + encodeURIComponent(playerName))
 			.then(function(response) { return response.json(); })
 			.then(function(data) {
 				var html = "";
@@ -333,10 +336,15 @@ var MillionaireModel = function(data) {
 // from the API (dynamic games show a loading screen while the AI
 // generates them), then bootstraps the game model.
 $(document).ready(function() {
-	if (!gameSelection) {
+	if (!gameSelection || !playerName) {
 		window.location.replace('/');
 		return;
 	}
+
+	// The AI Feedback button reviews this player's history specifically
+	$("#feedback-link").on('click', function() {
+		window.location.href = '/feedback?player=' + encodeURIComponent(playerName);
+	});
 
 	if (gameSelection.indexOf('dynamic') === 0) {
 		$("#loading-text").text("Generating your questions with AI - this can take a little while...");

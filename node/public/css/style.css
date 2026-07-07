@@ -467,3 +467,31 @@ input:checked + .slider:before {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+
+/* --- Player name entry --- */
+
+.name-container {
+    height: 120px;
+}
+
+.name-input {
+    padding: 10px 14px;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #1b1b1b;
+    color: white;
+    text-align: center;
+    width: 220px;
+}
+
+.name-input:focus {
+    outline: none;
+    border-color: #e7910f;
+}
+
+.report-player {
+    color: #e7910f;
+    font-size: 1.2em;
+    margin-top: -10px;
+}

@@ -13,6 +13,17 @@
             &#9881; Topics
         </button>
 
+        <div class="container name-container">
+            <div class="vertical-center">
+                <h3>Who's playing?</h3>
+                <input type="text" id="playerName" class="name-input" maxlength="40"
+                       placeholder="Enter your name" autocomplete="off">
+                <p id="nameError" class="error-message" style="display: none;">
+                    Please enter your name so we can track your progress.
+                </p>
+            </div>
+        </div>
+
         <div class="container">
             <div class="vertical-center">
                 <input class="btn btn-success" type="button" value="Primary School" data-level="1" onclick="navigateTo(this)" /><br/>
@@ -52,6 +63,11 @@
         </div>
 
         <script>
+            // Remember the last player on this device so returning players
+            // keep accumulating history under the same name.
+            const nameInput = document.getElementById('playerName');
+            nameInput.value = localStorage.getItem('playerName') || '';
+
             function updateDynamicStatus() {
                 const dynamic = document.getElementById('dynamicToggle').checked;
                 document.getElementById('dynamicStatus').textContent =
@@ -59,11 +75,20 @@
             }
 
             function navigateTo(button) {
+                const player = nameInput.value.trim();
+                if (!player) {
+                    document.getElementById('nameError').style.display = 'block';
+                    nameInput.focus();
+                    return;
+                }
+                localStorage.setItem('playerName', player);
+
                 const level = button.getAttribute('data-level');
                 const dynamic = document.getElementById('dynamicToggle').checked;
                 const mode = document.querySelector('input[name="gameMode"]:checked').value;
                 const selection = (dynamic ? 'dynamic-' : '') + level;
-                location.href = '/game?selection=' + selection + '&mode=' + mode;
+                location.href = '/game?selection=' + selection + '&mode=' + mode
+                    + '&player=' + encodeURIComponent(player);
             }
         </script>
     </body>

@@ -39,14 +39,19 @@ function buildSummary(results) {
   };
 }
 
-export async function generateFeedback() {
-  const results = getResults();
+export async function generateFeedback(player) {
+  const results = getResults(player);
   if (results.length === 0) {
-    throw new Error('No games played yet - play a game first, then come back for feedback.');
+    throw new Error(
+      player
+        ? `No games saved for ${player} yet - play a game first, then come back for feedback.`
+        : 'No games played yet - play a game first, then come back for feedback.',
+    );
   }
 
   const summary = buildSummary(results);
-  const prompt = `A student has completed multiple cybersecurity quiz sessions.
+  const who = player ? `A student named ${player}` : 'A student';
+  const prompt = `${who} has completed multiple cybersecurity quiz sessions.
 
 Here is a statistical summary of the student's performance:
 

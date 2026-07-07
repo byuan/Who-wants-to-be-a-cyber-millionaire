@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url';
 import { staticGame } from './lib/questions.js';
 import { generateGame } from './lib/generate.js';
 import { generateFeedback } from './lib/feedback.js';
-import { TOPIC_BANK, getResults, appendResult, getTopics, saveTopics } from './lib/store.js';
+import { TOPIC_BANK, getResults, getPlayers, appendResult, getTopics, saveTopics } from './lib/store.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -47,16 +47,26 @@ app.get('/api/game', async (req, res) => {
   }
 });
 
+// GET /api/results          -> all games
+// GET /api/results?player=X -> one player's games (case-insensitive)
 app.get('/api/results', (req, res) => {
-  res.json(getResults());
+  res.json(getResults(req.query.player));
+});
+
+app.get('/api/players', (req, res) => {
+  res.json(getPlayers());
 });
 
 app.post('/api/results', (req, res) => {
-  const { history, finalMoney, won, mode, selection } = req.body ?? {};
+  const { player, history, finalMoney, won, mode, selection } = req.body ?? {};
+  const name = typeof player === 'string' ? player.trim().slice(0, 40) : '';
+  if (!name) {
+    return res.status(400).json({ error: 'player name is required' });
+  }
   if (!Array.isArray(history) || history.length === 0) {
     return res.status(400).json({ error: 'history must be a non-empty array' });
   }
-  appendResult({ selection, mode, won: Boolean(won), finalMoney, history });
+  appendResult({ player: name, selection, mode, won: Boolean(won), finalMoney, history });
   res.json({ status: 'success' });
 });
 
@@ -70,9 +80,10 @@ app.post('/api/topics', (req, res) => {
   res.json({ status: 'success' });
 });
 
+// GET /api/feedback?player=X -> AI coaching over that player's games
 app.get('/api/feedback', async (req, res) => {
   try {
-    res.json({ feedback: await generateFeedback() });
+    res.json({ feedback: await generateFeedback(req.query.player) });
   } catch (err) {
     console.error('Feedback generation failed:', err);
     res.status(500).json({ error: err.message });
