@@ -60,30 +60,6 @@
     "level": 1
   },
   {
-    "question": "Which of the following is a strong password?",
-    "answers": [
-      "Password123",
-      "123456",
-      "Sup3rSecr3t!",
-      "Letmein"
-    ],
-    "correct": 2,
-    "difficulty": "easy",
-    "level": 1
-  },
-  {
-    "question": "Which of the following is a strong password?",
-    "answers": [
-      "123456",
-      "Password123",
-      "ilovecats",
-      "Tr0ub4dor&3"
-    ],
-    "correct": 3,
-    "difficulty": "easy",
-    "level": 1
-  },
-  {
     "question": "What is a good practice when creating a password?",
     "answers": [
       "Using personal information like your name or birthdate",
@@ -300,18 +276,6 @@
     "level": 1
   },
   {
-    "question": "What is cyberbullying?",
-    "answers": [
-      "Sending kind messages online",
-      "Sharing funny memes with friends",
-      "Posting mean comments to hurt someone on the internet",
-      "Watching educational videos on YouTube"
-    ],
-    "correct": 2,
-    "difficulty": "easy",
-    "level": 1
-  },
-  {
     "question": "What should you do if you receive a mean or threatening message online?",
     "answers": [
       "Respond with an even meaner message to show you are not scared",
@@ -342,18 +306,6 @@
       "Ignore them and not respond",
       "Ask them why they are being mean",
       "Share their messages with everyone"
-    ],
-    "correct": 1,
-    "difficulty": "easy",
-    "level": 1
-  },
-  {
-    "question": "What is cyberbullying?",
-    "answers": [
-      "A type of dance move",
-      "Sending mean messages or threats online",
-      "A way to make friends online",
-      "An online game"
     ],
     "correct": 1,
     "difficulty": "easy",
@@ -564,36 +516,12 @@
     "level": 1
   },
   {
-    "question": "What does the 'https://' at the beginning of a website URL indicate?",
-    "answers": [
-      "The website is not secure",
-      "The website is designed for kids",
-      "The website is located in a different country",
-      "The website is secure"
-    ],
-    "correct": 3,
-    "difficulty": "hard",
-    "level": 1
-  },
-  {
     "question": "What does the 'https://' at the beginning of a website's URL indicate?",
     "answers": [
       "The website is running on an old server",
       "The website is using outdated software",
       "The website is secure and encrypts data",
       "The website is prone to cyber attacks"
-    ],
-    "correct": 2,
-    "difficulty": "medium",
-    "level": 1
-  },
-  {
-    "question": "What does the 'https://' at the beginning of a website URL indicate?",
-    "answers": [
-      "The website has free giveaways",
-      "The website is not secure",
-      "The website uses a secure connection",
-      "The website is running slowly"
     ],
     "correct": 2,
     "difficulty": "medium",
@@ -692,18 +620,6 @@
       "A type of computer monitor"
     ],
     "correct": 1,
-    "difficulty": "medium",
-    "level": 1
-  },
-  {
-    "question": "What is a strong password?",
-    "answers": [
-      "Using your phone number",
-      "Using the word '123456'",
-      "Using a mix of uppercase and lowercase letters, numbers, and symbols",
-      "Using your best friend's name"
-    ],
-    "correct": 2,
     "difficulty": "medium",
     "level": 1
   },
@@ -962,13 +878,13 @@
   {
     "question": "What is phishing?",
     "answers": [
-      "A method of catching phish in the sea",
-      "A type of cyber attack where attackers pretend to be someone they're not to trick individuals into sharing sensitive information",
-      "A game played with a fishing rod and a hook",
-      "A type of dance popular on social media"
+      "A type of phishing",
+      "A way to catch ghosts",
+      "A cybersecurity attack that tricks people into giving out personal information",
+      "A type of surfing competition"
     ],
-    "correct": 1,
-    "difficulty": "medium",
+    "correct": 2,
+    "difficulty": "easy",
     "level": 1
   },
   {
@@ -984,30 +900,6 @@
     "level": 1
   },
   {
-    "question": "What is phishing?",
-    "answers": [
-      "A type of phishing",
-      "A way to catch ghosts",
-      "A cybersecurity attack that tricks people into giving out personal information",
-      "A type of surfing competition"
-    ],
-    "correct": 2,
-    "difficulty": "easy",
-    "level": 1
-  },
-  {
-    "question": "What is phishing?",
-    "answers": [
-      "Fishing for real fish",
-      "A cyber attack where scammers try to trick people into giving away their personal information",
-      "Recreational activity in water bodies",
-      "Using a fishing rod to catch cyber criminals"
-    ],
-    "correct": 1,
-    "difficulty": "medium",
-    "level": 1
-  },
-  {
     "question": "What is a common cyber attack where someone tries to trick you into giving out your personal information such as usernames, passwords, or credit card details by pretending to be a trustworthy entity?",
     "answers": [
       "Fishing",
@@ -1020,30 +912,6 @@
     "level": 1
   },
   {
-    "question": "What is phishing?",
-    "answers": [
-      "A way of catching fish",
-      "A fraudulent attempt to obtain sensitive information",
-      "A type of computer virus",
-      "A mathematical problem"
-    ],
-    "correct": 1,
-    "difficulty": "easy",
-    "level": 1
-  },
-  {
-    "question": "What is phishing?",
-    "answers": [
-      "A type of fishing done in a cyber world",
-      "A method of stealing passwords and personal information by pretending to be a trustworthy source",
-      "A way to catch physical fish using digital tools",
-      "A game played by hackers"
-    ],
-    "correct": 1,
-    "difficulty": "medium",
-    "level": 1
-  },
-  {
     "question": "What should you do if you receive an email asking for your password or personal information?",
     "answers": [
       "Click on any links or attachments in the email",
@@ -1052,18 +920,6 @@
       "Share your password with a friend"
     ],
     "correct": 2,
-    "difficulty": "easy",
-    "level": 1
-  },
-  {
-    "question": "What is phishing?",
-    "answers": [
-      "Fishing in a pond",
-      "Sending deceptive emails or messages to steal personal information",
-      "A type of outdoor activity",
-      "Cleaning up the ocean"
-    ],
-    "correct": 1,
     "difficulty": "easy",
     "level": 1
   },
@@ -1082,13 +938,13 @@
   {
     "question": "What should you do before downloading a file from the internet?",
     "answers": [
-      "Click on any download link you see",
-      "Ask an adult or teacher for permission",
-      "hare your personal information in exchange for the download",
-      "Download the file without checking where it's from"
+      "Double-click the file immediately",
+      "Check with a teacher or parent first",
+      "Download as many files as possible",
+      "Share the download link with friends"
     ],
     "correct": 1,
-    "difficulty": "medium",
+    "difficulty": "easy",
     "level": 1
   },
   {
@@ -1113,18 +969,6 @@
     ],
     "correct": 1,
     "difficulty": "easy",
-    "level": 1
-  },
-  {
-    "question": "What is the safest way to download files from the internet?",
-    "answers": [
-      "Click on pop-up ads",
-      "Use a reputable source or website",
-      "Enter personal information when prompted",
-      "Download from an unknown website"
-    ],
-    "correct": 1,
-    "difficulty": "medium",
     "level": 1
   },
   {
@@ -1170,18 +1014,6 @@
       "Checking the website's reputation before downloading",
       "Downloading files from unknown sources without checking",
       "Providing personal information to websites for downloads"
-    ],
-    "correct": 1,
-    "difficulty": "easy",
-    "level": 1
-  },
-  {
-    "question": "What should you do before downloading a file from the internet?",
-    "answers": [
-      "Double-click the file immediately",
-      "Check with a teacher or parent first",
-      "Download as many files as possible",
-      "Share the download link with friends"
     ],
     "correct": 1,
     "difficulty": "easy",
@@ -2810,13 +2642,13 @@
   {
     "question": "What is the purpose of a digital signature in cryptography?",
     "answers": [
-      "To hide the message content",
-      "To verify the identity of the sender",
-      "To encrypt the message",
-      "To increase the message speed"
+      "To encrypt sensitive data",
+      "To authenticate the sender of a message",
+      "To generate random numbers",
+      "To compress files"
     ],
     "correct": 1,
-    "difficulty": "medium",
+    "difficulty": "easy",
     "level": 3
   },
   {
@@ -2829,18 +2661,6 @@
     ],
     "correct": 2,
     "difficulty": "medium",
-    "level": 3
-  },
-  {
-    "question": "What is the purpose of a digital signature in cryptography?",
-    "answers": [
-      "To encrypt sensitive data",
-      "To authenticate the sender of a message",
-      "To generate random numbers",
-      "To compress files"
-    ],
-    "correct": 1,
-    "difficulty": "easy",
     "level": 3
   },
   {
@@ -3170,13 +2990,13 @@
   {
     "question": "What is the primary goal of ethical hacking?",
     "answers": [
-      "Stealing sensitive data",
-      "Causing damage to computer systems",
-      "Finding and fixing security vulnerabilities",
-      "Spreading malware"
+      "To disrupt systems and cause harm",
+      "To steal sensitive information",
+      "To detect vulnerabilities and improve security",
+      "To perform illegal activities"
     ],
     "correct": 2,
-    "difficulty": "medium",
+    "difficulty": "easy",
     "level": 3
   },
   {
@@ -3213,18 +3033,6 @@
     ],
     "correct": 2,
     "difficulty": "medium",
-    "level": 3
-  },
-  {
-    "question": "What is the primary goal of ethical hacking?",
-    "answers": [
-      "To disrupt systems and cause harm",
-      "To steal sensitive information",
-      "To detect vulnerabilities and improve security",
-      "To perform illegal activities"
-    ],
-    "correct": 2,
-    "difficulty": "easy",
     "level": 3
   },
   {

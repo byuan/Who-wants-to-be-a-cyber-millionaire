@@ -3,6 +3,7 @@
 //   LLM_PROVIDER=ollama             — a local Ollama server (OLLAMA_URL/OLLAMA_MODEL)
 import Anthropic from '@anthropic-ai/sdk';
 import { getTopics } from './store.js';
+import { normalize, isDuplicate } from './similarity.js';
 
 const PROVIDER = process.env.LLM_PROVIDER || 'anthropic';
 const ANTHROPIC_MODEL = process.env.ANTHROPIC_MODEL || 'claude-fable-5';
@@ -20,11 +21,29 @@ const LEVEL_META = {
   expert: ['You are a cybersecurity expert creating a quiz.', 'expert with technical experience'],
 };
 
-const PROMPT = (level, topic) =>
+// Within-game difficulty ramp: like the TV show, early questions are worth
+// little and should be easy, late questions are worth up to $1,000,000 and
+// should be genuinely hard - all relative to the selected audience level.
+// Slots 0-4 easy, 5-9 medium, 10-14 hard, matching the money ladder.
+const RAMP = [
+  'an easy warm-up question that most of this audience would get right',
+  'a moderately challenging question for this audience',
+  'a genuinely difficult question that would challenge the strongest of this audience',
+];
+const rampFor = (slot) => RAMP[Math.min(Math.floor(slot / 5), RAMP.length - 1)];
+
+const PROMPT = (level, topic, difficulty, avoid = []) =>
   `Write one unique ${level} level cybersecurity quiz question about ${topic} ` +
   'for an educational trivia game, and provide multiple-choice answers ' +
   '(one correct, three incorrect) similar to the game style of ' +
   'Who Wants to Be a Millionaire. ' +
+  `The question should be ${difficulty}. ` +
+  'All four answer options must be distinct. ' +
+  (avoid.length
+    ? 'Do NOT repeat or rephrase any of these already-used questions:\n' +
+      avoid.map((q) => `- ${q}`).join('\n') +
+      '\n'
+    : '') +
   'Respond with ONLY the following format and nothing else (no preamble, no markdown):\n' +
   'Question: <question>\n\n' +
   'A. <answer>\n' +
@@ -103,20 +122,24 @@ export function parseQuestion(text) {
   if (!question || answers.length < 4 || !correctLetter) {
     throw new Error(`Unable to parse model response:\n${text}`);
   }
+  const content = answers.slice(0, 4);
+  if (new Set(content.map(normalize)).size < 4) {
+    throw new Error(`Model produced duplicate answer options:\n${text}`);
+  }
   return {
     question,
-    content: answers.slice(0, 4),
+    content,
     correct: correctLetter.charCodeAt(0) - 'A'.charCodeAt(0),
   };
 }
 
-async function generateOne(tier, topics) {
+async function generateOne(tier, topics, difficulty, avoid) {
   const [system, levelLabel] = LEVEL_META[tier];
   let lastError;
   for (let attempt = 0; attempt < ATTEMPTS_PER_QUESTION; attempt++) {
-    const topic = topics[Math.floor(Math.random() * topics.length)];
+    const topic = topics[(Math.floor(Math.random() * topics.length) + attempt) % topics.length];
     try {
-      return parseQuestion(await complete(system, PROMPT(levelLabel, topic)));
+      return parseQuestion(await complete(system, PROMPT(levelLabel, topic, difficulty, avoid)));
     } catch (err) {
       lastError = err;
       console.warn(`Generation attempt ${attempt + 1} failed (${tier}/${topic}): ${err.message}`);
@@ -125,12 +148,61 @@ async function generateOne(tier, topics) {
   throw lastError;
 }
 
+function shuffled(list) {
+  const copy = [...list];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
 // Generates a full 15-question game concurrently (the Django version
 // generated sequentially, which made dynamic games painfully slow).
+// Questions ramp easy -> medium -> hard to match the money ladder, topics
+// are spread round-robin so one topic doesn't dominate, and near-duplicate
+// questions are regenerated with an avoid-list.
 export async function generateGame(tier) {
   if (!LEVEL_META[tier]) throw new Error(`Unknown tier: ${tier}`);
   const topics = getTopics()[tier];
-  return Promise.all(
-    Array.from({ length: QUESTIONS_PER_GAME }, () => generateOne(tier, topics)),
+
+  // Round-robin over a shuffled topic list: with >= 5 topics no topic
+  // repeats within a 5-question difficulty band.
+  const order = shuffled(topics);
+  const questions = await Promise.all(
+    Array.from({ length: QUESTIONS_PER_GAME }, (_, slot) =>
+      generateOne(tier, [order[slot % order.length]], rampFor(slot), []),
+    ),
   );
+
+  // Concurrent generation can still produce rephrasings of the same
+  // question; regenerate offending slots with an explicit avoid-list.
+  const MAX_DEDUP_ROUNDS = 2;
+  for (let round = 0; round < MAX_DEDUP_ROUNDS; round++) {
+    const seen = [];
+    const duplicateSlots = [];
+    questions.forEach((q, slot) => {
+      if (isDuplicate(q.question, seen)) duplicateSlots.push(slot);
+      else seen.push(q.question);
+    });
+    if (duplicateSlots.length === 0) break;
+
+    console.warn(`Regenerating ${duplicateSlots.length} duplicate question(s), round ${round + 1}`);
+    await Promise.all(
+      duplicateSlots.map(async (slot) => {
+        try {
+          questions[slot] = await generateOne(
+            tier,
+            topics,
+            rampFor(slot),
+            questions.filter((_, i) => i !== slot).map((q) => q.question),
+          );
+        } catch {
+          // Keep the duplicate rather than failing the whole game.
+        }
+      }),
+    );
+  }
+
+  return questions;
 }

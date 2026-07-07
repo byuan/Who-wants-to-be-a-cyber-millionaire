@@ -37,7 +37,7 @@ function parseRow(line) {
   return values;
 }
 
-const questions = readFileSync(sqlPath, 'utf8')
+const rows = readFileSync(sqlPath, 'utf8')
   .split('\n')
   .filter((line) => line.startsWith('('))
   .map(parseRow)
@@ -51,5 +51,27 @@ const questions = readFileSync(sqlPath, 'utf8')
     level,
   }));
 
+// The dump contains repeated questions within a level, sometimes with
+// conflicting difficulty tags ("What is phishing?" is tagged easy 3x and
+// medium 3x in level 1) - which lets one game show the same question twice
+// at different dollar amounts. Keep one copy per (level, question text),
+// tagged with the majority difficulty (ties go to the easier tag).
+const RANK = { easy: 0, medium: 1, hard: 2 };
+const groups = new Map();
+for (const row of rows) {
+  const key = `${row.level}|${row.question.toLowerCase().replace(/[^a-z0-9 ]/g, '').trim()}`;
+  if (!groups.has(key)) groups.set(key, []);
+  groups.get(key).push(row);
+}
+
+const questions = [...groups.values()].map((copies) => {
+  const votes = {};
+  for (const c of copies) votes[c.difficulty] = (votes[c.difficulty] || 0) + 1;
+  const difficulty = Object.keys(votes).sort(
+    (a, b) => votes[b] - votes[a] || RANK[a] - RANK[b],
+  )[0];
+  return { ...copies.find((c) => c.difficulty === difficulty), difficulty };
+});
+
 writeFileSync(outPath, JSON.stringify(questions, null, 2));
-console.log(`Wrote ${questions.length} questions to ${outPath}`);
+console.log(`Wrote ${questions.length} questions to ${outPath} (${rows.length - questions.length} duplicate rows merged)`);
