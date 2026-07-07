@@ -3,3 +3,4 @@ node_modules/
 data/results.json
 data/topic_settings.json
 .env
+data/topic_bank.json

@@ -60,7 +60,9 @@ docker run -p 8000:8000 -e ANTHROPIC_API_KEY=sk-ant-... cyber-millionaire
 | `/api/results[?player=X]` | GET | Lifetime game results, optionally one player's (case-insensitive) |
 | `/api/results`       | POST   | Save a finished game (wins *and* losses); requires a `player` name |
 | `/api/players`       | GET    | Distinct player names seen so far              |
-| `/api/topics`        | GET/POST | Topic bank + selected topics per level; POST validates that every level keeps at least one topic |
+| `/api/topics`        | GET/POST | Topic configuration; POST saves `{bank, selected}` and validates that every level keeps at least one enabled topic |
+| `/api/topics/reset`  | POST   | Restore the built-in default topic lists        |
+| `/api/stats`         | GET    | Per-player aggregates (games, wins, accuracy, per-game trend) |
 | `/api/feedback[?player=X]` | GET | AI coaching feedback over saved results, per player when given |
 
 ## Players
@@ -70,6 +72,18 @@ browser for next time). Every saved result is tagged with the player, the
 post-game report shows only that player's history, and the AI feedback
 coach evaluates each player's performance over time individually. Names
 match case-insensitively, so "alice" and "Alice" share one history.
+
+The **Players** page (`/players`) shows every player's games, wins, and
+overall accuracy, with an accuracy-per-game trend chart and a link to
+their AI feedback.
+
+## Topic configuration
+
+The **Topics** page (`/topics`) controls what dynamic games are about:
+add your own topics per level, remove ones you don't want, or untick a
+topic to keep it in the list without using it. "Restore Defaults" brings
+back the built-in lists. The custom configuration lives in
+`data/topic_bank.json` / `data/topic_settings.json` (gitignored).
 
 ## Question bank
 

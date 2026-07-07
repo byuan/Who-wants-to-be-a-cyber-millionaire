@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Select Topics</title>
+    <title>Topic Configuration</title>
     <link href="/css/style.css" rel="stylesheet">
     <link rel="icon" href="/img/tigerlogo.jpg">
 </head>
 
 <body>
     <div class="topic-container">
-        <h1>Select Question Topics</h1>
-        <h3>Dynamic games generate questions from the topics checked below.</h3>
+        <h1>Topic Configuration</h1>
+        <h3>
+            Dynamic games generate questions from the topics below.
+            Add your own topics, remove ones you don't want, and untick a topic
+            to keep it in the list but leave it out of the games.
+        </h3>
 
         <div id="error" class="error-message" style="display: none;"></div>
 
         <div class="topic-grid" id="topic-grid"></div>
 
         <div class="topic-buttons">
-            <input type="submit" value="Save Topics" onclick="save()">
+            <input type="submit" value="Save Configuration" onclick="save()">
+            <button class="topic-reset" onclick="restoreDefaults()">Restore Defaults</button>
             <a href="/">Back to Home</a>
         </div>
     </div>
@@ -28,6 +33,7 @@
             hard: "College",
             expert: "Expert"
         };
+        const MAX_TOPIC_LENGTH = 60;
 
         function showError(message) {
             const box = document.getElementById('error');
@@ -35,46 +41,109 @@
             box.style.display = message ? 'block' : 'none';
         }
 
-        // Render one checkbox column per tier from the server's topic bank
-        fetch('/api/topics')
-            .then(r => r.json())
-            .then(({ bank, selected }) => {
-                const grid = document.getElementById('topic-grid');
-                for (const [tier, topics] of Object.entries(bank)) {
-                    const column = document.createElement('div');
-                    column.className = 'topic-column';
-                    column.innerHTML = '<h2>' + TIER_LABELS[tier] + '</h2>';
-                    for (const topic of topics) {
-                        const label = document.createElement('label');
-                        const box = document.createElement('input');
-                        box.type = 'checkbox';
-                        box.name = tier;
-                        box.value = topic;
-                        box.checked = selected[tier].includes(topic);
-                        label.appendChild(box);
-                        label.appendChild(document.createTextNode(' ' + topic));
-                        column.appendChild(label);
-                    }
-                    grid.appendChild(column);
-                }
-            })
-            .catch(() => showError('Failed to load topics.'));
+        function topicRow(tier, topic, enabled) {
+            const row = document.createElement('div');
+            row.className = 'topic-row';
 
-        function save() {
-            const selection = {};
+            const label = document.createElement('label');
+            const box = document.createElement('input');
+            box.type = 'checkbox';
+            box.name = tier;
+            box.value = topic;
+            box.checked = enabled;
+            label.appendChild(box);
+            label.appendChild(document.createTextNode(' ' + topic));
+
+            const remove = document.createElement('button');
+            remove.className = 'topic-remove';
+            remove.title = 'Remove this topic';
+            remove.textContent = '×';
+            remove.onclick = () => { row.remove(); showError(''); };
+
+            row.appendChild(label);
+            row.appendChild(remove);
+            return row;
+        }
+
+        function addTopic(tier) {
+            const input = document.getElementById('add-' + tier);
+            const topic = input.value.trim().slice(0, MAX_TOPIC_LENGTH);
+            if (!topic) return;
+
+            const existing = [...document.querySelectorAll('#list-' + tier + ' input[type="checkbox"]')]
+                .map(box => box.value.toLowerCase());
+            if (existing.includes(topic.toLowerCase())) {
+                showError('"' + topic + '" is already in the ' + TIER_LABELS[tier] + ' list.');
+                return;
+            }
+
+            // New topics start enabled - you added them to use them
+            document.getElementById('list-' + tier).appendChild(topicRow(tier, topic, true));
+            input.value = '';
+            showError('');
+        }
+
+        function render({ bank, selected }) {
+            const grid = document.getElementById('topic-grid');
+            grid.innerHTML = '';
+            for (const [tier, topics] of Object.entries(bank)) {
+                const column = document.createElement('div');
+                column.className = 'topic-column';
+                column.innerHTML = '<h2>' + TIER_LABELS[tier] + '</h2>';
+
+                const list = document.createElement('div');
+                list.id = 'list-' + tier;
+                for (const topic of topics) {
+                    list.appendChild(topicRow(tier, topic, selected[tier].includes(topic)));
+                }
+                column.appendChild(list);
+
+                const adder = document.createElement('div');
+                adder.className = 'topic-add';
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.id = 'add-' + tier;
+                input.maxLength = MAX_TOPIC_LENGTH;
+                input.placeholder = 'New topic...';
+                input.addEventListener('keydown', (e) => { if (e.key === 'Enter') addTopic(tier); });
+                const button = document.createElement('button');
+                button.textContent = 'Add';
+                button.onclick = () => addTopic(tier);
+                adder.appendChild(input);
+                adder.appendChild(button);
+                column.appendChild(adder);
+
+                grid.appendChild(column);
+            }
+        }
+
+        function collect() {
+            const bank = {};
+            const selected = {};
             for (const tier of Object.keys(TIER_LABELS)) {
-                selection[tier] = [...document.querySelectorAll('input[name="' + tier + '"]:checked')]
-                    .map(box => box.value);
-                if (selection[tier].length === 0) {
-                    showError('Select at least one topic for ' + TIER_LABELS[tier] + '.');
-                    return;
+                const boxes = [...document.querySelectorAll('#list-' + tier + ' input[type="checkbox"]')];
+                bank[tier] = boxes.map(box => box.value);
+                selected[tier] = boxes.filter(box => box.checked).map(box => box.value);
+                if (bank[tier].length === 0) {
+                    showError(TIER_LABELS[tier] + ' needs at least one topic in its list.');
+                    return null;
+                }
+                if (selected[tier].length === 0) {
+                    showError('Enable at least one topic for ' + TIER_LABELS[tier] + '.');
+                    return null;
                 }
             }
+            return { bank, selected };
+        }
+
+        function save() {
+            const config = collect();
+            if (!config) return;
 
             fetch('/api/topics', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(selection)
+                body: JSON.stringify(config)
             })
             .then(r => r.json().then(data => ({ ok: r.ok, data })))
             .then(({ ok, data }) => {
@@ -83,6 +152,19 @@
             })
             .catch(() => showError('Save failed.'));
         }
+
+        function restoreDefaults() {
+            if (!confirm('Replace the topic lists with the built-in defaults?')) return;
+            fetch('/api/topics/reset', { method: 'POST' })
+                .then(r => r.json())
+                .then(render)
+                .catch(() => showError('Reset failed.'));
+        }
+
+        fetch('/api/topics')
+            .then(r => r.json())
+            .then(render)
+            .catch(() => showError('Failed to load topics.'));
     </script>
 </body>
 </html>

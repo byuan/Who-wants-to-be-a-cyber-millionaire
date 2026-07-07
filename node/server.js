@@ -8,7 +8,10 @@ import { fileURLToPath } from 'url';
 import { staticGame } from './lib/questions.js';
 import { generateGame } from './lib/generate.js';
 import { generateFeedback } from './lib/feedback.js';
-import { TOPIC_BANK, getResults, getPlayers, appendResult, getTopics, saveTopics } from './lib/store.js';
+import {
+  getResults, getPlayers, getPlayerStats, appendResult,
+  getBank, getTopics, saveTopicConfig, resetTopics,
+} from './lib/store.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -18,7 +21,7 @@ app.use(express.json({ limit: '1mb' }));
 app.use(express.static(join(here, 'public')));
 
 // Pretty routes for the pages (also reachable as /*.html via the static dir)
-for (const page of ['game', 'topics', 'feedback']) {
+for (const page of ['game', 'topics', 'feedback', 'players']) {
   app.get(`/${page}`, (req, res) => res.sendFile(join(here, 'public', `${page}.html`)));
 }
 
@@ -71,13 +74,24 @@ app.post('/api/results', (req, res) => {
 });
 
 app.get('/api/topics', (req, res) => {
-  res.json({ bank: TOPIC_BANK, selected: getTopics() });
+  res.json({ bank: getBank(), selected: getTopics() });
 });
 
+// Saves the full topic configuration: { bank: {tier: [...]}, selected: {tier: [...]} }
 app.post('/api/topics', (req, res) => {
-  const error = saveTopics(req.body ?? {});
+  const error = saveTopicConfig(req.body ?? {});
   if (error) return res.status(400).json({ error });
   res.json({ status: 'success' });
+});
+
+app.post('/api/topics/reset', (req, res) => {
+  resetTopics();
+  res.json({ bank: getBank(), selected: getTopics() });
+});
+
+// Per-player aggregates for the players overview page
+app.get('/api/stats', (req, res) => {
+  res.json(getPlayerStats());
 });
 
 // GET /api/feedback?player=X -> AI coaching over that player's games

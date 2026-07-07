@@ -190,14 +190,14 @@ audio {
 }
 
 .topic-grid {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
     gap: 20px;
 }
 
 .topic-column {
-    flex: 1;
+    min-width: 0;
     background: #1b1b1b;
     border: 1px solid #333;
     border-radius: 10px;
@@ -494,4 +494,217 @@ input:checked + .slider:before {
     color: #e7910f;
     font-size: 1.2em;
     margin-top: -10px;
+}
+
+/* --- Topic configuration page --- */
+
+.topic-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.topic-row label {
+    flex: 1;
+}
+
+.topic-remove {
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.topic-remove:hover {
+    color: #ff6666;
+    background: #2a2a2a;
+}
+
+.topic-add {
+    display: flex;
+    gap: 6px;
+    margin-top: 14px;
+}
+
+.topic-add input {
+    flex: 1;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background: #111;
+    color: white;
+}
+
+.topic-add input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.topic-add button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.topic-add button:hover {
+    background: #45a049;
+}
+
+.topic-reset {
+    background: #333;
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.topic-reset:hover {
+    background: #444;
+}
+
+/* --- Players overview page --- */
+
+.players-container {
+    width: 95%;
+    max-width: 900px;
+    margin: 40px auto;
+    color: white;
+}
+
+.players-empty {
+    text-align: center;
+    color: #999;
+    margin: 60px 0;
+    font-size: 18px;
+}
+
+.player-card {
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 18px;
+}
+
+.player-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.player-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+.player-meta {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.player-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.player-feedback {
+    background: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.player-feedback:hover {
+    background: #45a049;
+}
+
+.spark-line {
+    fill: none;
+    stroke: #e7910f;
+    stroke-width: 2;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+.spark-dot {
+    fill: #e7910f;
+}
+
+.spark-hit {
+    fill: transparent;
+    cursor: default;
+}
+
+.spark-hit:hover + .spark-dot,
+.spark-hit:hover {
+    stroke: #fff;
+    stroke-width: 1;
+}
+
+.spark-grid {
+    stroke: #333;
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+}
+
+.spark-label {
+    fill: #e6e6e6;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+}
+
+.player-card details {
+    margin-top: 10px;
+    color: #ccc;
+}
+
+.player-card summary {
+    cursor: pointer;
+    color: #999;
+    font-size: 14px;
+}
+
+.players-table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.players-table th,
+.players-table td {
+    text-align: left;
+    padding: 6px 10px;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.players-table th {
+    color: #888;
+    font-weight: normal;
+}
+
+.players-button {
+    right: 110px;
 }
