@@ -13,9 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url, include
+from django.conf.urls import url
 from django.contrib import admin
-from django.shortcuts import reverse
 from . import views
 
 urlpatterns = [
@@ -25,7 +24,6 @@ urlpatterns = [
     url(r'^college', views.start3, name='college'),  # Static College
     url(r'^expert', views.start4, name='expert'),  # Static Expert
 
-    # Add dynamic URL patterns
     url(r'^dynamic-primary-school', views.dynamic_start1, name='dynamic-primary-school'),  # Dynamic Primary School
     url(r'^dynamic-secondary-school', views.dynamic_start2, name='dynamic-secondary-school'),  # Dynamic Secondary School
     url(r'^dynamic-college', views.dynamic_start3, name='dynamic-college'),  # Dynamic College
@@ -39,6 +37,3 @@ urlpatterns = [
 
     url(r'', views.index, name='start-page'),
     ]
-
-    
-    

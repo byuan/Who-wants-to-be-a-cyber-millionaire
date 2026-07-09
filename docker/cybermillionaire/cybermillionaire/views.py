@@ -92,36 +92,31 @@ def topics(request):
 
 def index(request):
     return render(request, "index.html")
-    
-def start1(request):        # Static Primary School Level
-    e.export_questions('1')
-    return render(request, "game.html")
 
-def start2(request):        # Static Secondary School Level
-    e.export_questions('2')
+def start_game(request, mode):
+    e.export_questions(mode)
     return render(request, "game.html")
     
-def start3(request):        # Static College Level
-    e.export_questions('3')
-    return render(request, "game.html")
-      
-def start4(request):        # Static Expert Level
-    e.export_questions('4')
-    return render(request, "game.html")
+def start1(request):
+    return start_game(request, "1")
 
-# Dynamic views
-def dynamic_start1(request):  # Dynamic Primary School Level
-    e.export_questions('dynamic-1')
-    return render(request, "game.html")
+def start2(request):
+    return start_game(request, "2")
 
-def dynamic_start2(request):  # Dynamic Secondary School Level
-    e.export_questions('dynamic-2')
-    return render(request, "game.html")
+def start3(request):
+    return start_game(request, "3")
 
-def dynamic_start3(request):  # Dynamic College Level
-    e.export_questions('dynamic-3')
-    return render(request, "game.html")
+def start4(request):
+    return start_game(request, "4")
 
-def dynamic_start4(request):  # Dynamic Expert Level
-    e.export_questions('dynamic-4')
-    return render(request, "game.html")
+def dynamic_start1(request):
+    return start_game(request, "dynamic-1")
+
+def dynamic_start2(request):
+    return start_game(request, "dynamic-2")
+
+def dynamic_start3(request):
+    return start_game(request, "dynamic-3")
+
+def dynamic_start4(request):
+    return start_game(request, "dynamic-4")

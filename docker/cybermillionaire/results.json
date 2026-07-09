@@ -1,0 +1,244 @@
+[
+    {
+        "played_at": "2026-07-09T19:27:09.718951",
+        "history": [
+            {
+                "question": "What can you do to keep your digital footprint safe online?",
+                "selected": "Tell everyone who you are and what you like on the internet",
+                "correct": "Use strong passwords for all accounts",
+                "isCorrect": false
+            },
+            {
+                "question": "What can you do to keep your digital footprint safe online?",
+                "selected": "Use strong passwords for all accounts",
+                "correct": "Use strong passwords for all accounts",
+                "isCorrect": true
+            },
+            {
+                "question": "When you post something online, it leaves a trail that others can see, isn't it?",
+                "selected": "No one can ever find your digital footprints",
+                "correct": "Everyone who uses the internet can see them",
+                "isCorrect": false
+            },
+            {
+                "question": "When you post something online, it leaves a trail that others can see, isn't it?",
+                "selected": "Everyone who uses the internet can see them",
+                "correct": "Everyone who uses the internet can see them",
+                "isCorrect": true
+            },
+            {
+                "question": "What is something you should never share with strangers when playing online games?",
+                "selected": "Your address",
+                "correct": "Your password",
+                "isCorrect": false
+            },
+            {
+                "question": "What is something you should never share with strangers when playing online games?",
+                "selected": "Your password",
+                "correct": "Your password",
+                "isCorrect": true
+            },
+            {
+                "question": "When you share a picture of your birthday cake on social media, what do you leave behind that others might find?",
+                "selected": "A map of your house",
+                "correct": "Information about your age and where you live",
+                "isCorrect": false
+            },
+            {
+                "question": "When you share a picture of your birthday cake on social media, what do you leave behind that others might find?",
+                "selected": "The recipe for the cake",
+                "correct": "Information about your age and where you live",
+                "isCorrect": false
+            },
+            {
+                "question": "When you share a picture of your birthday cake on social media, what do you leave behind that others might find?",
+                "selected": "Information about your age and where you live",
+                "correct": "Information about your age and where you live",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-07-09T19:48:38.195307",
+        "history": [
+            {
+                "question": "What is a key characteristic of an Advanced Persistent Threat (APT) group that distinguishes it from other types of malware?",
+                "selected": "It relies solely on phishing tactics",
+                "correct": "It exhibits stealthy and adaptable behavior",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a key characteristic of an Advanced Persistent Threat (APT) group that distinguishes it from other types of malware?",
+                "selected": "It has a short, self-destructive lifecycle",
+                "correct": "It exhibits stealthy and adaptable behavior",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a key characteristic of an Advanced Persistent Threat (APT) group that distinguishes it from other types of malware?",
+                "selected": "It exhibits stealthy and adaptable behavior",
+                "correct": "It exhibits stealthy and adaptable behavior",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary function of a firewall in blocking unauthorized incoming or outgoing network traffic?",
+                "selected": "To restrict access to sensitive data and applications",
+                "correct": "To restrict access to sensitive data and applications",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of implementing endpoint security software, such as antivirus and anti-malware tools, on an organization's computers?",
+                "selected": "To monitor employee activity on company devices",
+                "correct": "To protect sensitive data stored on endpoints from unauthorized access or theft",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of implementing endpoint security software, such as antivirus and anti-malware tools, on an organization's computers?",
+                "selected": "To protect sensitive data stored on endpoints from unauthorized access or theft",
+                "correct": "To protect sensitive data stored on endpoints from unauthorized access or theft",
+                "isCorrect": true
+            },
+            {
+                "question": "A company uses endpoint security software to monitor its employees' personal devices that are used for work purposes. This type of protection is an example of:",
+                "selected": "Endpoint protection",
+                "correct": "Endpoint protection",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-07-09T20:01:29.247609",
+        "history": [
+            {
+                "question": "What is the primary benefit of using Input Validation in secure coding practices to prevent Buffer Overflow attacks?",
+                "selected": "Enhances system availability",
+                "correct": "Prevents information disclosure",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary benefit of using Input Validation in secure coding practices to prevent Buffer Overflow attacks?",
+                "selected": "Prevents information disclosure",
+                "correct": "Prevents information disclosure",
+                "isCorrect": true
+            },
+            {
+                "question": "An ethical hacker is conducting a penetration test on a company's network and discovers a vulnerability in the WAP server that allows an attacker to access sensitive information. Which of the following actions should the hacker take next?",
+                "selected": "Document the vulnerability and submit a report with recommended patches to the company's management.",
+                "correct": "Alert the IT department immediately so they can fix the issue before anyone uses it.",
+                "isCorrect": false
+            },
+            {
+                "question": "An ethical hacker is conducting a penetration test on a company's network and discovers a vulnerability in the WAP server that allows an attacker to access sensitive information. Which of the following actions should the hacker take next?",
+                "selected": "Alert the IT department immediately so they can fix the issue before anyone uses it.",
+                "correct": "Alert the IT department immediately so they can fix the issue before anyone uses it.",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of the SANS (Secure Applications) coding standard, and what are its main benefits?",
+                "selected": "The SANS standard targets cloud computing security by providing recommendations for secure deployment, data backup, and disaster recovery processes. Its adoption mitigates risks associated with cloud storage.",
+                "correct": "The SANS standard aims to ensure the secure coding of web applications by providing guidelines for input validation and error handling. It improves the application's robustness against common web attacks.",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of the SANS (Secure Applications) coding standard, and what are its main benefits?",
+                "selected": "The SANS standard emphasizes enterprise network security by offering guidelines for secure configuration and patch management of operating systems and applications. It reduces the attack surface and improves incident response.",
+                "correct": "The SANS standard aims to ensure the secure coding of web applications by providing guidelines for input validation and error handling. It improves the application's robustness against common web attacks.",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of the SANS (Secure Applications) coding standard, and what are its main benefits?",
+                "selected": "The SANS standard focuses on mobile app security by outlining best practices for encryption, secure authentication, and access control. Its implementation enhances user privacy and data integrity.",
+                "correct": "The SANS standard aims to ensure the secure coding of web applications by providing guidelines for input validation and error handling. It improves the application's robustness against common web attacks.",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of the SANS (Secure Applications) coding standard, and what are its main benefits?",
+                "selected": "The SANS standard aims to ensure the secure coding of web applications by providing guidelines for input validation and error handling. It improves the application's robustness against common web attacks.",
+                "correct": "The SANS standard aims to ensure the secure coding of web applications by providing guidelines for input validation and error handling. It improves the application's robustness against common web attacks.",
+                "isCorrect": true
+            },
+            {
+                "question": "When analyzing a digital forensic investigation, an analyst discovers a deleted email that is no longer available in the original location. What steps would you take next?",
+                "selected": "Immediately re-create the deleted email and analyze its contents",
+                "correct": "Use a data recovery tool to retrieve the deleted email from the hard drive or storage device",
+                "isCorrect": false
+            },
+            {
+                "question": "When analyzing a digital forensic investigation, an analyst discovers a deleted email that is no longer available in the original location. What steps would you take next?",
+                "selected": "Use a data recovery tool to retrieve the deleted email from the hard drive or storage device",
+                "correct": "Use a data recovery tool to retrieve the deleted email from the hard drive or storage device",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-07-09T20:08:49.895438",
+        "history": [
+            {
+                "question": "What is the primary purpose of endpoint protection software?",
+                "selected": "To prevent malware attacks on mobile devices",
+                "correct": "To safeguard remote workers' laptops and desktops from cyber threats",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of endpoint protection software?",
+                "selected": "To monitor and block suspicious network activity",
+                "correct": "To safeguard remote workers' laptops and desktops from cyber threats",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of endpoint protection software?",
+                "selected": "To protect user data from unauthorized access",
+                "correct": "To safeguard remote workers' laptops and desktops from cyber threats",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of endpoint protection software?",
+                "selected": "To safeguard remote workers' laptops and desktops from cyber threats",
+                "correct": "To safeguard remote workers' laptops and desktops from cyber threats",
+                "isCorrect": true
+            },
+            {
+                "question": "A school's firewall is configured to block all incoming connections by default, but allows outgoing connections for legitimate applications. What type of firewall configuration is this?",
+                "selected": "Stateful inspection",
+                "correct": "restrictive",
+                "isCorrect": false
+            },
+            {
+                "question": "A school's firewall is configured to block all incoming connections by default, but allows outgoing connections for legitimate applications. What type of firewall configuration is this?",
+                "selected": "Hybrid",
+                "correct": "restrictive",
+                "isCorrect": false
+            },
+            {
+                "question": "A school's firewall is configured to block all incoming connections by default, but allows outgoing connections for legitimate applications. What type of firewall configuration is this?",
+                "selected": "Permissive",
+                "correct": "restrictive",
+                "isCorrect": false
+            },
+            {
+                "question": "A school's firewall is configured to block all incoming connections by default, but allows outgoing connections for legitimate applications. What type of firewall configuration is this?",
+                "selected": "restrictive",
+                "correct": "restrictive",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary function of a Personal Identity Password (PIP) in endpoint security?",
+                "selected": "To verify user identity for all system access",
+                "correct": "To enable two-factor authentication",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary function of a Personal Identity Password (PIP) in endpoint security?",
+                "selected": "To enable two-factor authentication",
+                "correct": "To enable two-factor authentication",
+                "isCorrect": true
+            },
+            {
+                "question": "An organization's IT department discovers a malicious software (malware) infection in one of their employee's computers, but it is suspected that the attack may have originated from an internal source. What type of threat would this be classified as?",
+                "selected": "Advanced Persistent Threat (APT)",
+                "correct": "Advanced Persistent Threat (APT)",
+                "isCorrect": true
+            }
+        ]
+    }
+]
