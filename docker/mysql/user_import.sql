@@ -40,6 +40,8 @@ CREATE TABLE IF NOT EXISTS topic_settings (
     difficulty VARCHAR(20),
     topic VARCHAR(100),
 
+    UNIQUE(user_id, difficulty, topic),
+
     FOREIGN KEY (user_id)
         REFERENCES users(id)
 );
