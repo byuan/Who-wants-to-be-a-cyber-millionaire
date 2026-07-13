@@ -336,6 +336,7 @@ var MillionaireModel = function(data) {
 
                     $("#game").fadeOut('slow', function() {
                         $("#game-over").fadeIn('slow');
+                        sessionStorage.removeItem("currentGame");
                     });
 
                     self.transitioning = false;
@@ -372,6 +373,7 @@ var MillionaireModel = function(data) {
 
             console.log("Saved", data);
             loadLifetimeStats();
+            sessionStorage.removeItem("currentGame");
 
         })
         .catch(error => {
@@ -453,28 +455,25 @@ function loadLifetimeStats() {
 // Executes on page load, bootstrapping
 // the start game functionality to trigger a game model
 // being created
-$(document).ready(function () {
+$(document).ready(function() {
 
     console.log("Ready function worked");
 
-    // Use the data Django already embedded into the page
-    const data = gameData;
+    let storedGame = sessionStorage.getItem("currentGame");
 
-    console.log(data);
-
-    for (var i = 1; i <= data.games.length; i++) {
-        console.log(i);
-        $("#problem-set").append(
-            '<option value="' + i + '">' + i + "</option>"
-        );
+    if (!storedGame) {
+        console.error("No game data found");
+        return;
     }
 
-    var index = $('#problem-set').find(":selected").val() - 1;
-
-    ko.applyBindings(new MillionaireModel(data.games[0]));
-
-    console.log("Game loaded");
+    let data = JSON.parse(storedGame);
+    console.log("Loaded from sessionStorage:");
+    console.log(data);
+    ko.applyBindings(
+        new MillionaireModel(data.games[0])
+    );
 
     startSound('background', true);
     $("#game").fadeIn('slow');
+    console.log("Game loaded");
 });

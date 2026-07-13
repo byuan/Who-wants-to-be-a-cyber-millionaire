@@ -100,11 +100,19 @@
         {{ game_data|json_script:"game-data" }}
 
         <script>
-        const gameData = JSON.parse(
-            document.getElementById("game-data").textContent
-        );
+            if (!sessionStorage.getItem("currentGame")) {
+                const gameData = JSON.parse(
+                    document.getElementById("game-data").textContent
+                );
+                sessionStorage.setItem(
+                    "currentGame",
+                    JSON.stringify(gameData)
+                );
+                console.log("Stored new game");
+            } else {
+                console.log("Existing game found");
 
-        console.log(gameData);
+            }
         </script>
             
         

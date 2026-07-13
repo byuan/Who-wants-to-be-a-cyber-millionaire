@@ -541,5 +541,123 @@
                 "isCorrect": true
             }
         ]
+    },
+    {
+        "played_at": "2026-07-13T21:00:55.233456",
+        "history": [
+            {
+                "question": "What should you do before posting something new on social media?",
+                "selected": "Ask your parents for permission first",
+                "correct": "Ask your parents for permission first",
+                "isCorrect": true
+            },
+            {
+                "question": "What is something you should never share your password with?",
+                "selected": "Someone who wants to play games online with you",
+                "correct": "Someone who wants to play games online with you",
+                "isCorrect": true
+            },
+            {
+                "question": "When you want to send a secret message to your friend online, what should you do first?",
+                "selected": "Download and install new apps quickly",
+                "correct": "Check if the website is secure",
+                "isCorrect": false
+            },
+            {
+                "question": "When you want to send a secret message to your friend online, what should you do first?",
+                "selected": "Click on all links in the message",
+                "correct": "Check if the website is secure",
+                "isCorrect": false
+            },
+            {
+                "question": "When you want to send a secret message to your friend online, what should you do first?",
+                "selected": "Share your password with others",
+                "correct": "Check if the website is secure",
+                "isCorrect": false
+            },
+            {
+                "question": "When you want to send a secret message to your friend online, what should you do first?",
+                "selected": "Download and install new apps quickly",
+                "correct": "Check if the website is secure",
+                "isCorrect": false
+            },
+            {
+                "question": "When you want to send a secret message to your friend online, what should you do first?",
+                "selected": "Click on all links in the message",
+                "correct": "Check if the website is secure",
+                "isCorrect": false
+            },
+            {
+                "question": "When you want to send a secret message to your friend online, what should you do first?",
+                "selected": "Check if the website is secure",
+                "correct": "Check if the website is secure",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the word \"hacker\" originally mean?",
+                "selected": "A person who breaks into computer systems without permission",
+                "correct": "A person who breaks into computer systems without permission",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-07-13T21:14:33.123039",
+        "history": [
+            {
+                "question": "How can you protect your computer from malware?",
+                "selected": "Sharing your computer password with friends",
+                "correct": "Installing antivirus software and keeping it updated",
+                "isCorrect": false
+            },
+            {
+                "question": "How can you protect your computer from malware?",
+                "selected": "Installing antivirus software and keeping it updated",
+                "correct": "Installing antivirus software and keeping it updated",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a common practice that can help keep your social media account secure?",
+                "selected": "Sharing your passwords with friends",
+                "correct": "Using two-factor authentication",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a common practice that can help keep your social media account secure?",
+                "selected": "Using two-factor authentication",
+                "correct": "Using two-factor authentication",
+                "isCorrect": true
+            },
+            {
+                "question": "Which of the following is NOT a part of your digital footprint?",
+                "selected": "Videos you post on the internet",
+                "correct": "Conversations with friends in person",
+                "isCorrect": false
+            },
+            {
+                "question": "Which of the following is NOT a part of your digital footprint?",
+                "selected": "Conversations with friends in person",
+                "correct": "Conversations with friends in person",
+                "isCorrect": true
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website URL indicate?",
+                "selected": "The website is located in a different country",
+                "correct": "The website is secure",
+                "isCorrect": false
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website URL indicate?",
+                "selected": "The website is designed for kids",
+                "correct": "The website is secure",
+                "isCorrect": false
+            },
+            {
+                "question": "What does the 'https://' at the beginning of a website URL indicate?",
+                "selected": "The website is secure",
+                "correct": "The website is secure",
+                "isCorrect": true
+            }
+        ]
     }
 ]
