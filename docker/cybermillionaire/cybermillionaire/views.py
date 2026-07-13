@@ -110,7 +110,14 @@ def start4(request):
     return start_game(request, "4")
 
 def dynamic_start1(request):
-    return start_game(request, "dynamic-1")
+    game = e.export_questions("dynamic-1")
+    return render(
+        request,
+        "game.html",
+        {
+            "game_data": game
+        }
+    )
 
 def dynamic_start2(request):
     return start_game(request, "dynamic-2")

@@ -453,25 +453,31 @@ function loadLifetimeStats() {
 // Executes on page load, bootstrapping
 // the start game functionality to trigger a game model
 // being created
-$(document).ready(function() {
-    
-    console.log("Ready function worked")
-     
-    $.getJSON(path, function(data) {
-        console.log("getJSON start")
-        for(var i = 1; i <= data.games.length; i++) {
-            console.log(i)
-            $("#problem-set").append('<option value="' + i + '">' + i + '</option>');
-        }
-        var index = $('#problem-set').find(":selected").val() - 1;
-        console.log("index", index)
-        console.log(data.games[index])
-        ko.applyBindings(new MillionaireModel(data.games[0]));
-        console.log("getJSON finish")
-    });
-      
+$(document).ready(function () {
+
+    console.log("Ready function worked");
+
+    // Use the data Django already embedded into the page
+    const data = gameData;
+
+    console.log(data);
+
+    for (var i = 1; i <= data.games.length; i++) {
+        console.log(i);
+        $("#problem-set").append(
+            '<option value="' + i + '">' + i + "</option>"
+        );
+    }
+
+    var index = $('#problem-set').find(":selected").val() - 1;
+
+    console.log("index", index);
+    console.log(data.games[index]);
+
+    ko.applyBindings(new MillionaireModel(data.games[0]));
+
+    console.log("Game loaded");
+
     startSound('background', true);
     $("#game").fadeIn('slow');
-        console.log("Game loaded")
-        
 });

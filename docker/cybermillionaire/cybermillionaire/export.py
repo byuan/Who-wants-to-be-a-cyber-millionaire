@@ -1,7 +1,6 @@
 import mysql.connector
 from mysql.connector import Error
 import json
-import sys
 import cybermillionaire.dynamic_question_generation as generation
 import cybermillionaire.database_insert as insert
 
@@ -16,44 +15,35 @@ def run_sql(cursor, query, param=None):
     
 def generate_json(game):
     json_file = {}
-    json_file['games'] = []
+    json_file["games"] = []
+
     questions = []
 
     for question in game:
-        #for column in question:
-        for i in range(len(question)):
-            # Need to include "questions" around the individual question
-            if i == 0:
-                quest_json = question[i]
-            # Surround answers with [],
-            if i == 1:
-                ans1_json = question[i]
-            if i == 2:
-                ans2_json = question[i]
-            if i == 3:
-                ans3_json = question[i]
-            if i == 4:
-                ans4_json = question[i]
-            if i == 5:
-                correct_json = question[i]
-                                 
-        #create content array
-        content = []
-        content.append(str(ans1_json))
-        content.append(str(ans2_json))
-        content.append(str(ans3_json))
-        content.append(str(ans4_json))
 
-        # populate questions dictionary
+        quest_json = question[0]
+        ans1_json = question[1]
+        ans2_json = question[2]
+        ans3_json = question[3]
+        ans4_json = question[4]
+        correct_json = question[5]
+
         questions.append({
             "question": str(quest_json),
-            "content" : content,
+            "content": [
+                str(ans1_json),
+                str(ans2_json),
+                str(ans3_json),
+                str(ans4_json)
+            ],
             "correct": int(correct_json)
         })
-    json_file['games'].append({"questions" : questions})
 
-    with open('static/js/millionaire.json','w') as outfile:
-        json.dump(json_file, outfile)
+    json_file["games"].append({
+        "questions": questions
+    })
+
+    return json_file
 
 # This will run when a Static Primary School game is selected. It will gather all questions for the game       
 def Static_Game(cursor, level):
@@ -148,9 +138,11 @@ def export_questions(selection):
     else:
         print("Invalid Level Selection!")
     
-    generate_json(game)
+    json_game = generate_json(game)
 
     if (connection.is_connected()):
         connection.close()
         cursor.close()
         print("MySQL connection is closed")
+
+    return json_game

@@ -97,8 +97,14 @@
             </div>
         
             
+        {{ game_data|json_script:"game-data" }}
+
         <script>
-            var path = "{% static 'js/millionaire.json' %}"
+        const gameData = JSON.parse(
+            document.getElementById("game-data").textContent
+        );
+
+        console.log(gameData);
         </script>
             
         
