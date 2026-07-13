@@ -1,6 +1,5 @@
 import mysql.connector
 from mysql.connector import Error
-import json
 import cybermillionaire.dynamic_question_generation as generation
 import cybermillionaire.database_insert as insert
 
@@ -13,37 +12,31 @@ def run_sql(cursor, query, param=None):
     records = cursor.fetchall() #All the records for that query are here.
     return records
     
-def generate_json(game):
-    json_file = {}
-    json_file["games"] = []
+def format_game_data(game):
 
     questions = []
 
     for question in game:
 
-        quest_json = question[0]
-        ans1_json = question[1]
-        ans2_json = question[2]
-        ans3_json = question[3]
-        ans4_json = question[4]
-        correct_json = question[5]
-
         questions.append({
-            "question": str(quest_json),
+            "question": question[0],
             "content": [
-                str(ans1_json),
-                str(ans2_json),
-                str(ans3_json),
-                str(ans4_json)
+                question[1],
+                question[2],
+                question[3],
+                question[4]
             ],
-            "correct": int(correct_json)
+            "correct": int(question[5])
         })
 
-    json_file["games"].append({
-        "questions": questions
-    })
 
-    return json_file
+    return {
+        "games": [
+            {
+                "questions": questions
+            }
+        ]
+    }
 
 # This will run when a Static Primary School game is selected. It will gather all questions for the game       
 def Static_Game(cursor, level):
@@ -138,7 +131,7 @@ def export_questions(selection):
     else:
         print("Invalid Level Selection!")
     
-    json_game = generate_json(game)
+    json_game = format_game_data(game)
 
     if (connection.is_connected()):
         connection.close()
