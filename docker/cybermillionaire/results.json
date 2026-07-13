@@ -659,5 +659,208 @@
                 "isCorrect": true
             }
         ]
+    },
+    {
+        "played_at": "2026-07-13T23:18:41.842054",
+        "history": [
+            {
+                "question": "What is a primary characteristic of an Advanced Persistent Threat (APT) that distinguishes it from a typical malicious attack?",
+                "selected": "A focus on intellectual property theft",
+                "correct": "Multiple stages, requiring multiple attackers",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a primary characteristic of an Advanced Persistent Threat (APT) that distinguishes it from a typical malicious attack?",
+                "selected": "Multiple stages, requiring multiple attackers",
+                "correct": "Multiple stages, requiring multiple attackers",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary goal of an Advanced Persistent Threat (APT) attack, which often involves infiltrating networks to gather sensitive information and conduct malicious activities over time?",
+                "selected": "To steal sensitive information and conduct ongoing malicious activities",
+                "correct": "To gain access to highly classified data",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary goal of an Advanced Persistent Threat (APT) attack, which often involves infiltrating networks to gather sensitive information and conduct malicious activities over time?",
+                "selected": "To exploit vulnerabilities in software for short-term gains",
+                "correct": "To gain access to highly classified data",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary goal of an Advanced Persistent Threat (APT) attack, which often involves infiltrating networks to gather sensitive information and conduct malicious activities over time?",
+                "selected": "To gain access to highly classified data",
+                "correct": "To gain access to highly classified data",
+                "isCorrect": true
+            },
+            {
+                "question": "A company's firewall is configured to block incoming traffic on all ports except for HTTPS and SSH, which are allowed for remote access to its internal network.",
+                "selected": "This setup would prevent any unauthorized users from accessing the company's internal resources.",
+                "correct": "This would be a good security measure as it limits the number of potential vulnerabilities.",
+                "isCorrect": false
+            },
+            {
+                "question": "A company's firewall is configured to block incoming traffic on all ports except for HTTPS and SSH, which are allowed for remote access to its internal network.",
+                "selected": "This would be a good security measure as it limits the number of potential vulnerabilities.",
+                "correct": "This would be a good security measure as it limits the number of potential vulnerabilities.",
+                "isCorrect": true
+            },
+            {
+                "question": "What type of endpoint security measure involves the installation of an operating system and application software on a device, making it difficult for attackers to bypass?",
+                "selected": "Full-disk Encryption",
+                "correct": "Personalization Software",
+                "isCorrect": false
+            },
+            {
+                "question": "What type of endpoint security measure involves the installation of an operating system and application software on a device, making it difficult for attackers to bypass?",
+                "selected": "Application Whitelisting",
+                "correct": "Personalization Software",
+                "isCorrect": false
+            },
+            {
+                "question": "What type of endpoint security measure involves the installation of an operating system and application software on a device, making it difficult for attackers to bypass?",
+                "selected": "Device Control",
+                "correct": "Personalization Software",
+                "isCorrect": false
+            },
+            {
+                "question": "What type of endpoint security measure involves the installation of an operating system and application software on a device, making it difficult for attackers to bypass?",
+                "selected": "Personalization Software",
+                "correct": "Personalization Software",
+                "isCorrect": true
+            },
+            {
+                "question": "An organization's IT department discovers that an Advanced Persistent Threat (APT) has been targeting their network for over a year, with no signs of detection until recently. What is the most likely reason for the APT to have gone undetected for so long?",
+                "selected": "The organization's security team was incompetent and failed to implement adequate defenses.",
+                "correct": "The APT used advanced social engineering tactics to gain initial access, but then relied on automated tools to maintain access.",
+                "isCorrect": false
+            },
+            {
+                "question": "An organization's IT department discovers that an Advanced Persistent Threat (APT) has been targeting their network for over a year, with no signs of detection until recently. What is the most likely reason for the APT to have gone undetected for so long?",
+                "selected": "The APT used advanced social engineering tactics to gain initial access, but then relied on automated tools to maintain access.",
+                "correct": "The APT used advanced social engineering tactics to gain initial access, but then relied on automated tools to maintain access.",
+                "isCorrect": true
+            },
+            {
+                "question": "What is an Advanced Persistent Threat (APT) group's typical behavior when targeting organizations?",
+                "selected": "Employing spear phishing tactics with specific targets in mind",
+                "correct": "Employing spear phishing tactics with specific targets in mind",
+                "isCorrect": true
+            },
+            {
+                "question": "A company's firewall is configured to allow incoming traffic only from its own IP address range, but what happens when an employee uses their personal laptop to access the company's network?",
+                "selected": "The firewall will allow incoming connections from any public IP address",
+                "correct": "The firewall will allow incoming connections from any public IP address",
+                "isCorrect": true
+            },
+            {
+                "question": "What is an Advanced Persistent Threat (APT) and how does it differ from a typical malware attack?",
+                "selected": "APTs are typically spread through phishing emails, while regular malware is often downloaded from the internet.",
+                "correct": "APTs involve a sophisticated and coordinated effort by multiple attackers over an extended period, using various tactics to evade detection.",
+                "isCorrect": false
+            },
+            {
+                "question": "What is an Advanced Persistent Threat (APT) and how does it differ from a typical malware attack?",
+                "selected": "APTs primarily target specific industries or organizations, but do not necessarily aim to steal data directly.",
+                "correct": "APTs involve a sophisticated and coordinated effort by multiple attackers over an extended period, using various tactics to evade detection.",
+                "isCorrect": false
+            },
+            {
+                "question": "What is an Advanced Persistent Threat (APT) and how does it differ from a typical malware attack?",
+                "selected": "APTs involve a sophisticated and coordinated effort by multiple attackers over an extended period, using various tactics to evade detection.",
+                "correct": "APTs involve a sophisticated and coordinated effort by multiple attackers over an extended period, using various tactics to evade detection.",
+                "isCorrect": true
+            },
+            {
+                "question": "A company's firewall is configured to block all incoming connections from IP addresses that are not in its internal network. What is the primary benefit of this configuration?",
+                "selected": "Enhanced security by preventing unauthorized access",
+                "correct": "Enhanced security by preventing unauthorized access",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary function of a firewall in preventing unauthorized access to a computer network?",
+                "selected": "To filter incoming and outgoing network communications based on predetermined security rules",
+                "correct": "To filter incoming and outgoing network communications based on predetermined security rules",
+                "isCorrect": true
+            },
+            {
+                "question": "What is a common type of malware that can spread through USB drives, making them a popular target for endpoint security solutions?",
+                "selected": "Ransomware",
+                "correct": "Trojans",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a common type of malware that can spread through USB drives, making them a popular target for endpoint security solutions?",
+                "selected": "Rootkits",
+                "correct": "Trojans",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a common type of malware that can spread through USB drives, making them a popular target for endpoint security solutions?",
+                "selected": "Viruses",
+                "correct": "Trojans",
+                "isCorrect": false
+            },
+            {
+                "question": "What is a common type of malware that can spread through USB drives, making them a popular target for endpoint security solutions?",
+                "selected": "Trojans",
+                "correct": "Trojans",
+                "isCorrect": true
+            },
+            {
+                "question": "An organization has installed antivirus software on its laptops but neglects to install it on desktop computers, which are also used by employees to access sensitive data.",
+                "selected": "This is an example of a patch management vulnerability.",
+                "correct": "This is an example of an endpoint security weakness.",
+                "isCorrect": false
+            },
+            {
+                "question": "An organization has installed antivirus software on its laptops but neglects to install it on desktop computers, which are also used by employees to access sensitive data.",
+                "selected": "This is an example of a network segmentation issue.",
+                "correct": "This is an example of an endpoint security weakness.",
+                "isCorrect": false
+            },
+            {
+                "question": "An organization has installed antivirus software on its laptops but neglects to install it on desktop computers, which are also used by employees to access sensitive data.",
+                "selected": "This is an example of an endpoint security weakness.",
+                "correct": "This is an example of an endpoint security weakness.",
+                "isCorrect": true
+            },
+            {
+                "question": "An organization discovers that its network has been compromised by an Advanced Persistent Threat (APT). What is the primary purpose of the attacker, as evidenced by their actions over time?",
+                "selected": "Disruption of operations to cause financial losses",
+                "correct": "Intellectual property theft and espionage",
+                "isCorrect": false
+            },
+            {
+                "question": "An organization discovers that its network has been compromised by an Advanced Persistent Threat (APT). What is the primary purpose of the attacker, as evidenced by their actions over time?",
+                "selected": "Revenge against a specific individual or company",
+                "correct": "Intellectual property theft and espionage",
+                "isCorrect": false
+            },
+            {
+                "question": "An organization discovers that its network has been compromised by an Advanced Persistent Threat (APT). What is the primary purpose of the attacker, as evidenced by their actions over time?",
+                "selected": "Intellectual property theft and espionage",
+                "correct": "Intellectual property theft and espionage",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary function of a firewall in preventing unauthorized access to a network?",
+                "selected": "To scan for malware viruses",
+                "correct": "To block suspicious IP addresses",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary function of a firewall in preventing unauthorized access to a network?",
+                "selected": "To block suspicious IP addresses",
+                "correct": "To block suspicious IP addresses",
+                "isCorrect": true
+            },
+            {
+                "question": "A company's firewall is unable to block all incoming traffic from an unknown IP address, allowing hackers to access sensitive data. What should the company do first?",
+                "selected": "Block the IP address immediately and investigate later",
+                "correct": "Block the IP address immediately and investigate later",
+                "isCorrect": true
+            }
+        ]
     }
 ]
