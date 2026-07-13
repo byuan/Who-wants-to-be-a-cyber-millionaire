@@ -471,9 +471,6 @@ $(document).ready(function () {
 
     var index = $('#problem-set').find(":selected").val() - 1;
 
-    console.log("index", index);
-    console.log(data.games[index]);
-
     ko.applyBindings(new MillionaireModel(data.games[0]));
 
     console.log("Game loaded");

@@ -98,32 +98,33 @@ def start_game(request, mode):
     return render(request, "game.html")
     
 def start1(request):
-    return start_game(request, "1")
+    game_data = e.export_questions("1")
+    return render(request,"game.html",{"game_data": game_data})
 
 def start2(request):
-    return start_game(request, "2")
+    game_data = e.export_questions("2")
+    return render(request,"game.html",{"game_data": game_data})
 
 def start3(request):
-    return start_game(request, "3")
+    game_data = e.export_questions("3")
+    return render(request,"game.html",{"game_data": game_data})
 
 def start4(request):
-    return start_game(request, "4")
+    game_data = e.export_questions("4")
+    return render(request,"game.html",{"game_data": game_data})
 
 def dynamic_start1(request):
     game = e.export_questions("dynamic-1")
-    return render(
-        request,
-        "game.html",
-        {
-            "game_data": game
-        }
-    )
+    return render(request,"game.html",{"game_data": game})
 
 def dynamic_start2(request):
-    return start_game(request, "dynamic-2")
+    game = e.export_questions("dynamic-2")
+    return render(request,"game.html",{"game_data": game})
 
 def dynamic_start3(request):
-    return start_game(request, "dynamic-3")
+    game = e.export_questions("dynamic-3")
+    return render(request,"game.html",{"game_data": game})
 
 def dynamic_start4(request):
-    return start_game(request, "dynamic-4")
+    game = e.export_questions("dynamic-4")
+    return render(request,"game.html",{"game_data": game})

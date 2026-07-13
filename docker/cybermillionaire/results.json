@@ -240,5 +240,306 @@
                 "isCorrect": true
             }
         ]
+    },
+    {
+        "played_at": "2026-07-13T20:00:54.624185",
+        "history": [
+            {
+                "question": "A digital forensics examiner is analyzing a computer's memory and finds a deleted file with partial metadata still intact. Which of the following best describes the characteristics of this situation?",
+                "selected": "The file's metadata has been partially altered during the deletion process.",
+                "correct": "The file's metadata has been partially altered during the deletion process.",
+                "isCorrect": true
+            },
+            {
+                "question": "An investigator is examining the system logs of a compromised network and finds a suspicious login attempt from an unknown IP address at 3:00 AM. Which of the following would be the most appropriate next step for the investigator?",
+                "selected": "Check if there are any security incident response policies in place that address such scenarios",
+                "correct": "Collect and preserve the system logs, then analyze them using specialized tools",
+                "isCorrect": false
+            },
+            {
+                "question": "An investigator is examining the system logs of a compromised network and finds a suspicious login attempt from an unknown IP address at 3:00 AM. Which of the following would be the most appropriate next step for the investigator?",
+                "selected": "Analyze network traffic patterns to determine the source of the suspicious login attempt",
+                "correct": "Collect and preserve the system logs, then analyze them using specialized tools",
+                "isCorrect": false
+            },
+            {
+                "question": "An investigator is examining the system logs of a compromised network and finds a suspicious login attempt from an unknown IP address at 3:00 AM. Which of the following would be the most appropriate next step for the investigator?",
+                "selected": "Collect and preserve the system logs, then analyze them using specialized tools",
+                "correct": "Collect and preserve the system logs, then analyze them using specialized tools",
+                "isCorrect": true
+            },
+            {
+                "question": "In a digital forensic investigation, what is the primary purpose of using a \"lightweight forensic image\" of an operating system disk?",
+                "selected": "To enable the use of anti-forensic tools to conceal evidence",
+                "correct": "To allow for faster analysis of the disk contents",
+                "isCorrect": false
+            },
+            {
+                "question": "In a digital forensic investigation, what is the primary purpose of using a \"lightweight forensic image\" of an operating system disk?",
+                "selected": "To preserve the integrity of the original evidence",
+                "correct": "To allow for faster analysis of the disk contents",
+                "isCorrect": false
+            },
+            {
+                "question": "In a digital forensic investigation, what is the primary purpose of using a \"lightweight forensic image\" of an operating system disk?",
+                "selected": "To allow for faster analysis of the disk contents",
+                "correct": "To allow for faster analysis of the disk contents",
+                "isCorrect": true
+            },
+            {
+                "question": "A digital forensic analyst is analyzing a computer's hard drive to recover deleted files. Which of the following techniques would most likely allow them to do so, assuming the deleted files were written to a journaling file system?",
+                "selected": "Scanning the entire hard drive with a file carving tool",
+                "correct": "Using a data recovery software",
+                "isCorrect": false
+            },
+            {
+                "question": "A digital forensic analyst is analyzing a computer's hard drive to recover deleted files. Which of the following techniques would most likely allow them to do so, assuming the deleted files were written to a journaling file system?",
+                "selected": "Checking for disk errors using chkdsk",
+                "correct": "Using a data recovery software",
+                "isCorrect": false
+            },
+            {
+                "question": "A digital forensic analyst is analyzing a computer's hard drive to recover deleted files. Which of the following techniques would most likely allow them to do so, assuming the deleted files were written to a journaling file system?",
+                "selected": "Running a filesystem check using fsck",
+                "correct": "Using a data recovery software",
+                "isCorrect": false
+            },
+            {
+                "question": "A digital forensic analyst is analyzing a computer's hard drive to recover deleted files. Which of the following techniques would most likely allow them to do so, assuming the deleted files were written to a journaling file system?",
+                "selected": "Using a data recovery software",
+                "correct": "Using a data recovery software",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-07-13T20:03:33.108306",
+        "history": [
+            {
+                "question": "A school's network is protected by an internal firewall. What would happen if the firewall is disabled?",
+                "selected": "Malicious traffic can freely pass through the system",
+                "correct": "All incoming and outgoing traffic will be blocked",
+                "isCorrect": false
+            },
+            {
+                "question": "A school's network is protected by an internal firewall. What would happen if the firewall is disabled?",
+                "selected": "Malicious traffic can freely pass through the system",
+                "correct": "All incoming and outgoing traffic will be blocked",
+                "isCorrect": false
+            },
+            {
+                "question": "A school's network is protected by an internal firewall. What would happen if the firewall is disabled?",
+                "selected": "Only legitimate incoming traffic will be allowed",
+                "correct": "All incoming and outgoing traffic will be blocked",
+                "isCorrect": false
+            },
+            {
+                "question": "A school's network is protected by an internal firewall. What would happen if the firewall is disabled?",
+                "selected": "All incoming and outgoing traffic will be blocked",
+                "correct": "All incoming and outgoing traffic will be blocked",
+                "isCorrect": true
+            },
+            {
+                "question": "An Advanced Persistent Threat (APT) is a type of cyber attack that involves a series of smaller, targeted attacks against an organization over a long period of time. What is a common characteristic of APTs?",
+                "selected": "They involve the use of malware to steal sensitive information",
+                "correct": "They are typically carried out by nation-state actors",
+                "isCorrect": false
+            },
+            {
+                "question": "An Advanced Persistent Threat (APT) is a type of cyber attack that involves a series of smaller, targeted attacks against an organization over a long period of time. What is a common characteristic of APTs?",
+                "selected": "They are typically carried out by nation-state actors",
+                "correct": "They are typically carried out by nation-state actors",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary function of an Endpoint Security system in preventing malware attacks?",
+                "selected": "Providing real-time threat detection and response capabilities",
+                "correct": "Providing real-time threat detection and response capabilities",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of configuring an access control list (ACL) in a firewall?",
+                "selected": "To limit incoming traffic to specific sources",
+                "correct": "To limit incoming traffic to specific sources",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-07-13T20:19:37.819148",
+        "history": [
+            {
+                "question": "What cryptographic algorithm is commonly used in SSL certificates?",
+                "selected": "ROT13",
+                "correct": "RSA",
+                "isCorrect": false
+            },
+            {
+                "question": "What cryptographic algorithm is commonly used in SSL certificates?",
+                "selected": "AES",
+                "correct": "RSA",
+                "isCorrect": false
+            },
+            {
+                "question": "What cryptographic algorithm is commonly used in SSL certificates?",
+                "selected": "RSA",
+                "correct": "RSA",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary advantage of asymmetric encryption compared to symmetric encryption?",
+                "selected": "Speed",
+                "correct": "Key distribution",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary advantage of asymmetric encryption compared to symmetric encryption?",
+                "selected": "Key distribution",
+                "correct": "Key distribution",
+                "isCorrect": true
+            },
+            {
+                "question": "Which encryption algorithm is based on the concept of exchanging keys over a secure channel to establish a shared secret key?",
+                "selected": "Diffie-Hellman",
+                "correct": "Diffie-Hellman",
+                "isCorrect": true
+            },
+            {
+                "question": "How does a self-signed SSL certificate differ from a certificate signed by a trusted CA?",
+                "selected": "Self-signed certificates are not trusted by browsers.",
+                "correct": "Self-signed certificates are not trusted by browsers.",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-07-13T20:21:28.940632",
+        "history": [
+            {
+                "question": "What is the primary function of the TCP Syn Cookie in TCP SYN Flooding attacks?",
+                "selected": "To verify the integrity of data packets",
+                "correct": "To store a timestamp for the initial SYN packet",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary function of the TCP Syn Cookie in TCP SYN Flooding attacks?",
+                "selected": "To limit the number of connections per IP address",
+                "correct": "To store a timestamp for the initial SYN packet",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary function of the TCP Syn Cookie in TCP SYN Flooding attacks?",
+                "selected": "To store a timestamp for the initial SYN packet",
+                "correct": "To store a timestamp for the initial SYN packet",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of the IP Header's Type of Service (ToS) field in IPv4, which allows for traffic classification and prioritization?",
+                "selected": "Address spoofing detection",
+                "correct": "Quality of service (QoS)",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of the IP Header's Type of Service (ToS) field in IPv4, which allows for traffic classification and prioritization?",
+                "selected": "Network congestion management",
+                "correct": "Quality of service (QoS)",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of the IP Header's Type of Service (ToS) field in IPv4, which allows for traffic classification and prioritization?",
+                "selected": "Quality of service (QoS)",
+                "correct": "Quality of service (QoS)",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary function of the TCP SYN packet in a three-way handshake?",
+                "selected": "Confirmation of connection establishment",
+                "correct": "Request for data transmission",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary function of the TCP SYN packet in a three-way handshake?",
+                "selected": "Acknowledgment of data received",
+                "correct": "Request for data transmission",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary function of the TCP SYN packet in a three-way handshake?",
+                "selected": "Error notification to server",
+                "correct": "Request for data transmission",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary function of the TCP SYN packet in a three-way handshake?",
+                "selected": "Request for data transmission",
+                "correct": "Request for data transmission",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary difference between IPv4 and IPv6 in terms of addressing?",
+                "selected": "IPv4 uses variable-length addressing, while IPv6 uses fixed-length addressing",
+                "correct": "IPv4 uses 32-bit addresses, while IPv6 uses 64-bit addresses",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary difference between IPv4 and IPv6 in terms of addressing?",
+                "selected": "IPv4 uses 64-bit addresses, while IPv6 uses 32-bit addresses",
+                "correct": "IPv4 uses 32-bit addresses, while IPv6 uses 64-bit addresses",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary difference between IPv4 and IPv6 in terms of addressing?",
+                "selected": "IPv4 uses 32-bit addresses, while IPv6 uses 64-bit addresses",
+                "correct": "IPv4 uses 32-bit addresses, while IPv6 uses 64-bit addresses",
+                "isCorrect": true
+            }
+        ]
+    },
+    {
+        "played_at": "2026-07-13T20:29:32.919898",
+        "history": [
+            {
+                "question": "What is the primary purpose of the IP header's Type of Service (TOS) field, which is used to prioritize packets during network congestion?",
+                "selected": "To provide additional information for quality of service (QoS)",
+                "correct": "To provide additional information for quality of service (QoS)",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary function of the IPsec protocol in IPv6 networks?",
+                "selected": "To implement Quality of Service (QoS) policies for network traffic",
+                "correct": "To authenticate and encrypt Internet Protocol packets",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary function of the IPsec protocol in IPv6 networks?",
+                "selected": "To map IP addresses to MAC addresses for Layer 2 switching",
+                "correct": "To authenticate and encrypt Internet Protocol packets",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary function of the IPsec protocol in IPv6 networks?",
+                "selected": "To authenticate and encrypt Internet Protocol packets",
+                "correct": "To authenticate and encrypt Internet Protocol packets",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of the Ticket-Granting Service (TGS) in Kerberos Authentication?",
+                "selected": "Caching pre-authentication data for reduced communication overhead",
+                "correct": "Caching pre-authentication data for reduced communication overhead",
+                "isCorrect": true
+            },
+            {
+                "question": "What is the primary purpose of the TCP Flag \"ACK\" in a three-way handshake for establishing a connection over a TCP socket?",
+                "selected": "To confirm that a packet was received correctly and should be sent again",
+                "correct": "To acknowledge receipt of data",
+                "isCorrect": false
+            },
+            {
+                "question": "What is the primary purpose of the TCP Flag \"ACK\" in a three-way handshake for establishing a connection over a TCP socket?",
+                "selected": "To acknowledge receipt of data",
+                "correct": "To acknowledge receipt of data",
+                "isCorrect": true
+            }
+        ]
     }
 ]
