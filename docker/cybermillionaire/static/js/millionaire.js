@@ -69,7 +69,9 @@ var MillionaireModel = function(data) {
  	this.money = new ko.observable(0);
 
  	// The current level(starting at 1) <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<STARTING LEVEL
- 	this.level = new ko.observable(12);
+    this.level = new ko.observable(
+        Number(sessionStorage.getItem("currentLevel")) || 1
+    );
 
  	// The three the user can use to 
  	// attempt to answer a question (1 use each)
@@ -315,6 +317,7 @@ var MillionaireModel = function(data) {
 	 				});
  				} else {
  					self.level(self.level() + 1);
+                    sessionStorage.setItem("currentLevel",self.level());
  					$("#" + elm).css('background', 'none');
 			 		$("#answer-one").show();
 			 		$("#answer-two").show();
@@ -336,7 +339,8 @@ var MillionaireModel = function(data) {
 
                     $("#game").fadeOut('slow', function() {
                         $("#game-over").fadeIn('slow');
-                        sessionStorage.removeItem("currentGame");
+                            sessionStorage.removeItem("currentGame");
+                            sessionStorage.removeItem("currentLevel");
                     });
 
                     self.transitioning = false;
@@ -374,6 +378,7 @@ var MillionaireModel = function(data) {
             console.log("Saved", data);
             loadLifetimeStats();
             sessionStorage.removeItem("currentGame");
+            sessionStorage.removeItem("currentLevel");
 
         })
         .catch(error => {
