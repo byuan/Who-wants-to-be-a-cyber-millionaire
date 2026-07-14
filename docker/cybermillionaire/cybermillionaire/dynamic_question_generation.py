@@ -1,6 +1,6 @@
 import requests
 import random
-import json
+from .mysql_db import get_topic_settings
 
 # Dictionary to hold all the level choices
 levels = {"easy": ("You are a school teacher trying to create a cybersecurity quiz.", "primary school"), 
@@ -9,9 +9,8 @@ levels = {"easy": ("You are a school teacher trying to create a cybersecurity qu
           "expert" : ("You are a cybersecurity expert trying to create a quiz.", "expert with technical experience")}
 
 # Load user-selected topics
-def load_topic_settings():
-    with open("./cybermillionaire/topic_settings.json") as f:
-        return json.load(f)
+def load_topic_settings(user_id):
+    return get_topic_settings(user_id)
 
 # Function uses Random module to pick a word and returns it
 def pick_a_word(words):
@@ -57,12 +56,12 @@ Do not use markdown.
 
     return response.json()["response"].strip()
 
-def generate_question(level):
-    settings = load_topic_settings()
+def generate_question(level, user_id):
 
+    settings = load_topic_settings(user_id)
     words = settings[level]
-    content = levels[level][0] # sets the correct content field for the specified level
-    question_level = levels[level][1] # sets the correct question level field for the specified level
+    content = levels[level][0]
+    question_level = levels[level][1]
 
     return api(words, content, question_level)
 

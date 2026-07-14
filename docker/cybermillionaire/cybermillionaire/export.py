@@ -13,9 +13,7 @@ def run_sql(cursor, query, param=None):
     return records
     
 def format_game_data(game):
-
     questions = []
-
     for question in game:
 
         questions.append({
@@ -62,7 +60,7 @@ def Static_Game(cursor, level):
 
 # DYNAMIC
 # This will run when a dynamic primary school game is selected. It will gather all questions for the game and then empty the dynamic table.
-def Dynamic_Game(cursor, difficulty_level):
+def Dynamic_Game(cursor, difficulty_level, user_id):
     game = []
 
     # map your difficulty strings to AI input
@@ -78,7 +76,7 @@ def Dynamic_Game(cursor, difficulty_level):
     # 1. Generate questions + insert into DB
     count = 0
     while count < 15:
-        question_text = generation.generate_question(ai_level)
+        question_text = generation.generate_question(ai_level,user_id)
 
         try:
             question, answers, correct_answer = insert.parse_question_and_answers(question_text)
@@ -98,7 +96,7 @@ def Dynamic_Game(cursor, difficulty_level):
     return game
 
 #def main():
-def export_questions(selection):
+def export_questions(selection, user_id=None):
     # export questions from mysql based on a given level
     game = []
     try:
@@ -117,16 +115,16 @@ def export_questions(selection):
         game = Static_Game(cursor,selection)
 
     elif selection == 'dynamic-1':
-        game = Dynamic_Game(cursor,"primary")
+        game = Dynamic_Game(cursor,"primary",user_id)
 
     elif selection == 'dynamic-2':
-        game = Dynamic_Game(cursor,"secondary")
+        game = Dynamic_Game(cursor,"secondary",user_id)
 
     elif selection == 'dynamic-3':
-        game = Dynamic_Game(cursor,"college")
+        game = Dynamic_Game(cursor,"college",user_id)
 
     elif selection == 'dynamic-4':
-        game = Dynamic_Game(cursor,"expert")
+        game = Dynamic_Game(cursor,"expert",user_id)
 
     else:
         print("Invalid Level Selection!")

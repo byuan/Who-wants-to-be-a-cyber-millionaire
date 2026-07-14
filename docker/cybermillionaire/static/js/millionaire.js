@@ -70,7 +70,7 @@ var MillionaireModel = function(data) {
 
  	// The current level(starting at 1) <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<STARTING LEVEL
     this.level = new ko.observable(
-        Number(sessionStorage.getItem("currentLevel")) || 1
+        Number(sessionStorage.getItem("currentLevel")) || 12
     );
 
  	// The three the user can use to 
@@ -369,6 +369,7 @@ var MillionaireModel = function(data) {
             },
             body: JSON.stringify({
                 finalMoney: self.money(),
+                difficulty: getGameMode(),
                 history: self.history
             })
         })
