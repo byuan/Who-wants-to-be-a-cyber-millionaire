@@ -1,11 +1,5 @@
 import json
-import requests
-import os
-
-def load_results(path="./results.json"):
-    with open(path, "r") as f:
-        return json.load(f)
-    
+import requests    
 from collections import Counter
 
 def build_summary(data):
@@ -39,8 +33,7 @@ def build_summary(data):
         "most_seen_questions": question_counter.most_common(5)
     }
 
-def generate_ai_feedback(path):
-    data = load_results(path)
+def generate_ai_feedback(data):
     summary = build_summary(data)
     prompt = f"""
 You are a cybersecurity learning coach.

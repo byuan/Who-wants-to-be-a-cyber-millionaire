@@ -250,7 +250,7 @@ def get_user_results(user_id):
             difficulty
         FROM game_sessions
         WHERE user_id=%s
-        ORDER BY played DESC
+        ORDER BY played ASC
     """, (user_id,))
 
     sessions = cursor.fetchall()
@@ -278,7 +278,8 @@ def get_user_results(user_id):
                 "correct": row["correct_answer"],
                 "isCorrect": bool(row["was_correct"])
             })
-        session["played_at"] = session["played"]
+        session["played_at"] = session["played"].strftime("%Y-%m-%d %H:%M:%S")
+        del session["played"]
         session["history"] = history
     cursor.close()
     connection.close()

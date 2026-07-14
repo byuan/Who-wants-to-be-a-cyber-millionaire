@@ -54,7 +54,9 @@ def save_topics(request):
     return index(request)
     
 def ai_feedback(request):
-    feedback = generate_ai_feedback("results.json")
+    user_id = request.session["user_id"]
+    results = get_user_results(user_id)
+    feedback = generate_ai_feedback(results)
     return render(request, "feedback.html", {
         "feedback": feedback
     })
