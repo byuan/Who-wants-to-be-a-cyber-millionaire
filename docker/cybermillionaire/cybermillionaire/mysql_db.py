@@ -218,7 +218,7 @@ def save_game_results(session_id, history):
             (
                 session_id,
                 question,
-                chosen_answer,
+                selected_answer,
                 correct_answer,
                 was_correct
             )
@@ -228,9 +228,9 @@ def save_game_results(session_id, history):
             (
                 session_id,
                 question["question"],
-                question["chosen"],
+                question["selected"],
                 question["correct"],
-                question["correct"] == question["chosen"]
+                question["correct"] == question["selected"]
             )
         )
     connection.commit()

@@ -373,17 +373,12 @@ var MillionaireModel = function(data) {
                 history: self.history
             })
         })
-        .then(response => response.json())
-        .then(data => {
-
-            console.log("Saved", data);
-            loadLifetimeStats();
-            sessionStorage.removeItem("currentGame");
-            sessionStorage.removeItem("currentLevel");
-
+        .then(response => response.text())
+        .then(text => {
+            console.log(text);
         })
         .catch(error => {
-            console.error("Save failed:", error);
+            console.error(error);
         });
     };
 

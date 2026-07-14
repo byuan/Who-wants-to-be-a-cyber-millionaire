@@ -25,8 +25,8 @@ CREATE TABLE IF NOT EXISTS game_results (
     session_id INT NOT NULL,
 
     question TEXT,
-    chosen_answer INT,
-    correct_answer INT,
+    selected_answer TEXT,
+    correct_answer TEXT,
     was_correct BOOLEAN,
 
     FOREIGN KEY (session_id)
