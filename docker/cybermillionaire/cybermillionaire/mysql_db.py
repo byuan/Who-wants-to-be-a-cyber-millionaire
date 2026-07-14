@@ -241,20 +241,46 @@ def get_user_results(user_id):
 
     connection = get_connection()
     cursor = connection.cursor(dictionary=True)
-    cursor.execute(
-        """
+
+    cursor.execute("""
         SELECT
-            gs.id,
-            gs.played,
-            gs.score,
-            gs.difficulty
-        FROM game_sessions gs
-        WHERE gs.user_id=%s
-        ORDER BY gs.played DESC
-        """,
-        (user_id,)
-    )
+            id,
+            played,
+            score,
+            difficulty
+        FROM game_sessions
+        WHERE user_id=%s
+        ORDER BY played DESC
+    """, (user_id,))
+
     sessions = cursor.fetchall()
+
+    for session in sessions:
+
+        cursor.execute("""
+            SELECT
+                question,
+                selected_answer,
+                correct_answer,
+                was_correct
+            FROM game_results
+            WHERE session_id=%s
+        """, (session["id"],))
+
+        rows = cursor.fetchall()
+
+        history = []
+
+        for row in rows:
+            history.append({
+                "question": row["question"],
+                "selected": row["selected_answer"],
+                "correct": row["correct_answer"],
+                "isCorrect": bool(row["was_correct"])
+            })
+        session["played_at"] = session["played"]
+        session["history"] = history
     cursor.close()
     connection.close()
+
     return sessions

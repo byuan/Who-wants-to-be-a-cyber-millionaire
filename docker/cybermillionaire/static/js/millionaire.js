@@ -358,29 +358,32 @@ var MillionaireModel = function(data) {
 	    return self.money().money(2, '.', ',');
 	}  
     
-    self.showReport = function() {
+self.showReport = function() {
 
-        console.log("Saving game results...");
+    console.log("Saving game results...");
+    fetch('/save-results/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            finalMoney: self.money(),
+            difficulty: getGameMode(),
+            history: self.history
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Saved", data);
+        sessionStorage.removeItem("currentGame");
+        sessionStorage.removeItem("currentLevel");
+        loadLifetimeStats();
 
-        fetch('/save-results/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                finalMoney: self.money(),
-                difficulty: getGameMode(),
-                history: self.history
-            })
-        })
-        .then(response => response.text())
-        .then(text => {
-            console.log(text);
-        })
-        .catch(error => {
-            console.error(error);
-        });
-    };
+    })
+    .catch(error => {
+        console.error("Save failed:", error);
+    });
+};
 
 function setGameMode() {
     var mode = document.querySelector(
@@ -391,6 +394,12 @@ function setGameMode() {
 }
 
 function loadLifetimeStats() {
+
+    fetch('/get-results/')
+    .then(response => response.text())
+    .then(text => {
+        console.log(text);
+    });
 
     fetch('/get-results/')
         .then(response => response.json())

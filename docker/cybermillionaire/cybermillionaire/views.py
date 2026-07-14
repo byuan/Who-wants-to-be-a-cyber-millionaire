@@ -32,9 +32,8 @@ def save_results(request):
     return JsonResponse({"status":"success"})
 
 def get_results(request):
-
     user_id = request.session["user_id"]
-    results = get_results(user_id)
+    results = get_user_results(user_id)
     return JsonResponse(results,safe=False)
 
 @csrf_exempt
