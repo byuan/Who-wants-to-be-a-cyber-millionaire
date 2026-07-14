@@ -116,3 +116,70 @@ def get_or_create_user(username):
     cursor.close()
     connection.close()
     return user_id
+
+def save_topic_settings(user_id, settings):
+
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    # Remove the user's previous settings
+    cursor.execute(
+        "DELETE FROM topic_settings WHERE user_id = %s",
+        (user_id,)
+    )
+
+    # Insert the new selections
+    for difficulty, topics in settings.items():
+
+        for topic in topics:
+
+            cursor.execute(
+                """
+                INSERT INTO topic_settings
+                (user_id, difficulty, topic)
+                VALUES (%s, %s, %s)
+                """,
+                (
+                    user_id,
+                    difficulty,
+                    topic
+                )
+            )
+
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+def get_topic_settings(user_id):
+
+    connection = get_connection()
+    cursor = connection.cursor(dictionary=True)
+
+    cursor.execute(
+        """
+        SELECT difficulty, topic
+        FROM topic_settings
+        WHERE user_id = %s
+        """,
+        (user_id,)
+    )
+
+    rows = cursor.fetchall()
+
+    settings = {
+        "easy": [],
+        "medium": [],
+        "hard": [],
+        "expert": []
+    }
+
+    for row in rows:
+
+        settings[row["difficulty"]].append(
+            row["topic"]
+        )
+
+    cursor.close()
+    connection.close()
+
+    return settings

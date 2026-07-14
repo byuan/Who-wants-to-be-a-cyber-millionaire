@@ -8,7 +8,7 @@ from datetime import datetime
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .ai_report import generate_ai_feedback
-from .mysql_db import get_or_create_user
+from .mysql_db import get_or_create_user, save_topic_settings, get_topic_settings
 
 @csrf_exempt
 def save_results(request):
@@ -48,25 +48,20 @@ def get_results(request):
     
 @csrf_exempt
 def save_topics(request):
-    try:
-        if request.method == "POST":
 
-            settings = {
-                "easy": request.POST.getlist("easy_topics"),
-                "medium": request.POST.getlist("medium_topics"),
-                "hard": request.POST.getlist("hard_topics"),
-                "expert": request.POST.getlist("expert_topics")
-            }
-
-            with open("cybermillionaire/topic_settings.json", "w") as f:
-                json.dump(settings, f, indent=4)
-
-                return HttpResponse(index(request))
-
+    if request.method != "POST":
         return JsonResponse({"status": "invalid request"})
 
-    except Exception as e:
-        return JsonResponse({"error": str(e)})
+    user_id = request.session["user_id"]
+
+    settings = {
+        "easy": request.POST.getlist("easy_topics"),
+        "medium": request.POST.getlist("medium_topics"),
+        "hard": request.POST.getlist("hard_topics"),
+        "expert": request.POST.getlist("expert_topics")
+    }
+    save_topic_settings(user_id, settings)
+    return index(request)
     
 def ai_feedback(request):
     feedback = generate_ai_feedback("results.json")
@@ -75,20 +70,9 @@ def ai_feedback(request):
     })
 
 def topics(request):
-    try:
-        with open("cybermillionaire/topic_settings.json", "r") as f:
-            settings = json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        settings = {
-            "easy": [],
-            "medium": [],
-            "hard": [],
-            "expert": []
-        }
-
-    return render(request, "topics.html", {
-        "settings": settings
-    })
+    user_id = request.session["user_id"]
+    settings = get_topic_settings(user_id)
+    return render(request,"topics.html",{"settings": settings})
 
 def index(request):
     if "user_id" not in request.session:
