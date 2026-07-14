@@ -19,6 +19,7 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^login/$',views.login,name='login'),
     url(r'^primary-school', views.start1, name='primary-school'),  # Static Primary School
     url(r'^secondary-school', views.start2, name='secondary-school'),  # Static Secondary School
     url(r'^college', views.start3, name='college'),  # Static College

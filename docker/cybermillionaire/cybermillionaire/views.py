@@ -1,7 +1,6 @@
 #views.py file
 
-from django.shortcuts import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import HttpResponse, render, redirect
 import cybermillionaire.export as e
 import json
 import os
@@ -9,6 +8,7 @@ from datetime import datetime
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .ai_report import generate_ai_feedback
+from .mysql_db import get_or_create_user
 
 @csrf_exempt
 def save_results(request):
@@ -91,7 +91,9 @@ def topics(request):
     })
 
 def index(request):
-    return render(request, "index.html")
+    if "user_id" not in request.session:
+        return render(request,"login.html")
+    return render(request,"index.html",{"username": request.session["username"]})
 
 def start_game(request, mode):
     e.export_questions(mode)
@@ -128,3 +130,20 @@ def dynamic_start3(request):
 def dynamic_start4(request):
     game = e.export_questions("dynamic-4")
     return render(request,"game.html",{"game_data": game})
+
+def login(request):
+
+    if request.method == "POST":
+
+        username = request.POST.get("username").strip()
+        user_id = get_or_create_user(
+            username
+        )
+        request.session["user_id"] = user_id
+        request.session["username"] = username
+        return redirect("/")
+
+    return render(
+        request,
+        "login.html"
+    )
