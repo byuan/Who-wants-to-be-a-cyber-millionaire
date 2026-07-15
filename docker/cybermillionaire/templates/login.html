@@ -1,14 +1,91 @@
-<form method="post" action="/login/">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cyber Millionaire Login</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
 
-{% csrf_token %}
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-<input 
-    type="text"
-    name="username"
-    required>
+            height: 100vh;
+        }
 
-<input 
-    type="submit"
-    value="Continue">
+        .login-box {
+            text-align: center;
+            width: 350px;
+        }
 
-</form>
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+
+            background: #222;
+            color: white;
+
+            border: 1px solid #666;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+
+            background: #2b7cff;
+            color: white;
+
+            border: none;
+            border-radius: 5px;
+
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background: #1d5fc9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-box">
+
+    <h1>Welcome to Cyber Millionaire</h1>
+    <p>
+        Enter a username to begin playing and save your progress.
+    </p>
+    <form method="post" action="/login/">
+        {% csrf_token %}
+
+        <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            required>
+
+        <input
+            type="submit"
+            value="Continue">
+    </form>
+
+</div>
+
+</body>
+</html>
