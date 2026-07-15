@@ -14,6 +14,8 @@ def load_topic_settings(user_id):
 
 # Function uses Random module to pick a word and returns it
 def pick_a_word(words):
+    if not words:
+        return "a random cybersecurity topic"
     return random.choice(words) # returns a random word
 
 # Function that reaches out to the API
