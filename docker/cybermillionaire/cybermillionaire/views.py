@@ -1,6 +1,6 @@
 #views.py file
 
-from django.shortcuts import HttpResponse, render, redirect
+from django.shortcuts import render, redirect
 import cybermillionaire.export as e
 import json
 import os

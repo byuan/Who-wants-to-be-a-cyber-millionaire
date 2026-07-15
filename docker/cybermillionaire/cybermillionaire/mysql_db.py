@@ -1,9 +1,33 @@
 import mysql.connector
 from mysql.connector import Error
 
+DEFAULT_TOPICS = {
+    "easy": ["Passwords","Internet Safety","Cyberbullying","Social Media","Secure Websites",
+        "Hacking","Digital Footprints","Data","Phishing","Safe Downloading",
+    ],
+    "medium": ["Passwords","Phishing","Encryption","Firewall","Malware",
+        "Two-factor authentication","Social Engineering","Network Security","Endpoint Security","Advanced Persistent Threats",
+    ],
+    "hard": ["Intrusion Detection Systems","Cyber Threat Intelligence","Digital Forensics","Cryptography","Blockchain Security",
+        "Secure Coding Practices","Ethical Hacking","Social Engineering","Cyber Incident Response","Network Encryption",
+    ],
+    "expert": ["TCP Protocol","Wireless Security Protocol","HTTP Headers","Virtualization","Kerberos Authentication",
+        "TCP/UDP Protocol","SSL/X509 Certificates","Asymmetric/Symmetric Encryption for Cryptography","Linux/Unix System Forensics","Technical Aspects of Network Protocols",
+    ],
+}
+
+def create_default_topic_settings(cursor, user_id):
+    for difficulty, topics in DEFAULT_TOPICS.items():
+        for topic in topics:
+            cursor.execute(
+                """
+                INSERT INTO topic_settings (user_id, difficulty, topic)
+                VALUES (%s, %s, %s)
+                """,
+                (user_id, difficulty, topic)
+            )
 
 def get_connection():
-
     try:
         connection = mysql.connector.connect(
             host="db",
@@ -91,6 +115,7 @@ def get_or_create_user(username):
 
     connection = get_connection()
     cursor = connection.cursor()
+
     cursor.execute(
         """
         SELECT id
@@ -101,8 +126,10 @@ def get_or_create_user(username):
     )
 
     result = cursor.fetchone()
+
     if result:
         user_id = result[0]
+
     else:
         cursor.execute(
             """
@@ -111,10 +138,17 @@ def get_or_create_user(username):
             """,
             (username,)
         )
-        connection.commit()
+
         user_id = cursor.lastrowid
+
+        # Populate the user's topic settings
+        create_default_topic_settings(cursor, user_id)
+
+        connection.commit()
+
     cursor.close()
     connection.close()
+
     return user_id
 
 def save_topic_settings(user_id, settings):
