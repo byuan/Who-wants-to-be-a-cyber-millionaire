@@ -90,12 +90,9 @@
             }
 
             .settings-button {
-                position: absolute;
-                top: 15px;
-                right: 15px;
-
                 background: #4CAF50;
                 color: white;
+
                 border: none;
                 padding: 10px 14px;
                 border-radius: 8px;
@@ -123,11 +120,6 @@
                 gap: 10px;
             }
 
-            .username {
-                font-size: 16px;
-                color: white;
-            }
-
             .logout-button {
                 background: #d9534f;
                 color: white;
@@ -144,24 +136,18 @@
         </style>
     </head>
     <body>
-        <h1> Welcome To Who Wants To Be A Cyber Millionaire!</h1>
+        <h1> Welcome, {{ username}}, To Who Wants To Be A Cyber Millionaire!</h1>
         <h2> Please Select a Difficulty Level Below:</h2>
         
         <div class="container">
-            <div class="vertical-center">
-
             <div class="user-panel">
-
-                <span class="username">
-                    Welcome, {{ username }}
-                </span>
 
                 <button class="settings-button"
                         onclick="window.location.href='/topics/'">
                     ⚙ Topics
                 </button>
 
-                <form action="/logout/" method="post" style="margin:0;">
+                <form action="/logout/" method="post">
                     {% csrf_token %}
                     <button class="logout-button" type="submit">
                         Logout
@@ -241,7 +227,7 @@
         </div>
     
         <script>
-            let dynamicVariable = false; // Initialize dynamic variable as false (Static mode)
+            let dynamicVariable = false;
     
             // Function to update dynamic variable and update status text
             function updateDynamicVariable() {
@@ -261,7 +247,6 @@
                 const mode = document.querySelector(
                     'input[name="gameMode"]:checked'
                 ).value;
-
                 localStorage.setItem("gameMode", mode);
             }
     
@@ -269,19 +254,14 @@
             function navigateTo(button) {
                 const staticUrl = button.getAttribute('data-static-url');
                 const dynamicUrl = button.getAttribute('data-dynamic-url');
-
                 saveGameMode();
                 
                 if (dynamicVariable) {
-                    // Navigate to the dynamic URL
                     location.href = dynamicUrl;
                 } else {
-                    // Navigate to the static URL
                     location.href = staticUrl;
                 }
             }
         </script>
     </body>
-  
-       
 </html>
