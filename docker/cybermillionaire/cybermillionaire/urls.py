@@ -35,6 +35,7 @@ urlpatterns = [
     url(r'^ai-feedback/', views.ai_feedback, name='ai_feedback'),
     url(r'^topics/$', views.topics, name='topics'),
     url(r'^save-topics/$', views.save_topics, name='save_topics'),
+    url(r'logout/', views.logout, name="logout"),
 
     url(r'', views.index, name='start-page'),
     ]

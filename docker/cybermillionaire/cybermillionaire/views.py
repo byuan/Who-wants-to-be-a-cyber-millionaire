@@ -3,8 +3,6 @@
 from django.shortcuts import render, redirect
 import cybermillionaire.export as e
 import json
-import os
-from datetime import datetime
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .ai_report import generate_ai_feedback
@@ -12,23 +10,12 @@ from .mysql_db import get_or_create_user, save_topic_settings, get_topic_setting
 
 @csrf_exempt
 def save_results(request):
-
     if request.method != "POST":
         return JsonResponse({"status":"error"})
-
     data = json.loads(request.body)
     user_id = request.session["user_id"]
-    session_id = create_game_session(
-        user_id,
-        data.get("difficulty", "unknown"),
-        data["finalMoney"]
-    )
-
-    save_game_results(
-        session_id,
-        data["history"]
-    )
-
+    session_id = create_game_session(user_id,data.get("difficulty", "unknown"),data["finalMoney"])
+    save_game_results(session_id,data["history"])
     return JsonResponse({"status":"success"})
 
 def get_results(request):
@@ -38,12 +25,9 @@ def get_results(request):
 
 @csrf_exempt
 def save_topics(request):
-
     if request.method != "POST":
         return JsonResponse({"status": "invalid request"})
-
     user_id = request.session["user_id"]
-
     settings = {
         "easy": request.POST.getlist("easy_topics"),
         "medium": request.POST.getlist("medium_topics"),
@@ -57,9 +41,7 @@ def ai_feedback(request):
     user_id = request.session["user_id"]
     results = get_user_results(user_id)
     feedback = generate_ai_feedback(results)
-    return render(request, "feedback.html", {
-        "feedback": feedback
-    })
+    return render(request, "feedback.html", {"feedback": feedback})
 
 def topics(request):
     user_id = request.session["user_id"]
@@ -108,18 +90,14 @@ def dynamic_start4(request):
     return render(request,"game.html",{"game_data": game})
 
 def login(request):
-
     if request.method == "POST":
-
         username = request.POST.get("username").strip()
-        user_id = get_or_create_user(
-            username
-        )
+        user_id = get_or_create_user(username)
         request.session["user_id"] = user_id
         request.session["username"] = username
         return redirect("/")
+    return render(request,"login.html")
 
-    return render(
-        request,
-        "login.html"
-    )
+def logout(request):
+    request.session.flush()
+    return redirect("/login/")

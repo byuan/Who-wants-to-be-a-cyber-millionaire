@@ -112,6 +112,35 @@
                 font-size: 16px;
                 color: #e7910f;
             }
+
+            .user-panel {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .username {
+                font-size: 16px;
+                color: white;
+            }
+
+            .logout-button {
+                background: #d9534f;
+                color: white;
+                border: none;
+                padding: 10px 14px;
+                border-radius: 8px;
+                font-size: 14px;
+                cursor: pointer;
+            }
+
+            .logout-button:hover {
+                background: #c9302c;
+            }
         </style>
     </head>
     <body>
@@ -121,9 +150,25 @@
         <div class="container">
             <div class="vertical-center">
 
-            <button class="settings-button" onclick="window.location.href='/topics/'">
-                ⚙ Topics
-            </button>
+            <div class="user-panel">
+
+                <span class="username">
+                    Welcome, {{ username }}
+                </span>
+
+                <button class="settings-button"
+                        onclick="window.location.href='/topics/'">
+                    ⚙ Topics
+                </button>
+
+                <form action="/logout/" method="post" style="margin:0;">
+                    {% csrf_token %}
+                    <button class="logout-button" type="submit">
+                        Logout
+                    </button>
+                </form>
+
+            </div>
                 <!-- Buttons with pre-rendered static and dynamic URLs -->
                 <input 
                     class="btn btn-success" 
