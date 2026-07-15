@@ -7,6 +7,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .ai_report import generate_ai_feedback
 from .mysql_db import get_or_create_user, save_topic_settings, get_topic_settings, create_game_session, save_game_results, get_user_results
+import re
 
 @csrf_exempt
 def save_results(request):
@@ -92,6 +93,18 @@ def dynamic_start4(request):
 def login(request):
     if request.method == "POST":
         username = request.POST.get("username").strip()
+        if not username:
+            return render(request, "login.html", {
+                "error": "Please enter a username."
+            })
+        if len(username) > 50:
+            return render(request, "login.html", {
+                "error": "Username must be 50 characters or less."
+            })
+        if not re.match(r"^[a-zA-Z0-9_ ]+$", username):
+            return render(request, "login.html", {
+                "error": "Username can only contain letters, numbers, spaces, and underscores."
+            })
         user_id = get_or_create_user(username)
         request.session["user_id"] = user_id
         request.session["username"] = username
