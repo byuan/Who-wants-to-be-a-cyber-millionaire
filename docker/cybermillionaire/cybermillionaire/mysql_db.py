@@ -27,6 +27,15 @@ def create_default_topic_settings(cursor, user_id):
                 (user_id, difficulty, topic)
             )
 
+def create_default_ai_model(cursor, user_id):
+    cursor.execute(
+        """
+        INSERT INTO user_preferences (user_id, ai_model)
+        VALUES (%s, %s)
+        """,
+        (user_id, "llama3.2:3b")
+    )
+
 def get_connection():
     try:
         connection = mysql.connector.connect(
@@ -143,6 +152,7 @@ def get_or_create_user(username):
 
         # Populate the user's topic settings
         create_default_topic_settings(cursor, user_id)
+        create_default_ai_model(cursor, user_id)
 
         connection.commit()
 
@@ -188,7 +198,6 @@ def get_topic_settings(user_id):
 
     connection = get_connection()
     cursor = connection.cursor(dictionary=True)
-
     cursor.execute(
         """
         SELECT difficulty, topic
@@ -319,3 +328,23 @@ def get_user_results(user_id):
     connection.close()
 
     return sessions
+
+def get_ai_model(user_id):
+
+    connection = get_connection()
+    cursor = connection.cursor(dictionary=True)
+    cursor.execute(
+        """
+        SELECT ai_model
+        FROM user_preferences
+        WHERE user_id = %s
+        """,
+        (user_id,)
+    )
+
+    result = cursor.fetchone()
+
+    if result:
+        return result["ai_model"]
+
+    return "llama3.2:3b"

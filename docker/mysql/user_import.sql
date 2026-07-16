@@ -33,7 +33,6 @@ CREATE TABLE IF NOT EXISTS game_results (
         REFERENCES game_sessions(id)
 );
 
-
 CREATE TABLE IF NOT EXISTS topic_settings (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -41,6 +40,17 @@ CREATE TABLE IF NOT EXISTS topic_settings (
     topic VARCHAR(100),
 
     UNIQUE(user_id, difficulty, topic),
+
+    FOREIGN KEY (user_id)
+        REFERENCES users(id)
+);
+
+CREATE TABLE IF NOT EXISTS user_preferences (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    user_id INT NOT NULL UNIQUE,
+
+    ai_model VARCHAR(100) DEFAULT 'llama3.2:3b',
 
     FOREIGN KEY (user_id)
         REFERENCES users(id)
