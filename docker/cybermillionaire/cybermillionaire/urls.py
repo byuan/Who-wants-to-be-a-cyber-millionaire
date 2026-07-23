@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'^get-results/$', views.get_results, name='get_results'),
     url(r'^ai-feedback/', views.ai_feedback, name='ai_feedback'),
     url(r'^topics/$', views.topics, name='topics'),
+    url(r'^add-topic/', views.add_topic, name="add_topic"),
     url(r'^save-topics/$', views.save_topics, name='save_topics'),
     url(r'logout/', views.logout, name="logout"),
 

@@ -121,6 +121,27 @@
 
         </form>
 
+        <hr>
+
+        <div class="topic-buttons">
+
+            <form action="{% url 'add_topic' %}" method="post">
+
+                {% csrf_token %}
+
+                <input 
+                    type="text" 
+                    name="new_topic"
+                    maxlength="100"
+                    placeholder="Enter new topic"
+                >
+
+                <input type="submit" value="Add Topic">
+
+            </form>
+
+        </div>
+
     </div>
 
 </body>

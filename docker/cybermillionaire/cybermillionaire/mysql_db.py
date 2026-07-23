@@ -1,28 +1,6 @@
 import mysql.connector
 from mysql.connector import Error
 
-"""DEFAULT_TOPICS = {
-    "easy": ["Passwords","Internet Safety","Cyberbullying","Social Media","Secure Websites",
-        "Hacking","Digital Footprints","Data","Phishing","Safe Downloading",
-    ],
-    "medium": ["Passwords","Phishing","Encryption","Firewall","Malware",
-        "Two-factor authentication","Social Engineering","Network Security","Endpoint Security","Advanced Persistent Threats",
-    ],
-    "hard": ["Intrusion Detection Systems","Cyber Threat Intelligence","Digital Forensics","Cryptography","Blockchain Security",
-        "Secure Coding Practices","Ethical Hacking","Social Engineering","Cyber Incident Response","Network Encryption",
-    ],
-    "expert": ["TCP Protocol","Wireless Security Protocol","HTTP Headers","Virtualization","Kerberos Authentication",
-        "TCP/UDP Protocol","SSL/X509 Certificates","Asymmetric/Symmetric Encryption for Cryptography","Linux/Unix System Forensics","Technical Aspects of Network Protocols",
-    ],
-}
-
-ALL_TOPICS = [
-    "Advanced Persistent Threats","Asymmetric/Symmetric Encryption for Cryptography","Blockchain Security",
-    "Cyber Incident Response","Cyber Threat Intelligence","Cyberbullying","Cryptography","Data","Digital Footprints","Digital Forensics","Encryption","Endpoint Security",
-    "Ethical Hacking","Firewall","HTTP Headers","Hacking","Internet Safety","Intrusion Detection Systems","Kerberos Authentication","Linux/Unix System Forensics",
-    "Malware","Network Encryption","Network Security","Passwords","Phishing","Safe Downloading","Secure Coding Practices","Secure Websites","Social Engineering","Social Media",
-    "TCP Protocol","TCP/UDP Protocol","Technical Aspects of Network Protocols","Two-factor authentication","Virtualization","Wireless Security Protocol","SSL/X509 Certificates",]"""
-
 DIFFICULTIES = ["easy", "medium", "hard", "expert"]
 
 def create_default_topic_settings(cursor, user_id):
@@ -30,97 +8,17 @@ def create_default_topic_settings(cursor, user_id):
     topics = cursor.fetchall()
     for difficulty in DIFFICULTIES:
         for row in topics:
-            cursor.execute(
-                """
-                INSERT INTO topic_settings (user_id, difficulty, topic)
-                VALUES (%s, %s, %s)
-                """,
-                (user_id, difficulty, row[0])
-            )
+            cursor.execute("""INSERT INTO topic_settings (user_id, difficulty, topic) VALUES (%s, %s, %s)""",(user_id, difficulty, row[0]))
 
 def get_connection():
     try:
-        connection = mysql.connector.connect(
-            host="db",
-            database="Millionaire",
-            user="root",
-            password=open(
-                "cybermillionaire/util/mysqlPassword.txt"
-            ).read().strip()
-        )
-
+        connection = mysql.connector.connect(host="db",database="Millionaire",
+            user="root",password=open("cybermillionaire/util/mysqlPassword.txt").read().strip())
         return connection
 
     except Error as e:
         print("MySQL connection error:", e)
         return None
-    
-def save_topic_settings(user_id, settings):
-    connection = get_connection()
-    cursor = connection.cursor()
-    # remove old settings
-    cursor.execute(
-        """
-        DELETE FROM topic_settings
-        WHERE user_id = %s
-        """,
-        (user_id,)
-    )
-
-    for difficulty, topics in settings.items():
-        for topic in topics:
-            cursor.execute(
-                """
-                INSERT INTO topic_settings
-                (
-                    user_id,
-                    difficulty,
-                    topic
-                )
-                VALUES (%s,%s,%s)
-                """,
-                (
-                    user_id,
-                    difficulty,
-                    topic
-                )
-            )
-
-    connection.commit()
-
-    cursor.close()
-    connection.close()
-
-def get_topic_settings(user_id):
-
-    connection = get_connection()
-    cursor = connection.cursor(dictionary=True)
-    cursor.execute(
-        """
-        SELECT difficulty, topic
-        FROM topic_settings
-        WHERE user_id = %s
-        """,
-        (user_id,)
-    )
-
-
-    rows = cursor.fetchall()
-    settings = {
-        "easy": [],
-        "medium": [],
-        "hard": [],
-        "expert": []
-    }
-
-    for row in rows:
-        settings[row["difficulty"]].append(
-            row["topic"]
-        )
-
-    cursor.close()
-    connection.close()
-    return settings
 
 def get_or_create_user(username):
 
@@ -128,33 +26,16 @@ def get_or_create_user(username):
     cursor = connection.cursor()
 
     cursor.execute(
-        """
-        SELECT id
-        FROM users
-        WHERE username = %s
-        """,
-        (username,)
-    )
+        """SELECT id FROM users WHERE username = %s""",(username,))
 
     result = cursor.fetchone()
-
     if result:
         user_id = result[0]
 
     else:
-        cursor.execute(
-            """
-            INSERT INTO users(username)
-            VALUES(%s)
-            """,
-            (username,)
-        )
-
+        cursor.execute("""INSERT INTO users(username) VALUES(%s)""",(username,))
         user_id = cursor.lastrowid
-
-        # Populate the user's topic settings
         create_default_topic_settings(cursor, user_id)
-
         connection.commit()
 
     cursor.close()
@@ -177,20 +58,7 @@ def save_topic_settings(user_id, settings):
     for difficulty, topics in settings.items():
 
         for topic in topics:
-
-            cursor.execute(
-                """
-                INSERT INTO topic_settings
-                (user_id, difficulty, topic)
-                VALUES (%s, %s, %s)
-                """,
-                (
-                    user_id,
-                    difficulty,
-                    topic
-                )
-            )
-
+            cursor.execute("""INSERT INTO topic_settings(user_id, difficulty, topic) VALUES (%s, %s, %s)""",(user_id,difficulty,topic))
     connection.commit()
     cursor.close()
     connection.close()
@@ -199,29 +67,14 @@ def get_topic_settings(user_id):
 
     connection = get_connection()
     cursor = connection.cursor(dictionary=True)
-    cursor.execute(
-        """
-        SELECT difficulty, topic
-        FROM topic_settings
-        WHERE user_id = %s
-        """,
-        (user_id,)
-    )
+    cursor.execute("""SELECT difficulty, topic FROM topic_settings WHERE user_id = %s""",(user_id,))
 
     rows = cursor.fetchall()
 
-    settings = {
-        "easy": [],
-        "medium": [],
-        "hard": [],
-        "expert": []
-    }
+    settings = {"easy": [],"medium": [],"hard": [],"expert": []}
 
     for row in rows:
-
-        settings[row["difficulty"]].append(
-            row["topic"]
-        )
+        settings[row["difficulty"]].append(row["topic"])
 
     cursor.close()
     connection.close()
@@ -231,18 +84,7 @@ def create_game_session(user_id, difficulty, score):
 
     connection = get_connection()
     cursor = connection.cursor()
-    cursor.execute(
-        """
-        INSERT INTO game_sessions
-        (user_id, difficulty, score)
-        VALUES (%s, %s, %s)
-        """,
-        (
-            user_id,
-            difficulty,
-            score
-        )
-    )
+    cursor.execute("""INSERT INTO game_sessions (user_id, difficulty, score) VALUES (%s, %s, %s)""",(user_id,difficulty,score))
 
     connection.commit()
     session_id = cursor.lastrowid
@@ -255,28 +97,8 @@ def save_game_results(session_id, history):
     connection = get_connection()
     cursor = connection.cursor()
     for question in history:
-
-        cursor.execute(
-            """
-            INSERT INTO game_results
-            (
-                session_id,
-                question,
-                selected_answer,
-                correct_answer,
-                was_correct
-            )
-            VALUES
-            (%s,%s,%s,%s,%s)
-            """,
-            (
-                session_id,
-                question["question"],
-                question["selected"],
-                question["correct"],
-                question["correct"] == question["selected"]
-            )
-        )
+        cursor.execute("""INSERT INTO game_results(session_id,question,selected_answer,correct_answer,was_correct) VALUES(%s,%s,%s,%s,%s)""",
+        (session_id,question["question"],question["selected"],question["correct"],question["correct"] == question["selected"]))
     connection.commit()
     cursor.close()
     connection.close()
@@ -286,42 +108,18 @@ def get_user_results(user_id):
     connection = get_connection()
     cursor = connection.cursor(dictionary=True)
 
-    cursor.execute("""
-        SELECT
-            id,
-            played,
-            score,
-            difficulty
-        FROM game_sessions
-        WHERE user_id=%s
-        ORDER BY played ASC
-    """, (user_id,))
+    cursor.execute("""SELECT id, played, score, difficulty FROM game_sessions WHERE user_id=%s ORDER BY played ASC""", (user_id,))
 
     sessions = cursor.fetchall()
 
     for session in sessions:
 
-        cursor.execute("""
-            SELECT
-                question,
-                selected_answer,
-                correct_answer,
-                was_correct
-            FROM game_results
-            WHERE session_id=%s
-        """, (session["id"],))
-
+        cursor.execute("""SELECT question,selected_answer,correct_answer,was_correct FROM game_results WHERE session_id=%s""", (session["id"],))
         rows = cursor.fetchall()
-
         history = []
 
         for row in rows:
-            history.append({
-                "question": row["question"],
-                "selected": row["selected_answer"],
-                "correct": row["correct_answer"],
-                "isCorrect": bool(row["was_correct"])
-            })
+            history.append({"question": row["question"],"selected": row["selected_answer"],"correct": row["correct_answer"],"isCorrect": bool(row["was_correct"])})
         session["played_at"] = session["played"].strftime("%Y-%m-%d %H:%M:%S")
         del session["played"]
         session["history"] = history
@@ -334,18 +132,23 @@ def get_available_topics():
 
     connection = get_connection()
     cursor = connection.cursor(dictionary=True)
-
-    cursor.execute("""
-        SELECT topic
-        FROM available_topics
-        ORDER BY topic
-    """)
-
+    cursor.execute("""SELECT topic FROM available_topics ORDER BY topic""")
     rows = cursor.fetchall()
-
     topics = []
-
     for row in rows:
         topics.append(row["topic"])
+    cursor.close()
+    connection.close()
 
     return topics
+
+def add_available_topic(topic):
+
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    cursor.execute("""INSERT IGNORE INTO available_topics(topic) VALUES (%s)""",(topic,))
+
+    connection.commit()
+    cursor.close()
+    connection.close()
