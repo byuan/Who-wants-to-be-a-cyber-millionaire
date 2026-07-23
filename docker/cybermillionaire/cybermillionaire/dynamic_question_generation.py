@@ -1,6 +1,6 @@
 import requests
 import random
-from .mysql_db import get_topic_settings, get_ai_model
+from .mysql_db import get_topic_settings
 from openai import OpenAI
 from google import genai
 
@@ -123,9 +123,8 @@ def generate_question(level, user_id):
     words = settings[level]
     content = levels[level][0]
     question_level = levels[level][1]
-    ai_model = get_ai_model(user_id)
 
-    return api(ai_model, words, content, question_level)
+    return api("llama3.2:3b", words, content, question_level)
 
 if __name__ == '__main__':
     level = "expert"  # Default level for direct execution

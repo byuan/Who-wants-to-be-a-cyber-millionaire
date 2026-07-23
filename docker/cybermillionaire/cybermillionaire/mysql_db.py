@@ -330,22 +330,22 @@ def get_user_results(user_id):
 
     return sessions
 
-def get_ai_model(user_id):
+def get_available_topics():
 
     connection = get_connection()
     cursor = connection.cursor(dictionary=True)
-    cursor.execute(
-        """
-        SELECT ai_model
-        FROM user_preferences
-        WHERE user_id = %s
-        """,
-        (user_id,)
-    )
 
-    result = cursor.fetchone()
+    cursor.execute("""
+        SELECT topic
+        FROM available_topics
+        ORDER BY topic
+    """)
 
-    if result:
-        return result["ai_model"]
+    rows = cursor.fetchall()
 
-    return "llama3.2:3b"
+    topics = []
+
+    for row in rows:
+        topics.append(row["topic"])
+
+    return topics

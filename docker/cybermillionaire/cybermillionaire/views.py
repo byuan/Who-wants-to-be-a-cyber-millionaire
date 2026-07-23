@@ -6,7 +6,7 @@ import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .ai_report import generate_ai_feedback
-from .mysql_db import get_or_create_user, save_topic_settings, get_topic_settings, create_game_session, save_game_results, get_user_results
+from .mysql_db import get_or_create_user, save_topic_settings, get_topic_settings, create_game_session, save_game_results, get_user_results, get_available_topics
 import re
 
 @csrf_exempt
@@ -46,8 +46,26 @@ def ai_feedback(request):
 
 def topics(request):
     user_id = request.session["user_id"]
+
     settings = get_topic_settings(user_id)
-    return render(request,"topics.html",{"settings": settings})
+
+    all_topics = get_available_topics()
+
+    topics = {
+        "easy": all_topics,
+        "medium": all_topics,
+        "hard": all_topics,
+        "expert": all_topics
+    }
+
+    return render(
+        request,
+        "topics.html",
+        {
+            "settings": settings,
+            "topics": topics
+        }
+    )
 
 def index(request):
     if "user_id" not in request.session:
