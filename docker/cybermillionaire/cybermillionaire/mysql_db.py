@@ -16,6 +16,13 @@ DEFAULT_TOPICS = {
     ],
 }
 
+ALL_TOPICS = [
+    "Advanced Persistent Threats","Asymmetric/Symmetric Encryption for Cryptography","Blockchain Security",
+    "Cyber Incident Response","Cyber Threat Intelligence","Cyberbullying","Cryptography","Data","Digital Footprints","Digital Forensics","Encryption","Endpoint Security",
+    "Ethical Hacking","Firewall","HTTP Headers","Hacking","Internet Safety","Intrusion Detection Systems","Kerberos Authentication","Linux/Unix System Forensics",
+    "Malware","Network Encryption","Network Security","Passwords","Phishing","Safe Downloading","Secure Coding Practices","Secure Websites","Social Engineering","Social Media",
+    "TCP Protocol","TCP/UDP Protocol","Technical Aspects of Network Protocols","Two-factor authentication","Virtualization","Wireless Security Protocol","SSL/X509 Certificates",]
+
 def create_default_topic_settings(cursor, user_id):
     for difficulty, topics in DEFAULT_TOPICS.items():
         for topic in topics:
@@ -26,15 +33,6 @@ def create_default_topic_settings(cursor, user_id):
                 """,
                 (user_id, difficulty, topic)
             )
-
-def create_default_ai_model(cursor, user_id):
-    cursor.execute(
-        """
-        INSERT INTO user_preferences (user_id, ai_model)
-        VALUES (%s, %s)
-        """,
-        (user_id, "llama3.2:3b")
-    )
 
 def get_connection():
     try:
@@ -152,7 +150,6 @@ def get_or_create_user(username):
 
         # Populate the user's topic settings
         create_default_topic_settings(cursor, user_id)
-        create_default_ai_model(cursor, user_id)
 
         connection.commit()
 

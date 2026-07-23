@@ -95,30 +95,6 @@
                 <input type="submit" value="Save Topics">
                 <a href="/">Cancel</a>
             </div>
-
-            <hr>
-
-            <div class="ai-settings">
-
-                <h2>Question Generation AI</h2>
-
-                <label for="ai_model">Choose an AI model:</label>
-
-                <select name="ai_model" id="ai_model">
-
-                    {% for model in ai_models %}
-
-                        <option value="{{ model }}"
-                            {% if model == selected_ai_model %}selected{% endif %}>
-                            {{ model }}
-                        </option>
-
-                    {% endfor %}
-
-                </select>
-
-            </div>
-
         </form>
     </div>
 

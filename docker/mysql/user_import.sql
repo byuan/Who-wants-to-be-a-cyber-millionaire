@@ -44,14 +44,3 @@ CREATE TABLE IF NOT EXISTS topic_settings (
     FOREIGN KEY (user_id)
         REFERENCES users(id)
 );
-
-CREATE TABLE IF NOT EXISTS user_preferences (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-
-    user_id INT NOT NULL UNIQUE,
-
-    ai_model VARCHAR(100) DEFAULT 'llama3.2:3b',
-
-    FOREIGN KEY (user_id)
-        REFERENCES users(id)
-);
