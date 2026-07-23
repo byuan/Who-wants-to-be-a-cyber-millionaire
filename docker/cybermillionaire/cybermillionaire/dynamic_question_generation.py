@@ -3,6 +3,7 @@ import random
 from .mysql_db import get_topic_settings
 from openai import OpenAI
 from google import genai
+import os
 
 # Dictionary to hold all the level choices
 levels = {"easy": ("You are a school teacher trying to create a cybersecurity quiz.", "primary school"), 
@@ -24,7 +25,7 @@ def pick_a_word(words):
 def api(ai_model, words, content, question_level):
     word = pick_a_word(words)
     if ai_model == "gpt-3.5-turbo-0125":
-        client = OpenAI(api_key="")
+        client = os.getenv("OPENAI_API_KEY")
 
         completion = client.chat.completions.create(
             model=ai_model,
@@ -54,7 +55,7 @@ def api(ai_model, words, content, question_level):
         return completion.choices[0].message.content
 
     elif ai_model == "gemini-3.1-flash-lite":
-        client = genai.Client(api_key="")
+        client = os.getenv("GEMINI_API_KEY")
 
         prompt = f"""
     {content}
@@ -106,14 +107,7 @@ def api(ai_model, words, content, question_level):
         Do not use markdown.
         """
 
-            response = requests.post(
-                "http://192.168.1.28:11434/api/generate",
-                json={
-                    "model": ai_model,
-                    "prompt": prompt,
-                    "stream": False
-                },
-            )
+            response = requests.post(os.getenv("AI_IP"),json={"model": ai_model,"prompt": prompt,"stream": False},)
 
     return response.json()["response"].strip()
 
@@ -124,7 +118,7 @@ def generate_question(level, user_id):
     content = levels[level][0]
     question_level = levels[level][1]
 
-    return api("llama3.2:3b", words, content, question_level)
+    return api(os.getenv("LLAMA_MODEL"), words, content, question_level)
 
 if __name__ == '__main__':
     level = "expert"  # Default level for direct execution
