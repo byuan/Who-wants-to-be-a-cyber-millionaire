@@ -44,3 +44,20 @@ CREATE TABLE IF NOT EXISTS topic_settings (
     FOREIGN KEY (user_id)
         REFERENCES users(id)
 );
+
+CREATE TABLE IF NOT EXISTS available_topics (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    topic VARCHAR(100) NOT NULL UNIQUE
+);
+
+INSERT IGNORE INTO available_topics (topic) VALUES
+('Advanced Persistent Threats'),('Asymmetric/Symmetric Encryption for Cryptography'),
+('Blockchain Security'),('Cyber Incident Response'),('Cyber Threat Intelligence'),
+('Cyberbullying'),('Cryptography'),('Data'),('Digital Footprints'),
+('Digital Forensics'),('Encryption'),('Endpoint Security'),('Ethical Hacking'),('Firewall'),
+('HTTP Headers'),('Hacking'),('Internet Safety'),('Intrusion Detection Systems'),
+('Kerberos Authentication'),('Linux/Unix System Forensics'),('Malware'),('Network Encryption'),
+('Network Security'),('Passwords'),('Phishing'),('Safe Downloading'),('Secure Coding Practices'),
+('Secure Websites'),('Social Engineering'),('Social Media'),('TCP Protocol'),('TCP/UDP Protocol'),
+('Technical Aspects of Network Protocols'),('Two-factor authentication'),('Virtualization'),
+('Wireless Security Protocol'),('SSL/X509 Certificates');

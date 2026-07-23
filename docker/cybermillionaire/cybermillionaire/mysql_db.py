@@ -1,7 +1,7 @@
 import mysql.connector
 from mysql.connector import Error
 
-DEFAULT_TOPICS = {
+"""DEFAULT_TOPICS = {
     "easy": ["Passwords","Internet Safety","Cyberbullying","Social Media","Secure Websites",
         "Hacking","Digital Footprints","Data","Phishing","Safe Downloading",
     ],
@@ -21,17 +21,21 @@ ALL_TOPICS = [
     "Cyber Incident Response","Cyber Threat Intelligence","Cyberbullying","Cryptography","Data","Digital Footprints","Digital Forensics","Encryption","Endpoint Security",
     "Ethical Hacking","Firewall","HTTP Headers","Hacking","Internet Safety","Intrusion Detection Systems","Kerberos Authentication","Linux/Unix System Forensics",
     "Malware","Network Encryption","Network Security","Passwords","Phishing","Safe Downloading","Secure Coding Practices","Secure Websites","Social Engineering","Social Media",
-    "TCP Protocol","TCP/UDP Protocol","Technical Aspects of Network Protocols","Two-factor authentication","Virtualization","Wireless Security Protocol","SSL/X509 Certificates",]
+    "TCP Protocol","TCP/UDP Protocol","Technical Aspects of Network Protocols","Two-factor authentication","Virtualization","Wireless Security Protocol","SSL/X509 Certificates",]"""
+
+DIFFICULTIES = ["easy", "medium", "hard", "expert"]
 
 def create_default_topic_settings(cursor, user_id):
-    for difficulty, topics in DEFAULT_TOPICS.items():
-        for topic in topics:
+    cursor.execute("SELECT topic FROM available_topics ORDER BY topic")
+    topics = cursor.fetchall()
+    for difficulty in DIFFICULTIES:
+        for row in topics:
             cursor.execute(
                 """
                 INSERT INTO topic_settings (user_id, difficulty, topic)
                 VALUES (%s, %s, %s)
                 """,
-                (user_id, difficulty, topic)
+                (user_id, difficulty, row[0])
             )
 
 def get_connection():
