@@ -1,6 +1,7 @@
 import json
 import requests    
 from collections import Counter
+import os
 
 def build_summary(data):
     total_games = len(data)
@@ -59,15 +60,6 @@ Provide feedback based on these rules:
 """
 
     response = requests.post(
-        "http://192.168.1.28:11434/api/generate",
-        json={
-            "model": "qwen2.5:3b-instruct",
-            "prompt": prompt,
-            "stream": False
-        }
-    )
+        os.getenv("AI_IP"),json={"model": "qwen2.5:3b-instruct","prompt": prompt,"stream": False})
 
     return response.json()["response"]
-
-if __name__ == '__main__':
-    print(generate_ai_feedback("./docker/cybermillionaire/results.json"))
