@@ -152,3 +152,61 @@ def add_available_topic(topic):
     connection.commit()
     cursor.close()
     connection.close()
+
+def get_game_results(session_id, user_id):
+
+    connection = get_connection()
+    cursor = connection.cursor(dictionary=True)
+
+    # Verify that the requested game belongs to the logged-in user
+    cursor.execute(
+        """
+        SELECT id, played, score, difficulty
+        FROM game_sessions
+        WHERE id = %s
+          AND user_id = %s
+        """,
+        (session_id, user_id)
+    )
+
+    session = cursor.fetchone()
+
+    if not session:
+        cursor.close()
+        connection.close()
+        return None
+
+    cursor.execute(
+        """
+        SELECT question,
+               selected_answer,
+               correct_answer,
+               was_correct
+        FROM game_results
+        WHERE session_id = %s
+        """,
+        (session_id,)
+    )
+
+    rows = cursor.fetchall()
+
+    history = []
+
+    for row in rows:
+        history.append({
+            "question": row["question"],
+            "selected": row["selected_answer"],
+            "correct": row["correct_answer"],
+            "isCorrect": bool(row["was_correct"])
+        })
+
+    session["played_at"] = session["played"].strftime("%Y-%m-%d %H:%M:%S")
+    del session["played"]
+    session["history"] = history
+
+    cursor.close()
+    connection.close()
+
+    # Return a list containing one game so generate_ai_feedback()
+    # works without any changes.
+    return [session]

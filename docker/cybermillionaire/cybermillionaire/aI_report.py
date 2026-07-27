@@ -57,6 +57,7 @@ Provide feedback based on these rules:
 - Do NOT repeat raw data
 - Do NOT use invalid characters such as emojis
 - Give actionable feedback
+- Do NOT invent or create game sessions that did not happen.
 """
 
     response = requests.post(

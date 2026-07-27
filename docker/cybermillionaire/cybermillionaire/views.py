@@ -6,7 +6,7 @@ import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .ai_report import generate_ai_feedback
-from .mysql_db import get_or_create_user, save_topic_settings, get_topic_settings, create_game_session, save_game_results, get_user_results, get_available_topics, add_available_topic
+from .mysql_db import get_or_create_user, save_topic_settings, get_topic_settings, create_game_session, save_game_results, get_user_results, get_available_topics, add_available_topic, get_game_results
 import re
 
 def require_login(request):
@@ -60,6 +60,20 @@ def ai_feedback(request):
     results = get_user_results(user_id)
     feedback = generate_ai_feedback(results)
     return render(request, "feedback.html", {"feedback": feedback})
+
+def ai_game_feedback(request, session_id):
+
+    redirect_response = require_login(request)
+    if redirect_response:
+        return redirect_response
+
+    user_id = request.session["user_id"]
+    game = get_game_results(session_id, user_id)
+    if game is None:
+        return redirect("/")
+
+    feedback = generate_ai_feedback(game)
+    return render(request,"feedback.html",{"feedback": feedback})
 
 def topics(request):
     redirect_response = require_login(request)

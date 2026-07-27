@@ -436,6 +436,11 @@ function loadLifetimeStats() {
                 html += " - Score: " + percent + "%";
                 html += "</summary>";
 
+                html += "<button class='game-button' ";
+                html += "onclick=\"window.location.href='/ai-feedback/" + game.id + "/'\">";
+                html += "Analyze This Game";
+                html += "</button><br><br>";
+
                 html += "<ul>";
 
                 for (var i = 0; i < game.history.length; i++) {

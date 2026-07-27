@@ -33,6 +33,8 @@ urlpatterns = [
     url(r'^save-results/$', views.save_results, name='save_results'),
     url(r'^get-results/$', views.get_results, name='get_results'),
     url(r'^ai-feedback/', views.ai_feedback, name='ai_feedback'),
+    url(r'^ai-feedback/(?P<session_id>[0-9]+)/$',views.ai_game_feedback,name="ai_game_feedback"
+),
     url(r'^topics/$', views.topics, name='topics'),
     url(r'^add-topic/', views.add_topic, name="add_topic"),
     url(r'^save-topics/$', views.save_topics, name='save_topics'),
