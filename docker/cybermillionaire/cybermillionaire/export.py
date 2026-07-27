@@ -60,7 +60,7 @@ def Static_Game(cursor, level):
 
 # DYNAMIC
 # This will run when a dynamic primary school game is selected. It will gather all questions for the game and then empty the dynamic table.
-def Dynamic_Game(difficulty_level, user_id):
+def Dynamic_Game(difficulty_level, user_id, count=15):
 
     game = []
 
@@ -73,17 +73,28 @@ def Dynamic_Game(difficulty_level, user_id):
 
     ai_level = level_map[difficulty_level]
 
-    count = 0
-    while count < 15:
-        question_text = generation.generate_question(ai_level, user_id)
+
+    while len(game) < count:
+
+        question_text = generation.generate_question(
+            ai_level,
+            user_id
+        )
+
         try:
+
             question, answers, correct_answer = insert.parse_question_and_answers(question_text)
-            game.append({"question": question,"answers": answers,"correct_answer": correct_answer})
-            count += 1
+
+            game.append({
+                "question": question,
+                "answers": answers,
+                "correct_answer": correct_answer
+            })
+
 
         except Exception as e:
-            print(f"Generation error: {e}")
-            continue
+            print("Generation error:", e)
+
 
     return game
 

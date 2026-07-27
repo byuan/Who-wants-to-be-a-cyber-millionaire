@@ -70,7 +70,7 @@ var MillionaireModel = function(data) {
 
  	// The current level(starting at 1) <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<STARTING LEVEL
     this.level = new ko.observable(
-        Number(sessionStorage.getItem("currentLevel")) || 12
+        Number(sessionStorage.getItem("currentLevel")) || 1
     );
 
  	// The three the user can use to 
@@ -83,15 +83,21 @@ var MillionaireModel = function(data) {
     console.log("Game mode:", gameMode);
 
  	// Grabs the question text of the current question
- 	self.getQuestionText = function() {
- 		return self.questions[self.level() - 1].question;
- 	}
+    self.getQuestionText = function(){
+        var question = self.questions[self.level() - 1];
+        if (!question) {return "Loading next question...";}
+        return question.question;
+    }
 
  	// Gets the answer text of a specified question index (0-3)
  	// from the current question
- 	self.getAnswerText = function(index) {
- 		return self.questions[self.level() - 1].content[index];
- 	}
+    self.getAnswerText = function(index){
+        var question = self.questions[self.level() - 1];
+        if (!question) {
+            return "";
+        }
+        return question.content[index];
+    }
 
  	// Uses the fifty-fifty option of the user
  	self.fifty = function(item, event) {
@@ -255,6 +261,7 @@ var MillionaireModel = function(data) {
  	// Attempts to answer the question with the specified
  	// answer index (0-3) from a click event of elm
  	self.answerQuestion = function(index, elm) {
+        loadMoreQuestions();
  		if(self.transitioning)
  			return;
  		self.transitioning = true;
@@ -391,6 +398,26 @@ function setGameMode() {
     ).value;
 
     localStorage.setItem("gameMode", mode);
+}
+
+function loadMoreQuestions(){
+    fetch('/get-new-questions/')
+        .then(response => response.json())
+        .then(data => {
+            if(data.length > 0){
+                console.log(
+                    "Adding questions:",
+                    data.length
+                );
+                for(var i = 0; i < data.length; i++){
+                    self.questions.push({
+                        question: data[i].question,
+                        content: data[i].answers,
+                        correct: data[i].correct_answer
+                    });
+                }
+            }
+        });
 }
 
 function loadLifetimeStats() {
