@@ -45,6 +45,8 @@ startSound = function(id, loop) {
     
 }
 
+var loadingQuestions = false;
+
 /**
 * The View Model that represents one game of
 * Who Wants to Be a Millionaire.
@@ -261,7 +263,6 @@ var MillionaireModel = function(data) {
  	// Attempts to answer the question with the specified
  	// answer index (0-3) from a click event of elm
  	self.answerQuestion = function(index, elm) {
-        loadMoreQuestions();
  		if(self.transitioning)
  			return;
  		self.transitioning = true;
@@ -320,10 +321,10 @@ var MillionaireModel = function(data) {
                         console.log("History", self.history);
                         self.showReport();
 	 					$("#game-over").html('You Win!<br /><button onclick=\"window.location.replace(\'/\')\">Play again?</button>');
-	 					// self.showReport();
 	 				});
  				} else {
  					self.level(self.level() + 1);
+                    loadMoreQuestions();
                     sessionStorage.setItem("currentLevel",self.level());
  					$("#" + elm).css('background', 'none');
 			 		$("#answer-one").show();
@@ -363,7 +364,9 @@ var MillionaireModel = function(data) {
  	// Gets the money formatted string of the current won amount of money.
  	self.formatMoney = function() {
 	    return self.money().money(2, '.', ',');
-	}  
+	}
+
+startQuestionPolling();
     
 self.showReport = function() {
 
@@ -392,6 +395,12 @@ self.showReport = function() {
     });
 };
 
+function startQuestionPolling() {
+    setInterval(function() {
+        loadMoreQuestions();
+    }, 1000);
+}
+
 function setGameMode() {
     var mode = document.querySelector(
         'input[name="gameMode"]:checked'
@@ -400,23 +409,31 @@ function setGameMode() {
     localStorage.setItem("gameMode", mode);
 }
 
-function loadMoreQuestions(){
-    fetch('/get-new-questions/')
-        .then(response => response.json())
-        .then(data => {
-            if(data.length > 0){
-                console.log(
-                    "Adding questions:",
-                    data.length
-                );
-                for(var i = 0; i < data.length; i++){
-                    self.questions.push({
-                        question: data[i].question,
-                        content: data[i].answers,
-                        correct: data[i].correct_answer
-                    });
-                }
+function loadMoreQuestions() {
+    var remaining = self.questions.length - self.level() + 1;
+    if (remaining >= 10 || loadingQuestions) {
+        return;
+    }
+    loadingQuestions = true;
+
+    fetch("/get-new-questions/")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("HTTP " + response.status);
             }
+
+            return response.json();
+        })
+        .then(data => {
+            console.log("Adding questions:", data);
+            for (var i = 0; i < data.length; i++) {
+                self.questions.push(data[i]);
+            }
+            loadingQuestions = false;
+        })
+        .catch(error => {
+            console.error("Question loading failed:", error);
+            loadingQuestions = false;
         });
 }
 
@@ -511,9 +528,7 @@ $(document).ready(function() {
     let data = JSON.parse(storedGame);
     console.log("Loaded from sessionStorage:");
     console.log(data);
-    ko.applyBindings(
-        new MillionaireModel(data.games[0])
-    );
+    ko.applyBindings(new MillionaireModel(data.games[0]));
 
     startSound('background', true);
     $("#game").fadeIn('slow');

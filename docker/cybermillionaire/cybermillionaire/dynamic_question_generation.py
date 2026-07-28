@@ -6,7 +6,7 @@ from google import genai
 import os
 
 # Dictionary to hold all the level choices
-levels = {"easy": ("You are a school teacher trying to create a cybersecurity quiz.", "primary school"), 
+LEVELS = {"easy": ("You are a school teacher trying to create a cybersecurity quiz.", "primary school"), 
           "medium": ("You are a high school teacher trying to create a cybersecurity quiz.", "secondary school"), 
           "hard" : ("You are a cybersecurity professor trying to create a quiz.", "college"), 
           "expert" : ("You are a cybersecurity expert trying to create a quiz.", "expert with technical experience")}
@@ -21,104 +21,63 @@ def pick_a_word(words):
         return "a random cybersecurity topic"
     return random.choice(words) # returns a random word
 
+def build_prompt(system_prompt, question_level, topic):
+    return f"""
+{system_prompt}
+
+Write ONE unique {question_level} cybersecurity question about "{topic}".
+
+Return ONLY this format exactly:
+
+Question: <question>
+
+A. <answer>
+B. <answer>
+C. <answer>
+D. <answer>
+
+Correct Answer: <A, B, C, or D>
+
+Rules:
+- You MUST have one and only one correct answer.
+- You MUST indicate the correct answer.
+- Exactly four answer choices.
+- All answers must be unique.
+- Use correct grammar.
+- No explanations.
+- No markdown.
+- No extra text before or after the format.
+"""
+
 # Function that reaches out to the API
-def api(ai_model, words, content, question_level):
-    word = pick_a_word(words)
-    if ai_model == "gpt-3.5-turbo-0125":
-        client = os.getenv("OPENAI_API_KEY")
-
-        completion = client.chat.completions.create(
+def api(ai_model, topic, system_prompt, question_level):
+    prompt = build_prompt(system_prompt, question_level, topic)
+    if ai_model.startswith("gpt"):
+        client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        response = client.chat.completions.create(
             model=ai_model,
-            messages=[
-                {
-                    "role": "system",
-                    "content": content
-                },
-                {
-                    "role": "user",
-                    "content": (
-                        f"Write one unique {question_level} level cybersecurity question about {word} "
-                        "and provide multiple answers (one correct, three incorrect, but state the correct answer) "
-                        "similar to the game style of Who Wants to Be a Millionaire.\n\n"
-                        "Format:\n"
-                        "Question: <question>\n\n"
-                        "A. <answer>\n"
-                        "B. <answer>\n"
-                        "C. <answer>\n"
-                        "D. <answer>\n\n"
-                        "Correct Answer: <correct answer>"
-                    )
-                }
-            ]
+            messages=[{"role": "system","content": system_prompt},{"role": "user","content": prompt}]
         )
+        return response.choices[0].message.content.strip()
 
-        return completion.choices[0].message.content
-
-    elif ai_model == "gemini-3.1-flash-lite":
-        client = os.getenv("GEMINI_API_KEY")
-
-        prompt = f"""
-    {content}
-
-    Write one unique {question_level} level cybersecurity question about {word}
-    and provide multiple answers (one correct, three incorrect).
-
-    Format exactly like this:
-
-    Question: <question>
-
-    A. <answer>
-    B. <answer>
-    C. <answer>
-    D. <answer>
-
-    Correct Answer: <correct answer>
-    """
-
+    elif ai_model.startswith("gemini"):
+        client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
         response = client.models.generate_content(
             model=ai_model,
             contents=prompt
         )
-
-        return response.text
-    elif(ai_model == "llama3.2:3b"):
-            prompt = f"""
-        {content}
-
-        Write one unique {question_level} level cybersecurity question about {word}.
-
-        You MUST return ONLY the following format:
-
-        Question: <question>
-
-        A. <answer>
-        B. <answer>
-        C. <answer>
-        D. <answer>
-
-        Correct Answer: <A, B, C, or D>
-
-        Questions must make sense.
-        Questions must have valid grammatical structure.
-        Questions must always have exactly 4 unique answers followed by the correct answer.
-        The Correct Answer MUST always be reiterated on a seperate line below the answers. 
-        Do not provide explanations.
-        Do not provide reasoning.
-        Do not use markdown.
-        """
-
-            response = requests.post(os.getenv("AI_IP"),json={"model": ai_model,"prompt": prompt,"stream": False},)
-
-    return response.json()["response"].strip()
+        return response.text.strip()
+    
+    else:
+        response = requests.post(os.getenv("AI_IP"),json={"model": ai_model,"prompt": prompt,"stream": False})
+        return response.json()["response"].strip()
 
 def generate_question(level, user_id):
 
     settings = load_topic_settings(user_id)
-    words = settings[level]
-    content = levels[level][0]
-    question_level = levels[level][1]
-
-    return api(os.getenv("LLAMA_MODEL"), words, content, question_level)
+    topic = pick_a_word(settings[level])
+    system_prompt, question_level = LEVELS[level]
+    return api(os.getenv("LLAMA_MODEL"),topic,system_prompt,question_level)
 
 if __name__ == '__main__':
     level = "expert"  # Default level for direct execution

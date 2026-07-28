@@ -8,7 +8,6 @@ from django.views.decorators.csrf import csrf_exempt
 from .ai_report import generate_ai_feedback
 from .mysql_db import get_or_create_user, save_topic_settings, get_topic_settings, create_game_session, save_game_results, get_user_results, get_available_topics, add_available_topic, get_game_results
 from .question_queue import start_question_generation, get_questions, pop_questions
-from .background_generation import start_background_generation
 import re
 
 def require_login(request):
@@ -64,7 +63,6 @@ def ai_feedback(request):
     return render(request, "feedback.html", {"feedback": feedback})
 
 def ai_game_feedback(request, session_id):
-
     redirect_response = require_login(request)
     if redirect_response:
         return redirect_response
@@ -135,7 +133,7 @@ def dynamic_start1(request):
         return redirect_response
     user_id = request.session["user_id"]
     game = e.Dynamic_Game("primary",user_id,5)
-    start_background_generation("easy",user_id)
+    start_question_generation("easy",user_id)
     return render(request,"game.html",{"game_data": e.format_game_data(game)})
 
 def dynamic_start2(request):
@@ -144,7 +142,7 @@ def dynamic_start2(request):
         return redirect_response
     user_id = request.session["user_id"]
     game = e.Dynamic_Game("secondary",user_id,5)
-    start_background_generation("medium",user_id)
+    start_question_generation("medium",user_id)
     return render(request,"game.html",{"game_data": e.format_game_data(game)})
 
 def dynamic_start3(request):
@@ -153,7 +151,7 @@ def dynamic_start3(request):
         return redirect_response
     user_id = request.session["user_id"]
     game = e.Dynamic_Game("college",user_id,5)
-    start_background_generation("hard",user_id)
+    start_question_generation("hard",user_id)
     return render(request,"game.html",{"game_data": e.format_game_data(game)})
 
 def dynamic_start4(request):
@@ -162,7 +160,7 @@ def dynamic_start4(request):
         return redirect_response
     user_id = request.session["user_id"]
     game = e.Dynamic_Game("expert",user_id,5)
-    start_background_generation("expert",user_id)
+    start_question_generation("expert",user_id)
     return render(request,"game.html",{"game_data": e.format_game_data(game)})
 
 def get_question_queue(request):
@@ -176,18 +174,14 @@ def get_question_queue(request):
         safe=False
     )
 
-
 def get_new_questions(request):
+    redirect_response = require_login(request)
+    if redirect_response:
+        return redirect_response
     user_id = request.session["user_id"]
-    questions = pop_questions(
-        user_id,
-        5
-    )
-
-    return JsonResponse(
-        questions,
-        safe=False
-    )
+    questions = pop_questions(user_id, 5)
+    print("Sending questions:", questions)
+    return JsonResponse(questions,safe=False)
 
 def add_topic(request):
     redirect_response = require_login(request)
