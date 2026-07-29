@@ -324,7 +324,9 @@ var MillionaireModel = function(data) {
 	 				});
  				} else {
  					self.level(self.level() + 1);
-                    loadMoreQuestions();
+                    if (self.level() <= 15) {
+                        loadMoreQuestions();
+                    }
                     sessionStorage.setItem("currentLevel",self.level());
  					$("#" + elm).css('background', 'none');
 			 		$("#answer-one").show();
@@ -410,8 +412,14 @@ function setGameMode() {
 }
 
 function loadMoreQuestions() {
+    console.log(
+        "Level:", self.level(),
+        "Questions:", self.questions.length,
+        "Remaining:", self.questions.length - self.level(),
+        "Loading:", loadingQuestions
+    );
     var remaining = self.questions.length - self.level() + 1;
-    if (remaining >= 10 || loadingQuestions) {
+    if (remaining >= 5 || loadingQuestions) {
         return;
     }
     loadingQuestions = true;
