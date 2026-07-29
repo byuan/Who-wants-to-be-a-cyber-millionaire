@@ -106,6 +106,7 @@ var MillionaireModel = function(data) {
  		if(self.transitioning)
  			return;
  		$(event.target).fadeOut('slow');
+        sessionStorage.setItem("fiftyUsed", "true");
  		var correct = this.questions[self.level() - 1].correct;
  		var first = (correct + 1) % 4;
  		var second = (first + 1) % 4;
@@ -124,12 +125,12 @@ var MillionaireModel = function(data) {
  	}
     
     
-    
     //Uses the phone a friend option
     self.friend = function(item, event) {
         if(self.transitioning)
             return;
         $(event.target).fadeOut('slow');
+        sessionStorage.setItem("friendUsed", "true");
         $("#phoneImage").fadeIn('slow');
         var correct = this.questions[self.level() - 1].correct;
         
@@ -214,8 +215,7 @@ var MillionaireModel = function(data) {
         if(self.transitioning)
             return;
         $(event.target).fadeOut('slow');
-        
-        
+        sessionStorage.setItem("audienceUsed", "true");
         rand = Math.random()
         console.log("Random = " + rand)
         var elm = this.questions[self.level() - 1].correct
@@ -349,8 +349,7 @@ var MillionaireModel = function(data) {
 
                     $("#game").fadeOut('slow', function() {
                         $("#game-over").fadeIn('slow');
-                            sessionStorage.removeItem("currentGame");
-                            sessionStorage.removeItem("currentLevel");
+                        clearGame();
                     });
 
                     self.transitioning = false;
@@ -387,8 +386,7 @@ self.showReport = function() {
     .then(response => response.json())
     .then(data => {
         console.log("Saved", data);
-        sessionStorage.removeItem("currentGame");
-        sessionStorage.removeItem("currentLevel");
+        clearGame();
         loadLifetimeStats();
 
     })
@@ -519,6 +517,14 @@ function loadLifetimeStats() {
     }
 }
 
+function clearGame(){
+    sessionStorage.removeItem("currentGame");
+    sessionStorage.removeItem("currentLevel");
+    sessionStorage.removeItem("friendUsed");
+    sessionStorage.removeItem("audienceUsed");
+    sessionStorage.removeItem("fiftyUsed");
+}
+
 // Executes on page load, bootstrapping
 // the start game functionality to trigger a game model
 // being created
@@ -537,6 +543,17 @@ $(document).ready(function() {
     console.log("Loaded from sessionStorage:");
     console.log(data);
     ko.applyBindings(new MillionaireModel(data.games[0]));
+    if (sessionStorage.getItem("friendUsed") === "true") {
+        $("#friend").hide();
+    }
+
+    if (sessionStorage.getItem("audienceUsed") === "true") {
+        $("#audience").hide();
+    }
+
+    if (sessionStorage.getItem("fiftyUsed") === "true") {
+        $("#fifty").hide();
+}
 
     startSound('background', true);
     $("#game").fadeIn('slow');
