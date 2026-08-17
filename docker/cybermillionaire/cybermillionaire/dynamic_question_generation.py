@@ -51,9 +51,10 @@ Rules:
 
 # Function that reaches out to the API
 def api(ai_model, topic, system_prompt, question_level):
+    ai_model = os.getenv("AI_MODEL")
     prompt = build_prompt(system_prompt, question_level, topic)
     if ai_model.startswith("gpt"):
-        client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        client = OpenAI(api_key=os.getenv("API_KEY"))
         response = client.chat.completions.create(
             model=ai_model,
             messages=[{"role": "system","content": system_prompt},{"role": "user","content": prompt}]
@@ -61,14 +62,14 @@ def api(ai_model, topic, system_prompt, question_level):
         return response.choices[0].message.content.strip()
 
     elif ai_model.startswith("gemini"):
-        client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+        client = genai.Client(api_key=os.getenv("API_KEY"))
         response = client.models.generate_content(
             model=ai_model,
             contents=prompt
         )
         return response.text.strip()
     
-    else:
+    elif ai_model.startswith("llama"):
         response = requests.post(os.getenv("AI_IP"),json={"model": ai_model,"prompt": prompt,"stream": False})
         return response.json()["response"].strip()
 

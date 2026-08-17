@@ -35,7 +35,6 @@ def generate_question(ai_level, user_id):
 
 
 def generate_questions_background(ai_level, user_id):
-
     print("STARTING GENERATOR FOR", user_id, ai_level)
     if user_id not in question_queues:
         question_queues[user_id] = []

@@ -72,25 +72,15 @@ def Dynamic_Game(difficulty_level, user_id, count=15):
     }
 
     ai_level = level_map[difficulty_level]
-
-
     while len(game) < count:
-
         question_text = generation.generate_question(
             ai_level,
             user_id
         )
-
         try:
 
             question, answers, correct_answer = insert.parse_question_and_answers(question_text)
-
-            game.append({
-                "question": question,
-                "answers": answers,
-                "correct_answer": correct_answer
-            })
-
+            game.append({"question": question,"answers": answers,"correct_answer": correct_answer})
 
         except Exception as e:
             print("Generation error:", e)
@@ -100,9 +90,7 @@ def Dynamic_Game(difficulty_level, user_id, count=15):
 
 def export_questions(selection, user_id=None):
     game = []
-
     if selection == '1' or selection == '2' or selection == '3' or selection == '4':
-
         try:
             f = open("cybermillionaire/util/mysqlPassword.txt")
 
