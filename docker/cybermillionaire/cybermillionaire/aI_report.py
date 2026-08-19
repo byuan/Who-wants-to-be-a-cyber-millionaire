@@ -1,7 +1,10 @@
 import json
-import requests    
+import requests
 from collections import Counter
 import os
+from openai import OpenAI
+import anthropic
+
 
 def build_summary(data):
     total_games = len(data)
@@ -34,8 +37,11 @@ def build_summary(data):
         "most_seen_questions": question_counter.most_common(5)
     }
 
+
 def generate_ai_feedback(data):
+
     summary = build_summary(data)
+
     prompt = f"""
 You are a cybersecurity learning coach.
 
@@ -60,7 +66,71 @@ Provide feedback based on these rules:
 - Do NOT invent or create game sessions that did not happen.
 """
 
-    response = requests.post(
-        os.getenv("AI_IP"),json={"model": os.getenv("AI_MODEL"),"prompt": prompt,"stream": False})
+    ai_model = os.getenv("AI_MODEL")
 
-    return response.json()["response"]
+    if not ai_model:
+        raise ValueError("AI_MODEL environment variable is not set")
+
+    # GPT
+    if ai_model.lower().startswith("gpt"):
+
+        client = OpenAI(
+            api_key=os.getenv("GPT_API_KEY")
+        )
+
+        response = client.chat.completions.create(
+            model=ai_model,
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are a cybersecurity learning coach."
+                },
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ]
+        )
+
+        return response.choices[0].message.content.strip()
+
+    # Claude
+    elif ai_model.lower().startswith("claude"):
+
+        client = anthropic.Anthropic(
+            api_key=os.getenv("CLAUDE_API_KEY")
+        )
+
+        response = client.messages.create(
+            model=ai_model,
+            max_tokens=2000,
+            system="You are a cybersecurity learning coach.",
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ]
+        )
+
+        return response.content[0].text.strip()
+
+    # Llama
+    elif ai_model.lower().startswith("llama"):
+
+        response = requests.post(
+            os.getenv("AI_IP"),
+            json={
+                "model": ai_model,
+                "prompt": prompt,
+                "stream": False
+            }
+        )
+
+        response.raise_for_status()
+        return response.json()["response"].strip()
+
+    else:
+        raise ValueError(
+            f"Unsupported AI model: {ai_model}"
+        )

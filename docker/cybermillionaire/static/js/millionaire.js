@@ -524,7 +524,22 @@ function clearGame(){
     sessionStorage.removeItem("friendUsed");
     sessionStorage.removeItem("audienceUsed");
     sessionStorage.removeItem("fiftyUsed");
+
 }
+
+function quitGame() {
+    if (!confirm("Are you sure you want to quit this game? Your progress will be lost.")) {
+        return;
+    }
+    console.log("Player quit the game");
+    clearGame();
+    window.location.replace("/");
+}
+
+window.addEventListener("popstate", function(event) {
+    console.log("Browser navigation detected.");
+    clearGame();
+});
 
 // Executes on page load, bootstrapping
 // the start game functionality to trigger a game model
@@ -532,7 +547,7 @@ function clearGame(){
 $(document).ready(function() {
 
     console.log("Ready function worked");
-
+    history.pushState(null, "", window.location.href);
     let storedGame = sessionStorage.getItem("currentGame");
 
     if (!storedGame) {
