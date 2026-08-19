@@ -7,7 +7,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .ai_report import generate_ai_feedback
 from .mysql_db import get_or_create_user, save_topic_settings, get_topic_settings, create_game_session, save_game_results, get_user_results, get_available_topics, add_available_topic, get_game_results
-from .question_queue import start_question_generation, get_questions, pop_questions
+from .question_queue import start_question_generation, get_questions, pop_questions, generate_initial_questions
 import re
 
 def require_login(request):
@@ -129,39 +129,139 @@ def start4(request):
 
 def dynamic_start1(request):
     redirect_response = require_login(request)
+
     if redirect_response:
         return redirect_response
+
     user_id = request.session["user_id"]
-    game = e.Dynamic_Game("primary",user_id,5)
-    start_question_generation("easy",user_id)
-    return render(request,"game.html",{"game_data": e.format_game_data(game)})
+
+    initial_questions = generate_initial_questions(
+        "easy",
+        user_id,
+        5
+    )
+
+    start_question_generation(
+        "easy",
+        user_id
+    )
+
+    game_data = {
+        "games": [
+            {
+                "questions": initial_questions
+            }
+        ]
+    }
+
+    return render(
+        request,
+        "game.html",
+        {"game_data": game_data}
+    )
+
 
 def dynamic_start2(request):
     redirect_response = require_login(request)
+
     if redirect_response:
         return redirect_response
+
     user_id = request.session["user_id"]
-    game = e.Dynamic_Game("secondary",user_id,5)
-    start_question_generation("medium",user_id)
-    return render(request,"game.html",{"game_data": e.format_game_data(game)})
+
+    initial_questions = generate_initial_questions(
+        "medium",
+        user_id,
+        5
+    )
+
+    start_question_generation(
+        "medium",
+        user_id
+    )
+
+    game_data = {
+        "games": [
+            {
+                "questions": initial_questions
+            }
+        ]
+    }
+
+    return render(
+        request,
+        "game.html",
+        {"game_data": game_data}
+    )
 
 def dynamic_start3(request):
     redirect_response = require_login(request)
+
     if redirect_response:
         return redirect_response
+
     user_id = request.session["user_id"]
-    game = e.Dynamic_Game("college",user_id,5)
-    start_question_generation("hard",user_id)
-    return render(request,"game.html",{"game_data": e.format_game_data(game)})
+
+    # Generate first 5 questions concurrently
+    initial_questions = generate_initial_questions(
+        "hard",
+        user_id,
+        5
+    )
+
+    # Start background generator for future questions
+    start_question_generation(
+        "hard",
+        user_id
+    )
+
+    game_data = {
+        "games": [
+            {
+                "questions": initial_questions
+            }
+        ]
+    }
+
+    return render(
+        request,
+        "game.html",
+        {"game_data": game_data}
+    )
+
 
 def dynamic_start4(request):
     redirect_response = require_login(request)
+
     if redirect_response:
         return redirect_response
+
     user_id = request.session["user_id"]
-    game = e.Dynamic_Game("expert",user_id,5)
-    start_question_generation("expert",user_id)
-    return render(request,"game.html",{"game_data": e.format_game_data(game)})
+
+    initial_questions = generate_initial_questions(
+        "expert",
+        user_id,
+        5
+    )
+
+    start_question_generation(
+        "expert",
+        user_id
+    )
+
+    game_data = {
+        "games": [
+            {
+                "questions": initial_questions
+            }
+        ]
+    }
+
+    return render(
+        request,
+        "game.html",
+        {"game_data": game_data}
+    )
 
 def get_question_queue(request):
     redirect_response = require_login(request)
@@ -180,7 +280,7 @@ def get_new_questions(request):
         return redirect_response
     user_id = request.session["user_id"]
     questions = pop_questions(user_id, 5)
-    print("Sending questions:", questions)
+    print("Sending questions:", len(questions))
     return JsonResponse(questions,safe=False)
 
 def add_topic(request):

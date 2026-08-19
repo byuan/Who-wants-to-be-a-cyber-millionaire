@@ -396,6 +396,7 @@ self.showReport = function() {
 };
 
 function startQuestionPolling() {
+    loadMoreQuestions();
     setInterval(function() {
         loadMoreQuestions();
     }, 1000);
@@ -417,7 +418,7 @@ function loadMoreQuestions() {
         "Loading:", loadingQuestions
     );
     var remaining = self.questions.length - self.level() + 1;
-    if (remaining >= 5 || loadingQuestions) {
+    if (remaining >= 3 || loadingQuestions) {
         return;
     }
     loadingQuestions = true;
