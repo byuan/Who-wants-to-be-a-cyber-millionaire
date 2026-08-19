@@ -1,5 +1,7 @@
+import os
 import mysql.connector
 from mysql.connector import Error
+from django.contrib.auth.hashers import make_password, check_password
 
 DIFFICULTIES = ["easy", "medium", "hard", "expert"]
 
@@ -20,28 +22,63 @@ def get_connection():
         print("MySQL connection error:", e)
         return None
 
-def get_or_create_user(username):
+def get_or_create_user(username, password):
 
     connection = get_connection()
     cursor = connection.cursor()
-
     cursor.execute(
-        """SELECT id FROM users WHERE username = %s""",(username,))
-
+        """
+        SELECT id, password, is_admin
+        FROM users
+        WHERE username = %s
+        """,
+        (username,)
+    )
     result = cursor.fetchone()
     if result:
         user_id = result[0]
+        stored_password = result[1]
+        is_admin = bool(result[2])
+        if not check_password(password, stored_password):
+            cursor.close()
+            connection.close()
+            return None
 
+        cursor.close()
+        connection.close()
+
+        return user_id, is_admin
+
+    admin_username = os.getenv("ADMIN_USERNAME")
+    admin_password = os.getenv("ADMIN_PASSWORD")
+
+    if username == admin_username:
+        if password != admin_password:
+            cursor.close()
+            connection.close()
+            return None
+
+        is_admin = True
     else:
-        cursor.execute("""INSERT INTO users(username) VALUES(%s)""",(username,))
-        user_id = cursor.lastrowid
-        create_default_topic_settings(cursor, user_id)
-        connection.commit()
+        is_admin = False
 
+    hashed_password = make_password(password)
+
+    cursor.execute(
+        """
+        INSERT INTO users(username, password, is_admin)
+        VALUES(%s, %s, %s)
+        """,
+        (username, hashed_password, is_admin)
+    )
+
+    user_id = cursor.lastrowid
+    create_default_topic_settings(cursor, user_id)
+    connection.commit()
     cursor.close()
     connection.close()
 
-    return user_id
+    return user_id, is_admin
 
 def save_topic_settings(user_id, settings):
 

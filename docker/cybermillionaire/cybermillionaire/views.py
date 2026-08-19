@@ -9,6 +9,7 @@ from .ai_report import generate_ai_feedback
 from .mysql_db import get_or_create_user, save_topic_settings, get_topic_settings, create_game_session, save_game_results, get_user_results, get_available_topics, add_available_topic, get_game_results
 from .question_queue import start_question_generation, get_questions, pop_questions, generate_initial_questions
 import re
+from django.contrib.auth.hashers import make_password, check_password
 
 def require_login(request):
     if "user_id" not in request.session:
@@ -287,6 +288,10 @@ def add_topic(request):
     redirect_response = require_login(request)
     if redirect_response:
         return redirect_response
+
+    if not request.session.get("is_admin", False):
+        return redirect("/topics/")
+
     if request.method == "POST":
         topic = request.POST.get("new_topic", "").strip()
         if not topic:
@@ -314,9 +319,22 @@ def login(request):
             return render(request, "login.html", {
                 "error": "Username can only contain letters, numbers, spaces, and underscores."
             })
-        user_id = get_or_create_user(username)
+        password = request.POST.get("password")
+        if not password:
+            return render(request, "login.html", {
+                "error": "Please enter a password."
+            })
+
+        result = get_or_create_user(username, password)
+        if result is None:
+            return render(request, "login.html", {
+                "error": "Invalid username or password."
+            })
+
+        user_id, is_admin = result
         request.session["user_id"] = user_id
         request.session["username"] = username
+        request.session["is_admin"] = is_admin
         return redirect("/")
     return render(request,"login.html")
 

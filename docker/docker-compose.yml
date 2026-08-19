@@ -44,9 +44,3 @@ networks:
         driver: bridge
     db_network:
         driver: bridge
-
-
-
-
-
-

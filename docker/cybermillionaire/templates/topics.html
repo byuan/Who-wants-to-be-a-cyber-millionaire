@@ -121,6 +121,8 @@
 
         </form>
 
+        {% if request.session.is_admin %}
+
         <hr>
 
         <div class="topic-buttons">
@@ -141,6 +143,7 @@
             </form>
 
         </div>
+        {% endif %}
 
     </div>
 
