@@ -54,7 +54,7 @@ Rules:
 def api(ai_model, topic, system_prompt, question_level):
     prompt = build_prompt(system_prompt, question_level, topic)
     if ai_model.lower().startswith("gpt"):
-        client = OpenAI(api_key=os.getenv("API_KEY"))
+        client = OpenAI(api_key=os.getenv("GPT_API_KEY"))
 
         start = time.time()
 
@@ -72,7 +72,7 @@ def api(ai_model, topic, system_prompt, question_level):
         return response.choices[0].message.content.strip()
 
     elif ai_model.startswith("claude"):
-        client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+        client = anthropic.Anthropic(api_key=os.getenv("CLAUDE_API_KEY"))
         response = client.messages.create(
             model=ai_model,
             max_tokens=500,
