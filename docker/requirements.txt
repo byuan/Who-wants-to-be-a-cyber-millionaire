@@ -4,3 +4,4 @@ mysql-connector-python==8.0.28
 openai==1.39.0
 google-genai==0.8.0
 requests
+anthropic

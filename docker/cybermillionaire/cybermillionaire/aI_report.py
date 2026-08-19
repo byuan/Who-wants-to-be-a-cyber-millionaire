@@ -61,6 +61,6 @@ Provide feedback based on these rules:
 """
 
     response = requests.post(
-        os.getenv("AI_IP"),json={"model": "qwen2.5:3b-instruct","prompt": prompt,"stream": False})
+        os.getenv("AI_IP"),json={"model": os.getenv("AI_MODEL"),"prompt": prompt,"stream": False})
 
     return response.json()["response"]

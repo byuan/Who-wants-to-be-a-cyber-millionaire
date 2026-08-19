@@ -2,8 +2,9 @@ import requests
 import random
 from .mysql_db import get_topic_settings
 from openai import OpenAI
-from google import genai
+import anthropic
 import os
+import time
 
 # Dictionary to hold all the level choices
 LEVELS = {"easy": ("You are a school teacher trying to create a cybersecurity quiz.", "primary school"), 
@@ -51,34 +52,44 @@ Rules:
 
 # Function that reaches out to the API
 def api(ai_model, topic, system_prompt, question_level):
-    ai_model = os.getenv("AI_MODEL")
     prompt = build_prompt(system_prompt, question_level, topic)
-    if ai_model.startswith("gpt"):
+    if ai_model.lower().startswith("gpt"):
         client = OpenAI(api_key=os.getenv("API_KEY"))
+
+        start = time.time()
+
         response = client.chat.completions.create(
             model=ai_model,
-            messages=[{"role": "system","content": system_prompt},{"role": "user","content": prompt}]
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": prompt}
+            ]
         )
+
+        elapsed = time.time() - start
+        print(f"GPT request took {elapsed:.2f} seconds")
+
         return response.choices[0].message.content.strip()
 
-    elif ai_model.startswith("gemini"):
-        client = genai.Client(api_key=os.getenv("API_KEY"))
-        response = client.models.generate_content(
+    elif ai_model.startswith("claude"):
+        client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+        response = client.messages.create(
             model=ai_model,
-            contents=prompt
+            max_tokens=500,
+            system=system_prompt,
+            messages=[{"role": "user","content": prompt}]
         )
-        return response.text.strip()
+        return response.content[0].text.strip()
     
     elif ai_model.startswith("llama"):
         response = requests.post(os.getenv("AI_IP"),json={"model": ai_model,"prompt": prompt,"stream": False})
         return response.json()["response"].strip()
 
 def generate_question(level, user_id):
-
     settings = load_topic_settings(user_id)
     topic = pick_a_word(settings[level])
     system_prompt, question_level = LEVELS[level]
-    return api(os.getenv("LLAMA_MODEL"),topic,system_prompt,question_level)
+    return api(os.getenv("AI_MODEL"),topic,system_prompt,question_level)
 
 if __name__ == '__main__':
     level = "expert"  # Default level for direct execution

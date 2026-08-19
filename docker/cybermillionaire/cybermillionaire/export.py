@@ -2,6 +2,7 @@ import mysql.connector
 from mysql.connector import Error
 import cybermillionaire.dynamic_question_generation as generation
 import cybermillionaire.database_insert as insert
+import traceback
 
 # Executes all export functionality
 def run_sql(cursor, query, param=None):
@@ -83,8 +84,8 @@ def Dynamic_Game(difficulty_level, user_id, count=15):
             game.append({"question": question,"answers": answers,"correct_answer": correct_answer})
 
         except Exception as e:
-            print("Generation error:", e)
-
+            print(f"Generation error:, {e}")
+            traceback.print_exc()
 
     return game
 
