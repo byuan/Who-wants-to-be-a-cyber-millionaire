@@ -1,4 +1,4 @@
-#views.py file
+"""HTTP views for accounts, quizzes, topic preferences, and reports."""
 
 from django.shortcuts import render, redirect
 import cybermillionaire.export as e
@@ -9,17 +9,21 @@ from .ai_report import generate_ai_feedback
 from .mysql_db import get_or_create_user, save_topic_settings, get_topic_settings, create_game_session, save_game_results, get_user_results, get_available_topics, add_available_topic, get_game_results
 from .question_queue import start_question_generation, get_questions, pop_questions, generate_initial_questions, stop_question_generation
 import re
-from django.contrib.auth.hashers import make_password, check_password
+from functools import wraps
+from .mysql_db import DIFFICULTIES
 
-def require_login(request):
-    if "user_id" not in request.session:
-        return redirect("/login/")
-    return None
+def login_required(view):
+    """Protect views using the application's existing session-based login."""
+    @wraps(view)
+    def wrapped(request, *args, **kwargs):
+        if "user_id" not in request.session:
+            return redirect("/login/")
+        return view(request, *args, **kwargs)
+    return wrapped
 
+
+@login_required
 def save_results(request):
-    redirect_response = require_login(request)
-    if redirect_response:
-        return redirect_response
     if request.method != "POST":
         return JsonResponse({"status":"error"}, status=405)
     try:
@@ -49,43 +53,33 @@ def save_results(request):
     stop_question_generation(user_id)
     return JsonResponse({"status":"success"})
 
+@login_required
 def get_results(request):
-    redirect_response = require_login(request)
-    if redirect_response:
-        return redirect_response
     user_id = request.session["user_id"]
     results = get_user_results(user_id)
     return JsonResponse(results,safe=False)
 
+@login_required
 def save_topics(request):
-    redirect_response = require_login(request)
-    if redirect_response:
-        return redirect_response
     if request.method != "POST":
         return JsonResponse({"status": "invalid request"}, status=405)
     user_id = request.session["user_id"]
     settings = {
-        "easy": request.POST.getlist("easy_topics"),
-        "medium": request.POST.getlist("medium_topics"),
-        "hard": request.POST.getlist("hard_topics"),
-        "expert": request.POST.getlist("expert_topics")
+        difficulty: request.POST.getlist(difficulty + "_topics")
+        for difficulty in DIFFICULTIES
     }
     save_topic_settings(user_id, settings)
     return index(request)
     
+@login_required
 def ai_feedback(request):
-    redirect_response = require_login(request)
-    if redirect_response:
-        return redirect_response
     user_id = request.session["user_id"]
     results = get_user_results(user_id)
     feedback = generate_ai_feedback(results)
     return render(request, "feedback.html", {"feedback": feedback})
 
+@login_required
 def ai_game_feedback(request, session_id):
-    redirect_response = require_login(request)
-    if redirect_response:
-        return redirect_response
 
     user_id = request.session["user_id"]
     game = get_game_results(session_id, user_id)
@@ -95,206 +89,41 @@ def ai_game_feedback(request, session_id):
     feedback = generate_ai_feedback(game)
     return render(request,"feedback.html",{"feedback": feedback})
 
+@login_required
 def topics(request):
-    redirect_response = require_login(request)
-    if redirect_response:
-        return redirect_response
     user_id = request.session["user_id"]
     settings = get_topic_settings(user_id)
     all_topics = get_available_topics()
-    topics = {"easy": all_topics,"medium": all_topics,"hard": all_topics,"expert": all_topics}
+    labels = ("Primary School", "Secondary School", "College", "Expert")
+    groups = [
+        {"key": difficulty, "label": label, "selected": settings[difficulty]}
+        for difficulty, label in zip(DIFFICULTIES, labels)
+    ]
+    return render(request, "topics.html", {"groups": groups, "all_topics": all_topics})
 
-    return render(request,"topics.html",{"settings": settings,"topics": topics})
-
+@login_required
 def index(request):
-    redirect_response = require_login(request)
-    if redirect_response:
-        return redirect_response
     return render(request,"index.html",{"username": request.session["username"]})
 
-def start_game(request, mode):
-    redirect_response = require_login(request)
-    if redirect_response:
-        return redirect_response
-    e.export_questions(mode)
-    return render(request, "game.html")
-    
 @ensure_csrf_cookie
-def start1(request):
-    redirect_response = require_login(request)
-    if redirect_response:
-        return redirect_response
-    game_data = e.export_questions("1")
-    return render(request,"game.html",{"game_data": game_data})
+@login_required
+def start_game(request, level):
+    game_data = e.export_questions(level)
+    return render(request, "game.html", {"game_data": game_data})
+
 
 @ensure_csrf_cookie
-def start2(request):
-    redirect_response = require_login(request)
-    if redirect_response:
-        return redirect_response
-    game_data = e.export_questions("2")
-    return render(request,"game.html",{"game_data": game_data})
-
-@ensure_csrf_cookie
-def start3(request):
-    redirect_response = require_login(request)
-    if redirect_response:
-        return redirect_response
-    game_data = e.export_questions("3")
-    return render(request,"game.html",{"game_data": game_data})
-
-@ensure_csrf_cookie
-def start4(request):
-    redirect_response = require_login(request)
-    if redirect_response:
-        return redirect_response
-    game_data = e.export_questions("4")
-    return render(request,"game.html",{"game_data": game_data})
-
-@ensure_csrf_cookie
-def dynamic_start1(request):
-    redirect_response = require_login(request)
-
-    if redirect_response:
-        return redirect_response
-
+@login_required
+def start_dynamic_game(request, level):
     user_id = request.session["user_id"]
-
-    initial_questions = generate_initial_questions(
-        "easy",
-        user_id,
-        5
-    )
-
-    start_question_generation(
-        "easy",
-        user_id
-    )
-
-    game_data = {
-        "games": [
-            {
-                "questions": initial_questions
-            }
-        ]
-    }
-
-    return render(
-        request,
-        "game.html",
-        {"game_data": game_data}
-    )
+    questions = generate_initial_questions(level, user_id, 5)
+    start_question_generation(level, user_id)
+    game_data = {"games": [{"questions": questions}]}
+    return render(request, "game.html", {"game_data": game_data})
 
 
-@ensure_csrf_cookie
-def dynamic_start2(request):
-    redirect_response = require_login(request)
-
-    if redirect_response:
-        return redirect_response
-
-    user_id = request.session["user_id"]
-
-    initial_questions = generate_initial_questions(
-        "medium",
-        user_id,
-        5
-    )
-
-    start_question_generation(
-        "medium",
-        user_id
-    )
-
-    game_data = {
-        "games": [
-            {
-                "questions": initial_questions
-            }
-        ]
-    }
-
-    return render(
-        request,
-        "game.html",
-        {"game_data": game_data}
-    )
-
-@ensure_csrf_cookie
-def dynamic_start3(request):
-    redirect_response = require_login(request)
-
-    if redirect_response:
-        return redirect_response
-
-    user_id = request.session["user_id"]
-
-    # Generate first 5 questions concurrently
-    initial_questions = generate_initial_questions(
-        "hard",
-        user_id,
-        5
-    )
-
-    # Start background generator for future questions
-    start_question_generation(
-        "hard",
-        user_id
-    )
-
-    game_data = {
-        "games": [
-            {
-                "questions": initial_questions
-            }
-        ]
-    }
-
-    return render(
-        request,
-        "game.html",
-        {"game_data": game_data}
-    )
-
-
-@ensure_csrf_cookie
-def dynamic_start4(request):
-    redirect_response = require_login(request)
-
-    if redirect_response:
-        return redirect_response
-
-    user_id = request.session["user_id"]
-
-    initial_questions = generate_initial_questions(
-        "expert",
-        user_id,
-        5
-    )
-
-    start_question_generation(
-        "expert",
-        user_id
-    )
-
-    game_data = {
-        "games": [
-            {
-                "questions": initial_questions
-            }
-        ]
-    }
-
-    return render(
-        request,
-        "game.html",
-        {"game_data": game_data}
-    )
-
+@login_required
 def get_question_queue(request):
-    redirect_response = require_login(request)
-    if redirect_response:
-        return redirect_response
     user_id = request.session["user_id"]
     questions = get_questions(user_id)
     return JsonResponse(
@@ -302,19 +131,15 @@ def get_question_queue(request):
         safe=False
     )
 
+@login_required
 def get_new_questions(request):
-    redirect_response = require_login(request)
-    if redirect_response:
-        return redirect_response
     user_id = request.session["user_id"]
     questions = pop_questions(user_id, 5)
     print("Sending questions:", len(questions))
     return JsonResponse(questions,safe=False)
 
+@login_required
 def add_topic(request):
-    redirect_response = require_login(request)
-    if redirect_response:
-        return redirect_response
 
     if not request.session.get("is_admin", False):
         return redirect("/topics/")

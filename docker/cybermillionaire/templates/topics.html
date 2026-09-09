@@ -25,92 +25,20 @@
             <div class="topic-grid">
 
 
-                <!-- Primary School -->
+                {% for group in groups %}
                 <div class="topic-column">
-                    <h2>Primary School</h2>
-
-                    {% for topic in topics.easy %}
-
+                    <h2>{{ group.label }}</h2>
+                    {% for topic in all_topics %}
                     <label>
-                        <input 
-                            type="checkbox" 
-                            name="easy_topics" 
-                            value="{{ topic }}"
-                            {% if topic in settings.easy %}checked{% endif %}
-                        >
+                        <input type="checkbox"
+                               name="{{ group.key }}_topics"
+                               value="{{ topic }}"
+                               {% if topic in group.selected %}checked{% endif %}>
                         {{ topic }}
                     </label>
-
                     {% endfor %}
-
                 </div>
-
-
-
-                <!-- Secondary School -->
-                <div class="topic-column">
-                    <h2>Secondary School</h2>
-
-                    {% for topic in topics.medium %}
-
-                    <label>
-                        <input 
-                            type="checkbox" 
-                            name="medium_topics" 
-                            value="{{ topic }}"
-                            {% if topic in settings.medium %}checked{% endif %}
-                        >
-                        {{ topic }}
-                    </label>
-
-                    {% endfor %}
-
-                </div>
-
-
-
-                <!-- College -->
-                <div class="topic-column">
-                    <h2>College</h2>
-
-                    {% for topic in topics.hard %}
-
-                    <label>
-                        <input 
-                            type="checkbox" 
-                            name="hard_topics" 
-                            value="{{ topic }}"
-                            {% if topic in settings.hard %}checked{% endif %}
-                        >
-                        {{ topic }}
-                    </label>
-
-                    {% endfor %}
-
-                </div>
-
-
-
-                <!-- Expert -->
-                <div class="topic-column">
-                    <h2>Expert</h2>
-
-                    {% for topic in topics.expert %}
-
-                    <label>
-                        <input 
-                            type="checkbox" 
-                            name="expert_topics" 
-                            value="{{ topic }}"
-                            {% if topic in settings.expert %}checked{% endif %}
-                        >
-                        {{ topic }}
-                    </label>
-
-                    {% endfor %}
-
-                </div>
-
+                {% endfor %}
 
             </div>
                 
