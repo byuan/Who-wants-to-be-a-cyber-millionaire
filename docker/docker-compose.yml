@@ -10,7 +10,8 @@ services:
             - nginx_network
             - db_network
         depends_on:
-            - db
+            db:
+                condition: service_healthy
         env_file: ../api_config.env
 
     nginx:
@@ -28,13 +29,20 @@ services:
       
     db:
         build: ./mysql
+        healthcheck:
+            test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+            interval: 5s
+            timeout: 5s
+            retries: 30
+            start_period: 30s
         ports:
-            - "3306:3306"
+            - "127.0.0.1:3306:3306"
         volumes:
             - ./cybermillionaire:/cybermillionaire
+            - mariadb_data:/var/lib/mysql
         environment:
-            MYSQL_ROOT_PASSWORD: password
-            MYSQL_DATABASE: Millionaire
+            MARIADB_ROOT_PASSWORD: password
+            MARIADB_DATABASE: Millionaire
         networks:
             - db_network
         
@@ -44,3 +52,6 @@ networks:
         driver: bridge
     db_network:
         driver: bridge
+
+volumes:
+    mariadb_data:

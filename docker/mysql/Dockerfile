@@ -1,6 +1,6 @@
-FROM mysql:5.7
+FROM mariadb:11.4
 
-ADD static_import.sql /docker-entrypoint-initdb.d
-ADD user_import.sql /docker-entrypoint-initdb.d
+COPY static_import.sql /docker-entrypoint-initdb.d/01-static.sql
+COPY user_import.sql /docker-entrypoint-initdb.d/02-users.sql
 
 EXPOSE 3306

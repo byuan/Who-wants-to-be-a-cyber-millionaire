@@ -4,22 +4,20 @@ from mysql.connector import Error
 
 # Function to parse the returned text and remove the A, B, C, D labels
 def parse_question_and_answers(text):
-    # Regular expression to extract the question and answers
-    question_match = re.search(r"Question: (.*?)\n", text, re.IGNORECASE)
-    answers_match = re.findall(r"([A-D])\.\s([^\n]+)", text)  # Matches A. Answer text, B. Answer text, etc.
-    correct_answer_match = re.search(r"Correct Answer: ([A-D])", text, re.IGNORECASE)  # Matches Correct Answer: A, B, C, or D
-
-    if not question_match or not answers_match or not correct_answer_match:
-        raise ValueError("Unable to parse the text correctly")
-
-    question = question_match.group(1)
-    answers = [a[1].strip() for a in answers_match]  # Extract answer texts and strip extra spaces
-    correct_letter = correct_answer_match.group(1)  # The correct letter (e.g., A, B, C, D)
-    
-    # Convert the correct letter (A-D) to a 0-based index
-    correct_answer = ord(correct_letter) - ord('A')
-
-    return question, answers, correct_answer
+    if not isinstance(text, str):
+        raise ValueError("Question response must be text")
+    question_match = re.search(r"^Question:\s*([^\n]+)$", text, re.IGNORECASE | re.MULTILINE)
+    choices = re.findall(r"^([A-D])\.\s*([^\n]+)$", text, re.IGNORECASE | re.MULTILINE)
+    correct_matches = re.findall(r"^Correct Answer:\s*([A-D])\s*$", text, re.IGNORECASE | re.MULTILINE)
+    if not question_match or len(choices) != 4 or len(correct_matches) != 1:
+        raise ValueError("Expected a question, four choices, and one correct answer")
+    labels = [label.upper() for label, _ in choices]
+    answers = [answer.strip() for _, answer in choices]
+    if labels != list("ABCD") or any(not answer for answer in answers):
+        raise ValueError("Choices must be labeled A through D in order")
+    if len({answer.casefold() for answer in answers}) != 4:
+        raise ValueError("Answers must be unique")
+    return question_match.group(1).strip(), answers, ord(correct_matches[0].upper()) - ord("A")
 
 # Function to insert the parsed data into the database
 def insert_question_into_db(question, answers, correct_answer):

@@ -53,8 +53,10 @@ Rules:
 # Function that reaches out to the API
 def api(ai_model, topic, system_prompt, question_level):
     prompt = build_prompt(system_prompt, question_level, topic)
+    if not ai_model:
+        raise ValueError("AI_MODEL environment variable is not set")
     if ai_model.lower().startswith("gpt"):
-        client = OpenAI(api_key=os.getenv("GPT_API_KEY"))
+        client = OpenAI(timeout=20.0, max_retries=1, api_key=os.getenv("GPT_API_KEY") or os.getenv("OPENAI_API_KEY"))
 
         start = time.time()
 
@@ -72,7 +74,7 @@ def api(ai_model, topic, system_prompt, question_level):
         return response.choices[0].message.content.strip()
 
     elif ai_model.startswith("claude"):
-        client = anthropic.Anthropic(api_key=os.getenv("CLAUDE_API_KEY"))
+        client = anthropic.Anthropic(timeout=20.0, max_retries=1, api_key=os.getenv("CLAUDE_API_KEY"))
         response = client.messages.create(
             model=ai_model,
             max_tokens=500,
@@ -82,8 +84,10 @@ def api(ai_model, topic, system_prompt, question_level):
         return response.content[0].text.strip()
     
     elif ai_model.startswith("llama"):
-        response = requests.post(os.getenv("AI_IP"),json={"model": ai_model,"prompt": prompt,"stream": False})
+        response = requests.post(os.getenv("AI_IP"),json={"model": ai_model,"prompt": prompt,"stream": False}, timeout=20)
+        response.raise_for_status()
         return response.json()["response"].strip()
+    raise ValueError("Unsupported AI model: " + ai_model)
 
 def generate_question(level, user_id):
     settings = load_topic_settings(user_id)

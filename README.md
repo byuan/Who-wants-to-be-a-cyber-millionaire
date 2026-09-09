@@ -51,7 +51,7 @@ To enable dyanmic play, the game requires an API key to access the CHATGPT OPENA
 The game is hosted in Docker containers. Follow these steps to start:
 
 1. Ensure Docker and Docker-Compose are installed on your machine.
-2. Clone the repository from the `Django-branch`:
+2. Clone the repository from the `Jacob-Branch`:
 3. Ensure your API key is set within the `api_config.env` file if you plan on playing the dynamic gameplay.
 4. Navigate to the `docker` directory:
    ```bash
@@ -65,3 +65,57 @@ The game is hosted in Docker containers. Follow these steps to start:
 7. Enjoy the game!
 
 ---
+
+
+## AI configuration
+
+Set `AI_MODEL` in `api_config.env` to a model supported by your provider.
+GPT uses `GPT_API_KEY` (or `OPENAI_API_KEY`), Claude uses `CLAUDE_API_KEY`,
+and Llama uses `AI_IP` pointing to a compatible generation endpoint.
+Static quizzes do not require AI credentials; AI feedback does.
+Never commit real credentials.
+
+## Current deployment limits
+
+Question queues currently live in one server process. The entrypoint runs one
+Gunicorn worker with four threads. Do not increase the worker count or deploy
+multiple replicas until queue storage is shared. Starting a new dynamic game
+replaces that user's previous queue; simultaneous games for the same account
+are not supported. Idle generators expire after five minutes.
+
+This remains a development deployment: production requires external secrets,
+debug disabled, restricted hosts, supported framework/database versions, and
+restricted database access. Quiz scores are still client-reported and must not
+be used as verified assessment results. Server-authoritative games and scoring
+are required before adding competitive rankings or graded assessments.
+
+## Regression tests
+
+With the Python requirements installed, run from `docker/cybermillionaire`:
+
+```bash
+python -m unittest discover -s tests -v
+node tests/test_frontend.js
+```
+
+
+## ARM64 database support
+
+The database image is MariaDB 11.4, which supports ARM64 and AMD64 natively.
+The existing MySQL-compatible schema, seed scripts, and Python connector are
+retained. Compose waits for database readiness before starting Gunicorn, and
+stores MariaDB data in the `mariadb_data` named volume. Port 3306 is exposed
+only on localhost; containers connect using the existing `db` service name.
+
+From the `docker` directory, start with:
+
+```bash
+docker compose up --build -d
+```
+
+For an existing MySQL installation, export any users and game history before
+replacing its container, then import a compatible SQL dump into MariaDB.
+Do not mount a MySQL data directory directly into MariaDB. The new named volume
+starts with the bundled questions and an empty user database; it does not
+migrate existing records automatically. Avoid `docker compose down -v` unless
+you intend to delete the database volume.

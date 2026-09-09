@@ -4,10 +4,10 @@ from django.shortcuts import render, redirect
 import cybermillionaire.export as e
 import json
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import ensure_csrf_cookie
 from .ai_report import generate_ai_feedback
 from .mysql_db import get_or_create_user, save_topic_settings, get_topic_settings, create_game_session, save_game_results, get_user_results, get_available_topics, add_available_topic, get_game_results
-from .question_queue import start_question_generation, get_questions, pop_questions, generate_initial_questions
+from .question_queue import start_question_generation, get_questions, pop_questions, generate_initial_questions, stop_question_generation
 import re
 from django.contrib.auth.hashers import make_password, check_password
 
@@ -16,17 +16,37 @@ def require_login(request):
         return redirect("/login/")
     return None
 
-@csrf_exempt
 def save_results(request):
     redirect_response = require_login(request)
     if redirect_response:
         return redirect_response
     if request.method != "POST":
-        return JsonResponse({"status":"error"})
-    data = json.loads(request.body)
+        return JsonResponse({"status":"error"}, status=405)
+    try:
+        data = json.loads(request.body)
+        if not isinstance(data, dict):
+            raise ValueError("Expected an object")
+        history = data.get("history")
+        score = data.get("finalMoney")
+        difficulty = data.get("difficulty", "unknown")
+        if type(score) is not int or not 0 <= score <= 1000000:
+            raise ValueError("Invalid score")
+        if not isinstance(difficulty, str) or len(difficulty) > 20:
+            raise ValueError("Invalid difficulty")
+        if not isinstance(history, list) or not 1 <= len(history) <= 200:
+            raise ValueError("Invalid history")
+        for item in history:
+            if not isinstance(item, dict):
+                raise ValueError("Invalid answer")
+            for field in ("question", "selected", "correct"):
+                if not isinstance(item.get(field), str) or not 1 <= len(item[field]) <= 10000:
+                    raise ValueError("Invalid answer text")
+    except (ValueError, UnicodeDecodeError):
+        return JsonResponse({"status": "error", "message": "Invalid game results"}, status=400)
     user_id = request.session["user_id"]
     session_id = create_game_session(user_id,data.get("difficulty", "unknown"),data["finalMoney"])
     save_game_results(session_id,data["history"])
+    stop_question_generation(user_id)
     return JsonResponse({"status":"success"})
 
 def get_results(request):
@@ -37,13 +57,12 @@ def get_results(request):
     results = get_user_results(user_id)
     return JsonResponse(results,safe=False)
 
-@csrf_exempt
 def save_topics(request):
     redirect_response = require_login(request)
     if redirect_response:
         return redirect_response
     if request.method != "POST":
-        return JsonResponse({"status": "invalid request"})
+        return JsonResponse({"status": "invalid request"}, status=405)
     user_id = request.session["user_id"]
     settings = {
         "easy": request.POST.getlist("easy_topics"),
@@ -100,6 +119,7 @@ def start_game(request, mode):
     e.export_questions(mode)
     return render(request, "game.html")
     
+@ensure_csrf_cookie
 def start1(request):
     redirect_response = require_login(request)
     if redirect_response:
@@ -107,6 +127,7 @@ def start1(request):
     game_data = e.export_questions("1")
     return render(request,"game.html",{"game_data": game_data})
 
+@ensure_csrf_cookie
 def start2(request):
     redirect_response = require_login(request)
     if redirect_response:
@@ -114,6 +135,7 @@ def start2(request):
     game_data = e.export_questions("2")
     return render(request,"game.html",{"game_data": game_data})
 
+@ensure_csrf_cookie
 def start3(request):
     redirect_response = require_login(request)
     if redirect_response:
@@ -121,6 +143,7 @@ def start3(request):
     game_data = e.export_questions("3")
     return render(request,"game.html",{"game_data": game_data})
 
+@ensure_csrf_cookie
 def start4(request):
     redirect_response = require_login(request)
     if redirect_response:
@@ -128,6 +151,7 @@ def start4(request):
     game_data = e.export_questions("4")
     return render(request,"game.html",{"game_data": game_data})
 
+@ensure_csrf_cookie
 def dynamic_start1(request):
     redirect_response = require_login(request)
 
@@ -162,6 +186,7 @@ def dynamic_start1(request):
     )
 
 
+@ensure_csrf_cookie
 def dynamic_start2(request):
     redirect_response = require_login(request)
 
@@ -195,6 +220,7 @@ def dynamic_start2(request):
         {"game_data": game_data}
     )
 
+@ensure_csrf_cookie
 def dynamic_start3(request):
     redirect_response = require_login(request)
 
@@ -231,6 +257,7 @@ def dynamic_start3(request):
     )
 
 
+@ensure_csrf_cookie
 def dynamic_start4(request):
     redirect_response = require_login(request)
 
@@ -306,7 +333,7 @@ def add_topic(request):
 
 def login(request):
     if request.method == "POST":
-        username = request.POST.get("username").strip()
+        username = request.POST.get("username", "").strip()
         if not username:
             return render(request, "login.html", {
                 "error": "Please enter a username."
@@ -332,6 +359,7 @@ def login(request):
             })
 
         user_id, is_admin = result
+        request.session.cycle_key()
         request.session["user_id"] = user_id
         request.session["username"] = username
         request.session["is_admin"] = is_admin
@@ -339,5 +367,6 @@ def login(request):
     return render(request,"login.html")
 
 def logout(request):
+    stop_question_generation(request.session.get("user_id"))
     request.session.flush()
     return redirect("/login/")

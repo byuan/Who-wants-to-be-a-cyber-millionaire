@@ -16,9 +16,6 @@ RUN pip3 install --upgrade pip
 COPY ./requirements.txt .
 RUN pip3 install -r requirements.txt
 
-# Install openai for Python 3 using pip3 (latest version)
-RUN pip3 install --upgrade openai
-
 # Copy the rest of the application files to the container
 COPY ./cybermillionaire /cybermillionaire
 

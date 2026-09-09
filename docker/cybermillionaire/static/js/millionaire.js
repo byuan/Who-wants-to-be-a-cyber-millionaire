@@ -45,6 +45,19 @@ startSound = function(id, loop) {
     
 }
 
+function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, function(character) {
+        return {"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[character];
+    });
+}
+
+function csrfToken() {
+    var cookie = document.cookie.split("; ").find(function(item) {
+        return item.indexOf("csrftoken=") === 0;
+    });
+    return cookie ? decodeURIComponent(cookie.substring("csrftoken=".length)) : "";
+}
+
 var loadingQuestions = false;
 
 /**
@@ -103,7 +116,7 @@ var MillionaireModel = function(data) {
 
  	// Uses the fifty-fifty option of the user
  	self.fifty = function(item, event) {
- 		if(self.transitioning)
+        if(self.transitioning || !self.questions[self.level() - 1])
  			return;
  		$(event.target).fadeOut('slow');
         sessionStorage.setItem("fiftyUsed", "true");
@@ -127,7 +140,7 @@ var MillionaireModel = function(data) {
     
     //Uses the phone a friend option
     self.friend = function(item, event) {
-        if(self.transitioning)
+        if(self.transitioning || !self.questions[self.level() - 1])
             return;
         $(event.target).fadeOut('slow');
         sessionStorage.setItem("friendUsed", "true");
@@ -212,7 +225,7 @@ var MillionaireModel = function(data) {
  
     //Uses the audience option
     self.audience = function(item, event) {
-        if(self.transitioning)
+        if(self.transitioning || !self.questions[self.level() - 1])
             return;
         $(event.target).fadeOut('slow');
         sessionStorage.setItem("audienceUsed", "true");
@@ -254,7 +267,7 @@ var MillionaireModel = function(data) {
 
  	// Fades out an option used if possible
  	self.fadeOutOption = function(item, event) {
- 		if(self.transitioning)
+        if(self.transitioning || !self.questions[self.level() - 1])
  			return;
  		$(event.target).fadeOut('slow');
  	}
@@ -263,7 +276,7 @@ var MillionaireModel = function(data) {
  	// Attempts to answer the question with the specified
  	// answer index (0-3) from a click event of elm
  	self.answerQuestion = function(index, elm) {
- 		if(self.transitioning)
+        if(self.transitioning || !self.questions[self.level() - 1])
  			return;
  		self.transitioning = true;
         if(help == 1){
@@ -367,7 +380,7 @@ var MillionaireModel = function(data) {
 	    return self.money().money(2, '.', ',');
 	}
 
-startQuestionPolling();
+if (window.location.pathname.indexOf("/dynamic-") === 0) { startQuestionPolling(); }
     
 self.showReport = function() {
 
@@ -375,7 +388,8 @@ self.showReport = function() {
     fetch('/save-results/', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken()
         },
         body: JSON.stringify({
             finalMoney: self.money(),
@@ -383,7 +397,10 @@ self.showReport = function() {
             history: self.history
         })
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) { throw new Error("Save failed: HTTP " + response.status); }
+        return response.json();
+    })
     .then(data => {
         console.log("Saved", data);
         clearGame();
@@ -436,6 +453,7 @@ function loadMoreQuestions() {
             for (var i = 0; i < data.length; i++) {
                 self.questions.push(data[i]);
             }
+            self.level.valueHasMutated();
             loadingQuestions = false;
         })
         .catch(error => {
@@ -483,7 +501,7 @@ function loadLifetimeStats() {
                 html += "<details " + (g === data.length - 1 ? "open" : "") + ">";
                 html += "<summary>";
                 html += "Game " + (g + 1);
-                html += " - " + timestamp;
+                html += " - " + escapeHtml(timestamp);
                 html += " - Score: " + percent + "%";
                 html += "</summary>";
 
@@ -499,8 +517,8 @@ function loadLifetimeStats() {
                     var h = game.history[i];
 
                     html += "<li>";
-                    html += "<b>Q:</b> " + h.question + "<br>";
-                    html += "<b>Your Answer:</b> " + h.selected + "<br>";
+                    html += "<b>Q:</b> " + escapeHtml(h.question) + "<br>";
+                    html += "<b>Your Answer:</b> " + escapeHtml(h.selected) + "<br>";
                     html += "<b>Result:</b> " + (h.isCorrect ? "Correct" : "Wrong");
                     html += "</li><br>";
                 }

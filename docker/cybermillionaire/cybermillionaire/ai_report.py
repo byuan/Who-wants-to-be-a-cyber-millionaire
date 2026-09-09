@@ -75,7 +75,7 @@ Provide feedback based on these rules:
     if ai_model.lower().startswith("gpt"):
 
         client = OpenAI(
-            api_key=os.getenv("GPT_API_KEY")
+            api_key=os.getenv("GPT_API_KEY") or os.getenv("OPENAI_API_KEY")
         )
 
         response = client.chat.completions.create(
